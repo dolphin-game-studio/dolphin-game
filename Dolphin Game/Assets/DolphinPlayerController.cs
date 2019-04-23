@@ -5,8 +5,17 @@ using UnityEngine;
 public class DolphinPlayerController : MonoBehaviour
 {
     public Rigidbody Rigidbody { get; set; }
-    [SerializeField] private float speed = 10f;
+    public float Speed
+    {
+        get => _speed;
+        set => _speed = value;
+    }
+    [SerializeField] private PlayerController playerController;
+
+    [SerializeField] private float _speed = 10f;
     [SerializeField] private float maxRotationDegreesDelta = 0.1f;
+
+    [SerializeField] private bool funnyMoveMent = false;
 
 
     void Start()
@@ -16,28 +25,31 @@ public class DolphinPlayerController : MonoBehaviour
         {
             Debug.LogError("Rigidbody Component is not set on DolphinPlayerController");
         }
+
+        if (playerController == null)
+        {
+            Debug.LogError("PlayerController is not set on DolphinPlayerController");
+        }
     }
 
     void Update()
     {
-        var horizontal = Input.GetAxis("Horizontal") * speed;
-        var vertical = Input.GetAxis("Vertical") * speed;
 
+
+    }
+
+    public void Move(float horizontal, float vertical)
+    {
         var movement = new Vector3(horizontal, vertical);
         Rigidbody.velocity = movement;
 
         var lookRotation = Quaternion.LookRotation(movement);
-        var eulerLookRotation =  lookRotation.eulerAngles;
-        print(eulerLookRotation);
 
-        if (eulerLookRotation.y < 0) {
-            eulerLookRotation.y = 360 + eulerLookRotation.y;
+        if (funnyMoveMent)
+        {
+            transform.Rotate(movement);
         }
-        lookRotation = Quaternion.Euler(eulerLookRotation);
-        //transform.Rotate(movement); funny
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, maxRotationDegreesDelta);
-
-
     }
 }

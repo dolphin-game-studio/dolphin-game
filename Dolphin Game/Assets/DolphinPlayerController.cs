@@ -43,13 +43,17 @@ public class DolphinPlayerController : MonoBehaviour
         var movement = new Vector3(horizontal, vertical);
         Rigidbody.velocity = movement;
 
-        var lookRotation = Quaternion.LookRotation(movement);
-
         if (funnyMoveMent)
         {
             transform.Rotate(movement);
         }
+        if (movement == Vector3.zero)
+        {
+            movement = Vector3.forward;
+        }
+        var lookRotation = Quaternion.LookRotation(movement);
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, maxRotationDegreesDelta);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, maxRotationDegreesDelta);
+
     }
 }

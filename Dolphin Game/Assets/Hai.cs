@@ -77,7 +77,15 @@ public class Hai : MonoBehaviour
         for (int i = 0; i <= stepCount; i++)
         {
             float angle = transform.eulerAngles.x - viewAngle / 2 + stepAngleSize * i;
-            ViewCastInfo newViewCast = ViewCast(angle);
+
+            var lookRotation = Quaternion.Euler(transform.eulerAngles.x - viewAngle / 2 + stepAngleSize * i, transform.eulerAngles.y, transform.eulerAngles.z);
+
+            // var lookRotation = Quaternion.LookRotation(fow.transform.forward, fow.transform.right);
+
+            //   var lookRotationLeftBound = Quaternion.Euler(lookRotation.eulerAngles.x - viewAngle / 2 + stepAngleSize * i, lookRotation.eulerAngles.y, lookRotation.eulerAngles.z);
+
+
+            ViewCastInfo newViewCast = ViewCast(lookRotation * Vector3.forward);
 
             if (i > 0)
             {
@@ -129,25 +137,25 @@ public class Hai : MonoBehaviour
 
     EdgeInfo FindEdge(ViewCastInfo minViewCast, ViewCastInfo maxViewCast)
     {
-        float minAngle = minViewCast.angle;
-        float maxAngle = maxViewCast.angle;
+        Vector3 minAngle = minViewCast.dir;
+        Vector3 maxAngle = maxViewCast.dir;
         Vector3 minPoint = Vector3.zero;
         Vector3 maxPoint = Vector3.zero;
 
         for (int i = 0; i < edgeResolveIterations; i++)
         {
-            float angle = (minAngle + maxAngle) / 2;
-            ViewCastInfo newViewCast = ViewCast(angle);
+            Vector3 dir = (minAngle + maxAngle).normalized;
+            ViewCastInfo newViewCast = ViewCast(dir);
 
             bool edgeDstThresholdExceeded = Mathf.Abs(minViewCast.dst - newViewCast.dst) > edgeDstThreshold;
             if (newViewCast.hit == minViewCast.hit && !edgeDstThresholdExceeded)
             {
-                minAngle = angle;
+                minAngle = dir;
                 minPoint = newViewCast.point;
             }
             else
             {
-                maxAngle = angle;
+                maxAngle = dir;
                 maxPoint = newViewCast.point;
             }
         }
@@ -156,18 +164,18 @@ public class Hai : MonoBehaviour
     }
 
 
-    ViewCastInfo ViewCast(float globalAngle)
+    ViewCastInfo ViewCast(Vector3 dir)
     {
-        Vector3 dir = DirFromAngle(globalAngle, true);
+
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, dir, out hit, viewRadius, obstacleMask))
         {
-            return new ViewCastInfo(true, hit.point, hit.distance, globalAngle);
+            return new ViewCastInfo(true, hit.point, hit.distance, dir);
         }
         else
         {
-            return new ViewCastInfo(false, transform.position + dir * viewRadius, viewRadius, globalAngle);
+            return new ViewCastInfo(false, transform.position + dir * viewRadius, viewRadius, dir);
         }
     }
 
@@ -177,7 +185,8 @@ public class Hai : MonoBehaviour
         {
             angleInDegrees += transform.eulerAngles.x;
         }
-        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad), 0);
+        
+        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 
     public struct ViewCastInfo
@@ -185,14 +194,14 @@ public class Hai : MonoBehaviour
         public bool hit;
         public Vector3 point;
         public float dst;
-        public float angle;
+        public Vector3 dir;
 
-        public ViewCastInfo(bool _hit, Vector3 _point, float _dst, float _angle)
+        public ViewCastInfo(bool _hit, Vector3 _point, float _dst, Vector3 _dir)
         {
             hit = _hit;
             point = _point;
             dst = _dst;
-            angle = _angle;
+            dir = _dir;
         }
     }
 

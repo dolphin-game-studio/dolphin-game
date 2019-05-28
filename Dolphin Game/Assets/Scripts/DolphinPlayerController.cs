@@ -53,7 +53,7 @@ public class DolphinPlayerController : MonoBehaviour
         }
         var lookRotation = Quaternion.LookRotation(movement);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, maxRotationDegreesDelta);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, maxRotationDegreesDelta);
 
     }
 }

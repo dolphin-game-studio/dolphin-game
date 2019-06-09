@@ -1,14 +1,11 @@
 fileFormatVersion: 2
-guid: 01a241d76be48094ea4c15e1f6c4c6ef
+guid: fa0c5704212d77b46bcb4eb076a674a5
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
       74: 1989289236423521904
     second: Default Take
-  - first:
-      74: -9162750017006959501
-    second: wobble
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,37 +38,8 @@ ModelImporter:
       name: Default Take
       takeName: Default Take
       internalID: 1989289236423521904
-      firstFrame: -1
-      lastFrame: 39
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: wobble
-      takeName: wobble
-      internalID: -9162750017006959501
-      firstFrame: -1
-      lastFrame: 12
+      firstFrame: 0
+      lastFrame: 249
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

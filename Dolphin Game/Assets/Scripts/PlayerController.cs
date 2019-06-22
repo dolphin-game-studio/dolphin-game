@@ -34,7 +34,11 @@ public class PlayerController : MonoBehaviour
 
 
         float dolphinSpeed = currentDolphinPlayerController.Speed;
+
+        if (horizontal != 0 || vertical != 0)
+        {
         currentDolphinPlayerController.Move(horizontal * dolphinSpeed, vertical * dolphinSpeed);
+        }
 
         bool xPressed = Input.GetKeyUp(KeyCode.X);
 

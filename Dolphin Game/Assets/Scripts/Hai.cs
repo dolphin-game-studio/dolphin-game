@@ -1,14 +1,30 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Hai : MonoBehaviour
 {
-    public Transform[] viewPoints;
-    
+    AnimationCurve viewPanAnimationCurve;
+    private float viewPanAnimationTime;
+
     public float viewRadius;
     [Range(0, 360)]
     public float viewAngle;
+
+    public float playerEscapeViewRadius;
+
+
+
+    [Range(-180, 180)]
+    public float viewPanAngle1;
+    [Range(-180, 180)]
+    public float viewPanAngle2;
+
+    
+
+
 
     public LayerMask targetMask;
     public LayerMask obstacleMask;
@@ -23,34 +39,82 @@ public class Hai : MonoBehaviour
     public MeshFilter viewMeshFilter;
     Mesh viewMesh;
 
+    Quaternion currentViewPanRotation;
+
+
+    public float panDuration = 1.5f;
+
+ 
     void Start()
     {
+
+        viewPanAnimationCurve = AnimationCurve.EaseInOut(0, viewPanAngle1, panDuration, viewPanAngle2);
+
+
         viewMesh = new Mesh
         {
             name = "View Mesh"
         };
         viewMeshFilter.mesh = viewMesh;
-
-        StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
 
-    IEnumerator FindTargetsWithDelay(float delay)
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(delay);
-            FindVisibleTargets();
-        }
-    }
+
 
     void LateUpdate()
     {
+        UpdateViewDirection();
+
         DrawFieldOfView();
+
+        FindVisibleTargets();
+    }
+
+    float currentViewPanAngle;
+    private void UpdateViewDirection()
+    {
+        var angles = transform.eulerAngles;
+        if (visibleTargets.Count == 0)
+        {
+            viewPanAnimationTime += Time.deltaTime;
+
+            var wayBack = viewPanAnimationTime % (panDuration * 2) > panDuration;
+
+            var pan = viewPanAnimationTime % (panDuration);
+            
+            if (wayBack)
+            {
+                pan = panDuration - pan;
+            }
+            
+            currentViewPanAngle = viewPanAnimationCurve.Evaluate(pan);
+        }
+        else {
+            var visiblePlayer = visibleTargets[0];
+            Vector3 dirToTarget = (visiblePlayer.transform.position - transform.position).normalized;
+
+            var viewPanAngleDifferenceToTarget = Vector3.Angle(currentViewPanRotation * Vector3.forward, dirToTarget);
+
+            if (viewPanAngleDifferenceToTarget != 0) {
+                currentViewPanAngle += viewPanAngleDifferenceToTarget;
+            }
+        }
+
+        currentViewPanRotation = Quaternion.Euler(angles.x + currentViewPanAngle, angles.y, angles.z);
+
+
     }
 
     void FindVisibleTargets()
     {
+        float viewRadius;
+        if (visibleTargets.Count == 0) {
+            viewRadius = this.viewRadius;
+        }
+        else {
+            viewRadius = playerEscapeViewRadius;
+        }
+            
         visibleTargets.Clear();
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
@@ -58,7 +122,9 @@ public class Hai : MonoBehaviour
         {
             Transform target = targetsInViewRadius[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
-            if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
+
+            
+            if (Vector3.Angle(currentViewPanRotation * Vector3.forward, dirToTarget) < viewAngle / 2)
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
@@ -71,21 +137,21 @@ public class Hai : MonoBehaviour
 
     void DrawFieldOfView()
     {
+
         int stepCount = Mathf.RoundToInt(viewAngle * meshResolution);
         float stepAngleSize = viewAngle / stepCount;
         List<Vector3> viewPoints = new List<Vector3>();
         ViewCastInfo oldViewCast = new ViewCastInfo();
+
+        var startAngle = viewAngle / 2;
+
         for (int i = 0; i <= stepCount; i++)
         {
-            float angle = transform.eulerAngles.x - viewAngle / 2 + stepAngleSize * i;
 
-            var lookRotation = Quaternion.Euler(transform.eulerAngles.x - viewAngle / 2 + stepAngleSize * i, transform.eulerAngles.y, transform.eulerAngles.z);
+           //float angle = transform.eulerAngles.x + currentViewPanAngle - startAngle + stepAngleSize * i;
 
-            // var lookRotation = Quaternion.LookRotation(fow.transform.forward, fow.transform.right);
-
-            //   var lookRotationLeftBound = Quaternion.Euler(lookRotation.eulerAngles.x - viewAngle / 2 + stepAngleSize * i, lookRotation.eulerAngles.y, lookRotation.eulerAngles.z);
-
-
+            var lookRotation = Quaternion.Euler(currentViewPanRotation.eulerAngles.x - startAngle + stepAngleSize * i, currentViewPanRotation.eulerAngles.y, currentViewPanRotation.eulerAngles.z);
+             
             ViewCastInfo newViewCast = ViewCast(lookRotation * Vector3.forward);
 
             if (i > 0)

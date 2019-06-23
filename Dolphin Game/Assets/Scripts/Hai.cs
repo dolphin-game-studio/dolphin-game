@@ -9,11 +9,32 @@ public class Hai : MonoBehaviour
     AnimationCurve viewPanAnimationCurve;
     private float viewPanAnimationTime;
 
-    public float viewRadius;
+
     [Range(0, 360)]
     public float viewAngle;
 
-    public float playerEscapeViewRadius;
+
+    public float ViewRadius
+    {
+        get
+        {
+            if (visibleTargets.Count == 0)
+            {
+                return viewRadiusWhenNotSuspicious;
+            }
+            else
+            {
+                return viewRadiusWhenSuspicious;
+            }
+        }
+    }
+
+
+    [Range(1, 100)]
+    public float viewRadiusWhenNotSuspicious = 30;
+
+    [Range(1, 100)]
+    public float viewRadiusWhenSuspicious = 35;
 
 
 
@@ -22,7 +43,7 @@ public class Hai : MonoBehaviour
     [Range(-180, 180)]
     public float viewPanAngle2;
 
-    
+
 
 
 
@@ -44,7 +65,7 @@ public class Hai : MonoBehaviour
 
     public float panDuration = 1.5f;
 
- 
+
     void Start()
     {
 
@@ -71,6 +92,7 @@ public class Hai : MonoBehaviour
     }
 
     float currentViewPanAngle;
+
     private void UpdateViewDirection()
     {
         var angles = transform.eulerAngles;
@@ -81,49 +103,47 @@ public class Hai : MonoBehaviour
             var wayBack = viewPanAnimationTime % (panDuration * 2) > panDuration;
 
             var pan = viewPanAnimationTime % (panDuration);
-            
+
             if (wayBack)
             {
                 pan = panDuration - pan;
             }
-            
+
             currentViewPanAngle = viewPanAnimationCurve.Evaluate(pan);
+
+            currentViewPanRotation = Quaternion.Euler(angles.x + currentViewPanAngle, angles.y, angles.z);
+
         }
-        else {
+        else
+        {
             var visiblePlayer = visibleTargets[0];
             Vector3 dirToTarget = (visiblePlayer.transform.position - transform.position).normalized;
+            
+            var viewPanAngleDifferenceToTarget = Vector3.Angle( transform.forward, dirToTarget);
 
-            var viewPanAngleDifferenceToTarget = Vector3.Angle(currentViewPanRotation * Vector3.forward, dirToTarget);
+            if (viewPanAngleDifferenceToTarget != currentViewPanAngle)
+            {
+                currentViewPanAngle = viewPanAngleDifferenceToTarget;
+                currentViewPanRotation = Quaternion.Euler(currentViewPanAngle, angles.y, angles.z);
 
-            if (viewPanAngleDifferenceToTarget != 0) {
-                currentViewPanAngle += viewPanAngleDifferenceToTarget;
             }
         }
 
-        currentViewPanRotation = Quaternion.Euler(angles.x + currentViewPanAngle, angles.y, angles.z);
 
 
     }
 
     void FindVisibleTargets()
     {
-        float viewRadius;
-        if (visibleTargets.Count == 0) {
-            viewRadius = this.viewRadius;
-        }
-        else {
-            viewRadius = playerEscapeViewRadius;
-        }
-            
+        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, ViewRadius, targetMask);
         visibleTargets.Clear();
-        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
             Transform target = targetsInViewRadius[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
 
-            
+
             if (Vector3.Angle(currentViewPanRotation * Vector3.forward, dirToTarget) < viewAngle / 2)
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
@@ -147,11 +167,8 @@ public class Hai : MonoBehaviour
 
         for (int i = 0; i <= stepCount; i++)
         {
-
-           //float angle = transform.eulerAngles.x + currentViewPanAngle - startAngle + stepAngleSize * i;
-
             var lookRotation = Quaternion.Euler(currentViewPanRotation.eulerAngles.x - startAngle + stepAngleSize * i, currentViewPanRotation.eulerAngles.y, currentViewPanRotation.eulerAngles.z);
-             
+
             ViewCastInfo newViewCast = ViewCast(lookRotation * Vector3.forward);
 
             if (i > 0)
@@ -235,14 +252,14 @@ public class Hai : MonoBehaviour
     {
 
         RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, dir, out hit, viewRadius, obstacleMask))
+ 
+        if (Physics.Raycast(transform.position, dir, out hit, ViewRadius, obstacleMask))
         {
             return new ViewCastInfo(true, hit.point, hit.distance, dir);
         }
         else
         {
-            return new ViewCastInfo(false, transform.position + dir * viewRadius, viewRadius, dir);
+            return new ViewCastInfo(false, transform.position + dir * ViewRadius, ViewRadius, dir);
         }
     }
 
@@ -252,7 +269,7 @@ public class Hai : MonoBehaviour
         {
             angleInDegrees += transform.eulerAngles.x;
         }
-        
+
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 

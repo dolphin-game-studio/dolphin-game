@@ -26,13 +26,15 @@ public class FieldOfViewEditor : Editor {
     void OnSceneGUI() {
         
 		Hai fow = (Hai)target;
-		Handles.color = new Color(1,1,1,0.4f);
-        DrawFieldOfView(fow.transform, fow.transform.right, fow.transform.forward, 0, fow.viewRadius, fow.viewAngle);
 
+        Handles.color = new Color(1, 0, 0, 0.4f);
+        DrawFieldOfView(fow.transform, fow.transform.right, fow.transform.forward, 0, fow.viewRadiusWhenSuspicious, fow.viewAngle);
+        Handles.color = new Color(1,1,1,0.4f);
+        DrawFieldOfView(fow.transform, fow.transform.right, fow.transform.forward, 0, fow.ViewRadius, fow.viewAngle);
         Handles.color = new Color(0, 1, 0, 0.4f);
-        DrawFieldOfView(fow.transform, fow.transform.right, fow.transform.forward, fow.viewPanAngle1, fow.viewRadius, fow.viewAngle);
+        DrawFieldOfView(fow.transform, fow.transform.right, fow.transform.forward, fow.viewPanAngle1, fow.ViewRadius, fow.viewAngle);
         Handles.color = new Color(0, 0, 1, 0.4f);
-        DrawFieldOfView(fow.transform, fow.transform.right, fow.transform.forward, fow.viewPanAngle2, fow.viewRadius, fow.viewAngle);
+        DrawFieldOfView(fow.transform, fow.transform.right, fow.transform.forward, fow.viewPanAngle2, fow.ViewRadius, fow.viewAngle);
 
         var angleInDegrees = fow.transform.eulerAngles.x;
 

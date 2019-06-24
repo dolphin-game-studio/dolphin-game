@@ -111,7 +111,7 @@ public class Hai : MonoBehaviour
 
             currentViewPanAngle = viewPanAnimationCurve.Evaluate(pan);
 
-            currentViewPanRotation = Quaternion.Euler(angles.x + currentViewPanAngle, angles.y, angles.z);
+            currentViewPanRotation = Quaternion.Euler(angles.x + currentViewPanAngle, angles.y > 180 ? -90 : 90, angles.z);
 
         }
         else
@@ -124,7 +124,7 @@ public class Hai : MonoBehaviour
             if (viewPanAngleDifferenceToTarget != currentViewPanAngle)
             {
                 currentViewPanAngle = viewPanAngleDifferenceToTarget;
-                currentViewPanRotation = Quaternion.Euler(currentViewPanAngle, angles.y, angles.z);
+                currentViewPanRotation = Quaternion.Euler(currentViewPanAngle, angles.y > 180 ? -90 : 90, angles.z);
 
             }
         }

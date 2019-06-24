@@ -500,6 +500,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spottedScreen: {fileID: 2087623849}
+--- !u!1 &387584539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 387584540}
+  m_Layer: 0
+  m_Name: Waypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &387584540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387584539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1449489002}
+  - {fileID: 1484704063}
+  m_Father: {fileID: 442923816}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442644367
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,10 +575,10 @@ GameObject:
   - component: {fileID: 442923821}
   - component: {fileID: 442923820}
   - component: {fileID: 442923819}
-  - component: {fileID: 442923818}
   - component: {fileID: 442923817}
+  - component: {fileID: 442923818}
   m_Layer: 0
-  m_Name: Hai Posten (1)
+  m_Name: Hai Patrouille
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,12 +592,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442923815}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -4.4, y: 19.7, z: -0}
+  m_LocalPosition: {x: -7.8, y: 19.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1877621664}
   - {fileID: 1333586980}
   - {fileID: 1481554280}
+  - {fileID: 387584540}
   m_Father: {fileID: 1383498425}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -590,12 +623,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442923815}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e86596daf3f9904893970c6f6a311aa, type: 3}
+  m_Script: {fileID: 11500000, guid: e02dc2708c7e53d4a9247e8288064c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  waypoints:
+  - {fileID: 1449489003}
+  - {fileID: 1484704064}
+  speed: 5
+  roationSpeed: 80
 --- !u!114 &442923819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,7 +835,6 @@ GameObject:
   - component: {fileID: 490290747}
   - component: {fileID: 490290746}
   - component: {fileID: 490290745}
-  - component: {fileID: 490290744}
   - component: {fileID: 490290748}
   m_Layer: 0
   m_Name: Hai Posten
@@ -824,19 +860,6 @@ Transform:
   m_Father: {fileID: 1383498425}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 4.3710003, y: -90.00001, z: 0}
---- !u!114 &490290744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490290741}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e86596daf3f9904893970c6f6a311aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 6
 --- !u!114 &490290745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,11 +872,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d756d140e2a06b74b90d60aa8a2f678f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewAngle: 29
+  viewAngle: 27
   viewRadiusWhenNotSuspicious: 30
-  viewRadiusWhenSuspicious: 35
-  viewPanAngle1: 4
-  viewPanAngle2: 50
+  viewRadiusWhenSuspicious: 37
+  viewPanAngle1: 5
+  viewPanAngle2: 93
   targetMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -1317,7 +1340,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 560f2a4be237cad468bbbda42cf50bc2,
         type: 3}
       propertyPath: m_Name
-      value: shark1
+      value: shark
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 560f2a4be237cad468bbbda42cf50bc2,
         type: 3}
@@ -2495,7 +2518,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 560f2a4be237cad468bbbda42cf50bc2,
         type: 3}
       propertyPath: m_Name
-      value: shark1 (1)
+      value: shark
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 560f2a4be237cad468bbbda42cf50bc2,
         type: 3}
@@ -3539,6 +3562,51 @@ Transform:
   m_Father: {fileID: 1685036438}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1449489001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1449489002}
+  - component: {fileID: 1449489003}
+  m_Layer: 0
+  m_Name: Waypoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1449489002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449489001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 387584540}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1449489003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449489001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57242652e9cbc7542bd0a102f88cc2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseDuration: 3
+  observationAngle: 180
 --- !u!1 &1466243017
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,7 +3679,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 560f2a4be237cad468bbbda42cf50bc2,
         type: 3}
       propertyPath: m_Name
-      value: shark1 (1)
+      value: shark
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 560f2a4be237cad468bbbda42cf50bc2,
         type: 3}
@@ -3676,6 +3744,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1481554279}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1484704062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1484704063}
+  - component: {fileID: 1484704064}
+  m_Layer: 0
+  m_Name: Waypoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1484704063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484704062}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 64.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 387584540}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1484704064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484704062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57242652e9cbc7542bd0a102f88cc2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseDuration: 5
+  observationAngle: 0
 --- !u!1 &1534500239
 GameObject:
   m_ObjectHideFlags: 0

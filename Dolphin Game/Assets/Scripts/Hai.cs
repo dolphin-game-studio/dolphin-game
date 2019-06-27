@@ -1,14 +1,51 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Hai : MonoBehaviour
 {
-    public Transform[] viewPoints;
-    
-    public float viewRadius;
+    AnimationCurve viewPanAnimationCurve;
+    private float viewPanAnimationTime;
+
+
     [Range(0, 360)]
     public float viewAngle;
+
+
+    public float ViewRadius
+    {
+        get
+        {
+            if (visibleTargets.Count == 0)
+            {
+                return viewRadiusWhenNotSuspicious;
+            }
+            else
+            {
+                return viewRadiusWhenSuspicious;
+            }
+        }
+    }
+
+
+    [Range(1, 100)]
+    public float viewRadiusWhenNotSuspicious = 30;
+
+    [Range(1, 100)]
+    public float viewRadiusWhenSuspicious = 35;
+
+
+
+    [Range(-180, 180)]
+    public float viewPanAngle1;
+    [Range(-180, 180)]
+    public float viewPanAngle2;
+
+
+
+
 
     public LayerMask targetMask;
     public LayerMask obstacleMask;
@@ -23,42 +60,91 @@ public class Hai : MonoBehaviour
     public MeshFilter viewMeshFilter;
     Mesh viewMesh;
 
+    Quaternion currentViewPanRotation;
+
+
+    public float panDuration = 1.5f;
+
+
     void Start()
     {
+
+        viewPanAnimationCurve = AnimationCurve.EaseInOut(0, viewPanAngle1, panDuration, viewPanAngle2);
+
+
         viewMesh = new Mesh
         {
             name = "View Mesh"
         };
         viewMeshFilter.mesh = viewMesh;
-
-        StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
 
-    IEnumerator FindTargetsWithDelay(float delay)
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(delay);
-            FindVisibleTargets();
-        }
-    }
+
 
     void LateUpdate()
     {
+        UpdateViewDirection();
+
         DrawFieldOfView();
+
+        FindVisibleTargets();
+    }
+
+    float currentViewPanAngle;
+
+    private void UpdateViewDirection()
+    {
+        var angles = transform.eulerAngles;
+        if (visibleTargets.Count == 0)
+        {
+            viewPanAnimationTime += Time.deltaTime;
+
+            var wayBack = viewPanAnimationTime % (panDuration * 2) > panDuration;
+
+            var pan = viewPanAnimationTime % (panDuration);
+
+            if (wayBack)
+            {
+                pan = panDuration - pan;
+            }
+
+            currentViewPanAngle = viewPanAnimationCurve.Evaluate(pan);
+
+            currentViewPanRotation = Quaternion.Euler(angles.x + currentViewPanAngle, angles.y > 180 ? -90 : 90, angles.z);
+
+        }
+        else
+        {
+            var visiblePlayer = visibleTargets[0];
+            Vector3 dirToTarget = (visiblePlayer.transform.position - transform.position).normalized;
+            
+            var viewPanAngleDifferenceToTarget = Vector3.Angle( transform.forward, dirToTarget);
+
+            if (viewPanAngleDifferenceToTarget != currentViewPanAngle)
+            {
+                currentViewPanAngle = viewPanAngleDifferenceToTarget;
+                currentViewPanRotation = Quaternion.Euler(currentViewPanAngle, angles.y > 180 ? -90 : 90, angles.z);
+
+            }
+        }
+
+
+
     }
 
     void FindVisibleTargets()
     {
+        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, ViewRadius, targetMask);
         visibleTargets.Clear();
-        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
             Transform target = targetsInViewRadius[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
-            if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
+
+
+            if (Vector3.Angle(currentViewPanRotation * Vector3.forward, dirToTarget) < viewAngle / 2)
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
@@ -71,20 +157,17 @@ public class Hai : MonoBehaviour
 
     void DrawFieldOfView()
     {
+
         int stepCount = Mathf.RoundToInt(viewAngle * meshResolution);
         float stepAngleSize = viewAngle / stepCount;
         List<Vector3> viewPoints = new List<Vector3>();
         ViewCastInfo oldViewCast = new ViewCastInfo();
+
+        var startAngle = viewAngle / 2;
+
         for (int i = 0; i <= stepCount; i++)
         {
-            float angle = transform.eulerAngles.x - viewAngle / 2 + stepAngleSize * i;
-
-            var lookRotation = Quaternion.Euler(transform.eulerAngles.x - viewAngle / 2 + stepAngleSize * i, transform.eulerAngles.y, transform.eulerAngles.z);
-
-            // var lookRotation = Quaternion.LookRotation(fow.transform.forward, fow.transform.right);
-
-            //   var lookRotationLeftBound = Quaternion.Euler(lookRotation.eulerAngles.x - viewAngle / 2 + stepAngleSize * i, lookRotation.eulerAngles.y, lookRotation.eulerAngles.z);
-
+            var lookRotation = Quaternion.Euler(currentViewPanRotation.eulerAngles.x - startAngle + stepAngleSize * i, currentViewPanRotation.eulerAngles.y, currentViewPanRotation.eulerAngles.z);
 
             ViewCastInfo newViewCast = ViewCast(lookRotation * Vector3.forward);
 
@@ -169,14 +252,14 @@ public class Hai : MonoBehaviour
     {
 
         RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, dir, out hit, viewRadius, obstacleMask))
+ 
+        if (Physics.Raycast(transform.position, dir, out hit, ViewRadius, obstacleMask))
         {
             return new ViewCastInfo(true, hit.point, hit.distance, dir);
         }
         else
         {
-            return new ViewCastInfo(false, transform.position + dir * viewRadius, viewRadius, dir);
+            return new ViewCastInfo(false, transform.position + dir * ViewRadius, ViewRadius, dir);
         }
     }
 
@@ -186,7 +269,7 @@ public class Hai : MonoBehaviour
         {
             angleInDegrees += transform.eulerAngles.x;
         }
-        
+
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 

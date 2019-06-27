@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="edd157fb-a880-48f8-a7fc-9f6027ed6cf4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Art Department/Asset_Bib/Asset_bib.blend1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Department/Hai/Materials/SHARK_render.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Department/Hai/Materials/SHARK_render.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Department/Hai/SHARK_render.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Department/Hai/SHARK_render.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Department/Hai/shark1.blend1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Department/Hai/shark1.blend1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art Department/Orca/ORCA_V1.blend1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HDRPDefaultResources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HDRPDefaultResources/DefaultPostprocessingSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HDRPDefaultResources/DefaultPostprocessingSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HDRPDefaultResources/DefaultRenderingSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HDRPDefaultResources/DefaultRenderingSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HDRPDefaultResources/DefaultSceneRoot.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/HDRPDefaultResources/DefaultSceneRoot.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/New Scene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/New Scene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Placeholders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Placeholders/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Placeholders/Materials/New Material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Placeholders/Materials/New Material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/AudioCompressedInMemory.preset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/AudioCompressedInMemory.preset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/AudioStreaming.preset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/AudioStreaming.preset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/Defaults.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/Defaults/AlbedoTexture_Default.preset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/Defaults/AlbedoTexture_Default.preset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/Defaults/AudioDecompressOnLoad_Default.preset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/Defaults/AudioDecompressOnLoad_Default.preset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/Defaults/DirectionalLight_Default.preset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/Defaults/DirectionalLight_Default.preset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/Defaults/SSSSettings_Default.preset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/Defaults/SSSSettings_Default.preset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/HDRTexture.preset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/HDRTexture.preset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/NormalTexture.preset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/NormalTexture.preset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/UtilityTexture.preset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Presets/UtilityTexture.preset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Readme.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Readme.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EditorUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/EditorUtils.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HaiPatrouille.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HaiPatrouille.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HaiPatrouilleEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HaiPatrouilleEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Waypoint.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaypointEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WaypointEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Settings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Settings/HDRenderPipelineAsset.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Settings/HDRenderPipelineAsset.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Settings/SampleScenePostProcessingSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Settings/SampleScenePostProcessingSettings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Settings/SampleSceneRenderingSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Settings/SampleSceneRenderingSettings.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558789451$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558789575$FieldOfViewShader.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558789629$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558789741$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558789822$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558978517$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558979073$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558979267$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558979288$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558979333$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558979361$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558979414$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558980153$SpottedScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Waypoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558980299$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558981257$Game.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558981304$Game.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558981402$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558981452$SpotPlayerCharacter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558981879$Camera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558981879$Controller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558981918$Controller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558981937$Controller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558982054$FollowCamera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558982058$FollowCamera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558982177$PlayerController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558982246$PlayerController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558982286$FollowCamera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558982289$FollowCamera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558982317$PlayerController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/1558982327$PlayerController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/Scripts/1558982991$PlayerController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/Scripts/1558983083$FollowCamera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/Scripts/1558983095$FollowCamera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/Third Party/MultipurposeCameraRig/1558981879$PivotBasedCameraRig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.localhistory/C/Users/a.johr/Documents/GitHub/dolphin-game/Dolphin Game/Assets/Third Party/MultipurposeCameraRig/1558981879$ProtectCameraFromWallClip.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Department.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Department.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Department/Asset_Bib/Asset_bib.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Department/Asset_Bib/Asset_bib.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Department/Dolphin/dolphin_rig.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Department/Dolphin/dolphin_rig.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Department/Dolphin/dolphin_rig.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Department/Dolphin/dolphin_rig.blend1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Department/Hai/shark1.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Department/Hai/shark1.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Department/Jammer/jammer.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Department/Jammer/jammer.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Department/Jammer/jammer.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Department/Jammer/jammer.blend1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art Department/Orca/ORCA_V1.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art Department/Orca/ORCA_V1.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 2 Alex.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 2 Alex.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Start Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Start Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FieldOfViewEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FieldOfViewEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Hai.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Hai.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shader.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/Packages-Update.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Packages-Update.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NetworkManager.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Packages/manifest.json" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Dolphin Game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dolphin Game" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="edd157fb-a880-48f8-a7fc-9f6027ed6cf4" name="Default Changelist" comment="" />
+      <created>1561643011299</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1561643011299</updated>
+      <workItem from="1561643018993" duration="748000" />
+      <workItem from="1561645574754" duration="267000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1015000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

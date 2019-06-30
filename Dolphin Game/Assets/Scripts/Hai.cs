@@ -119,11 +119,11 @@ public class Hai : MonoBehaviour
             var visiblePlayer = visibleTargets[0];
             Vector3 dirToTarget = (visiblePlayer.transform.position - transform.position).normalized;
             
-            var viewPanAngleDifferenceToTarget = Vector3.Angle( transform.forward, dirToTarget);
+            var viewPanAngleDifferenceToTarget = Vector3.Angle( Vector3.right, dirToTarget);
 
-            if (viewPanAngleDifferenceToTarget != 0)
+            if (currentViewPanAngle != viewPanAngleDifferenceToTarget)
             {
-                currentViewPanAngle = currentViewPanAngle - viewPanAngleDifferenceToTarget;
+                currentViewPanAngle = viewPanAngleDifferenceToTarget;
                 currentViewPanRotation = Quaternion.Euler(currentViewPanAngle, angles.y > 180 ? -90 : 90, angles.z);
 
             }

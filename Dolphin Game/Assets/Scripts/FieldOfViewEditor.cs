@@ -11,6 +11,9 @@ public class FieldOfViewEditor : Editor {
 
         var haiAngle = Vector3.Angle(fow.transform.forward, Vector3.right);
 
+        //var haiAngle = fow.transform.eulerAngles.x;
+        Debug.Log(fow.transform.forward);
+
         Handles.color = new Color(1, 0, 0, 0.4f);
         EditorUtils.DrawFieldOfView(fow.transform, Vector3.back, haiAngle, fow.viewRadiusWhenSuspicious, fow.viewAngle);
         Handles.color = new Color(1,1,1,0.4f);

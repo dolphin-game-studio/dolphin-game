@@ -9,14 +9,16 @@ public class FieldOfViewEditor : Editor {
         
 		Hai fow = (Hai)target;
 
+        var haiAngle = Vector3.Angle(fow.transform.forward, Vector3.right);
+
         Handles.color = new Color(1, 0, 0, 0.4f);
-        EditorUtils.DrawFieldOfView(fow.transform, fow.transform.right, fow.transform.forward, 0, fow.viewRadiusWhenSuspicious, fow.viewAngle);
+        EditorUtils.DrawFieldOfView(fow.transform, Vector3.back, haiAngle, fow.viewRadiusWhenSuspicious, fow.viewAngle);
         Handles.color = new Color(1,1,1,0.4f);
-        EditorUtils.DrawFieldOfView(fow.transform, fow.transform.right, fow.transform.forward, 0, fow.ViewRadius, fow.viewAngle);
+        EditorUtils.DrawFieldOfView(fow.transform, Vector3.back, haiAngle, fow.ViewRadius, fow.viewAngle);
         Handles.color = new Color(0, 1, 0, 0.4f);
-        EditorUtils.DrawFieldOfView(fow.transform, fow.transform.right, fow.transform.forward, fow.viewPanAngle1, fow.ViewRadius, fow.viewAngle);
+        EditorUtils.DrawFieldOfView(fow.transform, Vector3.back, haiAngle + fow.viewPanAngle1, fow.ViewRadius, fow.viewAngle);
         Handles.color = new Color(0, 0, 1, 0.4f);
-        EditorUtils.DrawFieldOfView(fow.transform, fow.transform.right, fow.transform.forward, fow.viewPanAngle2, fow.ViewRadius, fow.viewAngle);
+        EditorUtils.DrawFieldOfView(fow.transform, Vector3.back, haiAngle + fow.viewPanAngle2, fow.ViewRadius, fow.viewAngle);
 
         var angleInDegrees = fow.transform.eulerAngles.x;
 

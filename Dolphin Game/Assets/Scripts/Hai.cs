@@ -121,9 +121,9 @@ public class Hai : MonoBehaviour
             
             var viewPanAngleDifferenceToTarget = Vector3.Angle( transform.forward, dirToTarget);
 
-            if (viewPanAngleDifferenceToTarget != currentViewPanAngle)
+            if (viewPanAngleDifferenceToTarget != 0)
             {
-                currentViewPanAngle = viewPanAngleDifferenceToTarget;
+                currentViewPanAngle = currentViewPanAngle - viewPanAngleDifferenceToTarget;
                 currentViewPanRotation = Quaternion.Euler(currentViewPanAngle, angles.y > 180 ? -90 : 90, angles.z);
 
             }

@@ -12,7 +12,7 @@ public class HaiPatrouilleEditor : Editor
 
         foreach (var waypoint in haiPatrouille.waypoints)
         {
-            EditorUtils.DrawFieldOfView(waypoint.transform, waypoint.transform.right, waypoint.transform.forward, waypoint.observationAngle, 20, 45);
+            EditorUtils.DrawFieldOfView(waypoint.transform, waypoint.transform.right, waypoint.observationAngle, 20, 45);
         }
 
 

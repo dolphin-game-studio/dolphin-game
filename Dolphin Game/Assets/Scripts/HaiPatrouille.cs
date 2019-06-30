@@ -40,7 +40,21 @@ public class HaiPatrouille : MonoBehaviour
             if(timeWaited > currentPauseDuration)
             {
                 pause = false;
+                current = (current + 1) % waypointPositions.Length;
             }
+            // Hinfahrt 15 - 18:25 ? -30m
+            // 1:30 - 3:30
+            // if (transform.position != waypointPositions[current])
+            // 10:26 - ?
+            //{
+
+            var observationDir = new Vector3(Mathf.Cos(waypoints[current].observationAngle * Mathf.Deg2Rad), Mathf.Sin(waypoints[current].observationAngle * Mathf.Deg2Rad), 0);
+
+          //  Vector3 observationDir = (Vector3)(Quaternion.Euler(0, 0, waypoints[current].observationAngle) * Vector3.right);
+
+            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(observationDir, Vector3.up), roationSpeed * Time.deltaTime);
+            GetComponent<Rigidbody>().MoveRotation(rotation);
+           // }
         }
         else {
             if (transform.position != waypointPositions[current])
@@ -57,8 +71,6 @@ public class HaiPatrouille : MonoBehaviour
 
                 pauseStartTime = Time.time;
                 currentPauseDuration = waypoints[current].pauseDuration;
-
-                current = (current + 1) % waypointPositions.Length;
             }
         }
 

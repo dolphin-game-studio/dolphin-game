@@ -46,6 +46,7 @@ public class HaiPatrouille : MonoBehaviour
             // 1:30 - 3:30
             // if (transform.position != waypointPositions[current])
             // 10:26 - 14:10
+            // 20:24 - 
             //{
 
             var observationDir = new Vector3(Mathf.Cos(waypoints[current].observationAngle * Mathf.Deg2Rad), Mathf.Sin(waypoints[current].observationAngle * Mathf.Deg2Rad), 0);

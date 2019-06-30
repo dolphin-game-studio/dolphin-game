@@ -22,6 +22,7 @@ Shader "Hidden/ScannerEffect"
 			Pass
 			{
 				CGPROGRAM
+ 
 				#pragma vertex vert
 				#pragma fragment frag
 
@@ -67,6 +68,8 @@ Shader "Hidden/ScannerEffect"
 				sampler2D_float _CameraDepthTexture;
 				float4 _WorldSpaceScannerPos;
 				float _ScanDistance;
+				float _ScanDistances[100];
+
 				float _ScanWidth;
 				float _LeadSharp;
 				float4 _LeadColor;
@@ -96,15 +99,27 @@ Shader "Hidden/ScannerEffect"
 
 					float dist = distance(wsPos, _WorldSpaceScannerPos);
 
-					if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && linearDepth < 1)
-					{
-						float diff = 1 - (_ScanDistance - dist) / (_ScanWidth);
-						half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
-						scannerCol = lerp(_TrailColor, edge, diff) + horizBars(i.uv) * _HBarColor;
-						scannerCol *= diff;
+					//if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && linearDepth < 1)
+					//{
+					//	float diff = 1 - (_ScanDistance - dist) / (_ScanWidth);
+					//	half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
+					//	scannerCol = lerp(_TrailColor, edge, diff) + horizBars(i.uv) * _HBarColor;
+					//	scannerCol *= diff;
+					//}
+
+					for (int i = 0; i < _ScanDistances.Length; i++) {
+						if (dist < _ScanDistances[i] && dist > _ScanDistances[i] - _ScanWidth && linearDepth < 1)
+						{
+							float diff = 1 - (_ScanDistances[i] - dist) / (_ScanWidth);
+							half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
+							scannerCol = lerp(_TrailColor, edge, diff) /*+ horizBars(i.uv) */;
+							scannerCol *= diff;
+							col += scannerCol;
+						}
 					}
 
-					return col + scannerCol;
+
+					return col;
 				}
 				ENDCG
 			}

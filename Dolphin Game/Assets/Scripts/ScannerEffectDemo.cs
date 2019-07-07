@@ -20,7 +20,7 @@ public class ScannerEffectDemo : MonoBehaviour
 
     // Demo Code
     bool _scanning;
-    Scannable[] _scannables;
+    Scannable[] _scannables= new Scannable[0];
 
     void Start()
     {

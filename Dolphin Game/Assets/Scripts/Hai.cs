@@ -13,6 +13,10 @@ public class Hai : MonoBehaviour
     [Range(0, 360)]
     public float viewAngle;
 
+    public float timeToRegainConsciousness;
+
+    private float timeSpendUnconscious = 0;
+
 
     public float ViewRadius
     {
@@ -30,6 +34,41 @@ public class Hai : MonoBehaviour
     }
 
 
+
+    public bool Unconscious
+    {
+        get
+        {
+            return !Conscious;
+        }
+        set
+        {
+            Conscious = !value;
+        }
+    }
+
+    public bool Conscious
+    {
+        get { return _conscious; }
+        set
+        {
+            if (_conscious != value)
+            {
+                _conscious = value;
+
+                if (Unconscious)
+                {
+                    unconsciousParticleSystem.Play();
+                    viewMesh.Clear();
+                }
+                if (Conscious)
+                {
+                    unconsciousParticleSystem.Stop();
+                }
+            }
+        }
+    }
+
     [Range(1, 100)]
     public float viewRadiusWhenNotSuspicious = 30;
 
@@ -44,6 +83,7 @@ public class Hai : MonoBehaviour
     public float viewPanAngle2;
 
 
+    public ParticleSystem unconsciousParticleSystem;
 
 
 
@@ -71,6 +111,10 @@ public class Hai : MonoBehaviour
 
         viewPanAnimationCurve = AnimationCurve.EaseInOut(0, viewPanAngle1, panDuration, viewPanAngle2);
 
+        if (unconsciousParticleSystem == null)
+        {
+            Debug.LogError("unconsciousParticleSystem is not set.");
+        }
 
         viewMesh = new Mesh
         {
@@ -84,11 +128,31 @@ public class Hai : MonoBehaviour
 
     void LateUpdate()
     {
-        UpdateViewDirection();
+        if (Conscious)
+        {
+            UpdateViewDirection();
 
-        DrawFieldOfView();
+            DrawFieldOfView();
 
-        FindVisibleTargets();
+            FindVisibleTargets();
+        }
+        else
+        {
+            RegainConsciousness();
+        }
+
+
+    }
+
+    private void RegainConsciousness()
+    {
+        timeSpendUnconscious += Time.deltaTime;
+
+        if (timeSpendUnconscious > timeToRegainConsciousness)
+        {
+            Conscious = true;
+            timeSpendUnconscious = 0;
+        }
     }
 
     float currentViewPanAngle;
@@ -122,23 +186,6 @@ public class Hai : MonoBehaviour
 
             currentViewPanRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y > 180 ? -90 : 90, transform.eulerAngles.z);
 
-            //var viewPanAngleDifferenceToTarget = Vector3.Angle(transform.forward, dirToTarget);
-
-            //Debug.Log(currentViewPanAngle);
-            //var dotUp = Vector3.Dot(transform.forward, Vector3.up);
-
-            //if (dotUp < 0)
-            //{
-            //    viewPanAngleDifferenceToTarget = 360 - viewPanAngleDifferenceToTarget;
-            //}
-
-            //if (currentViewPanAngle != viewPanAngleDifferenceToTarget)
-            //{
-
-            //currentViewPanAngle = viewPanAngleDifferenceToTarget;
-            //currentViewPanRotation = Quaternion.Euler(currentViewPanAngle, angles.y > 180 ? -90 : 90, angles.z);
-
-            //}
         }
 
 
@@ -146,6 +193,7 @@ public class Hai : MonoBehaviour
     }
 
     RayPlayerController spottedRay;
+    private bool _conscious = true;
 
     void FindVisibleTargets()
     {
@@ -185,8 +233,8 @@ public class Hai : MonoBehaviour
             }
             else
             {
-                    spottedRay = null;
-                
+                spottedRay = null;
+
             }
         }
     }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DolphinPlayerController : MonoBehaviour
 {
+    protected Animator animator;
+
     public Rigidbody Rigidbody { get; set; }
     public float Speed
     {
@@ -20,6 +22,11 @@ public class DolphinPlayerController : MonoBehaviour
 
     void Start()
     {
+        Init();
+    }
+
+    protected void Init()
+    {
         Rigidbody = GetComponent<Rigidbody>();
         if (Rigidbody == null)
         {
@@ -29,6 +36,12 @@ public class DolphinPlayerController : MonoBehaviour
         if (playerController == null)
         {
             Debug.LogError("PlayerController is not set on DolphinPlayerController");
+        }
+
+        animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            Debug.LogError("Animator Component is not set on DolphinPlayerController");
         }
     }
 
@@ -55,5 +68,6 @@ public class DolphinPlayerController : MonoBehaviour
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, maxRotationDegreesDelta);
 
+        animator.SetFloat("Speed", movement.magnitude);
     }
 }

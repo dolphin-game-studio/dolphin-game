@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class RayPlayerController : DolphinPlayerController
 {
-    Hai[] haie;
 
     int stingHash = Animator.StringToHash("Sting");
 
@@ -14,42 +13,16 @@ public class RayPlayerController : DolphinPlayerController
     {
         base.Init();
 
-        haie = FindObjectsOfType<Hai>();
 
 
     }
 
-    public Hai GetNearestFacingShark(out float distanceToNearestFacingShark)
-    {
-        Hai nearestShark = null;
-        float nearestSharkDistance = float.MaxValue;
-         
-        foreach (var hai in haie)
-        {
-            var fromPlayerToSharkVector = hai.transform.position - transform.position;
-             
-            var dotProdToShark = Vector3.Dot(fromPlayerToSharkVector.normalized, transform.forward);
-
-            bool facingTheShark = dotProdToShark > 0.5;
-
-            if (facingTheShark)
-            {
-                var distanceToShark = Vector3.Distance(hai.transform.position, transform.position);
-                if (distanceToShark < nearestSharkDistance)
-                {
-                    nearestSharkDistance = distanceToShark;
-                    nearestShark = hai;
-                }
-            }
-        }
-
-        distanceToNearestFacingShark = nearestSharkDistance;
-        return nearestShark;
-    }
+    
 
     void Update()
     {
-
+        if (playerController.currentDolphinPlayerController != this)
+            return;
 
 
         bool rPressed = Input.GetKeyUp(KeyCode.R);
@@ -59,10 +32,12 @@ public class RayPlayerController : DolphinPlayerController
             animator.SetTrigger(stingHash);
 
             float distanceToNearestFacingShark;
-            Hai nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark);
+            Vector3 fromPlayerToSharkVector;
+
+            Hai nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
             if (nearestFacingShark != null && distanceToNearestFacingShark < 15)
             {
-                nearestFacingShark.Unconscious = true;
+                nearestFacingShark.Stunned = true;
             }
         }
 

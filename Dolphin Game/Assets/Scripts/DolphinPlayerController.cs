@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DolphinPlayerController : MonoBehaviour
 {
+    protected Hai[] haie;
+
+
     protected Animator animator;
 
     public Rigidbody Rigidbody { get; set; }
@@ -12,7 +15,7 @@ public class DolphinPlayerController : MonoBehaviour
         get => _speed;
         set => _speed = value;
     }
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] protected PlayerController playerController;
 
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float maxRotationDegreesDelta = 0.1f;
@@ -22,11 +25,49 @@ public class DolphinPlayerController : MonoBehaviour
 
     void Start()
     {
+
+
         Init();
+    }
+
+
+    protected Hai GetNearestFacingShark(out float distanceToNearestFacingShark, out Vector3 fromPlayerToNearestFacingSharkVector)
+    {
+        Hai nearestShark = null;
+        float nearestSharkDistance = float.MaxValue;
+        fromPlayerToNearestFacingSharkVector = Vector3.zero;
+
+
+
+        foreach (var hai in haie)
+        {
+            var fromPlayerToSharkVector = hai.transform.position - transform.position;
+
+            var dotProdToShark = Vector3.Dot(fromPlayerToSharkVector.normalized, transform.forward);
+
+            bool facingTheShark = dotProdToShark > 0.5;
+
+            if (facingTheShark)
+            {
+                var distanceToShark = Vector3.Distance(hai.transform.position, transform.position);
+                if (distanceToShark < nearestSharkDistance)
+                {
+                    nearestSharkDistance = distanceToShark;
+                    nearestShark = hai;
+                    fromPlayerToNearestFacingSharkVector = fromPlayerToSharkVector;
+                }
+            }
+        }
+
+         distanceToNearestFacingShark = nearestSharkDistance;
+        return nearestShark;
     }
 
     protected void Init()
     {
+        haie = FindObjectsOfType<Hai>();
+
+
         Rigidbody = GetComponent<Rigidbody>();
         if (Rigidbody == null)
         {
@@ -47,7 +88,8 @@ public class DolphinPlayerController : MonoBehaviour
 
     void Update()
     {
-
+        if (playerController.currentDolphinPlayerController != this)
+            return;
 
     }
 

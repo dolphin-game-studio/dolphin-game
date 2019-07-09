@@ -15,7 +15,7 @@ public class Hai : MonoBehaviour
 
     public float timeToRegainConsciousness;
 
-    private float timeSpendUnconscious = 0;
+    private float timeSpendStunned = 0;
 
 
     public float ViewRadius
@@ -33,41 +33,51 @@ public class Hai : MonoBehaviour
         }
     }
 
-
-
-    public bool Unconscious
+    private bool _stunned = false;
+        
+    public bool Stunned
     {
-        get
-        {
-            return !Conscious;
-        }
+        get { return _stunned; }
         set
         {
-            Conscious = !value;
-        }
-    }
-
-    public bool Conscious
-    {
-        get { return _conscious; }
-        set
-        {
-            if (_conscious != value)
+            if (_stunned != value)
             {
-                _conscious = value;
+                _stunned = value;
 
-                if (Unconscious)
+                if (Stunned)
                 {
-                    unconsciousParticleSystem.Play();
+                    stunnedParticleSystem.Play();
                     viewMesh.Clear();
                 }
-                if (Conscious)
+                else
                 {
-                    unconsciousParticleSystem.Stop();
+                    stunnedParticleSystem.Stop();
                 }
             }
         }
     }
+
+    private bool _knockedOut = false;
+
+    public bool KnockedOut
+    {
+        get { return _knockedOut; }
+        set
+        {
+            if (_knockedOut != value)
+            {
+                _knockedOut = value;
+
+                if (KnockedOut)
+                {
+                    //unconsciousParticleSystem.Play();
+                    viewMesh.Clear();
+                }
+            }
+        }
+    }
+
+    public bool Conscious => !Stunned && !KnockedOut;
 
     [Range(1, 100)]
     public float viewRadiusWhenNotSuspicious = 30;
@@ -83,7 +93,7 @@ public class Hai : MonoBehaviour
     public float viewPanAngle2;
 
 
-    public ParticleSystem unconsciousParticleSystem;
+    public ParticleSystem stunnedParticleSystem;
 
 
 
@@ -111,7 +121,7 @@ public class Hai : MonoBehaviour
 
         viewPanAnimationCurve = AnimationCurve.EaseInOut(0, viewPanAngle1, panDuration, viewPanAngle2);
 
-        if (unconsciousParticleSystem == null)
+        if (stunnedParticleSystem == null)
         {
             Debug.LogError("unconsciousParticleSystem is not set.");
         }
@@ -136,7 +146,10 @@ public class Hai : MonoBehaviour
 
             FindVisibleTargets();
         }
-        else
+
+
+
+        if(Stunned)
         {
             RegainConsciousness();
         }
@@ -146,12 +159,12 @@ public class Hai : MonoBehaviour
 
     private void RegainConsciousness()
     {
-        timeSpendUnconscious += Time.deltaTime;
+        timeSpendStunned += Time.deltaTime;
 
-        if (timeSpendUnconscious > timeToRegainConsciousness)
+        if (timeSpendStunned > timeToRegainConsciousness)
         {
-            Conscious = true;
-            timeSpendUnconscious = 0;
+            Stunned = false;
+            timeSpendStunned = 0;
         }
     }
 
@@ -193,7 +206,6 @@ public class Hai : MonoBehaviour
     }
 
     RayPlayerController spottedRay;
-    private bool _conscious = true;
 
     void FindVisibleTargets()
     {

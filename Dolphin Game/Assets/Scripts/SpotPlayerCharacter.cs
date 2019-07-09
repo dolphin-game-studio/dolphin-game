@@ -35,8 +35,19 @@ public class SpotPlayerCharacter : MonoBehaviour
 
     void Update()
     {
-        _renderer.GetPropertyBlock(_propBlock);
 
+        if (hai.Conscious)
+        {
+            SpotPlayer();
+
+        }
+
+
+    }
+
+    private void SpotPlayer()
+    {
+        _renderer.GetPropertyBlock(_propBlock);
 
         if (timePlayerNoticed > secondsToSpotPlayer)
         {
@@ -49,7 +60,8 @@ public class SpotPlayerCharacter : MonoBehaviour
 
             _propBlock.SetColor("_Color", new Color(1, Mathf.Lerp(1, 0, timePlayerNoticed / secondsToSpotPlayer), 0));
         }
-        else {
+        else
+        {
             _propBlock.SetColor("_Color", colorNormal);
         }
 
@@ -65,6 +77,5 @@ public class SpotPlayerCharacter : MonoBehaviour
 
 
         _renderer.SetPropertyBlock(_propBlock);
-
     }
 }

@@ -8,11 +8,13 @@ public class FieldOfViewEditor : Editor {
     void OnSceneGUI() {
         
 		Hai fow = (Hai)target;
-
+        
         var haiAngle = Vector3.Angle(fow.transform.forward, Vector3.right);
 
-        //var haiAngle = fow.transform.eulerAngles.x;
-        Debug.Log(fow.transform.forward);
+        var dotUp = Vector3.Dot(fow.transform.forward, Vector3.up);
+        if (dotUp < 0) {
+            haiAngle = 360 - haiAngle;
+        }
 
         Handles.color = new Color(1, 0, 0, 0.4f);
         EditorUtils.DrawFieldOfView(fow.transform, Vector3.back, haiAngle, fow.viewRadiusWhenSuspicious, fow.viewAngle);
@@ -34,8 +36,8 @@ public class FieldOfViewEditor : Editor {
         Vector3 viewAngleC = lookRotationRightBound * Vector3.forward; 
  
         Handles.color = Color.red;
-		foreach (Transform visibleTarget in fow.visibleTargets) {
-			Handles.DrawLine (fow.transform.position, visibleTarget.position);
+		foreach (GameObject visibleTarget in fow.visibleTargets) {
+			Handles.DrawLine (fow.transform.position, visibleTarget.transform.position);
 		}
     }
 }

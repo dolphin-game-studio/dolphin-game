@@ -13,6 +13,10 @@ public class Hai : MonoBehaviour
     [Range(0, 360)]
     public float viewAngle;
 
+    public float timeToRegainConsciousness;
+
+    private float timeSpendStunned = 0;
+
 
     public float ViewRadius
     {
@@ -29,6 +33,51 @@ public class Hai : MonoBehaviour
         }
     }
 
+    private bool _stunned = false;
+        
+    public bool Stunned
+    {
+        get { return _stunned; }
+        set
+        {
+            if (_stunned != value)
+            {
+                _stunned = value;
+
+                if (Stunned)
+                {
+                    stunnedParticleSystem.Play();
+                    viewMesh.Clear();
+                }
+                else
+                {
+                    stunnedParticleSystem.Stop();
+                }
+            }
+        }
+    }
+
+    private bool _knockedOut = false;
+
+    public bool KnockedOut
+    {
+        get { return _knockedOut; }
+        set
+        {
+            if (_knockedOut != value)
+            {
+                _knockedOut = value;
+
+                if (KnockedOut)
+                {
+                    //unconsciousParticleSystem.Play();
+                    viewMesh.Clear();
+                }
+            }
+        }
+    }
+
+    public bool Conscious => !Stunned && !KnockedOut;
 
     [Range(1, 100)]
     public float viewRadiusWhenNotSuspicious = 30;
@@ -44,6 +93,7 @@ public class Hai : MonoBehaviour
     public float viewPanAngle2;
 
 
+    public ParticleSystem stunnedParticleSystem;
 
 
 
@@ -51,7 +101,7 @@ public class Hai : MonoBehaviour
     public LayerMask obstacleMask;
 
     [HideInInspector]
-    public List<Transform> visibleTargets = new List<Transform>();
+    public List<GameObject> visibleTargets = new List<GameObject>();
 
     public float meshResolution;
     public int edgeResolveIterations;
@@ -71,6 +121,10 @@ public class Hai : MonoBehaviour
 
         viewPanAnimationCurve = AnimationCurve.EaseInOut(0, viewPanAngle1, panDuration, viewPanAngle2);
 
+        if (stunnedParticleSystem == null)
+        {
+            Debug.LogError("unconsciousParticleSystem is not set.");
+        }
 
         viewMesh = new Mesh
         {
@@ -84,11 +138,34 @@ public class Hai : MonoBehaviour
 
     void LateUpdate()
     {
-        UpdateViewDirection();
+        if (Conscious)
+        {
+            UpdateViewDirection();
 
-        DrawFieldOfView();
+            DrawFieldOfView();
 
-        FindVisibleTargets();
+            FindVisibleTargets();
+        }
+
+
+
+        if(Stunned)
+        {
+            RegainConsciousness();
+        }
+
+
+    }
+
+    private void RegainConsciousness()
+    {
+        timeSpendStunned += Time.deltaTime;
+
+        if (timeSpendStunned > timeToRegainConsciousness)
+        {
+            Stunned = false;
+            timeSpendStunned = 0;
+        }
     }
 
     float currentViewPanAngle;
@@ -118,39 +195,58 @@ public class Hai : MonoBehaviour
         {
             var visiblePlayer = visibleTargets[0];
             Vector3 dirToTarget = (visiblePlayer.transform.position - transform.position).normalized;
-            
-            var viewPanAngleDifferenceToTarget = Vector3.Angle( Vector3.right, dirToTarget);
+            transform.forward = dirToTarget;
 
-            if (currentViewPanAngle != viewPanAngleDifferenceToTarget)
-            {
-                currentViewPanAngle = viewPanAngleDifferenceToTarget;
-                currentViewPanRotation = Quaternion.Euler(currentViewPanAngle, angles.y > 180 ? -90 : 90, angles.z);
+            currentViewPanRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y > 180 ? -90 : 90, transform.eulerAngles.z);
 
-            }
         }
 
 
 
     }
 
+    RayPlayerController spottedRay;
+
     void FindVisibleTargets()
     {
+
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, ViewRadius, targetMask);
         visibleTargets.Clear();
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
-            Transform target = targetsInViewRadius[i].transform;
-            Vector3 dirToTarget = (target.position - transform.position).normalized;
-
+            Collider target = targetsInViewRadius[i];
+            Vector3 dirToTarget = (target.transform.position - transform.position).normalized;
 
             if (Vector3.Angle(currentViewPanRotation * Vector3.forward, dirToTarget) < viewAngle / 2)
             {
-                float dstToTarget = Vector3.Distance(transform.position, target.position);
+
+                float dstToTarget = Vector3.Distance(transform.position, target.transform.position);
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
-                    visibleTargets.Add(target);
+                    RayPlayerController ray = target.GetComponent<RayPlayerController>();
+                    if (ray != null)
+                    {
+
+                        bool isNotNearGround = !Physics.Raycast(transform.position, dirToTarget, dstToTarget * 1.2f, obstacleMask);
+                        bool isMoving = ray.Rigidbody.velocity.magnitude > 1;
+
+                        if (spottedRay != null || isNotNearGround || isMoving)
+                        {
+                            visibleTargets.Add(target.gameObject);
+                            spottedRay = ray;
+                        }
+                    }
+                    else
+                    {
+                        visibleTargets.Add(target.gameObject);
+                    }
                 }
+            }
+            else
+            {
+                spottedRay = null;
+
             }
         }
     }
@@ -252,7 +348,7 @@ public class Hai : MonoBehaviour
     {
 
         RaycastHit hit;
- 
+
         if (Physics.Raycast(transform.position, dir, out hit, ViewRadius, obstacleMask))
         {
             return new ViewCastInfo(true, hit.point, hit.distance, dir);

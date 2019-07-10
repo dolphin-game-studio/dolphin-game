@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    DolphinPlayerController currentDolphinPlayerController;
+    public DolphinPlayerController currentDolphinPlayerController;
 
-    [SerializeField]
-    private DolphinPlayerController[] dolphinPlayerControllers;
+     private DolphinPlayerController[] dolphinPlayerControllers;
     private int currentPlayerIndex = 0;
 
     [SerializeField]
@@ -16,6 +15,10 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
+        dolphinPlayerControllers = FindObjectsOfType<DolphinPlayerController>();
+
+
         if (currentDolphinPlayerController == null)
         {
             Debug.LogError("CurrentDolphinPlayerController is not set on PlayerController");

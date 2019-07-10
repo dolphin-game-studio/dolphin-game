@@ -32,7 +32,7 @@ public class HaiPatrouille : MonoBehaviour
 
     void Update()
     {
-        if (hai.Conscious)
+        if (hai.Conscious && !hai.Distracted)
         {
             FollowWaypoints();
         }

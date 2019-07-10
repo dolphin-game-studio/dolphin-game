@@ -85,6 +85,17 @@ public class Hai : MonoBehaviour
         }
     }
 
+    Vector3 distractingSharkPositionWhenDistracted;
+    SharkPlayerController distractingShark;
+
+    internal void Distract(SharkPlayerController sharkPlayerController)
+    {
+        Distracted = true;
+        transform.LookAt(sharkPlayerController.transform, Vector3.up);
+        distractingShark = sharkPlayerController;
+        distractingSharkPositionWhenDistracted = sharkPlayerController.transform.position;
+    }
+
     public bool Conscious => !Stunned && !KnockedOut;
 
     [Range(1, 100)]
@@ -133,6 +144,8 @@ public class Hai : MonoBehaviour
         }
     }
 
+    public bool Distracted { get; set; }
+
     public float meshResolution;
     public int edgeResolveIterations;
     public float edgeDstThreshold;
@@ -180,7 +193,7 @@ public class Hai : MonoBehaviour
 
     void LateUpdate()
     {
-        if (Conscious)
+        if (Conscious && !Distracted)
         {
             UpdateViewDirection();
 
@@ -196,7 +209,19 @@ public class Hai : MonoBehaviour
             RegainConsciousness();
         }
 
+        if (Distracted)
+        {
+            WaitUntilDistractionIsAway();
+        }
+    }
 
+    private void WaitUntilDistractionIsAway()
+    {
+        float distractorDistanceFromInitialPosition = Vector3.Distance(distractingSharkPositionWhenDistracted, distractingShark.transform.position);
+        if (distractorDistanceFromInitialPosition > 5)
+        {
+            Distracted = false;
+        }
     }
 
     private void RegainConsciousness()
@@ -266,7 +291,11 @@ public class Hai : MonoBehaviour
                 float dstToTarget = Vector3.Distance(transform.position, target.transform.position);
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
-                    RayPlayerController ray = target.GetComponent<RayPlayerController>();
+                    var ray = target.GetComponent<RayPlayerController>();
+                    var shark = target.GetComponent<SharkPlayerController>();
+
+
+
                     if (ray != null)
                     {
 
@@ -277,6 +306,13 @@ public class Hai : MonoBehaviour
                         {
                             visibleTargets.Add(target.gameObject);
                             spottedRay = ray;
+                        }
+                    }
+                    else if (shark != null)
+                    {
+                        if (Rank == 3 || shark.Rank < Rank)
+                        {
+                            visibleTargets.Add(target.gameObject);
                         }
                     }
                     else

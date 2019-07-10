@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
         float dolphinSpeed = currentDolphinPlayerController.Speed;
 
-        if (horizontal != 0 || vertical != 0)
+        if (Mathf.Abs(horizontal)  + Mathf.Abs(vertical)  > 0.4)
         {
         currentDolphinPlayerController.Move(horizontal * dolphinSpeed, vertical * dolphinSpeed);
         }
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
             currentPlayerIndex = (currentPlayerIndex + 1) % dolphinPlayerControllers.Length;
             currentDolphinPlayerController = dolphinPlayerControllers[currentPlayerIndex];
 
-            camera.Target = currentDolphinPlayerController.gameObject;
+            camera.FollowObject = currentDolphinPlayerController.gameObject;
         }
     }
 }

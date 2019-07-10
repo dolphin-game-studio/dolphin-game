@@ -5,7 +5,7 @@ using UnityEngine;
 public class DolphinPlayerController : MonoBehaviour
 {
     protected Hai[] haie;
-
+    CapsuleCollider Collider;
 
     protected Animator animator;
 
@@ -62,11 +62,16 @@ public class DolphinPlayerController : MonoBehaviour
          distanceToNearestFacingShark = nearestSharkDistance;
         return nearestShark;
     }
-
+    
     protected void Init()
     {
         haie = FindObjectsOfType<Hai>();
 
+        Collider = GetComponent<CapsuleCollider>();
+        if (Collider == null)
+        {
+            Debug.LogError("collider is not set.");
+        }
 
         Rigidbody = GetComponent<Rigidbody>();
         if (Rigidbody == null)

@@ -6,9 +6,14 @@ using UnityEngine;
 
 public class Hai : MonoBehaviour
 {
+    [Range(1, 3)]
+    public int rank = 1;
+
+    public GameObject[] armbands;
+
     AnimationCurve viewPanAnimationCurve;
     private float viewPanAnimationTime;
-
+    public CapsuleCollider Collider;
 
     [Range(0, 360)]
     public float viewAngle;
@@ -34,7 +39,7 @@ public class Hai : MonoBehaviour
     }
 
     private bool _stunned = false;
-        
+
     public bool Stunned
     {
         get { return _stunned; }
@@ -70,7 +75,10 @@ public class Hai : MonoBehaviour
 
                 if (KnockedOut)
                 {
-                    //unconsciousParticleSystem.Play();
+                    Stunned = false;
+
+                    knockedParticleSystem.Play();
+
                     viewMesh.Clear();
                 }
             }
@@ -94,6 +102,7 @@ public class Hai : MonoBehaviour
 
 
     public ParticleSystem stunnedParticleSystem;
+    public ParticleSystem knockedParticleSystem;
 
 
 
@@ -102,6 +111,27 @@ public class Hai : MonoBehaviour
 
     [HideInInspector]
     public List<GameObject> visibleTargets = new List<GameObject>();
+
+    public bool IsAlarmed => visibleTargets.Count > 0;
+    public bool IsNotAlarmed => visibleTargets.Count == 0;
+
+    public int Rank
+    {
+        get
+        {
+            return rank;
+        }
+        set
+        {
+            if (rank != 0)
+                armbands[rank - 1].SetActive(false);
+
+            rank = value;
+
+            if (rank != 0)
+                armbands[rank - 1].SetActive(true);
+        }
+    }
 
     public float meshResolution;
     public int edgeResolveIterations;
@@ -118,12 +148,24 @@ public class Hai : MonoBehaviour
 
     void Start()
     {
+        Rank = rank;
+
+        Collider = GetComponent<CapsuleCollider>();
+        if (Collider == null)
+        {
+            Debug.LogError("collider is not set.");
+        }
 
         viewPanAnimationCurve = AnimationCurve.EaseInOut(0, viewPanAngle1, panDuration, viewPanAngle2);
 
         if (stunnedParticleSystem == null)
         {
             Debug.LogError("unconsciousParticleSystem is not set.");
+        }
+
+        if (knockedParticleSystem == null)
+        {
+            Debug.LogError("knockedParticleSystem is not set.");
         }
 
         viewMesh = new Mesh
@@ -149,7 +191,7 @@ public class Hai : MonoBehaviour
 
 
 
-        if(Stunned)
+        if (Stunned)
         {
             RegainConsciousness();
         }

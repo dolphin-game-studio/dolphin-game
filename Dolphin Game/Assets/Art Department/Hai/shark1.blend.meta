@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Default Take
-      takeName: Default Take
+      name: swim
+      takeName: swim
       internalID: 1989289236423521904
-      firstFrame: 0
-      lastFrame: 249
+      firstFrame: -1
+      lastFrame: 59
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

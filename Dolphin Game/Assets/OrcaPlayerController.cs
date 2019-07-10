@@ -91,17 +91,32 @@ public class OrcaPlayerController : DolphinPlayerController
 
         if (RamThrusting && nearestFacingShark != null)
         {
-            var distanceToShark = Vector3.Distance(nearestFacingShark.transform.position, transform.position);
-
-            if (distanceToShark < distanceToMakeSharkUnconscious)
-            {
-                nearestFacingShark.KnockedOut = true;
-                RamThrusting = false;
-            }
+ 
         }
 
 
 
+
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (RamThrusting) {
+            ContactPoint contact = collision.contacts[0];
+ 
+            Debug.Log(collision.gameObject);
+
+            Hai rammedShark = collision.gameObject.GetComponent<Hai>();
+            if (rammedShark != null && rammedShark.IsNotAlarmed)
+            {
+                rammedShark.KnockedOut = true;
+
+                RamThrusting = false;
+            } 
+          
+
+
+        }
 
     }
 

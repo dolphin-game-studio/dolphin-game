@@ -83,6 +83,7 @@ public class ScannerEffectDemo : MonoBehaviour
     [ImageEffectOpaque]
     void OnRenderImage(RenderTexture src, RenderTexture dst)
     {
+        Debug.Log("OnRenderImage");
         EffectMaterial.SetVector("_WorldSpaceScannerPos", ScannerOrigin.position);
 
 

@@ -114,6 +114,12 @@ Shader "Hidden/ScannerEffect"
 							half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
 							scannerCol = lerp(_TrailColor, edge, diff) /*+ horizBars(i.uv) */;
 							scannerCol *= diff;
+
+							//scannerCol *= (1 - (linearDepth * 5));
+							scannerCol *= (1 - (linearDepth * 8));
+
+							// scannerCol *= ((_ScanDistances[i]));
+
 							col += scannerCol;
 						}
 					}

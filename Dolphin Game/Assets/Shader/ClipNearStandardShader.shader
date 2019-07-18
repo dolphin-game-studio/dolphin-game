@@ -88,7 +88,7 @@
 
 			#pragma vertex vertBase
 			#pragma fragment fragBase
-			#include "UnityStandardCoreForward.cginc"
+			#include "UnityStandardCoreForwardClipNear.cginc"
 
 			ENDCG
 		}

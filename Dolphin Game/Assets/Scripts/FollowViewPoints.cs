@@ -17,17 +17,18 @@ public class FollowViewPoints : MonoBehaviour
         hai = GetComponent<Hai>();
         if (hai == null)
         {
-            Debug.LogError("FollowViewPoints must have a Hai component.");
+            throw new DolphinGameException("FollowViewPoints must have a Hai component.");
         }
 
         if (targets.Length < 1)
         {
-            Debug.LogError("FollowViewPoints targets should not be empty");
+            throw new DolphinGameException("FollowViewPoints targets should not be empty");
         }
 
         _rigidbody = GetComponent<Rigidbody>();
-        if (_rigidbody == null) {
-            Debug.LogError("FollowViewPoints rigidbody should not be null");
+        if (_rigidbody == null)
+        {
+            throw new DolphinGameException("FollowViewPoints rigidbody should not be null");
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpotPlayerCharacter : MonoBehaviour
 {
-    public Game game;
+    private Game game;
     Hai hai;
     bool noticedPlayer;
     float timePlayerNoticed;
@@ -18,14 +18,17 @@ public class SpotPlayerCharacter : MonoBehaviour
     void Start()
     {
         hai = GetComponent<Hai>();
+
+        game = FindObjectOfType<Game>();
+
         if (hai == null)
         {
-            Debug.LogError("SpotPlayerCharacter must have a Hai component.");
+            throw new DolphinGameException("SpotPlayerCharacter must have a Hai component.");
         }
 
         if (game == null)
         {
-            Debug.LogError("SpotPlayerCharacter must have a Game component.");
+            throw new DolphinGameException("The essentials are not present in this scene. Please add one Essentials object from the Prefabs Folder.");
         }
 
         _propBlock = new MaterialPropertyBlock();

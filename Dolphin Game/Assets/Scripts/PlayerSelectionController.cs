@@ -28,7 +28,7 @@ public class PlayerSelectionController : MonoBehaviour
     {
         if (playerSelectionImages.Length < 4)
         {
-            Debug.LogError("playerSelectionImages should be set with 4 player images but there are " + playerSelectionImages.Length);
+            throw new DolphinGameException("playerSelectionImages should be set with 4 player images but there are " + playerSelectionImages.Length);
         }
 
         selectedPlayerImageSize = 1f * selectedPlayerImageSizeMultiplier;

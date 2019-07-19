@@ -4,53 +4,125 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    public DolphinPlayerController currentDolphinPlayerController;
+    public PlayerControllerBase CurrentPlayerController { get => currentPlayerController; set => currentPlayerController = value; }
 
-     private DolphinPlayerController[] dolphinPlayerControllers;
-    private int currentPlayerIndex = 0;
+    private PlayerControllerBase currentPlayerController;
+     
+    private DolphinPlayerController dolphinPlayerController;
+    private RayPlayerController rayPlayerController;
+    private SharkPlayerController sharkPlayerController;
+    private OrcaPlayerController orcaPlayerController;
 
-    [SerializeField]
-    private FollowCamera camera;
+    private List<PlayerControllerBase> allPlayerControllers = new List<PlayerControllerBase>();
+ 
+
 
     void Start()
     {
+        dolphinPlayerController = FindObjectOfType<DolphinPlayerController>();
+        rayPlayerController = FindObjectOfType<RayPlayerController>();
+        sharkPlayerController = FindObjectOfType<SharkPlayerController>();
+        orcaPlayerController = FindObjectOfType<OrcaPlayerController>();
 
-        dolphinPlayerControllers = FindObjectsOfType<DolphinPlayerController>();
-
-
-        if (currentDolphinPlayerController == null)
-        {
-            Debug.LogError("CurrentDolphinPlayerController is not set on PlayerController");
+        if (dolphinPlayerController != null) {
+            allPlayerControllers.Add(dolphinPlayerController);
         }
-         
-        if (camera == null)
+        if (rayPlayerController != null)
         {
-            Debug.LogError("Camera is not set on PlayerController");
+            allPlayerControllers.Add(rayPlayerController);
+        }
+        if (sharkPlayerController != null)
+        {
+            allPlayerControllers.Add(sharkPlayerController);
+        }
+        if (orcaPlayerController != null)
+        {
+            allPlayerControllers.Add(orcaPlayerController);
+        }
+
+        if (allPlayerControllers.Count == 0)
+        {
+            throw new DolphinGameException("There is no dolphin, ray, orca or shark player controller in this scene. Please add at least one from the presets folder.");
+        }
+        else {
+            currentPlayerController = allPlayerControllers[0];
         }
     }
 
     void Update()
     {
+        UpdateMovement();
+
+        UpdatePlayerSelection();
+    }
+
+    private void UpdatePlayerSelection()
+    {
+        bool selectPrevChar = Input.GetButtonDown("Left Bumper");
+        bool selectNextChar = Input.GetButtonDown("Right Bumper");
+
+        bool selectDolphin = Input.GetKeyUp(KeyCode.Alpha1);
+        bool selectRay = Input.GetKeyUp(KeyCode.Alpha2);
+        bool selectOrca = Input.GetKeyUp(KeyCode.Alpha3);
+        bool selectShark = Input.GetKeyUp(KeyCode.Alpha4);
+
+
+        if (selectDolphin)
+        {
+            currentPlayerController = dolphinPlayerController;
+        }
+
+        if (selectRay)
+        {
+            currentPlayerController = rayPlayerController;
+
+        }
+
+        if (selectOrca)
+        {
+            currentPlayerController = orcaPlayerController;
+
+        }
+
+        if (selectShark)
+        {
+            currentPlayerController = sharkPlayerController;
+        }
+
+        if (selectPrevChar)
+        {
+            var currentPlayerIndex = allPlayerControllers.IndexOf(currentPlayerController);
+
+            currentPlayerIndex = (currentPlayerIndex - 1) % allPlayerControllers.Count;
+            currentPlayerController = allPlayerControllers[currentPlayerIndex];
+        }
+
+        if (selectNextChar)
+        {
+            var currentPlayerIndex = allPlayerControllers.IndexOf(currentPlayerController);
+
+            currentPlayerIndex = (currentPlayerIndex + 1) % allPlayerControllers.Count;
+            currentPlayerController = allPlayerControllers[currentPlayerIndex];
+        }
+    }
+
+    private void UpdateMovement()
+    {
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
 
+        float playerCharacterSpeed = currentPlayerController.Speed;
 
-        float dolphinSpeed = currentDolphinPlayerController.Speed;
+        var swimFastButtonPressed = Input.GetAxis("A Button");
 
-        if (Mathf.Abs(horizontal)  + Mathf.Abs(vertical)  > 0.4)
+        if (swimFastButtonPressed > 0)
         {
-        currentDolphinPlayerController.Move(horizontal * dolphinSpeed, vertical * dolphinSpeed);
+            playerCharacterSpeed += currentPlayerController.FastSwimMultiplier * swimFastButtonPressed;
         }
 
-        bool xPressed = Input.GetKeyUp(KeyCode.X);
-
-        if (xPressed)
+        if (Mathf.Abs(horizontal) + Mathf.Abs(vertical) > 0.4)
         {
-            currentPlayerIndex = (currentPlayerIndex + 1) % dolphinPlayerControllers.Length;
-            currentDolphinPlayerController = dolphinPlayerControllers[currentPlayerIndex];
-
-            camera.FollowObject = currentDolphinPlayerController.gameObject;
+             currentPlayerController.Move(horizontal * playerCharacterSpeed, vertical * playerCharacterSpeed);
         }
     }
 }

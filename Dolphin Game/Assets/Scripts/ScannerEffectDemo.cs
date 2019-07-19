@@ -6,9 +6,19 @@ using System.Collections.Generic;
 [ExecuteInEditMode]
 public class ScannerEffectDemo : MonoBehaviour
 {
+    ScanDistance[] scanDistances = new ScanDistance[10];
+
+    public ScannerEffectDemo() {
+        for (int i = 0; i < scanDistances.Length; i++)
+        {
+            scanDistances[i] = new ScanDistance();
+        }
+    }
+
+    private PlayerController playerController;
+
     public AudioSource[] dolphinSounds;
 
-    ScanDistance[] scanDistances = new ScanDistance[10];
     int currentScanDistancesIndex = 0;
 
 
@@ -24,12 +34,9 @@ public class ScannerEffectDemo : MonoBehaviour
 
     void Start()
     {
-        _scannables = FindObjectsOfType<Scannable>();
+        playerController = FindObjectOfType<PlayerController>();
 
-        for (int i = 0; i < scanDistances.Length; i++)
-        {
-            scanDistances[i] = new ScanDistance();
-        }
+        _scannables = FindObjectsOfType<Scannable>();
     }
 
     void Update()
@@ -52,13 +59,9 @@ public class ScannerEffectDemo : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            _scanning = true;
-            ScanDistance = 0;
-        }
+ 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("X Button"))
         {
             //AudioSource dolphinSound = dolphinSounds[Random.Range(0, dolphinSounds.Length)];
             //dolphinSound.Play();
@@ -80,23 +83,39 @@ public class ScannerEffectDemo : MonoBehaviour
 
     }
 
+    Transform eccoOrigin = null;
+
     [ImageEffectOpaque]
     void OnRenderImage(RenderTexture src, RenderTexture dst)
     {
-        Debug.Log("OnRenderImage");
-        EffectMaterial.SetVector("_WorldSpaceScannerPos", ScannerOrigin.position);
+        var dolphinPlayerController = playerController.CurrentPlayerController as DolphinPlayerController;
+        var orcaPlayerController = playerController.CurrentPlayerController as OrcaPlayerController;
 
 
-        float[] scanDistancesArray = new float[100];
-        for (int i = 0; i < scanDistances.Length && i < scanDistancesArray.Length; i++)
+
+        if (dolphinPlayerController != null) {
+            eccoOrigin = dolphinPlayerController.EccoOrigin;
+        }
+        if (orcaPlayerController != null)
         {
-            scanDistancesArray[i] = scanDistances[i].Distance;
+            eccoOrigin = orcaPlayerController.EccoOrigin;
         }
 
-        EffectMaterial.SetFloatArray("_ScanDistances", scanDistancesArray);
-        EffectMaterial.SetFloat("_ScanDistance", ScanDistance);
+        if (eccoOrigin != null) {
+            EffectMaterial.SetVector("_WorldSpaceScannerPos", eccoOrigin.position);
 
-        RaycastCornerBlit(src, dst, EffectMaterial);
+
+            float[] scanDistancesArray = new float[100];
+            for (int i = 0; i < scanDistances.Length && i < scanDistancesArray.Length; i++)
+            {
+                scanDistancesArray[i] = scanDistances[i].Distance;
+            }
+
+            EffectMaterial.SetFloatArray("_ScanDistances", scanDistancesArray);
+            EffectMaterial.SetFloat("_ScanDistance", ScanDistance);
+
+            RaycastCornerBlit(src, dst, EffectMaterial);
+        } 
     }
 
 

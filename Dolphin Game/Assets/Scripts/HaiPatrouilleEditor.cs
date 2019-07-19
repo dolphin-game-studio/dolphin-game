@@ -9,12 +9,12 @@ public class HaiPatrouilleEditor : Editor
     void OnSceneGUI()
     {
         HaiPatrouille haiPatrouille = (HaiPatrouille)target;
-
-        foreach (var waypoint in haiPatrouille.waypoints)
+        
+        var waypoints = haiPatrouille.GetComponentsInChildren<Waypoint>();
+        
+        foreach (var waypoint in waypoints)
         {
             EditorUtils.DrawFieldOfView(waypoint.transform, waypoint.transform.right, waypoint.observationAngle, 20, 45);
         }
-
-
     }
 }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class HaiPatrouille : MonoBehaviour
 {
-    public Waypoint[] waypoints;
+    private Waypoint[] waypoints;
+    public Waypoint[] Waypoints { get => waypoints; }
+
     private Vector3[] waypointPositions;
 
     public float speed = 1;
@@ -18,11 +20,15 @@ public class HaiPatrouille : MonoBehaviour
 
     private Hai hai;
 
+
+
     void Start()
     {
-
         hai = GetComponent<Hai>();
-       
+
+
+        waypoints = transform.GetComponentsInChildren<Waypoint>();
+         
         waypointPositions = new Vector3[waypoints.Length];
         for (int i = 0; i < waypoints.Length; i++)
         {
@@ -32,7 +38,7 @@ public class HaiPatrouille : MonoBehaviour
 
     void Update()
     {
-        if (hai.Conscious && !hai.Distracted)
+        if (hai.Conscious && !hai.Distracted && hai.IsNotAlarmed)
         {
             FollowWaypoints();
         }

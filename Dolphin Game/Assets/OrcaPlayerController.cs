@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrcaPlayerController : DolphinPlayerController
+public class OrcaPlayerController : PlayerControllerBase
 {
+    [SerializeField] private Transform eccoOrigin;
+
+    public Transform EccoOrigin { get => eccoOrigin; }
 
     int ramHash = Animator.StringToHash("Ram");
     public float ramForce = 1f;
@@ -51,23 +54,17 @@ public class OrcaPlayerController : DolphinPlayerController
 
     void Update()
     {
-        if (playerController.currentDolphinPlayerController != this)
+        if (playerController.CurrentPlayerController != this)
             return;
 
 
-        bool rPressed = Input.GetKeyUp(KeyCode.R);
+        bool bButtonPressed = Input.GetButtonUp("B Button");
 
-        if (rPressed)
+        if (bButtonPressed)
         {
             animator.SetTrigger(ramHash);
 
-            SheduleRamThrust();
-
-
-
-
-
-
+            SheduleRamThrust(); 
         }
 
         if (ramThrustSheduled)

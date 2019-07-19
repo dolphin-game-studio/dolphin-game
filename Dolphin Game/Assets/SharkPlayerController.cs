@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SharkPlayerController : DolphinPlayerController
+public class SharkPlayerController : PlayerControllerBase
 {
 
     [Range(0, 3)]
@@ -39,7 +39,7 @@ public class SharkPlayerController : DolphinPlayerController
 
     void Update()
     {
-        if (playerController.currentDolphinPlayerController != this)
+        if (playerController.CurrentPlayerController != this)
             return;
 
 

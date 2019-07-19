@@ -13,7 +13,7 @@ public class Hai : MonoBehaviour
 
     AnimationCurve viewPanAnimationCurve;
     private float viewPanAnimationTime;
-    public CapsuleCollider Collider;
+    private CapsuleCollider Collider;
 
     [Range(0, 360)]
     public float viewAngle;
@@ -166,19 +166,19 @@ public class Hai : MonoBehaviour
         Collider = GetComponent<CapsuleCollider>();
         if (Collider == null)
         {
-            Debug.LogError("collider is not set.");
+            throw new DolphinGameException("collider is not set.");
         }
 
         viewPanAnimationCurve = AnimationCurve.EaseInOut(0, viewPanAngle1, panDuration, viewPanAngle2);
 
         if (stunnedParticleSystem == null)
         {
-            Debug.LogError("unconsciousParticleSystem is not set.");
+            throw new DolphinGameException("unconsciousParticleSystem is not set.");
         }
 
         if (knockedParticleSystem == null)
         {
-            Debug.LogError("knockedParticleSystem is not set.");
+            throw new DolphinGameException("knockedParticleSystem is not set.");
         }
 
         viewMesh = new Mesh

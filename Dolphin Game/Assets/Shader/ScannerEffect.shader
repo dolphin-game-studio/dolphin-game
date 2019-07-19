@@ -116,8 +116,10 @@ Shader "Hidden/ScannerEffect"
 							scannerCol *= diff;
 
 							//scannerCol *= (1 - (linearDepth * 5));
-							scannerCol *= (1 - (linearDepth * 8));
+							//scannerCol *= (1 - (linearDepth * 8));
+							scannerCol /= (dist * 0.04);
 
+							
 							// scannerCol *= ((_ScanDistances[i]));
 
 							col += scannerCol;

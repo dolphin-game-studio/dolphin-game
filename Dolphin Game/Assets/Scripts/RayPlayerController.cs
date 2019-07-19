@@ -3,7 +3,7 @@ using System.Linq;
 
 using UnityEngine;
 
-public class RayPlayerController : DolphinPlayerController
+public class RayPlayerController : PlayerControllerBase
 {
 
     int stingHash = Animator.StringToHash("Sting");
@@ -17,17 +17,17 @@ public class RayPlayerController : DolphinPlayerController
 
     }
 
-    
+
 
     void Update()
     {
-        if (playerController.currentDolphinPlayerController != this)
+        if (playerController.CurrentPlayerController != this)
             return;
 
 
-        bool rPressed = Input.GetKeyUp(KeyCode.R);
+        bool stingButtonPressed = Input.GetButtonDown("X Button");
 
-        if (rPressed)
+        if (stingButtonPressed)
         {
             animator.SetTrigger(stingHash);
 
@@ -47,6 +47,6 @@ public class RayPlayerController : DolphinPlayerController
 
 
 
- 
- 
+
+
 }

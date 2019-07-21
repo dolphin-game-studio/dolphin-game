@@ -43,7 +43,7 @@ public class FollowCamera : MonoBehaviour
         var cameras = FindObjectsOfType<Camera>();
         if (cameras.Length > 1)
         {
-            throw new DolphinGameException("There are two cameras in this scene. Keep the camera inside the Essentials object and delete any other.");
+            throw new DolphinGameException("Es sind zwei Kameras in der Szene. Behalten Sie die Kamera im Essentials Objekt und löschen sie jede andere.");
         }
 
         playerController = FindObjectOfType<PlayerController>();

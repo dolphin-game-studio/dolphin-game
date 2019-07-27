@@ -93,7 +93,14 @@ public class PlayerController : MonoBehaviour
         {
             var currentPlayerIndex = allPlayerControllers.IndexOf(currentPlayerController);
 
+ 
             currentPlayerIndex = (currentPlayerIndex - 1) % allPlayerControllers.Count;
+
+
+            if (currentPlayerIndex < 0)
+            {
+                currentPlayerIndex = allPlayerControllers.Count + currentPlayerIndex;
+            } 
             currentPlayerController = allPlayerControllers[currentPlayerIndex];
         }
 

@@ -9,6 +9,8 @@ public class SpotPlayerCharacter : MonoBehaviour
     bool noticedPlayer;
     float timePlayerNoticed;
     public float secondsToSpotPlayer = 2f;
+    public float secondsToSpotPlayerWhenNear = 0.2f;
+
 
     private Color colorNormal = new Color(0, 1, 0), colorSuspicious = new Color(1, 1, 0), colorSpotted = new Color(1, 0, 0);
 
@@ -51,33 +53,29 @@ public class SpotPlayerCharacter : MonoBehaviour
     private void SpotPlayer()
     {
         _renderer.GetPropertyBlock(_propBlock);
-
-        if (timePlayerNoticed > secondsToSpotPlayer)
+         
+        if (hai.NearestTarget != null)
         {
-            game.Spotted = true;
-        }
+            var distanceToPlayer = Vector3.Distance(hai.transform.position, hai.NearestTarget.transform.position);
+             
+            var timeToSpotPlayerRegardingDistanceToPlayer = Mathf.Lerp(secondsToSpotPlayer, secondsToSpotPlayerWhenNear, 1 - distanceToPlayer / hai.viewRadiusWhenSuspicious);
 
-        if (noticedPlayer)
-        {
+            if (timePlayerNoticed > timeToSpotPlayerRegardingDistanceToPlayer)
+            {
+                game.Spotted = true;
+            }
+
+
             timePlayerNoticed += Time.deltaTime;
 
-            _propBlock.SetColor("_Color", new Color(1, Mathf.Lerp(1, 0, timePlayerNoticed / secondsToSpotPlayer), 0));
+            _propBlock.SetColor("_Color", new Color(1, Mathf.Lerp(1, 0, timePlayerNoticed / timeToSpotPlayerRegardingDistanceToPlayer), 0));
         }
         else
         {
+            timePlayerNoticed = 0;
             _propBlock.SetColor("_Color", colorNormal);
         }
-
-        if (hai.visibleTargets.Count > 0)
-        {
-            noticedPlayer = true;
-        }
-        else
-        {
-            noticedPlayer = false;
-            timePlayerNoticed = 0;
-        }
-
+ 
 
         _renderer.SetPropertyBlock(_propBlock);
     }

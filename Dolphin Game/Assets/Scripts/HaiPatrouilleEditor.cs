@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(HaiPatrouille))]
 public class HaiPatrouilleEditor : Editor
 {
@@ -18,3 +18,4 @@ public class HaiPatrouilleEditor : Editor
         }
     }
 }
+#endif

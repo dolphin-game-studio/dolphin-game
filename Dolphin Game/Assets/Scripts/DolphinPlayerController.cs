@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DolphinPlayerController : PlayerControllerBase
+public class DolphinPlayerController : SmallWhaleControllerBase
 {
-    [SerializeField] private Transform eccoOrigin;
-
-    public Transform EccoOrigin { get => eccoOrigin; }
-
+  
     void Start()
     {
         base.Init();
     }
 
-    void Update()
+    protected override void Update()
     {
         if (playerController.CurrentPlayerController != this)
             return;
+
+        base.Update();
     }
 
 

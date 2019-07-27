@@ -6,12 +6,19 @@ Shader "Hidden/ScannerEffect"
 	{
 		_MainTex("Texture", 2D) = "white" {}
 		_DetailTex("Texture", 2D) = "white" {}
-		_ScanDistance("Scan Distance", float) = 0
-		_ScanWidth("Scan Width", float) = 10
+ 		_ScanWidth("Scan Width", float) = 10
 		_LeadSharp("Leading Edge Sharpness", float) = 10
 		_LeadColor("Leading Edge Color", Color) = (1, 1, 1, 0)
 		_MidColor("Mid Color", Color) = (1, 1, 1, 0)
 		_TrailColor("Trail Color", Color) = (1, 1, 1, 0)
+					
+		_JammedScanWidth("Jammed Scan Width", float) = 1
+					_JammedLeadSharp("Jammed Leading Edge Sharpness", float) = 10
+
+		_JammedLeadColor("Jammed Leading Edge Color", Color) = (1, 0, 0, 0)
+		_JammedMidColor("Jammed Mid Color", Color) = (1, 0, 0, 0)
+		_JammedTrailColor("Jammed Trail Color", Color) = (1, 0, 0, 0)
+
 		_HBarColor("Horizontal Bar Color", Color) = (0.5, 0.5, 0.5, 0)
 	}
 		SubShader
@@ -67,8 +74,10 @@ Shader "Hidden/ScannerEffect"
 				sampler2D _DetailTex;
 				sampler2D_float _CameraDepthTexture;
 				float4 _WorldSpaceScannerPos;
-				float _ScanDistance;
-				float _ScanDistances[100];
+ 
+				float _EchoDistances[100];
+				float _EchoJammed[100];
+				float4 _EchoOrigins[100];
 
 				float _ScanWidth;
 				float _LeadSharp;
@@ -76,6 +85,13 @@ Shader "Hidden/ScannerEffect"
 				float4 _MidColor;
 				float4 _TrailColor;
 				float4 _HBarColor;
+
+				float _JammedScanWidth;
+ 					float _JammedLeadSharp;
+
+				float4 _JammedLeadColor;
+				float4 _JammedMidColor;
+				float4 _JammedTrailColor; 
 
 				float4 horizBars(float2 p)
 				{
@@ -97,7 +113,7 @@ Shader "Hidden/ScannerEffect"
 					float3 wsPos = _WorldSpaceCameraPos + wsDir;
 					half4 scannerCol = half4(0, 0, 0, 0);
 
-					float dist = distance(wsPos, _WorldSpaceScannerPos);
+					
 
 					//if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && linearDepth < 1)
 					//{
@@ -107,17 +123,36 @@ Shader "Hidden/ScannerEffect"
 					//	scannerCol *= diff;
 					//}
 
-					for (int i = 0; i < _ScanDistances.Length; i++) {
-						if (dist < _ScanDistances[i] && dist > _ScanDistances[i] - _ScanWidth && linearDepth < 1)
-						{
-							float diff = 1 - (_ScanDistances[i] - dist) / (_ScanWidth);
-							half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
-							scannerCol = lerp(_TrailColor, edge, diff) /*+ horizBars(i.uv) */;
-							scannerCol *= diff;
+					for (int i = 0; i < _EchoDistances.Length; i++) {
 
-							//scannerCol *= (1 - (linearDepth * 5));
-							//scannerCol *= (1 - (linearDepth * 8));
-							scannerCol /= (dist * 0.04);
+						float dist = distance(wsPos, _EchoOrigins[i]);
+
+						if (dist < _EchoDistances[i] && dist > _EchoDistances[i] - _ScanWidth && linearDepth < 1)
+						{
+
+							if (_EchoJammed[i] == 1) {
+  
+								float diff = 1 - (_EchoDistances[i] - dist) / (_JammedScanWidth);
+								half4 edge = lerp(_JammedMidColor, _JammedLeadColor, pow(diff, _JammedLeadSharp));
+								scannerCol = lerp(_JammedTrailColor, edge, diff) /*+ horizBars(i.uv) */;
+								scannerCol *= diff;
+
+								//scannerCol *= (1 - (linearDepth * 5));
+								//scannerCol *= (1 - (linearDepth * 8));
+								scannerCol /= (dist * 0.5);
+							}
+							else {
+								float diff = 1 - (_EchoDistances[i] - dist) / (_ScanWidth);
+								half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
+								scannerCol = lerp(_TrailColor, edge, diff) /*+ horizBars(i.uv) */;
+								scannerCol *= diff;
+
+								//scannerCol *= (1 - (linearDepth * 5));
+								//scannerCol *= (1 - (linearDepth * 8));
+								scannerCol /= (dist * 0.04);
+							}
+
+
 
 							
 							// scannerCol *= ((_ScanDistances[i]));

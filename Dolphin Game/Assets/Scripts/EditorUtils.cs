@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+#if UNITY_EDITOR
 public class EditorUtils
 {
     public static void DrawFieldOfView(Transform transform, Vector3 normal, float angle, float radius, float viewAngle)
@@ -23,3 +23,4 @@ public class EditorUtils
         Handles.DrawSolidArc(position, normal, leftAngle, viewAngle, radius);
     }
 }
+#endif

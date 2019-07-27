@@ -126,6 +126,32 @@ public class Hai : MonoBehaviour
     public bool IsAlarmed => visibleTargets.Count > 0;
     public bool IsNotAlarmed => visibleTargets.Count == 0;
 
+    public GameObject NearestTarget
+    {
+        get
+        {
+            if (visibleTargets.Count > 0)
+            {
+                GameObject nearestTarget = visibleTargets[0];
+                for (int i = 1; i < visibleTargets.Count; i++)
+                {
+                    var distanceToNearest= Vector3.Distance(this.transform.position, nearestTarget.transform.position);
+                    var distanceToCurrent = Vector3.Distance(this.transform.position, visibleTargets[i].transform.position);
+                    if (distanceToCurrent < distanceToNearest)
+                    {
+                        nearestTarget = visibleTargets[i];
+                    }
+                }
+                return nearestTarget;
+            }
+            else
+            {
+                return null;
+            }
+        }
+    }
+
+
     public int Rank
     {
         get
@@ -161,6 +187,8 @@ public class Hai : MonoBehaviour
 
     void Start()
     {
+        playerCharacterLayer = LayerMask.NameToLayer("Player Character");
+
         Rank = rank;
 
         Collider = GetComponent<CapsuleCollider>();
@@ -261,15 +289,18 @@ public class Hai : MonoBehaviour
         else
         {
             var visiblePlayer = visibleTargets[0];
-            Vector3 dirToTarget = (visiblePlayer.transform.position - transform.position).normalized;
-            transform.forward = dirToTarget;
-
-            currentViewPanRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y > 180 ? -90 : 90, transform.eulerAngles.z);
-
+            LookAtPlayerCharacter(visiblePlayer);
         }
 
 
 
+    }
+
+    private void LookAtPlayerCharacter(GameObject visiblePlayer)
+    {
+        Vector3 dirToTarget = (visiblePlayer.transform.position - transform.position).normalized;
+        transform.forward = dirToTarget;
+        currentViewPanRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y > 180 ? -90 : 90, transform.eulerAngles.z);
     }
 
     RayPlayerController spottedRay;
@@ -475,6 +506,19 @@ public class Hai : MonoBehaviour
         }
     }
 
+    #region Collision with Player
+
+    int playerCharacterLayer;
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.layer == playerCharacterLayer)
+        {
+            LookAtPlayerCharacter(collision.collider.gameObject);
+        }
+    }
+
+    #endregion
 
 
 }

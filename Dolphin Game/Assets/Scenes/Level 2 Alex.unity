@@ -17508,6 +17508,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: rank
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd031a5444c99964ca3e38e958cf98f4, type: 3}
 --- !u!1 &1372675833
@@ -21068,6 +21073,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: rank
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd031a5444c99964ca3e38e958cf98f4, type: 3}
@@ -27245,6 +27255,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1870413254}
     m_Modifications:
+    - target: {fileID: 437400459229176157, guid: 7cbca9958d8fd934d90bdcccd6998e50,
+        type: 3}
+      propertyPath: m_Name
+      value: Orca
+      objectReference: {fileID: 0}
     - target: {fileID: 437400459229347197, guid: 7cbca9958d8fd934d90bdcccd6998e50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27299,11 +27314,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437400459229176157, guid: 7cbca9958d8fd934d90bdcccd6998e50,
-        type: 3}
-      propertyPath: m_Name
-      value: Orca
       objectReference: {fileID: 0}
     - target: {fileID: 437400459229176158, guid: 7cbca9958d8fd934d90bdcccd6998e50,
         type: 3}
@@ -27470,6 +27480,16 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1741876647532499233, guid: 7811865ba7d209f44901e04ff1c4c47f,
+        type: 3}
+      propertyPath: bubbleDelay
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741876647532499233, guid: 7811865ba7d209f44901e04ff1c4c47f,
+        type: 3}
+      propertyPath: bubbleThrustPower
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7811865ba7d209f44901e04ff1c4c47f, type: 3}
 --- !u!4 &2432011081025149997
@@ -27493,6 +27513,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1870413254}
     m_Modifications:
+    - target: {fileID: 2494283649342051428, guid: 4d32f59acaef9b6458dc4b1c92155fef,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark
+      objectReference: {fileID: 0}
     - target: {fileID: 2494283649342051431, guid: 4d32f59acaef9b6458dc4b1c92155fef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27547,11 +27572,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2494283649342051428, guid: 4d32f59acaef9b6458dc4b1c92155fef,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark
       objectReference: {fileID: 0}
     - target: {fileID: 2494283649342051425, guid: 4d32f59acaef9b6458dc4b1c92155fef,
         type: 3}

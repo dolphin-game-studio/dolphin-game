@@ -54,7 +54,7 @@ public class SpotPlayerCharacter : MonoBehaviour
     {
         _renderer.GetPropertyBlock(_propBlock);
          
-        if (hai.NearestTarget != null)
+        if (hai.NearestTarget != null && hai.NearestTarget.GetComponent<Bubble>() == null )
         {
             var distanceToPlayer = Vector3.Distance(hai.transform.position, hai.NearestTarget.transform.position);
              

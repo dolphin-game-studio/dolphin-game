@@ -10531,6 +10531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rank: 1
+  roationSpeed: 30
   armbands:
   - {fileID: 735026571939852769}
   - {fileID: 6752674048853953380}
@@ -10545,7 +10546,7 @@ MonoBehaviour:
   knockedParticleSystem: {fileID: 6752674049593230664}
   targetMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2304
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512

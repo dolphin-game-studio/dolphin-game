@@ -9,6 +9,9 @@ public class Hai : MonoBehaviour
     [Range(1, 3)]
     public int rank = 1;
 
+        public float roationSpeed = 1;
+
+
     public GameObject[] armbands;
 
     AnimationCurve viewPanAnimationCurve;
@@ -184,9 +187,15 @@ public class Hai : MonoBehaviour
 
     public float panDuration = 1.5f;
 
+private Vector3 initialPosition;
+private Quaternion initialRotation;
+
 
     void Start()
     {
+initialPosition = transform.position;
+initialRotation = transform.rotation;
+
         playerCharacterLayer = LayerMask.NameToLayer("Player Character");
 
         Rank = rank;
@@ -285,6 +294,9 @@ public class Hai : MonoBehaviour
 
             currentViewPanRotation = Quaternion.Euler(angles.x + currentViewPanAngle, angles.y > 180 ? -90 : 90, angles.z);
 
+transform.position = initialPosition;
+
+transform.rotation = Quaternion.RotateTowards(transform.rotation , initialRotation , roationSpeed * Time.deltaTime);
         }
         else
         {
@@ -311,6 +323,8 @@ public class Hai : MonoBehaviour
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, ViewRadius, targetMask);
         visibleTargets.Clear();
 
+        bool foundAtLeastOnePlayer = false;
+
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
             Collider target = targetsInViewRadius[i];
@@ -324,7 +338,10 @@ public class Hai : MonoBehaviour
                 {
                     var ray = target.GetComponent<RayPlayerController>();
                     var shark = target.GetComponent<SharkPlayerController>();
+                    var dolphin = target.GetComponent<DolphinPlayerController>();
+                    var orca = target.GetComponent<OrcaPlayerController>();
 
+                    var bubble = target.GetComponent<Bubble>();
 
 
                     if (ray != null)
@@ -337,6 +354,7 @@ public class Hai : MonoBehaviour
                         {
                             visibleTargets.Add(target.gameObject);
                             spottedRay = ray;
+                            foundAtLeastOnePlayer = true;
                         }
                     }
                     else if (shark != null)
@@ -344,9 +362,15 @@ public class Hai : MonoBehaviour
                         if (Rank == 3 || shark.Rank < Rank)
                         {
                             visibleTargets.Add(target.gameObject);
+                            foundAtLeastOnePlayer = true;
                         }
                     }
-                    else
+                    else if (dolphin != null || orca  != null)
+                    {
+                        visibleTargets.Add(target.gameObject);
+                        foundAtLeastOnePlayer = true;
+                    }
+                    else if(bubble != null &&  Rank == 1)
                     {
                         visibleTargets.Add(target.gameObject);
                     }
@@ -358,6 +382,18 @@ public class Hai : MonoBehaviour
 
             }
         }
+
+if(foundAtLeastOnePlayer){
+        for (int i = visibleTargets.Count -1; i > 0; i--){
+var target = visibleTargets[i];
+                    var bubble = target.GetComponent<Bubble>();
+if(bubble != null){
+    visibleTargets.RemoveAt(i);
+}
+        }
+}
+ 
+        
     }
 
     void DrawFieldOfView()

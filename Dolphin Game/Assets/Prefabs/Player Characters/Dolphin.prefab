@@ -502,6 +502,9 @@ MonoBehaviour:
   maxRotationDegreesDelta: 5
   funnyMoveMent: 0
   eccoOrigin: {fileID: 1741876647858184255}
+  bubblePrefab: {fileID: 3408209998546932236, guid: 0956a836421f2ab439ee06c6ceb1649c,
+    type: 3}
+  bubbleDelay: 1
 --- !u!1 &1741876649099873084
 GameObject:
   m_ObjectHideFlags: 0

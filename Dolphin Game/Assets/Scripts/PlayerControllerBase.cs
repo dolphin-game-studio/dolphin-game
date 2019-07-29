@@ -66,7 +66,7 @@ public class PlayerControllerBase : MonoBehaviour
         return nearestShark;
     }
     
-    protected void Init()
+    protected virtual void Init()
     {
         playerController = FindObjectOfType<PlayerController>();
 
@@ -96,7 +96,7 @@ public class PlayerControllerBase : MonoBehaviour
         }
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (playerController.CurrentPlayerController != this)
             return;

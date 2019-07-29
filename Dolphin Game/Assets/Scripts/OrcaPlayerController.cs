@@ -3,11 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrcaPlayerController : PlayerControllerBase
+public class OrcaPlayerController : SmallWhaleControllerBase
 {
-    [SerializeField] private Transform eccoOrigin;
 
-    public Transform EccoOrigin { get => eccoOrigin; }
 
     int ramHash = Animator.StringToHash("Ram");
     public float ramForce = 1f;
@@ -52,11 +50,12 @@ public class OrcaPlayerController : PlayerControllerBase
 
     Hai nearestFacingShark;
 
-    void Update()
+    protected override void Update()
     {
         if (playerController.CurrentPlayerController != this)
             return;
 
+        base.Update();
 
         bool bButtonPressed = Input.GetButtonUp("B Button");
 

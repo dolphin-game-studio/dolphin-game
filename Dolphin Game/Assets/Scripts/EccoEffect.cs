@@ -4,14 +4,15 @@ using UnityEngine.Experimental.Rendering;
 using System.Collections.Generic;
 
 [ExecuteInEditMode]
-public class ScannerEffectDemo : MonoBehaviour
+public class EccoEffect : MonoBehaviour
 {
-    ScanDistance[] scanDistances = new ScanDistance[10];
+    Echo[] echos = new Echo[10];
 
-    public ScannerEffectDemo() {
-        for (int i = 0; i < scanDistances.Length; i++)
+    public EccoEffect()
+    {
+        for (int i = 0; i < echos.Length; i++)
         {
-            scanDistances[i] = new ScanDistance();
+            echos[i] = new Echo();
         }
     }
 
@@ -22,57 +23,63 @@ public class ScannerEffectDemo : MonoBehaviour
     int currentScanDistancesIndex = 0;
 
 
-    public Transform ScannerOrigin;
+    //Demo Code public Transform ScannerOrigin;
     public Material EffectMaterial;
-    public float ScanDistance;
+    //Demo Code public float ScanDistance;
 
     private Camera _camera;
 
     // Demo Code
-    bool _scanning;
-    Scannable[] _scannables= new Scannable[0];
+    // bool _scanning;
+    // Scannable[] _scannables = new Scannable[0];
+
+    public void StartEcho(Echo echo){
+        echos[currentScanDistancesIndex % echos.Length] = echo;
+        echo.Scanning = true;
+
+        currentScanDistancesIndex = (currentScanDistancesIndex + 1) % echos.Length;
+    }
 
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
 
-        _scannables = FindObjectsOfType<Scannable>();
+        // Demo Code _scannables = FindObjectsOfType<Scannable>();
     }
 
     void Update()
     {
-        for (int i = 0; i < scanDistances.Length; i++)
+        for (int i = 0; i < echos.Length; i++)
         {
-            if (scanDistances[i].Scanning) {
-
-            }
-            scanDistances[i].Distance += Time.deltaTime * 50;
-        }
-
-        if (_scanning)
-        {
-            ScanDistance += Time.deltaTime * 50;
-            foreach (Scannable s in _scannables)
+            if (echos[i].Scanning)
             {
-                if (Vector3.Distance(ScannerOrigin.position, s.transform.position) <= ScanDistance)
-                    s.Ping();
+                echos[i].Distance += Time.deltaTime * 50;
             }
         }
 
- 
+        // Demo Code if (_scanning)
+        //{
+        //    ScanDistance += Time.deltaTime * 50;
+        //    foreach (Scannable s in _scannables)
+        //    {
+        //        if (Vector3.Distance(ScannerOrigin.position, s.transform.position) <= ScanDistance)
+        //            s.Ping();
+        //    }
+        //}
 
-        if (Input.GetButtonDown("X Button"))
-        {
+
+
+        //if (Input.GetButtonDown("X Button"))
+        //{
             //AudioSource dolphinSound = dolphinSounds[Random.Range(0, dolphinSounds.Length)];
             //dolphinSound.Play();
-            _scanning = true;
-            ScanDistance = 0;
 
-            scanDistances[currentScanDistancesIndex % scanDistances.Length].Scanning = true;
-            scanDistances[currentScanDistancesIndex % scanDistances.Length].Distance = 0;
-            currentScanDistancesIndex = (currentScanDistancesIndex + 1) % scanDistances.Length;
+            //Demo Code _scanning = true;
+            //Demo Code ScanDistance = 0;
 
-        }
+            
+
+        //}
     }
     // End Demo Code
 
@@ -88,34 +95,29 @@ public class ScannerEffectDemo : MonoBehaviour
     [ImageEffectOpaque]
     void OnRenderImage(RenderTexture src, RenderTexture dst)
     {
-        var dolphinPlayerController = playerController.CurrentPlayerController as DolphinPlayerController;
-        var orcaPlayerController = playerController.CurrentPlayerController as OrcaPlayerController;
+ 
+ 
+ 
 
+            float[] echoDistancesArray = new float[100];
+            float[] echoJammedArray = new float[100];
+            Vector4[] echoOriginsArray = new Vector4[100];
 
-
-        if (dolphinPlayerController != null) {
-            eccoOrigin = dolphinPlayerController.EccoOrigin;
-        }
-        if (orcaPlayerController != null)
-        {
-            eccoOrigin = orcaPlayerController.EccoOrigin;
-        }
-
-        if (eccoOrigin != null) {
-            EffectMaterial.SetVector("_WorldSpaceScannerPos", eccoOrigin.position);
-
-
-            float[] scanDistancesArray = new float[100];
-            for (int i = 0; i < scanDistances.Length && i < scanDistancesArray.Length; i++)
+            for (int i = 0; i < echos.Length && i < echoDistancesArray.Length; i++)
             {
-                scanDistancesArray[i] = scanDistances[i].Distance;
+                echoDistancesArray[i] = echos[i].Distance;
+                echoOriginsArray[i] = echos[i].Origin;
+                echoJammedArray[i] = echos[i].Jammed ? 1f : 0f;
+
             }
 
-            EffectMaterial.SetFloatArray("_ScanDistances", scanDistancesArray);
-            EffectMaterial.SetFloat("_ScanDistance", ScanDistance);
+            EffectMaterial.SetVectorArray("_EchoOrigins", echoOriginsArray);
+            EffectMaterial.SetFloatArray("_EchoDistances", echoDistancesArray);
+            EffectMaterial.SetFloatArray("_EchoJammed", echoJammedArray);
+ 
 
             RaycastCornerBlit(src, dst, EffectMaterial);
-        } 
+ 
     }
 
 
@@ -183,11 +185,16 @@ public class ScannerEffectDemo : MonoBehaviour
     }
 }
 
-public class ScanDistance
+public class Echo
 {
-    float distance = 0;
-    bool scanning = false; 
+    private Vector3 origin = Vector3.zero;
+    private float distance = 0;
+    private bool scanning = false;
+    private bool jammed = false;
 
     public float Distance { get => distance; set => distance = value; }
     public bool Scanning { get => scanning; set => scanning = value; }
+    public Vector3 Origin { get => origin; set => origin = value; }
+    public bool Jammed { get => jammed; set => jammed = value; }
+
 }

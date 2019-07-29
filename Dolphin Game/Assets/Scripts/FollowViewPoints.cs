@@ -34,17 +34,16 @@ public class FollowViewPoints : MonoBehaviour
 
     void Update()
     {
-        if (hai.visibleTargets.Count > 0)
+        if (hai.NearestTarget != null)
         {
-            var visiblePlayer = hai.visibleTargets[0];
-
-            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(visiblePlayer.transform.position - transform.position, Vector3.up), roationSpeed * 1.5f * Time.deltaTime);
+            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(hai.NearestTarget.transform.position - transform.position, Vector3.up), roationSpeed * 1.5f * Time.deltaTime);
             if (transform.rotation.eulerAngles != rotation.eulerAngles)
             {
                 _rigidbody.MoveRotation(rotation);
             }
         }
-        else {
+        else
+        {
             Quaternion rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(targets[current].position - transform.position, Vector3.up), roationSpeed * Time.deltaTime);
             if (transform.rotation.eulerAngles != rotation.eulerAngles)
             {
@@ -56,6 +55,6 @@ public class FollowViewPoints : MonoBehaviour
             }
         }
 
-   
+
     }
 }

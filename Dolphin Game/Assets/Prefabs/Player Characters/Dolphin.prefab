@@ -505,6 +505,11 @@ MonoBehaviour:
   bubblePrefab: {fileID: 3408209998546932236, guid: 0956a836421f2ab439ee06c6ceb1649c,
     type: 3}
   bubbleDelay: 1
+  bubbleThrustPower: 1
+  hackDistance: 100
+  hackEchoDelayMultiplier: 0.7
+  hackEchoDelayEnd: 0.001
+  initialHackEchoDelay: 3
 --- !u!1 &1741876649099873084
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,10 +19,99 @@ public class DolphinPlayerController : SmallWhaleControllerBase
         base.Init();
     }
 
+#region hacking
+    public float hackDistance;
+
+public void SendHackEcho()
+    {
+                    eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = nearestJammerInHackDistance.transform.position });
+                    eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin =EccoOrigin.position });
+
+
+    }
+
+public Jammer GetNearestJammerInHackDistance()
+    {
+        Jammer nearestJammer = null;
+                float distanceToNearestJammer = float.MaxValue;
+
+        for (int i = 0; i < allJammer.Length; i++)
+        {
+            var jammer = allJammer[i];
+            if (jammer.IsActive)
+            {
+                var distanceToJammer = Vector3.Distance(transform.position, jammer.transform.position);
+
+                if (distanceToJammer < hackDistance)
+                {
+                    if(nearestJammer == null || distanceToJammer < distanceToNearestJammer){
+nearestJammer = jammer;
+                    }
+                }
+            }
+        }
+        return nearestJammer;
+    }
+
+ public float hackEchoDelayMultiplier = 0.8f; // 1 1 2 3 5 8
+ public float hackEchoDelayEnd = 0.1f; // 1 1 2 3 5 8
+
+public float initialHackEchoDelay = 3f; // 1 1 2 3 5 8
+private float hackEchoDelay;
+private float timeSinceLastHackEcho;
+
+private bool hackingInProgress = false;
+private Jammer nearestJammerInHackDistance = null;
+
+    private void HandleHacking(){
+bool yButtonDown = Input.GetButtonDown("Y Button");
+		bool yButtonUp = Input.GetButtonUp("Y Button");
+
+
+        if (yButtonDown)
+        {
+nearestJammerInHackDistance = GetNearestJammerInHackDistance();
+if(nearestJammerInHackDistance != null){
+
+hackingInProgress = true;
+hackEchoDelay = initialHackEchoDelay;
+SendHackEcho();
+}
+        }
+        if (yButtonUp)
+        {
+
+hackingInProgress = false;
+}
+        
+
+        if (hackingInProgress){
+
+if( timeSinceLastHackEcho > hackEchoDelay){
+                Debug.Log(eccoEffect);
+SendHackEcho();
+
+hackEchoDelay *= hackEchoDelayMultiplier;
+timeSinceLastHackEcho = 0;
+if(hackEchoDelay < hackEchoDelayEnd){
+    hackingInProgress = false;
+}
+}
+timeSinceLastHackEcho += Time.deltaTime;
+
+        
+
+
+        }
+    }
+#endregion
     protected override void Update()
     {
         if (playerController.CurrentPlayerController != this)
             return;
+
+
+		HandleHacking();
 
 		 bool bButtonPressed = Input.GetButtonUp("B Button");
 

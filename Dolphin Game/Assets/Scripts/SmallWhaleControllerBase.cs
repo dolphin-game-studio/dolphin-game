@@ -8,8 +8,9 @@ public class SmallWhaleControllerBase : PlayerControllerBase
 
     public Transform EccoOrigin { get => eccoOrigin; }
 
-    Jammer[] allJammer;
-    EccoEffect eccoEffect;
+    protected Jammer[] allJammer;
+    protected EccoEffect eccoEffect;
+
 
     protected override void Init()
     {
@@ -18,6 +19,8 @@ public class SmallWhaleControllerBase : PlayerControllerBase
         allJammer = FindObjectsOfType<Jammer>();
         eccoEffect = FindObjectOfType<EccoEffect>();
     }
+
+
 
     public List<Jammer> GetJammerInReach()
     {
@@ -47,14 +50,14 @@ public class SmallWhaleControllerBase : PlayerControllerBase
         {
             var jammerInReach = GetJammerInReach();
 
-            eccoEffect.StartEcho(new Echo() { Jammed = jammerInReach.Count > 0, Origin = eccoOrigin.position });
+            eccoEffect.StartEcho(new Echo() { Type = jammerInReach.Count > 0 ? EchoType.JammedEcho :  EchoType.Echo, Origin = eccoOrigin.position });
 
             if (jammerInReach.Count > 0)
             {
                 for (int i = 0; i < jammerInReach.Count; i++)
                 {
                     var jammer =  jammerInReach[i];
-                    eccoEffect.StartEcho(new Echo() { Jammed = jammerInReach.Count > 0, Origin = jammer.transform.position });
+                    eccoEffect.StartEcho(new Echo() { Type = jammerInReach.Count > 0 ? EchoType.JammedEcho :  EchoType.Echo, Origin = jammer.transform.position });
                 }
             }
         }

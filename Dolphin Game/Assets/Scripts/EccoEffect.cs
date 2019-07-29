@@ -6,7 +6,7 @@ using System.Collections.Generic;
 [ExecuteInEditMode]
 public class EccoEffect : MonoBehaviour
 {
-    Echo[] echos = new Echo[10];
+    Echo[] echos = new Echo[100];
 
     public EccoEffect()
     {
@@ -100,20 +100,37 @@ public class EccoEffect : MonoBehaviour
  
 
             float[] echoDistancesArray = new float[100];
-            float[] echoJammedArray = new float[100];
+            float[] echoTypesArray = new float[100];
             Vector4[] echoOriginsArray = new Vector4[100];
 
             for (int i = 0; i < echos.Length && i < echoDistancesArray.Length; i++)
             {
                 echoDistancesArray[i] = echos[i].Distance;
                 echoOriginsArray[i] = echos[i].Origin;
-                echoJammedArray[i] = echos[i].Jammed ? 1f : 0f;
+
+                switch (echos[i].Type)
+                {
+                    case EchoType.Echo:
+                echoTypesArray[i] = 0f;
+
+                    break;
+                    case EchoType.JammedEcho:
+                echoTypesArray[i] = 1f;
+
+                    break;
+                    case EchoType.HackEcho:
+                echoTypesArray[i] = 2f;
+
+                    break;
+                    default:                    break;
+
+                }
 
             }
 
             EffectMaterial.SetVectorArray("_EchoOrigins", echoOriginsArray);
             EffectMaterial.SetFloatArray("_EchoDistances", echoDistancesArray);
-            EffectMaterial.SetFloatArray("_EchoJammed", echoJammedArray);
+            EffectMaterial.SetFloatArray("_EchoTypes", echoTypesArray);
  
 
             RaycastCornerBlit(src, dst, EffectMaterial);
@@ -189,12 +206,19 @@ public class Echo
 {
     private Vector3 origin = Vector3.zero;
     private float distance = 0;
+    private EchoType type = EchoType.Echo;
     private bool scanning = false;
-    private bool jammed = false;
 
     public float Distance { get => distance; set => distance = value; }
     public bool Scanning { get => scanning; set => scanning = value; }
     public Vector3 Origin { get => origin; set => origin = value; }
-    public bool Jammed { get => jammed; set => jammed = value; }
+    public EchoType Type { get => type; set => type = value; }
 
+}
+
+public enum EchoType
+{
+    Echo,
+    JammedEcho,
+    HackEcho
 }

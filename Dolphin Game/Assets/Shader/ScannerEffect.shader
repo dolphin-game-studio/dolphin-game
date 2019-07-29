@@ -1,5 +1,7 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
+// 27.07 11:30 - 15:?? 
+// 28.07 1:50 - 3:12
 Shader "Hidden/ScannerEffect"
 {
 	Properties
@@ -13,11 +15,16 @@ Shader "Hidden/ScannerEffect"
 		_TrailColor("Trail Color", Color) = (1, 1, 1, 0)
 					
 		_JammedScanWidth("Jammed Scan Width", float) = 1
-					_JammedLeadSharp("Jammed Leading Edge Sharpness", float) = 10
-
+		_JammedLeadSharp("Jammed Leading Edge Sharpness", float) = 10
 		_JammedLeadColor("Jammed Leading Edge Color", Color) = (1, 0, 0, 0)
 		_JammedMidColor("Jammed Mid Color", Color) = (1, 0, 0, 0)
 		_JammedTrailColor("Jammed Trail Color", Color) = (1, 0, 0, 0)
+
+		_HackEchoWidth("Hack Echo Width", float) = 1
+		_HackLeadSharp("Hack Leading Edge Sharpness", float) = 10
+		_HackLeadColor("Hack Leading Edge Color", Color) = (0, 1, 0, 0)
+		_HackMidColor("Hack Mid Color", Color) = (0, 1, 0, 0)
+		_HackTrailColor("Hack Trail Color", Color) = (0, 1, 0, 0)
 
 		_HBarColor("Horizontal Bar Color", Color) = (0.5, 0.5, 0.5, 0)
 	}
@@ -76,7 +83,7 @@ Shader "Hidden/ScannerEffect"
 				float4 _WorldSpaceScannerPos;
  
 				float _EchoDistances[100];
-				float _EchoJammed[100];
+				float _EchoTypes[100];
 				float4 _EchoOrigins[100];
 
 				float _ScanWidth;
@@ -87,11 +94,16 @@ Shader "Hidden/ScannerEffect"
 				float4 _HBarColor;
 
 				float _JammedScanWidth;
- 					float _JammedLeadSharp;
-
+ 				float _JammedLeadSharp;
 				float4 _JammedLeadColor;
 				float4 _JammedMidColor;
 				float4 _JammedTrailColor; 
+
+				float _HackEchoWidth;
+ 				float _HackLeadSharp;
+				float4 _HackLeadColor;
+				float4 _HackMidColor;
+				float4 _HackTrailColor; 
 
 				float4 horizBars(float2 p)
 				{
@@ -130,18 +142,8 @@ Shader "Hidden/ScannerEffect"
 						if (dist < _EchoDistances[i] && dist > _EchoDistances[i] - _ScanWidth && linearDepth < 1)
 						{
 
-							if (_EchoJammed[i] == 1) {
+							if (_EchoTypes[i] == 0) {
   
-								float diff = 1 - (_EchoDistances[i] - dist) / (_JammedScanWidth);
-								half4 edge = lerp(_JammedMidColor, _JammedLeadColor, pow(diff, _JammedLeadSharp));
-								scannerCol = lerp(_JammedTrailColor, edge, diff) /*+ horizBars(i.uv) */;
-								scannerCol *= diff;
-
-								//scannerCol *= (1 - (linearDepth * 5));
-								//scannerCol *= (1 - (linearDepth * 8));
-								scannerCol /= (dist * 0.5);
-							}
-							else {
 								float diff = 1 - (_EchoDistances[i] - dist) / (_ScanWidth);
 								half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
 								scannerCol = lerp(_TrailColor, edge, diff) /*+ horizBars(i.uv) */;
@@ -150,6 +152,30 @@ Shader "Hidden/ScannerEffect"
 								//scannerCol *= (1 - (linearDepth * 5));
 								//scannerCol *= (1 - (linearDepth * 8));
 								scannerCol /= (dist * 0.04);
+
+							}
+							else if(_EchoTypes[i] == 1) {
+
+								float diff = 1 - (_EchoDistances[i] - dist) / (_JammedScanWidth);
+								half4 edge = lerp(_JammedMidColor, _JammedLeadColor, pow(diff, _JammedLeadSharp));
+								scannerCol = lerp(_JammedTrailColor, edge, diff) /*+ horizBars(i.uv) */;
+								scannerCol *= diff;
+
+								//scannerCol *= (1 - (linearDepth * 5));
+								//scannerCol *= (1 - (linearDepth * 8));
+								scannerCol /= (dist * 0.5);
+
+							} else if (_EchoTypes[i] == 2) { 
+
+								float diff = 1 - (_EchoDistances[i] - dist) / (_HackEchoWidth);
+								half4 edge = lerp(_HackMidColor, _HackLeadColor, pow(diff, _HackLeadSharp));
+								scannerCol = lerp(_HackTrailColor, edge, diff) /*+ horizBars(i.uv) */;
+								scannerCol *= diff;
+
+								//scannerCol *= (1 - (linearDepth * 5));
+								//scannerCol *= (1 - (linearDepth * 8));
+								scannerCol /= (dist * 0.5);
+
 							}
 
 

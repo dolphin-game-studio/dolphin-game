@@ -179,9 +179,8 @@ public class Hai : MonoBehaviour
         get { return distracted; }
         set
         {
-            if (value != distracted) {
-                transform.position = initialPosition;
-                desiredRotation = initialRotation;
+            if (value != distracted)
+            {
                 distracted = value;
             }
         }
@@ -202,12 +201,15 @@ public class Hai : MonoBehaviour
     private Vector3 initialPosition;
     private Quaternion initialRotation;
     private Quaternion desiredRotation;
-
+    public Quaternion DesiredRotation { get => desiredRotation; set => desiredRotation = value; }
 
     void Start()
     {
         initialPosition = transform.position;
         initialRotation = transform.rotation;
+
+        transform.position = initialPosition;
+        DesiredRotation = initialRotation;
 
         playerCharacterLayer = LayerMask.NameToLayer("Player Character");
 
@@ -250,6 +252,7 @@ public class Hai : MonoBehaviour
             DrawFieldOfView();
 
             FindVisibleTargets();
+
         }
 
 
@@ -262,6 +265,21 @@ public class Hai : MonoBehaviour
         if (Distracted)
         {
             WaitUntilDistractionIsAway();
+        }
+
+        if (!Distracted && IsNotAlarmed)
+        {
+            RotateToDesiredRotation();
+        }
+
+    }
+
+    private void RotateToDesiredRotation()
+    {
+        if (transform.rotation != DesiredRotation)
+        {
+            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, DesiredRotation, roationSpeed * Time.deltaTime);
+            GetComponent<Rigidbody>().MoveRotation(rotation);
         }
     }
 

@@ -42,11 +42,7 @@ public class HaiPatrouille : MonoBehaviour
         {
             FollowWaypoints();
         }
-
-
-
-
-
+         
     }
 
     private void FollowWaypoints()
@@ -58,14 +54,10 @@ public class HaiPatrouille : MonoBehaviour
             {
                 pause = false;
                 current = (current + 1) % waypointPositions.Length;
-            }
-  
+            } 
 
             var observationDir = new Vector3(Mathf.Cos(waypoints[current].observationAngle * Mathf.Deg2Rad), Mathf.Sin(waypoints[current].observationAngle * Mathf.Deg2Rad), 0);
-
- 
-            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(observationDir, Vector3.up), roationSpeed * Time.deltaTime);
-            GetComponent<Rigidbody>().MoveRotation(rotation);
+            hai.DesiredRotation = Quaternion.LookRotation(observationDir, Vector3.up);
          }
         else
         {
@@ -74,8 +66,7 @@ public class HaiPatrouille : MonoBehaviour
                 Vector3 pos = Vector3.MoveTowards(transform.position, waypointPositions[current], speed * Time.deltaTime);
                 GetComponent<Rigidbody>().MovePosition(pos);
                 Quaternion rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(waypointPositions[current] - transform.position, Vector3.up), roationSpeed * Time.deltaTime);
-                GetComponent<Rigidbody>().MoveRotation(rotation);
-
+                GetComponent<Rigidbody>().MoveRotation(rotation); 
             }
             else
             {

@@ -9,7 +9,7 @@ public class Hai : MonoBehaviour
     [Range(1, 3)]
     public int rank = 1;
 
-        public float roationSpeed = 1;
+    public float roationSpeed = 1;
 
 
     public GameObject[] armbands;
@@ -138,7 +138,7 @@ public class Hai : MonoBehaviour
                 GameObject nearestTarget = visibleTargets[0];
                 for (int i = 1; i < visibleTargets.Count; i++)
                 {
-                    var distanceToNearest= Vector3.Distance(this.transform.position, nearestTarget.transform.position);
+                    var distanceToNearest = Vector3.Distance(this.transform.position, nearestTarget.transform.position);
                     var distanceToCurrent = Vector3.Distance(this.transform.position, visibleTargets[i].transform.position);
                     if (distanceToCurrent < distanceToNearest)
                     {
@@ -173,7 +173,19 @@ public class Hai : MonoBehaviour
         }
     }
 
-    public bool Distracted { get; set; }
+    private bool distracted;
+    public bool Distracted
+    {
+        get { return distracted; }
+        set
+        {
+            if (value != distracted) {
+                transform.position = initialPosition;
+                desiredRotation = initialRotation;
+                distracted = value;
+            }
+        }
+    }
 
     public float meshResolution;
     public int edgeResolveIterations;
@@ -187,14 +199,15 @@ public class Hai : MonoBehaviour
 
     public float panDuration = 1.5f;
 
-private Vector3 initialPosition;
-private Quaternion initialRotation;
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+    private Quaternion desiredRotation;
 
 
     void Start()
     {
-initialPosition = transform.position;
-initialRotation = transform.rotation;
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
 
         playerCharacterLayer = LayerMask.NameToLayer("Player Character");
 
@@ -294,9 +307,6 @@ initialRotation = transform.rotation;
 
             currentViewPanRotation = Quaternion.Euler(angles.x + currentViewPanAngle, angles.y > 180 ? -90 : 90, angles.z);
 
-transform.position = initialPosition;
-
-transform.rotation = Quaternion.RotateTowards(transform.rotation , initialRotation , roationSpeed * Time.deltaTime);
         }
         else
         {
@@ -365,12 +375,12 @@ transform.rotation = Quaternion.RotateTowards(transform.rotation , initialRotati
                             foundAtLeastOnePlayer = true;
                         }
                     }
-                    else if (dolphin != null || orca  != null)
+                    else if (dolphin != null || orca != null)
                     {
                         visibleTargets.Add(target.gameObject);
                         foundAtLeastOnePlayer = true;
                     }
-                    else if(bubble != null &&  Rank == 1)
+                    else if (bubble != null && Rank == 1)
                     {
                         visibleTargets.Add(target.gameObject);
                     }
@@ -383,17 +393,20 @@ transform.rotation = Quaternion.RotateTowards(transform.rotation , initialRotati
             }
         }
 
-if(foundAtLeastOnePlayer){
-        for (int i = visibleTargets.Count -1; i > 0; i--){
-var target = visibleTargets[i];
-                    var bubble = target.GetComponent<Bubble>();
-if(bubble != null){
-    visibleTargets.RemoveAt(i);
-}
+        if (foundAtLeastOnePlayer)
+        {
+            for (int i = visibleTargets.Count - 1; i > 0; i--)
+            {
+                var target = visibleTargets[i];
+                var bubble = target.GetComponent<Bubble>();
+                if (bubble != null)
+                {
+                    visibleTargets.RemoveAt(i);
+                }
+            }
         }
-}
- 
-        
+
+
     }
 
     void DrawFieldOfView()
@@ -548,7 +561,33 @@ if(bubble != null){
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.layer == playerCharacterLayer)
+        bool sharkShouldLookAtPlayer = false;
+
+        var collidingObject = collision.collider.gameObject;
+
+        bool collidedWithPlayer = collidingObject.layer == playerCharacterLayer && collidingObject.GetComponent<Bubble>() == null;
+        if (collidedWithPlayer)
+        {
+            var orca = collidingObject.GetComponent<OrcaPlayerController>();
+
+            bool collidedWithOrca = orca != null;
+            bool collidedWithPlayerOtherThenOrca = orca == null;
+
+            if (collidedWithOrca)
+            {
+                bool orcaDidntRam = orca != null && !orca.RamThrusting;
+                if (orcaDidntRam)
+                {
+                    sharkShouldLookAtPlayer = true;
+                }
+            }
+            else if (collidedWithPlayerOtherThenOrca)
+            {
+                sharkShouldLookAtPlayer = true;
+            }
+        }
+
+        if (sharkShouldLookAtPlayer)
         {
             LookAtPlayerCharacter(collision.collider.gameObject);
         }

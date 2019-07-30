@@ -29,6 +29,7 @@ public class PlayerControllerBase : MonoBehaviour
 
     [SerializeField] private bool funnyMoveMent = false;
 
+    public virtual bool CanMove { get { return true; } }
 
     void Start()
     {
@@ -105,6 +106,11 @@ public class PlayerControllerBase : MonoBehaviour
 
     public void Move(float horizontal, float vertical)
     {
+        var cantMove = !CanMove;
+        if (cantMove) {
+            return;
+        }
+
         var movement = new Vector3(horizontal, vertical);
         Rigidbody.velocity = movement;
 

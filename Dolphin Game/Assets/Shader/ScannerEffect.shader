@@ -2,6 +2,17 @@
 
 // 27.07 11:30 - 15:?? 
 // 28.07 1:50 - 3:12
+
+
+// 30.07.2019 19:00 - 19:12 Bubble doesn't distract shark on collision
+
+// 30.07.2019 19:12 - 20:06 Bug: Orca Ram distracted shark / Orca was able to move when ramming
+
+// 30.07.2019 20:06 - 20:18 Jammer finalisiert
+
+// 30.07.2019 20:18 - 20:27 Patrol bug fixxed
+
+
 Shader "Hidden/ScannerEffect"
 {
 	Properties

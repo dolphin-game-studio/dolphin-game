@@ -29,7 +29,6 @@ public class OrcaPlayerController : SmallWhaleControllerBase
             if (_ramThrusting)
             {
                 Rigidbody.AddForce(transform.forward * ramForce, ForceMode.Impulse);
-
             }
             else
             {
@@ -37,6 +36,14 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
             }
 
+        }
+    }
+
+    public override bool CanMove
+    {
+        get
+        {
+            return RamThrusting == false && ramThrustSheduled == false;
         }
     }
 
@@ -48,22 +55,29 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
     }
 
+
+    #region Handle Ram Thrust
+    [SerializeField] private float timeToBeAbleToMoveAgainAfterRam = 1f;
+    private float timeSinceRamStarted = 0f;
+
+
+
     Hai nearestFacingShark;
+    float distanceToNearestFacingShark;
+    Vector3 fromPlayerToSharkVector;
 
-    protected override void Update()
+    private void HandleRamThrust()
     {
-        if (playerController.CurrentPlayerController != this)
-            return;
-
-        base.Update();
-
         bool bButtonPressed = Input.GetButtonUp("B Button");
 
         if (bButtonPressed)
         {
-            animator.SetTrigger(ramHash);
+            nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
 
-            SheduleRamThrust(); 
+            if (nearestFacingShark != null)
+            {
+                SheduleRamThrust();
+            }
         }
 
         if (ramThrustSheduled)
@@ -72,9 +86,6 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
             if (timeLeftUntilRamThrust < 0)
             {
-                float distanceToNearestFacingShark;
-                Vector3 fromPlayerToSharkVector;
-
                 nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
 
                 transform.forward = fromPlayerToSharkVector;
@@ -84,40 +95,52 @@ public class OrcaPlayerController : SmallWhaleControllerBase
                 RamThrusting = true;
             }
         }
-
-        if (RamThrusting && nearestFacingShark != null)
+        if (RamThrusting)
         {
- 
+            timeSinceRamStarted += Time.deltaTime;
+
+            if (timeSinceRamStarted > timeToBeAbleToMoveAgainAfterRam)
+            {
+                timeSinceRamStarted = 0;
+                RamThrusting = false;
+            }
         }
+    }
+    #endregion Handle Ram Thrust
 
 
+    protected override void Update()
+    {
+        if (playerController.CurrentPlayerController != this)
+            return;
 
+        base.Update();
 
+        HandleRamThrust();
+        
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (RamThrusting) {
+        if (RamThrusting)
+        {
             ContactPoint contact = collision.contacts[0];
- 
+
             Debug.Log(collision.gameObject);
 
             Hai rammedShark = collision.gameObject.GetComponent<Hai>();
             if (rammedShark != null && rammedShark.IsNotAlarmed)
             {
                 rammedShark.KnockedOut = true;
-
-                RamThrusting = false;
-            } 
-          
-
-
+            }
         }
 
     }
 
     private void SheduleRamThrust()
     {
+        animator.SetTrigger(ramHash);
+
         ramThrustSheduled = true;
         timeLeftUntilRamThrust = ramThrustDelay;
     }

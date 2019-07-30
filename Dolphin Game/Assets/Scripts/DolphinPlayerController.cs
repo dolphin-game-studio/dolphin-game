@@ -38,7 +38,7 @@ public Jammer GetNearestJammerInHackDistance()
         for (int i = 0; i < allJammer.Length; i++)
         {
             var jammer = allJammer[i];
-            if (jammer.IsActive)
+            if (jammer.IsNotHacked)
             {
                 var distanceToJammer = Vector3.Distance(transform.position, jammer.transform.position);
 
@@ -95,6 +95,8 @@ hackEchoDelay *= hackEchoDelayMultiplier;
 timeSinceLastHackEcho = 0;
 if(hackEchoDelay < hackEchoDelayEnd){
     hackingInProgress = false;
+                    nearestJammerInHackDistance.IsHacked = true;
+
 }
 }
 timeSinceLastHackEcho += Time.deltaTime;

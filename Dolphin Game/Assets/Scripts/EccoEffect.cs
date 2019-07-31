@@ -33,7 +33,8 @@ public class EccoEffect : MonoBehaviour
     // bool _scanning;
     // Scannable[] _scannables = new Scannable[0];
 
-    public void StartEcho(Echo echo){
+    public void StartEcho(Echo echo)
+    {
         echos[currentScanDistancesIndex % echos.Length] = echo;
         echo.Scanning = true;
 
@@ -71,13 +72,13 @@ public class EccoEffect : MonoBehaviour
 
         //if (Input.GetButtonDown("X Button"))
         //{
-            //AudioSource dolphinSound = dolphinSounds[Random.Range(0, dolphinSounds.Length)];
-            //dolphinSound.Play();
+        //AudioSource dolphinSound = dolphinSounds[Random.Range(0, dolphinSounds.Length)];
+        //dolphinSound.Play();
 
-            //Demo Code _scanning = true;
-            //Demo Code ScanDistance = 0;
+        //Demo Code _scanning = true;
+        //Demo Code ScanDistance = 0;
 
-            
+
 
         //}
     }
@@ -95,46 +96,46 @@ public class EccoEffect : MonoBehaviour
     [ImageEffectOpaque]
     void OnRenderImage(RenderTexture src, RenderTexture dst)
     {
- 
- 
- 
 
-            float[] echoDistancesArray = new float[100];
-            float[] echoTypesArray = new float[100];
-            Vector4[] echoOriginsArray = new Vector4[100];
 
-            for (int i = 0; i < echos.Length && i < echoDistancesArray.Length; i++)
+
+
+        float[] echoDistancesArray = new float[100];
+        float[] echoTypesArray = new float[100];
+        Vector4[] echoOriginsArray = new Vector4[100];
+
+        for (int i = 0; i < echos.Length && i < echoDistancesArray.Length; i++)
+        {
+            echoDistancesArray[i] = echos[i].Distance;
+            echoOriginsArray[i] = echos[i].Origin;
+
+            switch (echos[i].Type)
             {
-                echoDistancesArray[i] = echos[i].Distance;
-                echoOriginsArray[i] = echos[i].Origin;
-
-                switch (echos[i].Type)
-                {
-                    case EchoType.Echo:
-                echoTypesArray[i] = 0f;
+                case EchoType.Echo:
+                    echoTypesArray[i] = 0f;
 
                     break;
-                    case EchoType.JammedEcho:
-                echoTypesArray[i] = 1f;
+                case EchoType.JammedEcho:
+                    echoTypesArray[i] = 1f;
 
                     break;
-                    case EchoType.HackEcho:
-                echoTypesArray[i] = 2f;
+                case EchoType.HackEcho:
+                    echoTypesArray[i] = 2f;
 
                     break;
-                    default:                    break;
-
-                }
+                default: break;
 
             }
 
-            EffectMaterial.SetVectorArray("_EchoOrigins", echoOriginsArray);
-            EffectMaterial.SetFloatArray("_EchoDistances", echoDistancesArray);
-            EffectMaterial.SetFloatArray("_EchoTypes", echoTypesArray);
- 
+        }
 
-            RaycastCornerBlit(src, dst, EffectMaterial);
- 
+        EffectMaterial.SetVectorArray("_EchoOrigins", echoOriginsArray);
+        EffectMaterial.SetFloatArray("_EchoDistances", echoDistancesArray);
+        EffectMaterial.SetFloatArray("_EchoTypes", echoTypesArray);
+
+
+        RaycastCornerBlit(src, dst, EffectMaterial);
+
     }
 
 

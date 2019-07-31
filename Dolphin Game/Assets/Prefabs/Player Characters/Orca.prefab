@@ -101,9 +101,10 @@ MonoBehaviour:
   maxRotationDegreesDelta: 5
   funnyMoveMent: 0
   eccoOrigin: {fileID: 2555234944986317815}
+  mouthSpine: {fileID: 849612582631142409}
   ramForce: 30
   ramThrustDelay: 1
-  distanceToMakeSharkUnconscious: 5
+  ramThrustDuration: 1
 --- !u!1 &8292739252884151147
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +358,12 @@ PrefabInstance:
 --- !u!4 &4858048816654773136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5da583add83df6647b2c6e303fc59e62,
+    type: 3}
+  m_PrefabInstance: {fileID: 437400458939547786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &849612582631142409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8224809586226285437, guid: 5da583add83df6647b2c6e303fc59e62,
     type: 3}
   m_PrefabInstance: {fileID: 437400458939547786}
   m_PrefabAsset: {fileID: 0}

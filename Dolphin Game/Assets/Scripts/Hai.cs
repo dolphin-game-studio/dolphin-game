@@ -11,6 +11,9 @@ public class Hai : MonoBehaviour
 
     public float roationSpeed = 1;
 
+    [SerializeField] private GameObject backFin;
+    public GameObject BackFin { get => backFin; set => backFin = value; }
+
 
     public GameObject[] armbands;
 
@@ -67,7 +70,7 @@ public class Hai : MonoBehaviour
 
     private bool _knockedOut = false;
 
-    public bool KnockedOut
+    public bool IsKnockedOut
     {
         get { return _knockedOut; }
         set
@@ -76,17 +79,21 @@ public class Hai : MonoBehaviour
             {
                 _knockedOut = value;
 
-                if (KnockedOut)
+                if (IsKnockedOut)
                 {
                     Stunned = false;
 
                     knockedParticleSystem.Play();
 
                     viewMesh.Clear();
+
+                    Collider.enabled = false;
                 }
             }
         }
     }
+
+    public bool IsNotKnockedOut { get => !IsKnockedOut; set => IsKnockedOut = !value; }
 
     Vector3 distractingSharkPositionWhenDistracted;
     SharkPlayerController distractingShark;
@@ -99,7 +106,7 @@ public class Hai : MonoBehaviour
         distractingSharkPositionWhenDistracted = sharkPlayerController.transform.position;
     }
 
-    public bool Conscious => !Stunned && !KnockedOut;
+    public bool Conscious => !Stunned && !IsKnockedOut;
 
     [Range(1, 100)]
     public float viewRadiusWhenNotSuspicious = 30;
@@ -186,6 +193,8 @@ public class Hai : MonoBehaviour
         }
     }
 
+    public bool IsNotDistracted { get => !Distracted; set => Distracted = !value; }
+
     public float meshResolution;
     public int edgeResolveIterations;
     public float edgeDstThreshold;
@@ -245,7 +254,7 @@ public class Hai : MonoBehaviour
 
     void LateUpdate()
     {
-        if (Conscious && !Distracted)
+        if (Conscious && IsNotDistracted)
         {
             UpdateViewDirection();
 
@@ -267,7 +276,7 @@ public class Hai : MonoBehaviour
             WaitUntilDistractionIsAway();
         }
 
-        if (!Distracted && IsNotAlarmed)
+        if (IsNotDistracted && IsNotAlarmed && IsNotKnockedOut)
         {
             RotateToDesiredRotation();
         }

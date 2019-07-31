@@ -63,7 +63,7 @@ public class PlayerControllerBase : MonoBehaviour
             }
         }
 
-         distanceToNearestFacingShark = nearestSharkDistance;
+        distanceToNearestFacingShark = nearestSharkDistance;
         return nearestShark;
     }
     

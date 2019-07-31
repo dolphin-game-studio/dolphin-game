@@ -4,36 +4,36 @@ using UnityEngine;
 
 public class DolphinPlayerController : SmallWhaleControllerBase
 {
-	public GameObject bubblePrefab;
-	int bubbleHash = Animator.StringToHash("Bubble");
+    public GameObject bubblePrefab;
+    int bubbleHash = Animator.StringToHash("Bubble");
     private bool bubbleSheduled = false;
     public float bubbleDelay = 1f;
     private float timeLeftUntilBubble = 0;
-  
-  	public float bubbleThrustPower = 1f;
 
-  
-  
+    public float bubbleThrustPower = 1f;
+
+
+
     void Start()
     {
         base.Init();
     }
 
-#region hacking
+    #region hacking
     public float hackDistance;
 
-public void SendHackEcho()
+    public void SendHackEcho()
     {
-                    eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = nearestJammerInHackDistance.transform.position });
-                    eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin =EccoOrigin.position });
+        eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = nearestJammerInHackDistance.transform.position });
+        eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = EccoOrigin.position });
 
 
     }
 
-public Jammer GetNearestJammerInHackDistance()
+    public Jammer GetNearestJammerInHackDistance()
     {
         Jammer nearestJammer = null;
-                float distanceToNearestJammer = float.MaxValue;
+        float distanceToNearestJammer = float.MaxValue;
 
         for (int i = 0; i < allJammer.Length; i++)
         {
@@ -44,8 +44,9 @@ public Jammer GetNearestJammerInHackDistance()
 
                 if (distanceToJammer < hackDistance)
                 {
-                    if(nearestJammer == null || distanceToJammer < distanceToNearestJammer){
-nearestJammer = jammer;
+                    if (nearestJammer == null || distanceToJammer < distanceToNearestJammer)
+                    {
+                        nearestJammer = jammer;
                     }
                 }
             }
@@ -53,89 +54,94 @@ nearestJammer = jammer;
         return nearestJammer;
     }
 
- public float hackEchoDelayMultiplier = 0.8f; // 1 1 2 3 5 8
- public float hackEchoDelayEnd = 0.1f; // 1 1 2 3 5 8
+    public float hackEchoDelayMultiplier = 0.8f; // 1 1 2 3 5 8
+    public float hackEchoDelayEnd = 0.1f; // 1 1 2 3 5 8
 
-public float initialHackEchoDelay = 3f; // 1 1 2 3 5 8
-private float hackEchoDelay;
-private float timeSinceLastHackEcho;
+    public float initialHackEchoDelay = 3f; // 1 1 2 3 5 8
+    private float hackEchoDelay;
+    private float timeSinceLastHackEcho;
 
-private bool hackingInProgress = false;
-private Jammer nearestJammerInHackDistance = null;
+    private bool hackingInProgress = false;
+    private Jammer nearestJammerInHackDistance = null;
 
-    private void HandleHacking(){
-bool yButtonDown = Input.GetButtonDown("Y Button");
-		bool yButtonUp = Input.GetButtonUp("Y Button");
+    private void HandleHacking()
+    {
+        bool yButtonDown = Input.GetButtonDown("Y Button");
+        bool yButtonUp = Input.GetButtonUp("Y Button");
 
 
         if (yButtonDown)
         {
-nearestJammerInHackDistance = GetNearestJammerInHackDistance();
-if(nearestJammerInHackDistance != null){
+            nearestJammerInHackDistance = GetNearestJammerInHackDistance();
+            if (nearestJammerInHackDistance != null)
+            {
 
-hackingInProgress = true;
-hackEchoDelay = initialHackEchoDelay;
-SendHackEcho();
-}
+                hackingInProgress = true;
+                hackEchoDelay = initialHackEchoDelay;
+                SendHackEcho();
+            }
         }
         if (yButtonUp)
         {
 
-hackingInProgress = false;
-}
-        
+            hackingInProgress = false;
+        }
 
-        if (hackingInProgress){
 
-if( timeSinceLastHackEcho > hackEchoDelay){
+        if (hackingInProgress)
+        {
+
+            if (timeSinceLastHackEcho > hackEchoDelay)
+            {
                 Debug.Log(eccoEffect);
-SendHackEcho();
+                SendHackEcho();
 
-hackEchoDelay *= hackEchoDelayMultiplier;
-timeSinceLastHackEcho = 0;
-if(hackEchoDelay < hackEchoDelayEnd){
-    hackingInProgress = false;
+                hackEchoDelay *= hackEchoDelayMultiplier;
+                timeSinceLastHackEcho = 0;
+                if (hackEchoDelay < hackEchoDelayEnd)
+                {
+                    hackingInProgress = false;
                     nearestJammerInHackDistance.IsHacked = true;
 
-}
-}
-timeSinceLastHackEcho += Time.deltaTime;
+                }
+            }
+            timeSinceLastHackEcho += Time.deltaTime;
 
-        
+
 
 
         }
     }
-#endregion
+    #endregion
     protected override void Update()
     {
         if (playerController.CurrentPlayerController != this)
             return;
 
 
-		HandleHacking();
+        HandleHacking();
 
-		 bool bButtonPressed = Input.GetButtonUp("B Button");
+        bool bButtonPressed = Input.GetButtonUp("B Button");
 
         if (bButtonPressed)
         {
             animator.SetTrigger(bubbleHash);
-            SheduleBubble(); 
+            SheduleBubble();
 
         }
-		
-		if (bubbleSheduled)
+
+        if (bubbleSheduled)
         {
             timeLeftUntilBubble -= Time.deltaTime;
 
             if (timeLeftUntilBubble < 0)
             {
-ShotBubble();
-	
+                ShotBubble();
+
                 bubbleSheduled = false;
             }
         }
-		
+
         base.Update();
     }
 
@@ -144,13 +150,13 @@ ShotBubble();
         bubbleSheduled = true;
         timeLeftUntilBubble = bubbleDelay;
     }
-	
-	    private void ShotBubble()
+
+    private void ShotBubble()
     {
         var bubble = Instantiate(bubblePrefab);
-		bubble.transform.position = EccoOrigin.transform.position;
-				var bubbleRigidBody = bubble.GetComponent<Rigidbody>();
-				bubbleRigidBody.velocity = transform.forward * bubbleThrustPower;
+        bubble.transform.position = EccoOrigin.transform.position;
+        var bubbleRigidBody = bubble.GetComponent<Rigidbody>();
+        bubbleRigidBody.velocity = transform.forward * bubbleThrustPower;
     }
-					
+
 }

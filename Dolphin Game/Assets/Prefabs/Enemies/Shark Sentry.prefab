@@ -10562,7 +10562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rank: 1
-  roationSpeed: 30
+  roationSpeed: 60
   backFin: {fileID: 3631768846482716547}
   armbands:
   - {fileID: 735026571939852769}
@@ -10613,9 +10613,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1
-  m_Height: 9.5
+  m_Height: 7
   m_Direction: 2
-  m_Center: {x: 0, y: -0.15, z: -4.5}
+  m_Center: {x: 0, y: -0.15, z: -3}
 --- !u!1 &6752674050016587263
 GameObject:
   m_ObjectHideFlags: 0

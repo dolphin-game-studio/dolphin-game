@@ -212,8 +212,14 @@ public class Hai : MonoBehaviour
     private Quaternion desiredRotation;
     public Quaternion DesiredRotation { get => desiredRotation; set => desiredRotation = value; }
 
+    private Rigidbody Rigidbody;
+    private HaiPatrouille HaiPatrouille;
     void Start()
     {
+        HaiPatrouille = GetComponent<HaiPatrouille>();
+
+        Rigidbody = GetComponent<Rigidbody>();
+
         initialPosition = transform.position;
         initialRotation = transform.rotation;
 
@@ -276,7 +282,7 @@ public class Hai : MonoBehaviour
             WaitUntilDistractionIsAway();
         }
 
-        if (IsNotDistracted && IsNotAlarmed && IsNotKnockedOut)
+        if (IsNotDistracted && IsNotAlarmed && IsNotKnockedOut && HaiPatrouille == null)
         {
             RotateToDesiredRotation();
         }
@@ -288,7 +294,7 @@ public class Hai : MonoBehaviour
         if (transform.rotation != DesiredRotation)
         {
             Quaternion rotation = Quaternion.RotateTowards(transform.rotation, DesiredRotation, roationSpeed * Time.deltaTime);
-            GetComponent<Rigidbody>().MoveRotation(rotation);
+            Rigidbody.MoveRotation(rotation);
         }
     }
 

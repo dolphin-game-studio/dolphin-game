@@ -7,6 +7,8 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 {
     public override bool CanMove => RamThrusting == false && ramThrustSheduled == false && IsNotSwimmingToSharkToTransport;
 
+    
+
     void Start()
     {
         base.Init();
@@ -30,6 +32,8 @@ public class OrcaPlayerController : SmallWhaleControllerBase
     #region Transport Knocked Out Sharks
 
     [SerializeField] private GameObject mouthSpine;
+    [SerializeField] private float rotateSharkInMouthSpeed;
+    [SerializeField] private float moveSharkInMouthSpeed;
 
 
     private bool _isTransportingShark;
@@ -78,9 +82,15 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
         if (IsSwimmingToSharkToTransport) {
 
-            var distanceToShark = Vector3.Distance(transform.position, currentlyTransportedShark.BackFin.transform.position);
-            Debug.Log(distanceToShark);
-            Vector3 pos = Vector3.MoveTowards(transform.position, currentlyTransportedShark.BackFin.transform.position, Speed * Time.deltaTime);
+            var distanceToShark = Vector3.Distance(mouthSpine.transform.position, currentlyTransportedShark.BackFin.transform.position);
+            //var distanceToShark = Vector3.Distance(transform.position, currentlyTransportedShark.BackFin.transform.position);
+
+            var centerToMouth = mouthSpine.transform.position - transform.position;
+            var fromMouthToFin = currentlyTransportedShark.BackFin.transform.position - mouthSpine.transform.position;
+            //Vector3 pos = Vector3.MoveTowards(transform.position, currentlyTransportedShark.BackFin.transform.position, Speed * Time.deltaTime);
+            Vector3 pos = Vector3.MoveTowards(transform.position, currentlyTransportedShark.BackFin.transform.position - centerToMouth, Speed * Time.deltaTime);
+             
+            Debug.Log(mouthSpine.transform.position + " " + currentlyTransportedShark.BackFin.transform.position + " " + pos + " mouth to fin: " + fromMouthToFin + "distance mouth to fin: " + distanceToShark);
             GetComponent<Rigidbody>().MovePosition(pos);
 
             if (distanceToShark < 1) {
@@ -95,7 +105,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
             //if (currentlyTransportedShark.transform.rotation != currentlyTransportedSharkDesiredRotation)
             //{
             //  Quaternion rotation = Quaternion.RotateTowards(currentlyTransportedShark.transform.rotation, currentlyTransportedSharkDesiredRotation, currentlyTransportedShark.roationSpeed * Time.deltaTime);
-            Quaternion rotation = Quaternion.RotateTowards(currentlyTransportedShark.transform.localRotation, currentlyTransportedSharkDesiredRotation, currentlyTransportedShark.roationSpeed * Time.deltaTime);
+            Quaternion rotation = Quaternion.RotateTowards(currentlyTransportedShark.transform.localRotation, currentlyTransportedSharkDesiredRotation, rotateSharkInMouthSpeed * Time.deltaTime);
             currentlyTransportedShark.transform.localRotation = rotation; //.GetComponent<Rigidbody>().MoveRotation(rotation);
                                                                                                           //}
                                                                                                           //if (currentlyTransportedShark.transform.position != currentlyTransportedSharkDesiredPosition)
@@ -103,7 +113,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
                                                                                                           //Vector3 pos = Vector3.MoveTowards(currentlyTransportedShark.transform.position, currentlyTransportedSharkDesiredPosition, Time.deltaTime);
                                                                                                           //currentlyTransportedShark.GetComponent<Rigidbody>().MovePosition(pos);
 
-            Vector3 pos = Vector3.MoveTowards(currentlyTransportedShark.transform.localPosition, currentlyTransportedSharkDesiredPosition, Time.deltaTime);
+            Vector3 pos = Vector3.MoveTowards(currentlyTransportedShark.transform.localPosition, currentlyTransportedSharkDesiredPosition, moveSharkInMouthSpeed  * Time.deltaTime);
             currentlyTransportedShark.transform.localPosition = pos;
             //}
         }

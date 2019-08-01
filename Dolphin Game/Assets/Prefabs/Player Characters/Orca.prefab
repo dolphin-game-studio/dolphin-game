@@ -102,6 +102,8 @@ MonoBehaviour:
   funnyMoveMent: 0
   eccoOrigin: {fileID: 2555234944986317815}
   mouthSpine: {fileID: 849612582631142409}
+  rotateSharkInMouthSpeed: 120
+  moveSharkInMouthSpeed: 10
   ramForce: 30
   ramThrustDelay: 1
   ramThrustDuration: 1

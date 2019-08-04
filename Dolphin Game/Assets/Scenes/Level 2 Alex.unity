@@ -3304,6 +3304,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323955010}
   m_Mesh: {fileID: 4300028, guid: a3bb59f8a8f1e0747bf81d10e0382351, type: 3}
+--- !u!1 &331249408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 331249409}
+  - component: {fileID: 331249411}
+  - component: {fileID: 331249410}
+  m_Layer: 12
+  m_Name: BackgroundMusicArea2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &331249409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331249408}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 45.8, y: 57.1, z: 0}
+  m_LocalScale: {x: 86.0512, y: 86.0512, z: 86.0512}
+  m_Children: []
+  m_Father: {fileID: 1806319322}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331249410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331249408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331afbabc64463846a21dee86ced4b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerSnapshot: {fileID: -7435375612739838950, guid: a374505712d29cb4b833dace29f1f46c,
+    type: 2}
+--- !u!65 &331249411
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331249408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &331638236
 GameObject:
   m_ObjectHideFlags: 0
@@ -8223,12 +8282,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652027530}
   m_Mesh: {fileID: 4300034, guid: a3bb59f8a8f1e0747bf81d10e0382351, type: 3}
---- !u!4 &656436084 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1741876647858184255, guid: 7811865ba7d209f44901e04ff1c4c47f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1741876648309082955}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &671034239
 GameObject:
   m_ObjectHideFlags: 0
@@ -11027,6 +11080,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872545002}
   m_Mesh: {fileID: 4300034, guid: a3bb59f8a8f1e0747bf81d10e0382351, type: 3}
+--- !u!1 &875443289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875443290}
+  - component: {fileID: 875443292}
+  - component: {fileID: 875443291}
+  m_Layer: 12
+  m_Name: BackgroundMusicArea3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &875443290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875443289}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.2, y: -63.5, z: 0}
+  m_LocalScale: {x: 86.0512, y: 86.0512, z: 86.0512}
+  m_Children: []
+  m_Father: {fileID: 1806319322}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &875443291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875443289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331afbabc64463846a21dee86ced4b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerSnapshot: {fileID: -2527288955241564763, guid: a374505712d29cb4b833dace29f1f46c,
+    type: 2}
+--- !u!65 &875443292
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875443289}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &891571003
 GameObject:
   m_ObjectHideFlags: 0
@@ -18695,6 +18807,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496898865}
   m_Mesh: {fileID: 4300004, guid: e26cab61a6b716147920c7a60956085d, type: 3}
+--- !u!1 &1499880208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1499880209}
+  - component: {fileID: 1499880211}
+  - component: {fileID: 1499880210}
+  m_Layer: 12
+  m_Name: BackgroundMusicArea1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1499880209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499880208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -111.6, y: 93.7, z: 0}
+  m_LocalScale: {x: 86.05119, y: 86.05119, z: 86.05119}
+  m_Children: []
+  m_Father: {fileID: 1806319322}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1499880210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499880208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331afbabc64463846a21dee86ced4b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerSnapshot: {fileID: -1177299084654544295, guid: a374505712d29cb4b833dace29f1f46c,
+    type: 2}
+--- !u!65 &1499880211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499880208}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1516573042
 GameObject:
   m_ObjectHideFlags: 0
@@ -22582,6 +22753,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800849322}
   m_Mesh: {fileID: 4300012, guid: a3bb59f8a8f1e0747bf81d10e0382351, type: 3}
+--- !u!1 &1806319321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806319322}
+  m_Layer: 0
+  m_Name: BackgroundMusicAreas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1806319322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806319321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1499880209}
+  - {fileID: 331249409}
+  - {fileID: 875443290}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815303292
 GameObject:
   m_ObjectHideFlags: 0
@@ -27884,11 +28088,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4234261456324797394, guid: 0786fac5742214146b9ac0c71b9f1a7e,
+    - target: {fileID: 731662315538848847, guid: 0786fac5742214146b9ac0c71b9f1a7e,
         type: 3}
-      propertyPath: ScannerOrigin
+      propertyPath: m_Name
+      value: GenerateBackgroundMusicControler
+      objectReference: {fileID: 0}
+    - target: {fileID: 325198325841885980, guid: 0786fac5742214146b9ac0c71b9f1a7e,
+        type: 3}
+      propertyPath: backgroundMusicControlerPrefab
       value: 
-      objectReference: {fileID: 656436084}
+      objectReference: {fileID: 9218529674586630567, guid: 72482f130f31b5840ad6cd69f6da61b0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0786fac5742214146b9ac0c71b9f1a7e, type: 3}
 --- !u!4 &4617463865345378735

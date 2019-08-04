@@ -5,6 +5,8 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class FollowCamera : MonoBehaviour
 {
+    [SerializeField] private float clipNearOffset;
+
     private PlayerController playerController;
 
     PostProcessVolume volume;
@@ -97,10 +99,9 @@ public class FollowCamera : MonoBehaviour
 
         Vector3 position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * damping);
         transform.position = new Vector3(position.x, position.y, position.z);
-        Camera.nearClipPlane = Mathf.Abs(transform.position.z) - 5;
+        Camera.nearClipPlane = Mathf.Abs(transform.position.z) - clipNearOffset;
         depthOfFieldLayer.focusDistance.value = Mathf.Abs(transform.position.z);
-
-
+ 
         transform.LookAt(targetPosition);
 
         var leftTrigger = Input.GetAxis("Left Trigger");

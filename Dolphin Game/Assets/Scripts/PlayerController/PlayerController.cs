@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public PlayerControllerBase CurrentPlayerController { get => currentPlayerController; set => currentPlayerController = value; }
+    public PlayerControllerBase CurrentPlayerController
+    {
+        get => currentPlayerController; set
+        {
+            if (currentPlayerController != value) {
+                currentPlayerController = value;
+            }
+        }
+    }
 
     private PlayerControllerBase currentPlayerController;
      
@@ -45,7 +53,7 @@ public class PlayerController : MonoBehaviour
             throw new DolphinGameException("There is no dolphin, ray, orca or shark player controller in this scene. Please add at least one from the presets folder.");
         }
         else {
-            currentPlayerController = allPlayerControllers[0];
+            CurrentPlayerController = allPlayerControllers[0];
         }
     }
 
@@ -69,29 +77,29 @@ public class PlayerController : MonoBehaviour
 
         if (selectDolphin)
         {
-            currentPlayerController = dolphinPlayerController;
+            CurrentPlayerController = dolphinPlayerController;
         }
 
         if (selectRay)
         {
-            currentPlayerController = rayPlayerController;
+            CurrentPlayerController = rayPlayerController;
 
         }
 
         if (selectOrca)
         {
-            currentPlayerController = orcaPlayerController;
+            CurrentPlayerController = orcaPlayerController;
 
         }
 
         if (selectShark)
         {
-            currentPlayerController = sharkPlayerController;
+            CurrentPlayerController = sharkPlayerController;
         }
 
         if (selectPrevChar)
         {
-            var currentPlayerIndex = allPlayerControllers.IndexOf(currentPlayerController);
+            var currentPlayerIndex = allPlayerControllers.IndexOf(CurrentPlayerController);
 
  
             currentPlayerIndex = (currentPlayerIndex - 1) % allPlayerControllers.Count;
@@ -100,16 +108,16 @@ public class PlayerController : MonoBehaviour
             if (currentPlayerIndex < 0)
             {
                 currentPlayerIndex = allPlayerControllers.Count + currentPlayerIndex;
-            } 
-            currentPlayerController = allPlayerControllers[currentPlayerIndex];
+            }
+            CurrentPlayerController = allPlayerControllers[currentPlayerIndex];
         }
 
         if (selectNextChar)
         {
-            var currentPlayerIndex = allPlayerControllers.IndexOf(currentPlayerController);
+            var currentPlayerIndex = allPlayerControllers.IndexOf(CurrentPlayerController);
 
             currentPlayerIndex = (currentPlayerIndex + 1) % allPlayerControllers.Count;
-            currentPlayerController = allPlayerControllers[currentPlayerIndex];
+            CurrentPlayerController = allPlayerControllers[currentPlayerIndex];
         }
     }
 
@@ -118,18 +126,18 @@ public class PlayerController : MonoBehaviour
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
 
-        float playerCharacterSpeed = currentPlayerController.Speed;
+        float playerCharacterSpeed = CurrentPlayerController.Speed;
 
         var swimFastButtonPressed = Input.GetAxis("A Button");
 
         if (swimFastButtonPressed > 0)
         {
-            playerCharacterSpeed += currentPlayerController.FastSwimMultiplier * swimFastButtonPressed;
+            playerCharacterSpeed += CurrentPlayerController.FastSwimMultiplier * swimFastButtonPressed;
         }
 
         if (Mathf.Abs(horizontal) + Mathf.Abs(vertical) > 0.4)
         {
-             currentPlayerController.Move(horizontal * playerCharacterSpeed, vertical * playerCharacterSpeed);
+            CurrentPlayerController.Move(horizontal * playerCharacterSpeed, vertical * playerCharacterSpeed);
         }
     }
 }

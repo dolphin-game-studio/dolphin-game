@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ab4748a09e6064a942aa000b09a163, type: 3}
+  m_Name: Background Mixer Control
+  m_EditorClassIdentifier: 
+  snapshotMenu: {fileID: -4955460864522507736, guid: a374505712d29cb4b833dace29f1f46c,
+    type: 2}
+  snapshot1: {fileID: -1177299084654544295, guid: a374505712d29cb4b833dace29f1f46c,
+    type: 2}
+  snapshot2: {fileID: -7435375612739838950, guid: a374505712d29cb4b833dace29f1f46c,
+    type: 2}
+  snapshot3: {fileID: -2527288955241564763, guid: a374505712d29cb4b833dace29f1f46c,
+    type: 2}
+  snapshot4: {fileID: 0}

@@ -93,7 +93,6 @@ public class DolphinPlayerController : SmallWhaleControllerBase
 
             if (timeSinceLastHackEcho > hackEchoDelay)
             {
-                Debug.Log(eccoEffect);
                 SendHackEcho();
 
                 hackEchoDelay *= hackEchoDelayMultiplier;

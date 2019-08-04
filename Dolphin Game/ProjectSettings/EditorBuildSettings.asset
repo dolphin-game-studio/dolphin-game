@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Map 1 shanice.unity
     guid: e503552fbc131954284ea63390a45f1a
   - enabled: 0
     path: Assets/Scenes/Level 2 Alex.unity
     guid: 11f16bb4bf2076344a1e2a910e8f04d8
+  - enabled: 1
+    path: "Assets/Scenes/Cinematic Scenes/Mein F\xFChrer.unity"
+    guid: c61a87b46f28b74439b10cea811402f4
   m_configObjects: {}

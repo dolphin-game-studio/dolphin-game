@@ -37,7 +37,7 @@ public class RayPlayerController : PlayerControllerBase
             Hai nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
             if (nearestFacingShark != null && distanceToNearestFacingShark < 15)
             {
-                nearestFacingShark.Stunned = true;
+                nearestFacingShark.IsStunned = true;
             }
         }
 

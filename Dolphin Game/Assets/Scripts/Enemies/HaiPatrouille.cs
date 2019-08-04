@@ -38,7 +38,7 @@ public class HaiPatrouille : MonoBehaviour
 
     void Update()
     {
-        if (hai.Conscious && !hai.Distracted && hai.IsNotAlarmed)
+        if (hai.Conscious && !hai.IsDistracted && hai.IsNotAlarmed)
         {
             FollowWaypoints();
         }

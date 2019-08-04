@@ -49,7 +49,7 @@ public class PlayerControllerBase : MonoBehaviour
 
             var dotProdToShark = Vector3.Dot(fromPlayerToSharkVector.normalized, transform.forward);
 
-            bool facingTheShark = dotProdToShark > 0.5;
+            bool facingTheShark = dotProdToShark > 0;
 
             if (facingTheShark)
             {

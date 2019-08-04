@@ -6,28 +6,22 @@ using UnityEngine;
 
 public class Hai : MonoBehaviour
 {
-    [Range(1, 3)]
-    public int rank = 1;
-
-    public float roationSpeed = 1;
+    private Rigidbody Rigidbody;
+    private HaiPatrouille HaiPatrouille;
 
     [SerializeField] private GameObject backFin;
     public GameObject BackFin { get => backFin; set => backFin = value; }
 
-
-    public GameObject[] armbands;
-
-    AnimationCurve viewPanAnimationCurve;
-    private float viewPanAnimationTime;
-    private CapsuleCollider Collider;
-
     [Range(0, 360)]
     public float viewAngle;
+    
+    #region View Radius
 
-    public float timeToRegainConsciousness;
+    [Range(1, 100)]
+    public float viewRadiusWhenNotSuspicious = 30;
 
-    private float timeSpendStunned = 0;
-
+    [Range(1, 100)]
+    public float viewRadiusWhenSuspicious = 35;
 
     public float ViewRadius
     {
@@ -43,10 +37,15 @@ public class Hai : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region IsStunned
     private bool _stunned = false;
 
-    public bool Stunned
+    public ParticleSystem stunnedParticleSystem;
+
+
+    public bool IsStunned
     {
         get { return _stunned; }
         set
@@ -55,7 +54,7 @@ public class Hai : MonoBehaviour
             {
                 _stunned = value;
 
-                if (Stunned)
+                if (IsStunned)
                 {
                     stunnedParticleSystem.Play();
                     viewMesh.Clear();
@@ -68,7 +67,17 @@ public class Hai : MonoBehaviour
         }
     }
 
+    public bool IsNotStunned
+    {
+        get => !IsStunned;
+        set => IsStunned = !value;
+    }
+    #endregion
+
+    #region IsKnockedOut
     private bool _knockedOut = false;
+
+    public ParticleSystem knockedParticleSystem;
 
     public bool IsKnockedOut
     {
@@ -81,7 +90,7 @@ public class Hai : MonoBehaviour
 
                 if (IsKnockedOut)
                 {
-                    Stunned = false;
+                    IsStunned = false;
 
                     knockedParticleSystem.Play();
 
@@ -95,46 +104,31 @@ public class Hai : MonoBehaviour
 
     public bool IsNotKnockedOut { get => !IsKnockedOut; set => IsKnockedOut = !value; }
 
+    #endregion
+
+    #region Distractions
     Vector3 distractingSharkPositionWhenDistracted;
     SharkPlayerController distractingShark;
 
     internal void Distract(SharkPlayerController sharkPlayerController)
     {
-        Distracted = true;
+        IsDistracted = true;
         transform.LookAt(sharkPlayerController.transform, Vector3.up);
         distractingShark = sharkPlayerController;
         distractingSharkPositionWhenDistracted = sharkPlayerController.transform.position;
     }
 
-    public bool Conscious => !Stunned && !IsKnockedOut;
+    private Vector3 initialPosition;
 
-    [Range(1, 100)]
-    public float viewRadiusWhenNotSuspicious = 30;
-
-    [Range(1, 100)]
-    public float viewRadiusWhenSuspicious = 35;
-
-
-
-    [Range(-180, 180)]
-    public float viewPanAngle1;
-    [Range(-180, 180)]
-    public float viewPanAngle2;
-
-
-    public ParticleSystem stunnedParticleSystem;
-    public ParticleSystem knockedParticleSystem;
-
-
-
-    public LayerMask targetMask;
-    public LayerMask obstacleMask;
-
-    [HideInInspector]
-    public List<GameObject> visibleTargets = new List<GameObject>();
-
-    public bool IsAlarmed => visibleTargets.Count > 0;
-    public bool IsNotAlarmed => visibleTargets.Count == 0;
+    private void WaitUntilDistractionIsAway()
+    {
+        float distractorDistanceFromInitialPosition = Vector3.Distance(distractingSharkPositionWhenDistracted, distractingShark.transform.position);
+        if (distractorDistanceFromInitialPosition > 5)
+        {
+            IsDistracted = false;
+        }
+    }
+    #endregion
 
     public GameObject NearestTarget
     {
@@ -161,6 +155,9 @@ public class Hai : MonoBehaviour
         }
     }
 
+    #region Ranks
+    [Range(1, 3)]
+    public int rank = 1; 
 
     public int Rank
     {
@@ -180,8 +177,12 @@ public class Hai : MonoBehaviour
         }
     }
 
+    public GameObject[] armbands;
+    #endregion
+
+    #region IsDistracted
     private bool distracted;
-    public bool Distracted
+    public bool IsDistracted
     {
         get { return distracted; }
         set
@@ -193,38 +194,17 @@ public class Hai : MonoBehaviour
         }
     }
 
-    public bool IsNotDistracted { get => !Distracted; set => Distracted = !value; }
-
-    public float meshResolution;
-    public int edgeResolveIterations;
-    public float edgeDstThreshold;
-
-    public MeshFilter viewMeshFilter;
-    Mesh viewMesh;
-
-    Quaternion currentViewPanRotation;
-
-
-    public float panDuration = 1.5f;
-
-    private Vector3 initialPosition;
-    private Quaternion initialRotation;
-    private Quaternion desiredRotation;
-    public Quaternion DesiredRotation { get => desiredRotation; set => desiredRotation = value; }
-
-    private Rigidbody Rigidbody;
-    private HaiPatrouille HaiPatrouille;
+    public bool IsNotDistracted { get => !IsDistracted; set => IsDistracted = !value; }
+    #endregion
+     
     void Start()
     {
         HaiPatrouille = GetComponent<HaiPatrouille>();
 
         Rigidbody = GetComponent<Rigidbody>();
 
-        initialPosition = transform.position;
-        initialRotation = transform.rotation;
-
-        transform.position = initialPosition;
-        DesiredRotation = initialRotation;
+        DesiredPosition = transform.position;
+        DesiredRotation = transform.rotation;
 
         playerCharacterLayer = LayerMask.NameToLayer("Player Character");
 
@@ -255,29 +235,26 @@ public class Hai : MonoBehaviour
         viewMeshFilter.mesh = viewMesh;
     }
 
-
-
-
     void LateUpdate()
     {
         if (Conscious && IsNotDistracted)
         {
             UpdateViewDirection();
+        }
 
+        if (Conscious)
+        {
             DrawFieldOfView();
 
             FindVisibleTargets();
-
         }
 
-
-
-        if (Stunned)
+        if (IsStunned)
         {
             RegainConsciousness();
         }
 
-        if (Distracted)
+        if (IsDistracted)
         {
             WaitUntilDistractionIsAway();
         }
@@ -285,9 +262,15 @@ public class Hai : MonoBehaviour
         if (IsNotDistracted && IsNotAlarmed && IsNotKnockedOut && HaiPatrouille == null)
         {
             RotateToDesiredRotation();
+            MoveToDesiredPosition();
         }
-
     }
+
+    #region Rotate To Desired Rotation
+
+    public Quaternion DesiredRotation { get; set; }
+
+    public float roationSpeed = 1;
 
     private void RotateToDesiredRotation()
     {
@@ -297,15 +280,29 @@ public class Hai : MonoBehaviour
             Rigidbody.MoveRotation(rotation);
         }
     }
+    #endregion
 
-    private void WaitUntilDistractionIsAway()
+    #region Move To Desired Position
+
+    public Vector3 DesiredPosition { get; set; }
+
+    private void MoveToDesiredPosition()
     {
-        float distractorDistanceFromInitialPosition = Vector3.Distance(distractingSharkPositionWhenDistracted, distractingShark.transform.position);
-        if (distractorDistanceFromInitialPosition > 5)
+        if (transform.position != DesiredPosition)
         {
-            Distracted = false;
+            Vector3 pos = Vector3.MoveTowards(transform.position, DesiredPosition, Time.deltaTime);
+            transform.position = pos;
         }
     }
+    #endregion
+
+    #region Consciousness and Unconsciousness
+
+    public bool Conscious => !IsStunned && !IsKnockedOut;
+
+    public float timeToRegainConsciousness;
+
+    private float timeSpendStunned = 0;
 
     private void RegainConsciousness()
     {
@@ -313,12 +310,29 @@ public class Hai : MonoBehaviour
 
         if (timeSpendStunned > timeToRegainConsciousness)
         {
-            Stunned = false;
+            IsStunned = false;
             timeSpendStunned = 0;
         }
     }
+    #endregion
+
+    #region View Direction
+
+    Quaternion currentViewPanRotation;
 
     float currentViewPanAngle;
+
+    [Range(-180, 180)]
+    public float viewPanAngle1;
+    [Range(-180, 180)]
+    public float viewPanAngle2;
+
+    private AnimationCurve viewPanAnimationCurve;
+
+    private float viewPanAnimationTime;
+
+
+    public float panDuration = 1.5f;
 
     private void UpdateViewDirection()
     {
@@ -346,17 +360,28 @@ public class Hai : MonoBehaviour
             var visiblePlayer = visibleTargets[0];
             LookAtPlayerCharacter(visiblePlayer);
         }
-
-
-
     }
+    #endregion
 
+    #region Look At Player Character
     private void LookAtPlayerCharacter(GameObject visiblePlayer)
     {
         Vector3 dirToTarget = (visiblePlayer.transform.position - transform.position).normalized;
         transform.forward = dirToTarget;
         currentViewPanRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y > 180 ? -90 : 90, transform.eulerAngles.z);
     }
+    #endregion
+
+    #region Find Visible Targets
+
+    public LayerMask targetMask;
+    public LayerMask obstacleMask;
+
+    [HideInInspector]
+    public List<GameObject> visibleTargets = new List<GameObject>();
+
+    public bool IsAlarmed => visibleTargets.Count > 0;
+    public bool IsNotAlarmed => visibleTargets.Count == 0;
 
     RayPlayerController spottedRay;
 
@@ -422,7 +447,6 @@ public class Hai : MonoBehaviour
             else
             {
                 spottedRay = null;
-
             }
         }
 
@@ -438,9 +462,16 @@ public class Hai : MonoBehaviour
                 }
             }
         }
-
-
     }
+    #endregion
+
+    #region Field Of View
+    public float meshResolution;
+    public int edgeResolveIterations;
+    public float edgeDstThreshold;
+
+    public MeshFilter viewMeshFilter;
+    Mesh viewMesh;
 
     void DrawFieldOfView()
     {
@@ -505,7 +536,6 @@ public class Hai : MonoBehaviour
         viewMesh.RecalculateNormals();
     }
 
-
     EdgeInfo FindEdge(ViewCastInfo minViewCast, ViewCastInfo maxViewCast)
     {
         Vector3 minAngle = minViewCast.dir;
@@ -534,7 +564,6 @@ public class Hai : MonoBehaviour
         return new EdgeInfo(minPoint, maxPoint);
     }
 
-
     ViewCastInfo ViewCast(Vector3 dir)
     {
 
@@ -548,16 +577,6 @@ public class Hai : MonoBehaviour
         {
             return new ViewCastInfo(false, transform.position + dir * ViewRadius, ViewRadius, dir);
         }
-    }
-
-    public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
-    {
-        if (!angleIsGlobal)
-        {
-            angleInDegrees += transform.eulerAngles.x;
-        }
-
-        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 
     public struct ViewCastInfo
@@ -587,8 +606,11 @@ public class Hai : MonoBehaviour
             pointB = _pointB;
         }
     }
+    #endregion
 
     #region Collision with Player
+    
+    private CapsuleCollider Collider;
 
     int playerCharacterLayer;
 
@@ -627,6 +649,4 @@ public class Hai : MonoBehaviour
     }
 
     #endregion
-
-
 }

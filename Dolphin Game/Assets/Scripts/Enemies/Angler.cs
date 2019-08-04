@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,54 +18,36 @@ public class Angler : MonoBehaviour
     {
         SharkToFollow = sharkToFollow;
     }
-    bool followsShark;
-    bool followsConsciousHai;
-    bool followsSharkPlayer;
-    bool followedHaiGotUnconscious;
-    bool followsHai;
 
     public GameObject SharkToFollow
     {
-        get { return sharkToFollow; }
-        set
-        {
-            Debug.Log("SharkToFollow");
-
-            if (sharkToFollow == null)
-            {
-                Debug.Log("1");
-
-                sharkToFollow = value;
-            }
-            else if (value == null)
-            {
-                Debug.Log("2");
-                sharkToFollow = null;
-            }
-
-            followsShark = sharkToFollow != null;
-
-            var hai = followsShark ? sharkToFollow.GetComponent<Hai>() : null;
-            followsHai = followsShark && sharkToFollow.GetComponent<Hai>() != null;
-
-            followsConsciousHai = followsHai && hai.Conscious;
-            followedHaiGotUnconscious = followsHai && !hai.Conscious;
-
-            followsSharkPlayer = followsShark && sharkToFollow.GetComponent<SharkPlayerController>() != null;
-        }
+        get => sharkToFollow;
+        set => sharkToFollow = value;
     }
 
     void Update()
-    {               
-        if (followsConsciousHai || followsSharkPlayer)
+    {
+        if (sharkToFollow != null)
         {
-            RotateToDesiredRotation();
-            MoveToDesiredPosition();
+            FollowShark();
+        }
+    }
+
+    private void FollowShark()
+    {
+        RotateToDesiredRotation();
+        MoveToDesiredPosition();
+
+        var hai = sharkToFollow.GetComponent<Hai>();
+
+        if (hai != null)
+        {
+            if (hai.IsKnockedOut)
+            {
+                sharkToFollow = null;
+            }
         }
 
-        if (followsHai &&  followedHaiGotUnconscious) {
-            SharkToFollow = null;
-        }
     }
 
     private void RotateToDesiredRotation()

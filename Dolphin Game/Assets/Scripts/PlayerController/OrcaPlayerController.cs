@@ -7,11 +7,14 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 {
     public override bool CanMove => RamThrusting == false && ramThrustSheduled == false && IsNotSwimmingToSharkToTransport;
 
-    
+    Destructable[] destructables;
 
     void Start()
     {
         base.Init();
+
+        destructables = FindObjectsOfType<Destructable>();
+
     }
 
     protected override void Update()
@@ -160,6 +163,10 @@ public class OrcaPlayerController : SmallWhaleControllerBase
     Hai nearestFacingShark;
     float distanceToNearestFacingShark;
     Vector3 fromPlayerToSharkVector;
+    
+    Destructable nearestFacingDestructable;
+    float distanceToNearestFacingDestructable;
+    Vector3 fromPlayerToDestructableVector;
 
     private void SheduleRamThrust()
     {
@@ -175,12 +182,22 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
         if (bButtonPressed)
         {
-            nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
-
-            if (nearestFacingShark != null)
+            nearestFacingDestructable = GetNearestFacingDestructable(out distanceToNearestFacingDestructable, out fromPlayerToDestructableVector);
+            
+            if (nearestFacingDestructable != null)
             {
                 SheduleRamThrust();
             }
+            else {
+                nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
+                
+                if (nearestFacingShark != null)
+                {
+                    SheduleRamThrust();
+                }
+            }
+
+            
         }
 
         if (ramThrustSheduled)
@@ -189,13 +206,23 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
             if (timeLeftUntilRamThrust < 0)
             {
-                nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
+                if (nearestFacingDestructable != null)
+                {
+                    transform.forward = fromPlayerToDestructableVector;
 
-                transform.forward = fromPlayerToSharkVector;
+                    ramThrustSheduled = false;
+                    RamThrusting = true;
+                }
+                else
+                {
+                    if (nearestFacingShark != null)
+                    {
+                        transform.forward = fromPlayerToSharkVector;
 
-                ramThrustSheduled = false;
-
-                RamThrusting = true;
+                        ramThrustSheduled = false;
+                        RamThrusting = true;
+                    }
+                }
             }
         }
         if (RamThrusting)
@@ -221,9 +248,49 @@ public class OrcaPlayerController : SmallWhaleControllerBase
             {
                 rammedShark.IsKnockedOut = true;
             }
+
+            Destructable rammedDestructable = collision.gameObject.GetComponent<Destructable>();
+            if (rammedDestructable != null)
+            {
+                rammedDestructable.Destroy();
+            }
         }
 
     }
     #endregion Handle Ram Thrust
 
+
+    #region Handle Structibles
+
+    protected Destructable GetNearestFacingDestructable(out float distanceToNearestFacingDestructable, out Vector3 fromPlayerToNearestFacingDestructableVector)
+    {
+        Destructable nearestDestructable = null;
+        float nearestDestructableDistance = float.MaxValue;
+        fromPlayerToNearestFacingDestructableVector = Vector3.zero;
+
+        foreach (var destructable in destructables)
+        {
+            var fromPlayerToDestructableVector = destructable.transform.position - transform.position;
+
+            var dotProdToDestructable = Vector3.Dot(fromPlayerToDestructableVector.normalized, transform.forward);
+
+            bool facingTheDestructable = dotProdToDestructable > 0;
+
+            if (facingTheDestructable)
+            {
+                var distanceToDestructable = Vector3.Distance(destructable.transform.position, transform.position);
+                if (distanceToDestructable < nearestDestructableDistance)
+                {
+                    nearestDestructableDistance = distanceToDestructable;
+                    nearestDestructable = destructable;
+                    fromPlayerToNearestFacingDestructableVector = fromPlayerToDestructableVector;
+                }
+            }
+        }
+
+        distanceToNearestFacingDestructable = nearestDestructableDistance;
+        return nearestDestructable;
+    }
+
+    #endregion
 }

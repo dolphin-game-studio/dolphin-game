@@ -66,10 +66,11 @@ public class PlayerControllerBase : MonoBehaviour
         distanceToNearestFacingShark = nearestSharkDistance;
         return nearestShark;
     }
-    
+
     protected virtual void Init()
     {
         playerController = FindObjectOfType<PlayerController>();
+
 
         haie = FindObjectsOfType<Hai>();
 

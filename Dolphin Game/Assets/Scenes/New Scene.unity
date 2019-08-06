@@ -120,3 +120,72 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &3290325311536120826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7857382512610485777, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_Name
+      value: Stahltraeger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895037613562301400, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895037613562301400, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895037613562301400, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895037613562301400, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895037613562301400, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895037613562301400, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895037613562301400, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895037613562301400, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895037613562301400, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895037613562301400, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895037613562301400, guid: 9a1134eec600f394cbaf148a656d72ca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a1134eec600f394cbaf148a656d72ca, type: 3}

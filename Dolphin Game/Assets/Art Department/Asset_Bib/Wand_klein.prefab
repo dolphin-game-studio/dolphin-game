@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2016273050982646716}
   - component: {fileID: 6752296027227305841}
   m_Layer: 0
-  m_Name: Plane_002
+  m_Name: Wand_klein
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121783537229874761}
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
-  m_LocalPosition: {x: -18.205875, y: 5.511299, z: -0.010232124}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

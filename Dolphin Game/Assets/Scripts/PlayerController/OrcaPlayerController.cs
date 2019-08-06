@@ -260,7 +260,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
     #endregion Handle Ram Thrust
 
 
-    #region Handle Structibles
+    #region GetNearestFacingDestructable
 
     protected Destructable GetNearestFacingDestructable(out float distanceToNearestFacingDestructable, out Vector3 fromPlayerToNearestFacingDestructableVector)
     {

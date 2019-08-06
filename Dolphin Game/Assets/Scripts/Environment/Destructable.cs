@@ -1,8 +1,12 @@
 ﻿
 using UnityEngine;
 
-public class Destructable : MonoBehaviour
+public class DestructableObstacle : MonoBehaviour
 {
+    public bool OrcaCanDestroy => findable == null ? true : findable.Found;
+
+    private Findable findable;
+
     SphereCollider sphereCollider;
     Rigidbody[] stones;
     [SerializeField] private float minDestructableForce = 300;

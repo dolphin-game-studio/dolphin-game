@@ -33,7 +33,7 @@ public class RayPlayerController : PlayerControllerBase
             NarrowCorridor nearestFacingNarrowCorridor = GetNearestFacingNarrowCorridor(out distanceToNearestNarrowCorridor, out fromPlayerToNarrowCorridorVector);
             if (nearestFacingNarrowCorridor != null && distanceToNearestNarrowCorridor < 15)
             {
-                if (nearestFacingNarrowCorridor.Found) {
+                if (nearestFacingNarrowCorridor.RayCanSlipThrough) {
                     this.transform.position = nearestFacingNarrowCorridor.OtherNarrowCorridor.OutputPosition;
                 }
             }
@@ -73,20 +73,22 @@ public class RayPlayerController : PlayerControllerBase
 
         foreach (var narrowCorridor in narrowCorridors)
         {
-            var fromPlayerToNarrowCorridorVector = narrowCorridor.transform.position - transform.position;
+            if (narrowCorridor.RayCanSlipThrough) {
+                var fromPlayerToNarrowCorridorVector = narrowCorridor.transform.position - transform.position;
 
-            var dotProdToNarrowCorridor = Vector3.Dot(fromPlayerToNarrowCorridorVector.normalized, transform.forward);
+                var dotProdToNarrowCorridor = Vector3.Dot(fromPlayerToNarrowCorridorVector.normalized, transform.forward);
 
-            bool facingTheNarrowCorridor = dotProdToNarrowCorridor > 0;
+                bool facingTheNarrowCorridor = dotProdToNarrowCorridor > 0;
 
-            if (facingTheNarrowCorridor)
-            {
-                var distanceToNarrowCorridor = Vector3.Distance(narrowCorridor.transform.position, transform.position);
-                if (distanceToNarrowCorridor < nearestNarrowCorridorDistance)
+                if (facingTheNarrowCorridor)
                 {
-                    nearestNarrowCorridorDistance = distanceToNarrowCorridor;
-                    nearestNarrowCorridor = narrowCorridor;
-                    fromPlayerToNearestFacingNarrowCorridorVector = fromPlayerToNarrowCorridorVector;
+                    var distanceToNarrowCorridor = Vector3.Distance(narrowCorridor.transform.position, transform.position);
+                    if (distanceToNarrowCorridor < nearestNarrowCorridorDistance)
+                    {
+                        nearestNarrowCorridorDistance = distanceToNarrowCorridor;
+                        nearestNarrowCorridor = narrowCorridor;
+                        fromPlayerToNearestFacingNarrowCorridorVector = fromPlayerToNarrowCorridorVector;
+                    }
                 }
             }
         }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8016815026036857939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.17, y: 0, z: -3.689}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8739804390234705127}
@@ -56,13 +56,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8739804390183002309}
-  m_LocalRotation: {x: 0.6532816, y: -0.65328133, z: -0.27059814, w: 0.27059808}
-  m_LocalPosition: {x: -3.7778077, y: -0.34000024, z: 1.7765181}
-  m_LocalScale: {x: 0.76364, y: 0.41864282, z: 0.7636406}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: -2, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 0.36189}
   m_Children: []
   m_Father: {fileID: 8739804390234705127}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -135, z: -90.00001}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!33 &8739804390183002305
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -175,8 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherNarrowCorridor: {fileID: 0}
   outputTransform: {fileID: 1063222738318369974}
-  timeToStopFoundParticles: 10
-  foundParticleSystem: {fileID: 6508526815973149991}
+  particleSystem: {fileID: 6508526815973149991}
 --- !u!1 &8739804391597355968
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,13 +202,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8739804391597355968}
-  m_LocalRotation: {x: -0.27059856, y: 0.27059844, z: -0.6532812, w: 0.6532814}
-  m_LocalPosition: {x: -1.2392254, y: -0.3395494, z: -1.2893851}
-  m_LocalScale: {x: 0.76364, y: 0.41864282, z: 0.7636404}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.31829}
   m_Children: []
   m_Father: {fileID: 8739804390234705127}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 45.000004, z: -90.00001}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!33 &8739804391597355836
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -285,7 +284,7 @@ GameObject:
   - component: {fileID: 6508526815973149991}
   - component: {fileID: 5881437185137377835}
   m_Layer: 10
-  m_Name: Found Particle System
+  m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,13 +297,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8796553480651690584}
-  m_LocalRotation: {x: 0, y: 0.96506226, z: -0, w: -0.2620206}
-  m_LocalPosition: {x: -3.01, y: 0.112, z: -0.101}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8739804390234705127}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 210.38, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &6508526815973149991
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -939,7 +938,7 @@ ParticleSystem:
     radiusThickness: 0.6
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: -0, y: 180, z: -0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0

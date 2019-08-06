@@ -31,7 +31,7 @@ public class EccoEffect : MonoBehaviour
 
     // Demo Code
     // bool _scanning;
-    NarrowCorridor[] narrowCorridors = new NarrowCorridor[0];
+    Findable[] findables = new Findable[0];
 
     public void StartEcho(Echo echo)
     {
@@ -45,7 +45,7 @@ public class EccoEffect : MonoBehaviour
     {
         playerController = FindObjectOfType<PlayerController>();
 
-        narrowCorridors = FindObjectsOfType<NarrowCorridor>();
+        findables = FindObjectsOfType<Findable>();
     }
 
     void Update()
@@ -57,13 +57,11 @@ public class EccoEffect : MonoBehaviour
                 echos[i].Distance += Time.deltaTime * 50;
                 if (echos[i].Type == EchoType.Echo && echos[i].Distance < 250)
                 {
-                    foreach (NarrowCorridor narrowCorridor in narrowCorridors)
+                    foreach (Findable findable in findables)
                     {
-                        if (Vector3.Distance(echos[i].Origin, narrowCorridor.transform.position) <= echos[i].Distance)
+                        if (Vector3.Distance(echos[i].Origin, findable.transform.position) <= echos[i].Distance)
                         {
-                            Debug.Log(echos[i].Distance);
-
-                            narrowCorridor.FoundByEcho(echos[i]);
+                            findable.FoundByEcho(echos[i]);
                         }
                     }
                 }

@@ -7,13 +7,13 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 {
     public override bool CanMove => RamThrusting == false && ramThrustSheduled == false && IsNotSwimmingToSharkToTransport;
 
-    Destructable[] destructables;
+    DestructableObstacle[] destructables;
 
     void Start()
     {
         base.Init();
 
-        destructables = FindObjectsOfType<Destructable>();
+        destructables = FindObjectsOfType<DestructableObstacle>();
 
     }
 
@@ -164,7 +164,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
     float distanceToNearestFacingShark;
     Vector3 fromPlayerToSharkVector;
     
-    Destructable nearestFacingDestructable;
+    DestructableObstacle nearestFacingDestructable;
     float distanceToNearestFacingDestructable;
     Vector3 fromPlayerToDestructableVector;
 
@@ -249,7 +249,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
                 rammedShark.IsKnockedOut = true;
             }
 
-            Destructable rammedDestructable = collision.gameObject.GetComponent<Destructable>();
+            DestructableObstacle rammedDestructable = collision.gameObject.GetComponent<DestructableObstacle>();
             if (rammedDestructable != null)
             {
                 rammedDestructable.Destroy();
@@ -262,28 +262,30 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
     #region GetNearestFacingDestructable
 
-    protected Destructable GetNearestFacingDestructable(out float distanceToNearestFacingDestructable, out Vector3 fromPlayerToNearestFacingDestructableVector)
+    protected DestructableObstacle GetNearestFacingDestructable(out float distanceToNearestFacingDestructable, out Vector3 fromPlayerToNearestFacingDestructableVector)
     {
-        Destructable nearestDestructable = null;
+        DestructableObstacle nearestDestructable = null;
         float nearestDestructableDistance = float.MaxValue;
         fromPlayerToNearestFacingDestructableVector = Vector3.zero;
 
         foreach (var destructable in destructables)
         {
-            var fromPlayerToDestructableVector = destructable.transform.position - transform.position;
+            if (destructable.OrcaCanDestroy) {
+                var fromPlayerToDestructableVector = destructable.transform.position - transform.position;
 
-            var dotProdToDestructable = Vector3.Dot(fromPlayerToDestructableVector.normalized, transform.forward);
+                var dotProdToDestructable = Vector3.Dot(fromPlayerToDestructableVector.normalized, transform.forward);
 
-            bool facingTheDestructable = dotProdToDestructable > 0;
+                bool facingTheDestructable = dotProdToDestructable > 0;
 
-            if (facingTheDestructable)
-            {
-                var distanceToDestructable = Vector3.Distance(destructable.transform.position, transform.position);
-                if (distanceToDestructable < nearestDestructableDistance)
+                if (facingTheDestructable)
                 {
-                    nearestDestructableDistance = distanceToDestructable;
-                    nearestDestructable = destructable;
-                    fromPlayerToNearestFacingDestructableVector = fromPlayerToDestructableVector;
+                    var distanceToDestructable = Vector3.Distance(destructable.transform.position, transform.position);
+                    if (distanceToDestructable < nearestDestructableDistance)
+                    {
+                        nearestDestructableDistance = distanceToDestructable;
+                        nearestDestructable = destructable;
+                        fromPlayerToNearestFacingDestructableVector = fromPlayerToDestructableVector;
+                    }
                 }
             }
         }

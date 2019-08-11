@@ -1889,9 +1889,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationChangeSpeed: 10
   abilityTilesDolphin: {fileID: 1644883007}
-  abilityTilesOrca: {fileID: 1386497933}
-  abilityTilesShark: {fileID: 359319037}
-  abilityTilesRay: {fileID: 1357449517}
+  abilityTilesOrca: {fileID: 1357449517}
+  abilityTilesShark: {fileID: 1386497933}
+  abilityTilesRay: {fileID: 359319037}
 --- !u!1 &1112661066
 GameObject:
   m_ObjectHideFlags: 0

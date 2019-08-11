@@ -10,19 +10,37 @@ public class PlayerController : MonoBehaviour
 
         set
         {
-            if (currentPlayerController != value) {
+            if (currentPlayerController != value)
+            {
                 currentPlayerController = value;
+
+                if (currentPlayerController == DolphinPlayerController)
+                {
+                    characterVisualisation.ActivePlayerSelectionImage = characterVisualisation.PlayerVisualisationImageDolphin;
+                }
+                else if (currentPlayerController == RayPlayerController)
+                {
+                    characterVisualisation.ActivePlayerSelectionImage = characterVisualisation.PlayerVisualisationImageRay;
+                }
+                else if (currentPlayerController == OrcaPlayerController)
+                {
+                    characterVisualisation.ActivePlayerSelectionImage = characterVisualisation.PlayerVisualisationImageOrca;
+                }
+                else if (currentPlayerController == SharkPlayerController)
+                {
+                    characterVisualisation.ActivePlayerSelectionImage = characterVisualisation.PlayerVisualisationImageShark;
+                }
             }
         }
     }
 
-    public DolphinPlayerController DolphinPlayerController { get => dolphinPlayerController; set => dolphinPlayerController = value; }
-    public RayPlayerController RayPlayerController { get => rayPlayerController; set => rayPlayerController = value; }
-    public SharkPlayerController SharkPlayerController { get => sharkPlayerController; set => sharkPlayerController = value; }
-    public OrcaPlayerController OrcaPlayerController { get => orcaPlayerController; set => orcaPlayerController = value; }
+    public DolphinPlayerController DolphinPlayerController => dolphinPlayerController;
+    public RayPlayerController RayPlayerController => rayPlayerController;
+    public SharkPlayerController SharkPlayerController => sharkPlayerController;
+    public OrcaPlayerController OrcaPlayerController => orcaPlayerController;
 
     private PlayerControllerBase currentPlayerController;
-     
+
     private DolphinPlayerController dolphinPlayerController;
     private RayPlayerController rayPlayerController;
     private SharkPlayerController sharkPlayerController;
@@ -30,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
     private List<PlayerControllerBase> allPlayerControllers = new List<PlayerControllerBase>();
     private CharacterSelection characterSelection;
+    private CharacterVisualisation characterVisualisation;
+
 
 
     void Start()
@@ -41,21 +61,30 @@ public class PlayerController : MonoBehaviour
             throw new DolphinGameException("CharacterSelection Object couldn't be found.");
         }
 
+        characterVisualisation = FindObjectOfType<CharacterVisualisation>();
+
+        if (characterVisualisation == null)
+        {
+            throw new DolphinGameException("characterVisualisation Object couldn't be found.");
+        }
+
+
         dolphinPlayerController = FindObjectOfType<DolphinPlayerController>();
         rayPlayerController = FindObjectOfType<RayPlayerController>();
         sharkPlayerController = FindObjectOfType<SharkPlayerController>();
         orcaPlayerController = FindObjectOfType<OrcaPlayerController>();
 
-        if (dolphinPlayerController != null) {
+        if (dolphinPlayerController != null)
+        {
             allPlayerControllers.Add(dolphinPlayerController);
         }
         if (rayPlayerController != null)
         {
-            allPlayerControllers.Add(rayPlayerController);
+            allPlayerControllers.Add(sharkPlayerController);
         }
         if (sharkPlayerController != null)
         {
-            allPlayerControllers.Add(sharkPlayerController);
+            allPlayerControllers.Add(rayPlayerController);
         }
         if (orcaPlayerController != null)
         {
@@ -66,14 +95,16 @@ public class PlayerController : MonoBehaviour
         {
             throw new DolphinGameException("There is no dolphin, ray, orca or shark player controller in this scene. Please add at least one from the presets folder.");
         }
-        else {
+        else
+        {
             CurrentPlayerController = allPlayerControllers[0];
         }
     }
 
     void Update()
     {
-        if (characterSelection.NotVisible) {
+        if (characterSelection.NotVisible)
+        {
             UpdateMovement();
 
             UpdatePlayerSelection();
@@ -99,13 +130,11 @@ public class PlayerController : MonoBehaviour
         if (selectRay)
         {
             CurrentPlayerController = rayPlayerController;
-
         }
 
         if (selectOrca)
         {
             CurrentPlayerController = orcaPlayerController;
-
         }
 
         if (selectShark)
@@ -117,7 +146,7 @@ public class PlayerController : MonoBehaviour
         {
             var currentPlayerIndex = allPlayerControllers.IndexOf(CurrentPlayerController);
 
- 
+
             currentPlayerIndex = (currentPlayerIndex - 1) % allPlayerControllers.Count;
 
 

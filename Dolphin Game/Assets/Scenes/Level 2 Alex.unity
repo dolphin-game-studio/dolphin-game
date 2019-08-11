@@ -18079,6 +18079,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1383498425}
     m_Modifications:
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18133,11 +18138,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -21808,6 +21808,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1383498425}
     m_Modifications:
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry
+      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21862,11 +21867,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -26237,6 +26237,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1383498425}
     m_Modifications:
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26291,11 +26296,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826230, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -28745,21 +28745,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 811385730, guid: 0786fac5742214146b9ac0c71b9f1a7e, type: 3}
-      propertyPath: m_LocalPosition.z
+    - target: {fileID: 811385733, guid: 0786fac5742214146b9ac0c71b9f1a7e, type: 3}
+      propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 731662315538848847, guid: 0786fac5742214146b9ac0c71b9f1a7e,
-        type: 3}
-      propertyPath: m_Name
-      value: GenerateBackgroundMusicControler
-      objectReference: {fileID: 0}
-    - target: {fileID: 325198325841885980, guid: 0786fac5742214146b9ac0c71b9f1a7e,
-        type: 3}
-      propertyPath: backgroundMusicControlerPrefab
-      value: 
-      objectReference: {fileID: 9218529674586630567, guid: 72482f130f31b5840ad6cd69f6da61b0,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0786fac5742214146b9ac0c71b9f1a7e, type: 3}
 --- !u!4 &4617463865345378735

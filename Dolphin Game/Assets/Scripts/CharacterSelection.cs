@@ -6,6 +6,7 @@ using UnityEngine;
 public class CharacterSelection : MonoBehaviour
 {
     private PlayerController playerController;
+    private DolphinGameCamera dolphinGameCamera;
 
 
     [SerializeField] private GameObject characterSelectionPanels;
@@ -83,6 +84,13 @@ public class CharacterSelection : MonoBehaviour
             throw new DolphinGameException("Player Controller Object couldn't be found.");
         }
 
+        dolphinGameCamera = FindObjectOfType<DolphinGameCamera>();
+        if (dolphinGameCamera == null)
+        {
+            throw new DolphinGameException("Dolphin Game Camera Object couldn't be found.");
+        }
+
+
         Visible = false;
 
         allPlayerSelectionImages = new Transform[] { playerSelectionImageNorth, playerSelectionImageWest, playerSelectionImageEast, playerSelectionImageSouth };
@@ -125,7 +133,8 @@ public class CharacterSelection : MonoBehaviour
         }
 
 
-        if (Visible) {
+        if (Visible)
+        {
             HandleSelectCharacterByAnalogStick();
 
             HandleChoseCharacterByAButton();
@@ -138,7 +147,8 @@ public class CharacterSelection : MonoBehaviour
 
         if (aButtonPressed)
         {
-            if (SelectedPlayerSelectionImage == playerSelectionImageNorth) {
+            if (SelectedPlayerSelectionImage == playerSelectionImageNorth)
+            {
                 playerController.CurrentPlayerController = playerController.DolphinPlayerController;
             }
             else if (SelectedPlayerSelectionImage == playerSelectionImageWest)

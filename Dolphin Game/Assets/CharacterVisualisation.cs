@@ -5,11 +5,8 @@ using UnityEngine;
 
 public class CharacterVisualisation : MonoBehaviour
 {
-    private PlayerController playerController;
-
     [SerializeField] private float sizeChangeSpeed = 1;
     [SerializeField] private float positionChangeSpeed = 1;
-
 
     [SerializeField] private CharacterVisualisationPanel playerVisualisationImageDolphin;
     [SerializeField] private CharacterVisualisationPanel playerVisualisationImageOrca;
@@ -75,13 +72,6 @@ public class CharacterVisualisation : MonoBehaviour
 
     void Start()
     {
-        playerController = FindObjectOfType<PlayerController>();
-
-        if (playerController == null)
-        {
-            throw new DolphinGameException("Player Controller Object couldn't be found.");
-        }
-
         allPlayerVisualisationImages = new CharacterVisualisationPanel[] { playerVisualisationImageDolphin, playerVisualisationImageOrca, playerVisualisationImageShark, playerVisualisationImageRay };
 
         if (playerVisualisationImageDolphin == null)

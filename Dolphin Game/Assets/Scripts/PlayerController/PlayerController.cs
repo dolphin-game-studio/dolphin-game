@@ -34,6 +34,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public bool DolphinIsActive => currentPlayerController == DolphinPlayerController;
+    public bool RayIsActive => currentPlayerController == RayPlayerController;
+    public bool SharkIsActive => currentPlayerController == SharkPlayerController;
+    public bool OrcaIsActive => currentPlayerController == OrcaPlayerController;
+
+
     public DolphinPlayerController DolphinPlayerController => dolphinPlayerController;
     public RayPlayerController RayPlayerController => rayPlayerController;
     public SharkPlayerController SharkPlayerController => sharkPlayerController;

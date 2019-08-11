@@ -6,13 +6,20 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerControllerBase CurrentPlayerController
     {
-        get => currentPlayerController; set
+        get => currentPlayerController;
+
+        set
         {
             if (currentPlayerController != value) {
                 currentPlayerController = value;
             }
         }
     }
+
+    public DolphinPlayerController DolphinPlayerController { get => dolphinPlayerController; set => dolphinPlayerController = value; }
+    public RayPlayerController RayPlayerController { get => rayPlayerController; set => rayPlayerController = value; }
+    public SharkPlayerController SharkPlayerController { get => sharkPlayerController; set => sharkPlayerController = value; }
+    public OrcaPlayerController OrcaPlayerController { get => orcaPlayerController; set => orcaPlayerController = value; }
 
     private PlayerControllerBase currentPlayerController;
      
@@ -22,11 +29,18 @@ public class PlayerController : MonoBehaviour
     private OrcaPlayerController orcaPlayerController;
 
     private List<PlayerControllerBase> allPlayerControllers = new List<PlayerControllerBase>();
- 
+    private CharacterSelection characterSelection;
 
 
     void Start()
     {
+        characterSelection = FindObjectOfType<CharacterSelection>();
+
+        if (characterSelection == null)
+        {
+            throw new DolphinGameException("CharacterSelection Object couldn't be found.");
+        }
+
         dolphinPlayerController = FindObjectOfType<DolphinPlayerController>();
         rayPlayerController = FindObjectOfType<RayPlayerController>();
         sharkPlayerController = FindObjectOfType<SharkPlayerController>();
@@ -59,9 +73,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        UpdateMovement();
+        if (characterSelection.NotVisible) {
+            UpdateMovement();
 
-        UpdatePlayerSelection();
+            UpdatePlayerSelection();
+        }
     }
 
     private void UpdatePlayerSelection()

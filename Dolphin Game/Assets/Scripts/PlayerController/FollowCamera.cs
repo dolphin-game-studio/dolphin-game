@@ -11,7 +11,7 @@ public class FollowCamera : MonoBehaviour
 
     PostProcessVolume volume;
     DepthOfField depthOfFieldLayer = null;
-
+ 
 
     private Vector3 targetPosition;
 
@@ -61,6 +61,9 @@ public class FollowCamera : MonoBehaviour
 
         volume = gameObject.GetComponent<PostProcessVolume>();
         volume.profile.TryGetSettings(out depthOfFieldLayer);
+
+
+         
     }
 
 
@@ -101,7 +104,10 @@ public class FollowCamera : MonoBehaviour
         transform.position = new Vector3(position.x, position.y, position.z);
         Camera.nearClipPlane = Mathf.Abs(transform.position.z) - clipNearOffset;
         depthOfFieldLayer.focusDistance.value = Mathf.Abs(transform.position.z);
- 
+        depthOfFieldLayer.focalLength.value = Mathf.Abs(transform.position.z * 3);
+
+
+
         transform.LookAt(targetPosition);
 
         var leftTrigger = Input.GetAxis("Left Trigger");

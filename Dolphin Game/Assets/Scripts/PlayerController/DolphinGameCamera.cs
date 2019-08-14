@@ -35,7 +35,8 @@ public class DolphinGameCamera : MonoBehaviour
             }
         }
     }
-
+    
+    public float followSpeed;
     public float panSpeed;
     public float zoomSpeed;
 
@@ -100,7 +101,7 @@ public class DolphinGameCamera : MonoBehaviour
         }
         else
         {
-            targetPosition = playerController.CurrentPlayerController.transform.position;
+            targetPosition = Vector3.MoveTowards(targetPosition , playerController.CurrentPlayerController.transform.position, Time.deltaTime * followSpeed);
         }
 
         desiredPosition = targetPosition + Offset;

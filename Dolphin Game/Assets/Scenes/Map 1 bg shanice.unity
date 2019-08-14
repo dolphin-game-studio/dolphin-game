@@ -618,6 +618,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (31)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -687,11 +692,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (31)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -1647,6 +1647,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (34)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1716,11 +1721,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (34)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -2082,6 +2082,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (39)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2151,11 +2156,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (39)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -2340,6 +2340,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
+        type: 3}
+      propertyPath: m_Name
+      value: Narrow Corridow (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8739804390234705127, guid: c57ea3571272ac14aa4d8aec572c9a34,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2400,11 +2405,6 @@ PrefabInstance:
       propertyPath: otherNarrowCorridor
       value: 
       objectReference: {fileID: 103542714}
-    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
-        type: 3}
-      propertyPath: m_Name
-      value: Narrow Corridow (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57ea3571272ac14aa4d8aec572c9a34, type: 3}
 --- !u!4 &91813064 stripped
@@ -3072,6 +3072,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3141,11 +3146,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -3538,6 +3538,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (56)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3607,11 +3612,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (56)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -3724,6 +3724,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3793,11 +3798,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -4105,6 +4105,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (38)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4174,11 +4179,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (38)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -4574,6 +4574,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1998100093}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 275.83246
@@ -4629,10 +4633,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -4826,11 +4826,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4900,6 +4895,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -5267,6 +5267,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5336,11 +5341,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -5435,6 +5435,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (25)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5504,11 +5509,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (25)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -5896,6 +5896,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5965,11 +5970,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (23)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -6194,6 +6194,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6249,11 +6254,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: sharkToFollow
@@ -6278,6 +6278,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6332,11 +6337,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -6451,6 +6451,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (48)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6520,11 +6525,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (48)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -6947,11 +6947,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7006,6 +7001,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -7106,6 +7106,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (35)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7176,11 +7181,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (35)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &291273999 stripped
@@ -7196,6 +7196,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7265,11 +7270,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -7885,21 +7885,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.0000038146973
-      objectReference: {fileID: 0}
-    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 44.000004
-      objectReference: {fileID: 0}
     - target: {fileID: 505448285502111761, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -7914,6 +7899,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0000019073486
+      objectReference: {fileID: 0}
+    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0000038146973
+      objectReference: {fileID: 0}
+    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 44.000004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08eb86cb8a1e4cc409b7585ffca5dce4, type: 3}
@@ -8272,6 +8272,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 7502942654606880445, guid: 820515b509584844abe172efd43622ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Destructable (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 5905239831711517343, guid: 820515b509584844abe172efd43622ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8342,11 +8347,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 7502942654606880445, guid: 820515b509584844abe172efd43622ad,
-        type: 3}
-      propertyPath: m_Name
-      value: Destructable (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 820515b509584844abe172efd43622ad, type: 3}
 --- !u!1001 &359164370
@@ -8356,6 +8356,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8411,11 +8416,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (7)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &359164371 stripped
@@ -8431,6 +8431,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1 (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8500,11 +8505,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1 (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -8690,6 +8690,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8759,11 +8764,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (19)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -9172,6 +9172,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 93.3
@@ -9227,10 +9231,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -10036,6 +10036,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (51)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10105,11 +10110,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (51)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -10195,6 +10195,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10264,11 +10269,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -10547,6 +10547,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1998100093}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 328.83246
@@ -10603,10 +10607,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (5)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
 --- !u!1001 &445119655
@@ -10616,6 +10616,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10670,11 +10675,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (8)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -10904,6 +10904,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 218
@@ -10959,10 +10963,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -11075,6 +11075,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11144,11 +11149,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -12113,6 +12113,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
+        type: 3}
+      propertyPath: m_Name
+      value: Narrow Corridow (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 8739804390234705127, guid: c57ea3571272ac14aa4d8aec572c9a34,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12173,11 +12178,6 @@ PrefabInstance:
       propertyPath: otherNarrowCorridor
       value: 
       objectReference: {fileID: 934397624}
-    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
-        type: 3}
-      propertyPath: m_Name
-      value: Narrow Corridow (5)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57ea3571272ac14aa4d8aec572c9a34, type: 3}
 --- !u!1001 &501381277
@@ -12187,6 +12187,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1 (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12256,11 +12261,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1 (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -12364,6 +12364,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 731
@@ -12419,10 +12423,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -12725,6 +12725,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (32)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12795,11 +12800,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (32)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!1001 &516318479
@@ -12809,6 +12809,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 731
@@ -12864,10 +12868,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -12977,6 +12977,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13031,11 +13036,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -13274,6 +13274,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13343,11 +13348,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -14060,6 +14060,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14130,11 +14135,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (15)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!1001 &571361690
@@ -14144,6 +14144,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (33)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14213,11 +14218,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (33)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -14442,6 +14442,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (34)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14512,11 +14517,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (34)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!1001 &588531992
@@ -14526,6 +14526,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (49)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14595,11 +14600,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (49)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -14883,6 +14883,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: -36.2
@@ -14939,10 +14943,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
 --- !u!4 &610124644 stripped
@@ -14958,11 +14958,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1721644627}
     m_Modifications:
-    - target: {fileID: 437400459229176157, guid: 7cbca9958d8fd934d90bdcccd6998e50,
-        type: 3}
-      propertyPath: m_Name
-      value: Orca
-      objectReference: {fileID: 0}
     - target: {fileID: 437400459229347197, guid: 7cbca9958d8fd934d90bdcccd6998e50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15018,6 +15013,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 437400459229176157, guid: 7cbca9958d8fd934d90bdcccd6998e50,
+        type: 3}
+      propertyPath: m_Name
+      value: Orca
+      objectReference: {fileID: 0}
     - target: {fileID: 437400459229176158, guid: 7cbca9958d8fd934d90bdcccd6998e50,
         type: 3}
       propertyPath: _speed
@@ -15032,6 +15032,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (31)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15101,11 +15106,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (31)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -15653,6 +15653,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
+        type: 3}
+      propertyPath: m_Name
+      value: Narrow Corridow
+      objectReference: {fileID: 0}
     - target: {fileID: 8739804390234705127, guid: c57ea3571272ac14aa4d8aec572c9a34,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15713,11 +15718,6 @@ PrefabInstance:
       propertyPath: otherNarrowCorridor
       value: 
       objectReference: {fileID: 1100676587}
-    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
-        type: 3}
-      propertyPath: m_Name
-      value: Narrow Corridow
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57ea3571272ac14aa4d8aec572c9a34, type: 3}
 --- !u!1001 &647277540
@@ -15811,6 +15811,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15880,11 +15885,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -15985,6 +15985,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (54)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16054,11 +16059,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (54)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -16174,6 +16174,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1998100093}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: -214.16753
@@ -16229,10 +16233,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -16336,6 +16336,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.6
@@ -16391,10 +16395,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -16730,6 +16730,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (24)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16799,11 +16804,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (24)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -16904,6 +16904,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16958,11 +16963,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -17074,6 +17074,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (28)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17143,11 +17148,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (28)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -17374,11 +17374,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17448,6 +17443,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -17915,6 +17915,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (18)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17984,11 +17989,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (18)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -19572,6 +19572,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
+        type: 3}
+      propertyPath: m_Name
+      value: Jammer (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 2433536918077416650, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19626,11 +19631,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
-        type: 3}
-      propertyPath: m_Name
-      value: Jammer (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1702062923731130074, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}
@@ -19835,11 +19835,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1721644627}
     m_Modifications:
-    - target: {fileID: 5931532044033843787, guid: 8640facfd38965b4a8c158d357d7d1a8,
-        type: 3}
-      propertyPath: m_Name
-      value: Ray
-      objectReference: {fileID: 0}
     - target: {fileID: 5931532044033843786, guid: 8640facfd38965b4a8c158d357d7d1a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19894,6 +19889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931532044033843787, guid: 8640facfd38965b4a8c158d357d7d1a8,
+        type: 3}
+      propertyPath: m_Name
+      value: Ray
       objectReference: {fileID: 0}
     - target: {fileID: 5931532044033843785, guid: 8640facfd38965b4a8c158d357d7d1a8,
         type: 3}
@@ -19993,11 +19993,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1721644627}
     m_Modifications:
-    - target: {fileID: 2494283649342051428, guid: 4d32f59acaef9b6458dc4b1c92155fef,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark
-      objectReference: {fileID: 0}
     - target: {fileID: 2494283649342051431, guid: 4d32f59acaef9b6458dc4b1c92155fef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20068,6 +20063,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2494283649342051428, guid: 4d32f59acaef9b6458dc4b1c92155fef,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark
+      objectReference: {fileID: 0}
     - target: {fileID: 2494283649342051425, guid: 4d32f59acaef9b6458dc4b1c92155fef,
         type: 3}
       propertyPath: _speed
@@ -20082,6 +20082,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20136,11 +20141,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -20494,6 +20494,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 483
@@ -20550,10 +20554,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (11)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
 --- !u!4 &797356769 stripped
@@ -20569,6 +20569,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20638,11 +20643,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -20746,6 +20746,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20815,11 +20820,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -21631,6 +21631,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21700,11 +21705,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (20)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -22447,6 +22447,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: -42.5
@@ -22502,10 +22506,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -22612,6 +22612,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (62)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22682,11 +22687,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (62)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &879554714 stripped
@@ -22702,6 +22702,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (25)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22772,11 +22777,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 22
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (25)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!4 &883127435 stripped
@@ -22792,6 +22792,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1822067477591478, guid: 0c0ad8671cf3e014db8d5e0f3957931c, type: 3}
+      propertyPath: m_Name
+      value: Cave_Corridor_4Way_High
+      objectReference: {fileID: 0}
     - target: {fileID: 4017264011974330, guid: 0c0ad8671cf3e014db8d5e0f3957931c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 356.18008
@@ -22848,10 +22852,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1822067477591478, guid: 0c0ad8671cf3e014db8d5e0f3957931c, type: 3}
-      propertyPath: m_Name
-      value: Cave_Corridor_4Way_High
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c0ad8671cf3e014db8d5e0f3957931c, type: 3}
 --- !u!4 &886081622 stripped
@@ -22867,6 +22867,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22937,11 +22942,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!1001 &891571508
@@ -22951,6 +22951,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23021,11 +23026,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (9)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!1001 &893829186
@@ -23035,6 +23035,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1 (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23104,11 +23109,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -23212,6 +23212,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (24)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23282,11 +23287,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 22
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (24)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!4 &895513821 stripped
@@ -23314,6 +23314,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (28)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23383,11 +23388,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (28)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -23491,6 +23491,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23561,11 +23566,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!1001 &907623751
@@ -23575,6 +23575,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23629,11 +23634,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (6)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -24978,6 +24978,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 7502942654606880445, guid: 820515b509584844abe172efd43622ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Destructable
+      objectReference: {fileID: 0}
     - target: {fileID: 5905239831711517343, guid: 820515b509584844abe172efd43622ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25047,11 +25052,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502942654606880445, guid: 820515b509584844abe172efd43622ad,
-        type: 3}
-      propertyPath: m_Name
-      value: Destructable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 820515b509584844abe172efd43622ad, type: 3}
@@ -25146,6 +25146,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25215,11 +25220,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -25413,6 +25413,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (45)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25483,11 +25488,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (45)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &979258254 stripped
@@ -25503,6 +25503,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (32)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25572,11 +25577,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (32)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -25773,6 +25773,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25828,11 +25833,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
 --- !u!1001 &985875133
@@ -25842,6 +25842,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25911,11 +25916,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -26016,6 +26016,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (30)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26086,11 +26091,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (30)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!4 &997275763 stripped
@@ -26106,6 +26106,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (53)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26176,11 +26181,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (53)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &1002081966 stripped
@@ -26196,6 +26196,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (41)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26265,11 +26270,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (41)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -26631,6 +26631,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26701,11 +26706,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (22)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!1001 &1016288963
@@ -26715,6 +26715,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26785,11 +26790,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 30.000017
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (7)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!4 &1016288964 stripped
@@ -26805,6 +26805,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26874,11 +26879,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (23)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -26951,6 +26951,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
+        type: 3}
+      propertyPath: m_Name
+      value: Narrow Corridow (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 8739804390234705127, guid: c57ea3571272ac14aa4d8aec572c9a34,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27011,11 +27016,6 @@ PrefabInstance:
       propertyPath: otherNarrowCorridor
       value: 
       objectReference: {fileID: 786127784}
-    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
-        type: 3}
-      propertyPath: m_Name
-      value: Narrow Corridow (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57ea3571272ac14aa4d8aec572c9a34, type: 3}
 --- !u!4 &1026775965 stripped
@@ -27031,6 +27031,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27100,11 +27105,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -27431,6 +27431,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27500,11 +27505,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -28190,6 +28190,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1 (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28259,11 +28264,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1 (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -28707,6 +28707,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1 (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28776,11 +28781,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1 (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -29783,6 +29783,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4234261456324797395, guid: 0786fac5742214146b9ac0c71b9f1a7e,
+        type: 3}
+      propertyPath: clipNearOffset
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0786fac5742214146b9ac0c71b9f1a7e, type: 3}
 --- !u!1 &1169393324
@@ -29915,6 +29920,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1141442710326042, guid: ec67a6d93e3acae46b6915ad530b58f2, type: 3}
+      propertyPath: m_Name
+      value: Cave_Room_7_High
+      objectReference: {fileID: 0}
     - target: {fileID: 4564662395759398, guid: ec67a6d93e3acae46b6915ad530b58f2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.980103
@@ -29958,10 +29967,6 @@ PrefabInstance:
     - target: {fileID: 4564662395759398, guid: ec67a6d93e3acae46b6915ad530b58f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1141442710326042, guid: ec67a6d93e3acae46b6915ad530b58f2, type: 3}
-      propertyPath: m_Name
-      value: Cave_Room_7_High
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec67a6d93e3acae46b6915ad530b58f2, type: 3}
@@ -30071,6 +30076,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 86.8
@@ -30126,10 +30135,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -30215,21 +30220,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -28.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.71
-      objectReference: {fileID: 0}
     - target: {fileID: 505448285502111761, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -30244,6 +30234,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.71
       objectReference: {fileID: 0}
     - target: {fileID: 505448286642768209, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
         type: 3}
@@ -30271,6 +30276,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1135835310274916, guid: 55413f152a1db8745a18ece2c1c8faa0, type: 3}
+      propertyPath: m_Name
+      value: Rock_2_High
+      objectReference: {fileID: 0}
     - target: {fileID: 4982777345014452, guid: 55413f152a1db8745a18ece2c1c8faa0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.719894
@@ -30326,10 +30335,6 @@ PrefabInstance:
     - target: {fileID: 4982777345014452, guid: 55413f152a1db8745a18ece2c1c8faa0, type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1135835310274916, guid: 55413f152a1db8745a18ece2c1c8faa0, type: 3}
-      propertyPath: m_Name
-      value: Rock_2_High
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55413f152a1db8745a18ece2c1c8faa0, type: 3}
@@ -30709,6 +30714,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (52)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30778,11 +30788,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (52)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -30982,6 +30987,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31051,11 +31061,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -31252,11 +31257,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31326,6 +31326,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -31705,6 +31710,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1 (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31774,11 +31784,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1 (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -31963,6 +31968,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32032,11 +32042,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -32336,6 +32341,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
+        type: 3}
+      propertyPath: m_Name
+      value: Jammer (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 2433536918077416650, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32391,11 +32401,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
-        type: 3}
-      propertyPath: m_Name
-      value: Jammer (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 1702062923731130074, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}
       propertyPath: radius
@@ -32410,6 +32415,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1 (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32479,11 +32489,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -32644,6 +32649,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 505448285502111761, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 505448285502111761, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 505448285502111761, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 505448286642768208, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
         type: 3}
       propertyPath: rank
@@ -32674,21 +32694,6 @@ PrefabInstance:
       propertyPath: viewRadiusWhenSuspicious
       value: 44
       objectReference: {fileID: 0}
-    - target: {fileID: 505448285502111761, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -12.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 505448285502111761, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 505448285502111761, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08eb86cb8a1e4cc409b7585ffca5dce4, type: 3}
 --- !u!4 &1262664656 stripped
@@ -32710,6 +32715,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (33)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32780,11 +32790,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (33)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!1001 &1267510471
@@ -32794,6 +32799,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (42)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32863,11 +32873,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (42)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -32983,6 +32988,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1998100093}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 65.83247
@@ -33038,10 +33047,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -33551,6 +33556,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (27)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33621,11 +33631,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (27)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!4 &1301206658 stripped
@@ -33641,6 +33646,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (50)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33710,11 +33720,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (50)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -34082,6 +34087,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1110304705905596, guid: a1800d7418734254c9b44c520098cee6, type: 3}
+      propertyPath: m_Name
+      value: Cave_Room_3_High
+      objectReference: {fileID: 0}
     - target: {fileID: 4109106270618146, guid: a1800d7418734254c9b44c520098cee6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.419895
@@ -34126,10 +34135,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
       objectReference: {fileID: 0}
-    - target: {fileID: 1110304705905596, guid: a1800d7418734254c9b44c520098cee6, type: 3}
-      propertyPath: m_Name
-      value: Cave_Room_3_High
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1800d7418734254c9b44c520098cee6, type: 3}
 --- !u!4 &1312995452 stripped
@@ -34145,6 +34150,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (44)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34214,11 +34224,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (44)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -34328,6 +34333,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1 (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34397,11 +34407,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1 (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -34577,21 +34582,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.0000038146973
-      objectReference: {fileID: 0}
-    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 37.000004
-      objectReference: {fileID: 0}
     - target: {fileID: 505448285502111761, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -34606,6 +34596,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0000038146973
+      objectReference: {fileID: 0}
+    - target: {fileID: 505448285603150660, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37.000004
       objectReference: {fileID: 0}
     - target: {fileID: 505448286642768209, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
         type: 3}
@@ -34846,6 +34851,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (21)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34916,11 +34926,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (21)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!1001 &1347423875
@@ -34930,6 +34935,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch
+      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34999,11 +35009,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -35575,6 +35580,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35630,11 +35640,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (8)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &1371276839 stripped
@@ -35650,6 +35655,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (37)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35719,11 +35729,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (37)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -35932,6 +35937,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36001,11 +36011,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -36350,6 +36355,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (26)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36419,11 +36429,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (26)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -36533,11 +36538,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36593,6 +36593,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (4)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
 --- !u!1001 &1429195724
@@ -36602,6 +36607,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (46)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36672,11 +36682,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (46)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &1429195725 stripped
@@ -36698,6 +36703,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 7502942654606880445, guid: 820515b509584844abe172efd43622ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Destructable (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5905239831711517343, guid: 820515b509584844abe172efd43622ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36767,11 +36777,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502942654606880445, guid: 820515b509584844abe172efd43622ad,
-        type: 3}
-      propertyPath: m_Name
-      value: Destructable (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 820515b509584844abe172efd43622ad, type: 3}
@@ -37007,6 +37012,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1998100093}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: -218.16753
@@ -37063,10 +37072,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
 --- !u!1001 &1446744324
@@ -37076,11 +37081,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37150,6 +37150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -37253,6 +37258,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37322,11 +37332,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -37464,6 +37469,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5701802199677265307, guid: a393c0e5695e77b43b124d12959c060e,
+        type: 3}
+      propertyPath: m_Name
+      value: Sauele_dick
+      objectReference: {fileID: 0}
     - target: {fileID: 1690390604494582098, guid: a393c0e5695e77b43b124d12959c060e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37534,11 +37544,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 5701802199677265307, guid: a393c0e5695e77b43b124d12959c060e,
-        type: 3}
-      propertyPath: m_Name
-      value: Sauele_dick
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a393c0e5695e77b43b124d12959c060e, type: 3}
 --- !u!4 &1475197315 stripped
@@ -37554,6 +37559,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: -36.2
@@ -37610,10 +37619,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
 --- !u!4 &1475620108 stripped
@@ -37629,11 +37634,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37689,6 +37689,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
 --- !u!1001 &1478778798
@@ -37698,6 +37703,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1763051537380256, guid: c38c8d3403f009244817edbda2169b0f, type: 3}
+      propertyPath: m_Name
+      value: Cave_Corridor_Curve_High (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4591396282873026, guid: c38c8d3403f009244817edbda2169b0f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 466.6
@@ -37753,10 +37762,6 @@ PrefabInstance:
     - target: {fileID: 4591396282873026, guid: c38c8d3403f009244817edbda2169b0f, type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1763051537380256, guid: c38c8d3403f009244817edbda2169b0f, type: 3}
-      propertyPath: m_Name
-      value: Cave_Corridor_Curve_High (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c38c8d3403f009244817edbda2169b0f, type: 3}
@@ -38446,11 +38451,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38520,6 +38520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -38639,6 +38644,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (29)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38709,11 +38719,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (29)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!4 &1537029001 stripped
@@ -38735,6 +38740,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (60)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38805,11 +38815,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (60)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &1543672751 stripped
@@ -38825,6 +38830,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (36)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38894,11 +38904,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (36)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -38999,6 +39004,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (30)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39068,11 +39078,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (30)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -39182,6 +39187,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1089208140660334, guid: 1acef5f02fbbaae4887a3f8f4cf05d75, type: 3}
+      propertyPath: m_Name
+      value: Rock_Crystals_Big_3_High
+      objectReference: {fileID: 0}
     - target: {fileID: 4155388109376538, guid: 1acef5f02fbbaae4887a3f8f4cf05d75, type: 3}
       propertyPath: m_LocalPosition.x
       value: 254.68008
@@ -39238,10 +39247,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 1089208140660334, guid: 1acef5f02fbbaae4887a3f8f4cf05d75, type: 3}
-      propertyPath: m_Name
-      value: Rock_Crystals_Big_3_High
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1acef5f02fbbaae4887a3f8f4cf05d75, type: 3}
 --- !u!1001 &1554607345
@@ -39251,6 +39256,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (27)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39320,11 +39330,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (27)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -39434,11 +39439,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39493,6 +39493,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -39962,6 +39967,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40031,11 +40041,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -40289,6 +40294,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40359,11 +40369,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (5)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!4 &1593420963 stripped
@@ -40385,6 +40390,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (40)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40454,11 +40464,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (40)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -41006,6 +41011,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41060,11 +41070,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -41278,6 +41283,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1 (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41347,11 +41357,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1 (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -41539,6 +41544,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41609,11 +41619,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (22)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!4 &1653580755 stripped
@@ -41629,6 +41634,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41699,11 +41709,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (10)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!1001 &1656909691
@@ -41713,6 +41718,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41782,11 +41792,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -42653,6 +42658,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (29)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42722,11 +42732,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (29)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -43280,6 +43285,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43349,11 +43359,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -43801,6 +43806,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_1
+      objectReference: {fileID: 0}
     - target: {fileID: 4585804172759379847, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43870,11 +43880,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476035875069652471, guid: 0ca9fa1b3a3419e4e80bb724e80d4071,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca9fa1b3a3419e4e80bb724e80d4071, type: 3}
@@ -44047,6 +44052,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (61)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44117,11 +44127,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (61)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &1738474989 stripped
@@ -44137,6 +44142,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44206,11 +44216,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -44311,6 +44316,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (26)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44380,11 +44390,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (26)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -44494,6 +44499,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44564,11 +44574,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (7)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!4 &1748690190 stripped
@@ -44590,6 +44595,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (59)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44660,11 +44670,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (59)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &1751230333 stripped
@@ -44680,11 +44685,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44755,6 +44755,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (5)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
 --- !u!1001 &1754315294
@@ -44764,6 +44769,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
+        type: 3}
+      propertyPath: m_Name
+      value: Narrow Corridow (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 8739804390234705127, guid: c57ea3571272ac14aa4d8aec572c9a34,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44824,11 +44834,6 @@ PrefabInstance:
       propertyPath: otherNarrowCorridor
       value: 
       objectReference: {fileID: 63136174}
-    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
-        type: 3}
-      propertyPath: m_Name
-      value: Narrow Corridow (4)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57ea3571272ac14aa4d8aec572c9a34, type: 3}
 --- !u!1001 &1758494580
@@ -44838,6 +44843,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 225.6
@@ -44893,10 +44902,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -45301,6 +45306,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1998100093}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 65.83247
@@ -45357,10 +45366,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
 --- !u!4 &1792038465 stripped
@@ -45376,11 +45381,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45450,6 +45450,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -45544,6 +45549,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45614,11 +45624,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!1001 &1795769789
@@ -45628,6 +45633,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1763051537380256, guid: c38c8d3403f009244817edbda2169b0f, type: 3}
+      propertyPath: m_Name
+      value: Cave_Corridor_Curve_High
+      objectReference: {fileID: 0}
     - target: {fileID: 4591396282873026, guid: c38c8d3403f009244817edbda2169b0f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 140.3801
@@ -45684,10 +45693,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1763051537380256, guid: c38c8d3403f009244817edbda2169b0f, type: 3}
-      propertyPath: m_Name
-      value: Cave_Corridor_Curve_High
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c38c8d3403f009244817edbda2169b0f, type: 3}
 --- !u!1001 &1800257876
@@ -45697,6 +45702,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (57)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45766,11 +45776,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (57)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -46291,6 +46296,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (58)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46360,11 +46370,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (58)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -46483,11 +46488,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross
-      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46558,6 +46558,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
 --- !u!1001 &1846417093
@@ -46567,6 +46572,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (47)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46637,11 +46647,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (47)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &1846417094 stripped
@@ -46657,6 +46662,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46726,11 +46736,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -47026,6 +47031,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (55)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47095,11 +47105,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (55)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -47350,6 +47355,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 7502942654606880445, guid: 820515b509584844abe172efd43622ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Destructable (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 5905239831711517343, guid: 820515b509584844abe172efd43622ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -47419,11 +47429,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7502942654606880445, guid: 820515b509584844abe172efd43622ad,
-        type: 3}
-      propertyPath: m_Name
-      value: Destructable (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 820515b509584844abe172efd43622ad, type: 3}
@@ -47734,6 +47739,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022702420}
     m_Modifications:
+    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
+      propertyPath: m_Name
+      value: Cave_Blockage_High (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalPosition.x
       value: 438
@@ -47789,10 +47798,6 @@ PrefabInstance:
     - target: {fileID: 4895649246148798, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
       propertyPath: m_LocalScale.z
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894731218017160, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
-      propertyPath: m_Name
-      value: Cave_Blockage_High (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76149708fcdc0ff4a8018ba5151d4931, type: 3}
@@ -48361,6 +48366,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (21)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48430,11 +48440,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (21)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -48644,6 +48649,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48699,11 +48709,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (6)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &1907532506 stripped
@@ -48725,6 +48730,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48779,11 +48789,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (7)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -49015,6 +49020,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
+        type: 3}
+      propertyPath: m_Name
+      value: Narrow Corridow (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8739804390234705127, guid: c57ea3571272ac14aa4d8aec572c9a34,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49075,11 +49085,6 @@ PrefabInstance:
       propertyPath: otherNarrowCorridor
       value: 
       objectReference: {fileID: 330514218}
-    - target: {fileID: 8739804390234705124, guid: c57ea3571272ac14aa4d8aec572c9a34,
-        type: 3}
-      propertyPath: m_Name
-      value: Narrow Corridow (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57ea3571272ac14aa4d8aec572c9a34, type: 3}
 --- !u!1001 &1936579025
@@ -49089,6 +49094,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49159,11 +49169,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!4 &1941573618 stripped
@@ -49191,6 +49196,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49260,11 +49270,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -49560,6 +49565,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5701802199677265307, guid: a393c0e5695e77b43b124d12959c060e,
+        type: 3}
+      propertyPath: m_Name
+      value: Sauele_dick
+      objectReference: {fileID: 0}
     - target: {fileID: 1690390604494582098, guid: a393c0e5695e77b43b124d12959c060e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49629,11 +49639,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5701802199677265307, guid: a393c0e5695e77b43b124d12959c060e,
-        type: 3}
-      propertyPath: m_Name
-      value: Sauele_dick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a393c0e5695e77b43b124d12959c060e, type: 3}
@@ -49737,6 +49742,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49806,11 +49816,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -50409,6 +50414,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50478,11 +50488,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (20)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -50577,6 +50582,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50647,11 +50657,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (6)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
 --- !u!4 &2008653225 stripped
@@ -50667,6 +50672,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (43)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50736,11 +50746,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (43)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -51087,6 +51092,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51141,11 +51151,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -51537,6 +51542,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51591,11 +51601,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -52361,6 +52366,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -52416,11 +52426,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
 --- !u!4 &2062230517 stripped
@@ -52472,6 +52477,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
+        type: 3}
+      propertyPath: m_Name
+      value: Stein_3 (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 3070924081390459544, guid: feed0a55aabe95d4abe75eeb0e6e4570,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -52541,11 +52551,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5919969639689112809, guid: feed0a55aabe95d4abe75eeb0e6e4570,
-        type: 3}
-      propertyPath: m_Name
-      value: Stein_3 (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feed0a55aabe95d4abe75eeb0e6e4570, type: 3}
@@ -52832,6 +52837,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -52886,11 +52896,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}
@@ -53663,6 +53668,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
+    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
+        type: 3}
+      propertyPath: m_Name
+      value: Jammer (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 2433536918077416650, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -53717,11 +53727,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
-        type: 3}
-      propertyPath: m_Name
-      value: Jammer (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1702062923731130074, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}
@@ -53974,6 +53979,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468252023}
     m_Modifications:
+    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
+        type: 3}
+      propertyPath: m_Name
+      value: Steel Beam (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 2414951930269300540, guid: bd2d85a74ff6bed438d7f68d68978fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54043,11 +54053,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252373617980037877, guid: bd2d85a74ff6bed438d7f68d68978fa3,
-        type: 3}
-      propertyPath: m_Name
-      value: Steel Beam (19)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd2d85a74ff6bed438d7f68d68978fa3, type: 3}

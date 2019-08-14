@@ -534,7 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 10
   _fastSwimMultiplier: 15
-  maxRotationDegreesDelta: 5
+  maxRotationDegreesDelta: 15
   funnyMoveMent: 0
 --- !u!1 &6024272212209227123
 GameObject:

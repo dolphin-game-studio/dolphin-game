@@ -10,6 +10,8 @@ public class SmallWhaleControllerBase : PlayerControllerBase
 
     protected Jammer[] allJammer;
     protected EccoEffect eccoEffect;
+    protected EccoEffectFindable eccoEffectFindable;
+    protected EccoEffectJammed eccoEffectJammed;
 
 
     protected override void Init()
@@ -18,6 +20,9 @@ public class SmallWhaleControllerBase : PlayerControllerBase
 
         allJammer = FindObjectsOfType<Jammer>();
         eccoEffect = FindObjectOfType<EccoEffect>();
+        eccoEffectFindable = FindObjectOfType<EccoEffectFindable>();
+        eccoEffectJammed = FindObjectOfType<EccoEffectJammed>();
+
     }
 
 
@@ -50,15 +55,24 @@ public class SmallWhaleControllerBase : PlayerControllerBase
         {
             var jammerInReach = GetJammerInReach();
 
-            eccoEffect.StartEcho(new Echo() { Type = jammerInReach.Count > 0 ? EchoType.JammedEcho :  EchoType.Echo, Origin = eccoOrigin.position });
-
             if (jammerInReach.Count > 0)
             {
+                eccoEffect.StartEcho(new Echo() { Type = EchoType.JammedEcho, Origin = eccoOrigin.position });
+
+
                 for (int i = 0; i < jammerInReach.Count; i++)
                 {
-                    var jammer =  jammerInReach[i];
-                    eccoEffect.StartEcho(new Echo() { Type = jammerInReach.Count > 0 ? EchoType.JammedEcho :  EchoType.Echo, Origin = jammer.transform.position });
+                    var jammer = jammerInReach[i];
+                    eccoEffect.StartEcho(new Echo() { Type = jammerInReach.Count > 0 ? EchoType.JammedEcho : EchoType.Echo, Origin = jammer.transform.position });
                 }
+            }
+            else
+            {
+                eccoEffect.StartEcho(new Echo() { Type = EchoType.Echo, Origin = eccoOrigin.position });
+                eccoEffectFindable.StartEcho(new Echo() { Type = EchoType.Echo, Origin = eccoOrigin.position });
+                eccoEffectFindable.StartEcho(new Echo() { Type = EchoType.Echo, Origin = eccoOrigin.position });
+                eccoEffectFindable.StartEcho(new Echo() { Type = EchoType.Echo, Origin = eccoOrigin.position });
+
             }
         }
     }

@@ -26,8 +26,6 @@ public class DolphinPlayerController : SmallWhaleControllerBase
     {
         eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = nearestJammerInHackDistance.transform.position });
         eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = EccoOrigin.position });
-
-
     }
 
     public Jammer GetNearestJammerInHackDistance()

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1063222738318369974}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Output
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 8739804390183002305}
   - component: {fileID: 8739804390183002310}
   - component: {fileID: 8739804390183002311}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Cube_001 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8739804390234705127}
   - component: {fileID: 3720731745066557810}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Narrow Corridow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 8739804391597355836}
   - component: {fileID: 8739804391597355837}
   - component: {fileID: 8739804391597355970}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Cube_001 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 653786932218695227}
   - component: {fileID: 6508526815973149991}
   - component: {fileID: 5881437185137377835}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

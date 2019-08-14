@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class SharkPlayerController : PlayerControllerBase
 {
-
-
-
+    
     #region Ranks
     [Range(0, 3)]
     public int rank = 0;

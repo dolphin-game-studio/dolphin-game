@@ -223,11 +223,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,6 +293,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: viewAngle
@@ -338,11 +338,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -412,6 +407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -2420,11 +2420,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 131311258479205618, guid: 0bb4768bafc67094e8e07bf11854e27f,
-        type: 3}
-      propertyPath: m_Name
-      value: Saeule_duenn
-      objectReference: {fileID: 0}
     - target: {fileID: 8541554101143635457, guid: 0bb4768bafc67094e8e07bf11854e27f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2494,6 +2489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 131311258479205618, guid: 0bb4768bafc67094e8e07bf11854e27f,
+        type: 3}
+      propertyPath: m_Name
+      value: Saeule_duenn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb4768bafc67094e8e07bf11854e27f, type: 3}
@@ -3261,11 +3261,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3335,6 +3330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -4369,11 +4369,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4443,6 +4438,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (10)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -4826,6 +4826,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4895,11 +4900,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -5588,11 +5588,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (11)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5662,6 +5657,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (11)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -5807,7 +5807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &228284271
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5986,11 +5986,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6060,6 +6055,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -6194,11 +6194,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6254,6 +6249,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: sharkToFollow
@@ -6278,11 +6278,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6337,6 +6332,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -6745,11 +6745,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6819,6 +6814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -6947,6 +6947,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7001,11 +7006,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -7797,6 +7797,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78fd1b2faa01094b8a174ed9ff64467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &332720129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1230304691}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1689796441}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &333021792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4225093663674926, guid: 4c84b069cb694c448a587e870deb037e,
@@ -8888,11 +8904,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8962,6 +8973,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -10432,11 +10448,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10506,6 +10517,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (8)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -10616,11 +10632,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10675,6 +10686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (8)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -11687,11 +11703,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11761,6 +11772,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -14333,11 +14349,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14407,6 +14418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -16904,11 +16920,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16963,6 +16974,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -17170,11 +17186,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17244,6 +17255,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -17374,6 +17390,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17443,11 +17464,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -17875,6 +17891,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 505448286642768209, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 505448286642768208, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
         type: 3}
       propertyPath: viewRadiusWhenNotSuspicious
@@ -17894,11 +17915,6 @@ PrefabInstance:
         type: 3}
       propertyPath: viewPanAngle2
       value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 505448286642768209, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: speed
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08eb86cb8a1e4cc409b7585ffca5dce4, type: 3}
@@ -18167,11 +18183,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18241,6 +18252,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (5)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -19023,6 +19039,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 505448286642768209, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 505448286642768208, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
         type: 3}
       propertyPath: viewRadiusWhenNotSuspicious
@@ -19042,11 +19063,6 @@ PrefabInstance:
         type: 3}
       propertyPath: viewPanAngle2
       value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 505448286642768209, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: speed
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08eb86cb8a1e4cc409b7585ffca5dce4, type: 3}
@@ -19572,11 +19588,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
-    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
-        type: 3}
-      propertyPath: m_Name
-      value: Jammer (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2433536918077416650, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19631,6 +19642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
+        type: 3}
+      propertyPath: m_Name
+      value: Jammer (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1702062923731130074, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}
@@ -20373,11 +20389,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20447,6 +20458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -21217,11 +21233,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Hai Posten (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21291,6 +21302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Hai Posten (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -23575,11 +23591,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23634,6 +23645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (6)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -26360,11 +26376,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26434,6 +26445,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -27121,11 +27137,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27195,6 +27206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -27701,11 +27717,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27775,6 +27786,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -29783,11 +29799,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4234261456324797395, guid: 0786fac5742214146b9ac0c71b9f1a7e,
-        type: 3}
-      propertyPath: clipNearOffset
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0786fac5742214146b9ac0c71b9f1a7e, type: 3}
 --- !u!1 &1169393324
@@ -31257,6 +31268,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31326,11 +31342,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -32226,11 +32237,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32301,6 +32307,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: viewAngle
@@ -32341,11 +32352,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
-    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
-        type: 3}
-      propertyPath: m_Name
-      value: Jammer (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 2433536918077416650, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32400,6 +32406,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
+        type: 3}
+      propertyPath: m_Name
+      value: Jammer (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1702062923731130074, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}
@@ -33246,11 +33257,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Hai Posten (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33320,6 +33326,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Hai Posten (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -34935,11 +34946,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch
-      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35009,6 +35015,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -36538,6 +36549,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36592,11 +36608,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -36817,7 +36828,7 @@ Transform:
   - {fileID: 330514217}
   - {fileID: 934397623}
   - {fileID: 63136173}
-  - {fileID: 1689796441}
+  - {fileID: 1836960721}
   - {fileID: 879554714}
   - {fileID: 1403382341}
   - {fileID: 672728784}
@@ -37081,6 +37092,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37150,11 +37166,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -37354,11 +37365,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37428,6 +37434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -37634,6 +37645,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37688,11 +37704,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -37778,11 +37789,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Hai Posten
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37852,6 +37858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Hai Posten
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -38451,6 +38462,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38521,11 +38537,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (9)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
 --- !u!1001 &1527419303
@@ -38535,11 +38546,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38609,6 +38615,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -39439,6 +39450,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39493,11 +39509,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -39598,11 +39609,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
-    - target: {fileID: 131311258479205618, guid: 0bb4768bafc67094e8e07bf11854e27f,
-        type: 3}
-      propertyPath: m_Name
-      value: Saeule_duenn (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8541554101143635457, guid: 0bb4768bafc67094e8e07bf11854e27f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39672,6 +39678,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 131311258479205618, guid: 0bb4768bafc67094e8e07bf11854e27f,
+        type: 3}
+      propertyPath: m_Name
+      value: Saeule_duenn (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb4768bafc67094e8e07bf11854e27f, type: 3}
@@ -41011,11 +41022,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41070,6 +41076,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -42543,11 +42554,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42617,6 +42623,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (5)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -42828,12 +42839,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689407017}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1689796441 stripped
+--- !u!4 &1689796441
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 5905239831711517343, guid: 0d18f79e7bb03fc49a6479184ee97acb,
     type: 3}
   m_PrefabInstance: {fileID: 1230304691}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332720129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1836960721}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1690999718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43369,11 +43389,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43443,6 +43458,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -44006,6 +44026,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.0000038146973
       objectReference: {fileID: 0}
+    - target: {fileID: 505448286642768209, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
+        type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 505448286642768208, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
         type: 3}
       propertyPath: viewRadiusWhenNotSuspicious
@@ -44025,11 +44050,6 @@ PrefabInstance:
         type: 3}
       propertyPath: viewPanAngle2
       value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 505448286642768209, guid: 08eb86cb8a1e4cc409b7585ffca5dce4,
-        type: 3}
-      propertyPath: speed
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08eb86cb8a1e4cc409b7585ffca5dce4, type: 3}
@@ -44685,6 +44705,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44754,11 +44779,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -45191,11 +45211,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45265,6 +45280,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (7)
       objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826229, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
@@ -45381,6 +45401,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45450,11 +45475,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -46379,6 +46399,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1832363844}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1836960720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1230304691}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1836960721}
+  m_Layer: 0
+  m_Name: Destructable 1 (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1836960721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1230304691}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836960720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1689796441}
+  m_Father: {fileID: 1430453892}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1838531204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46488,6 +46539,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336965933}
     m_Modifications:
+    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
+        type: 3}
+      propertyPath: m_Name
+      value: Wand_gross
+      objectReference: {fileID: 0}
     - target: {fileID: 8809097894933571763, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46557,11 +46613,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4280299108409842128, guid: ebb977ed5c5bbfd44aa4f34b6d254693,
-        type: 3}
-      propertyPath: m_Name
-      value: Wand_gross
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb977ed5c5bbfd44aa4f34b6d254693, type: 3}
@@ -48730,11 +48781,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48789,6 +48835,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (7)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -49826,11 +49877,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shark Sentry (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 6752674049978826234, guid: dd031a5444c99964ca3e38e958cf98f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49900,6 +49946,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752674049978826233, guid: dd031a5444c99964ca3e38e958cf98f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shark Sentry (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd031a5444c99964ca3e38e958cf98f4, type: 3}
@@ -51542,11 +51593,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 748202245}
     m_Modifications:
-    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
-        type: 3}
-      propertyPath: m_Name
-      value: Anglerfisch (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 2990527092262712227, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51601,6 +51647,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2990527092262712224, guid: 8293855093e76c5449372e98e2509a56,
+        type: 3}
+      propertyPath: m_Name
+      value: Anglerfisch (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8503689326452386953, guid: 8293855093e76c5449372e98e2509a56,
         type: 3}
@@ -53668,11 +53719,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430453892}
     m_Modifications:
-    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
-        type: 3}
-      propertyPath: m_Name
-      value: Jammer (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 2433536918077416650, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -53727,6 +53773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702062923731130073, guid: a441b47d5301bf8498db3979908406ee,
+        type: 3}
+      propertyPath: m_Name
+      value: Jammer (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1702062923731130074, guid: a441b47d5301bf8498db3979908406ee,
         type: 3}

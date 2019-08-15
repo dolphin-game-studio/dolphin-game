@@ -3,7 +3,27 @@ using UnityEngine;
 
 public class DestructableObstacle : MonoBehaviour
 {
-    public bool OrcaCanDestroy => findable == null ? true : findable.Found;
+    public bool OrcaCanDestroy
+    {
+        get
+        {
+            if (Destroyed)
+            {
+                return false;
+            }
+            else if (NotDestroyed) {
+                if (findable != null)
+                {
+                    return findable.Found;
+                }
+                else {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
 
     private Findable findable;
 
@@ -11,6 +31,10 @@ public class DestructableObstacle : MonoBehaviour
     Rigidbody[] stones;
     [SerializeField] private float minDestructableForce = 300;
     [SerializeField] private float maxDestructableForce = 1000;
+
+    private bool destroyed = false;
+    public bool Destroyed { get => destroyed; set => destroyed = value; }
+    public bool NotDestroyed { get => !Destroyed; set => Destroyed = !value; }
 
 
     void Start()
@@ -33,6 +57,7 @@ public class DestructableObstacle : MonoBehaviour
 
     public void Destroy()
     {
+        destroyed = true;
         sphereCollider.enabled = false;
 
         foreach (var stone in stones)
@@ -51,7 +76,7 @@ public class DestructableObstacle : MonoBehaviour
             stone.AddForce(new Vector3(randomForceOnX, randomForceOnY, randomForceOnZ));
             stone.AddTorque(new Vector3(randomForceOnX, randomForceOnY, randomForceOnZ));
 
-            Destroy(stone, 10);
+            Destroy(stone.gameObject, 10);
         }
     }
 }

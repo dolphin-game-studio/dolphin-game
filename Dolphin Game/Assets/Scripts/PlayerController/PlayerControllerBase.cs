@@ -16,13 +16,13 @@ public class PlayerControllerBase : MonoBehaviour
     [SerializeField] private float _speed = 10f;
     public float Speed
     {
-        get => _speed; 
+        get => _speed;
     }
 
     [SerializeField] private float _fastSwimMultiplier = 2f;
     public float FastSwimMultiplier
     {
-        get => _fastSwimMultiplier; 
+        get => _fastSwimMultiplier;
     }
 
     [SerializeField] private float maxRotationDegreesDelta = 0.1f;
@@ -45,6 +45,9 @@ public class PlayerControllerBase : MonoBehaviour
 
         foreach (var hai in haie)
         {
+            if (hai.IsKnockedOut)
+                continue;
+
             var fromPlayerToSharkVector = hai.transform.position - transform.position;
 
             var dotProdToShark = Vector3.Dot(fromPlayerToSharkVector.normalized, transform.forward);
@@ -61,6 +64,7 @@ public class PlayerControllerBase : MonoBehaviour
                     fromPlayerToNearestFacingSharkVector = fromPlayerToSharkVector;
                 }
             }
+
         }
 
         distanceToNearestFacingShark = nearestSharkDistance;
@@ -94,7 +98,7 @@ public class PlayerControllerBase : MonoBehaviour
         animator = GetComponent<Animator>();
         if (animator == null)
         {
-            throw new DolphinGameException("Animator Component is not set on DolphinPlayerController"); 
+            throw new DolphinGameException("Animator Component is not set on DolphinPlayerController");
         }
     }
 
@@ -108,7 +112,8 @@ public class PlayerControllerBase : MonoBehaviour
     public void Move(float horizontal, float vertical)
     {
         var cantMove = !CanMove;
-        if (cantMove) {
+        if (cantMove)
+        {
             return;
         }
 

@@ -14,7 +14,7 @@ public class Hai : MonoBehaviour
 
     [Range(0, 360)]
     public float viewAngle;
-    
+
     #region View Radius
 
     [Range(1, 100)]
@@ -157,7 +157,7 @@ public class Hai : MonoBehaviour
 
     #region Ranks
     [Range(1, 3)]
-    public int rank = 1; 
+    public int rank = 1;
 
     public int Rank
     {
@@ -196,7 +196,7 @@ public class Hai : MonoBehaviour
 
     public bool IsNotDistracted { get => !IsDistracted; set => IsDistracted = !value; }
     #endregion
-     
+
     void Start()
     {
         HaiPatrouille = GetComponent<HaiPatrouille>();
@@ -366,9 +366,12 @@ public class Hai : MonoBehaviour
     #region Look At Player Character
     private void LookAtPlayerCharacter(GameObject visiblePlayer)
     {
-        Vector3 dirToTarget = (visiblePlayer.transform.position - transform.position).normalized;
-        transform.forward = dirToTarget;
-        currentViewPanRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y > 180 ? -90 : 90, transform.eulerAngles.z);
+        if (visiblePlayer != null)
+        {
+            Vector3 dirToTarget = (visiblePlayer.transform.position - transform.position).normalized;
+            transform.forward = dirToTarget;
+            currentViewPanRotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y > 180 ? -90 : 90, transform.eulerAngles.z);
+        }
     }
     #endregion
 
@@ -427,7 +430,7 @@ public class Hai : MonoBehaviour
                     }
                     else if (shark != null)
                     {
-                        if (Rank == 3 || shark.Rank < Rank)
+                        if (shark.Rank < Rank)
                         {
                             visibleTargets.Add(target.gameObject);
                             foundAtLeastOnePlayer = true;
@@ -609,7 +612,7 @@ public class Hai : MonoBehaviour
     #endregion
 
     #region Collision with Player
-    
+
     private CapsuleCollider Collider;
 
     int playerCharacterLayer;

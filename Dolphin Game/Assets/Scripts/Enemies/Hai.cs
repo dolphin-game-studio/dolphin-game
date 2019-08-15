@@ -430,7 +430,7 @@ public class Hai : MonoBehaviour
                     }
                     else if (shark != null)
                     {
-                        if (Rank == 3 || shark.Rank < Rank)
+                        if (shark.Rank < Rank)
                         {
                             visibleTargets.Add(target.gameObject);
                             foundAtLeastOnePlayer = true;

@@ -38,6 +38,8 @@ public class OrcaPlayerController : SmallWhaleControllerBase
     [SerializeField] private float rotateSharkInMouthSpeed;
     [SerializeField] private float moveSharkInMouthSpeed;
 
+    [SerializeField] private float maxRamDistance;
+
 
     private bool _isTransportingShark;
     public bool IsTransportingShark { get => _isTransportingShark; set => _isTransportingShark = value; }
@@ -48,8 +50,8 @@ public class OrcaPlayerController : SmallWhaleControllerBase
     public bool IsNotSwimmingToSharkToTransport { get => !_isSwimmingToSharkToTransport; set => _isSwimmingToSharkToTransport = !value; }
 
     private Hai currentlyTransportedShark;
-    private Vector3 currentlyTransportedSharkDesiredPosition = new Vector3(-0.6f,1.1f,0.2f);
-    private Quaternion currentlyTransportedSharkDesiredRotation = Quaternion.Euler(-90,-90,0);
+    private Vector3 currentlyTransportedSharkDesiredPosition = new Vector3(-0.6f, 1.1f, 0.2f);
+    private Quaternion currentlyTransportedSharkDesiredRotation = Quaternion.Euler(-90, -90, 0);
 
     private Transform currentlyTransportedSharkParent;
 
@@ -83,7 +85,8 @@ public class OrcaPlayerController : SmallWhaleControllerBase
             }
         }
 
-        if (IsSwimmingToSharkToTransport) {
+        if (IsSwimmingToSharkToTransport)
+        {
 
             var distanceToShark = Vector3.Distance(mouthSpine.transform.position, currentlyTransportedShark.BackFin.transform.position);
             //var distanceToShark = Vector3.Distance(transform.position, currentlyTransportedShark.BackFin.transform.position);
@@ -92,11 +95,12 @@ public class OrcaPlayerController : SmallWhaleControllerBase
             var fromMouthToFin = currentlyTransportedShark.BackFin.transform.position - mouthSpine.transform.position;
             //Vector3 pos = Vector3.MoveTowards(transform.position, currentlyTransportedShark.BackFin.transform.position, Speed * Time.deltaTime);
             Vector3 pos = Vector3.MoveTowards(transform.position, currentlyTransportedShark.BackFin.transform.position - centerToMouth, Speed * Time.deltaTime);
-             
+
             Debug.Log(mouthSpine.transform.position + " " + currentlyTransportedShark.BackFin.transform.position + " " + pos + " mouth to fin: " + fromMouthToFin + "distance mouth to fin: " + distanceToShark);
             GetComponent<Rigidbody>().MovePosition(pos);
 
-            if (distanceToShark < 1) {
+            if (distanceToShark < 1)
+            {
                 IsNotSwimmingToSharkToTransport = true;
 
                 currentlyTransportedSharkParent = currentlyTransportedShark.transform.parent;
@@ -104,24 +108,25 @@ public class OrcaPlayerController : SmallWhaleControllerBase
             }
         }
 
-        if (IsTransportingShark && IsNotSwimmingToSharkToTransport) {
+        if (IsTransportingShark && IsNotSwimmingToSharkToTransport)
+        {
             //if (currentlyTransportedShark.transform.rotation != currentlyTransportedSharkDesiredRotation)
             //{
             //  Quaternion rotation = Quaternion.RotateTowards(currentlyTransportedShark.transform.rotation, currentlyTransportedSharkDesiredRotation, currentlyTransportedShark.roationSpeed * Time.deltaTime);
             Quaternion rotation = Quaternion.RotateTowards(currentlyTransportedShark.transform.localRotation, currentlyTransportedSharkDesiredRotation, rotateSharkInMouthSpeed * Time.deltaTime);
             currentlyTransportedShark.transform.localRotation = rotation; //.GetComponent<Rigidbody>().MoveRotation(rotation);
-                                                                                                          //}
-                                                                                                          //if (currentlyTransportedShark.transform.position != currentlyTransportedSharkDesiredPosition)
-                                                                                                          //{
-                                                                                                          //Vector3 pos = Vector3.MoveTowards(currentlyTransportedShark.transform.position, currentlyTransportedSharkDesiredPosition, Time.deltaTime);
-                                                                                                          //currentlyTransportedShark.GetComponent<Rigidbody>().MovePosition(pos);
+                                                                          //}
+                                                                          //if (currentlyTransportedShark.transform.position != currentlyTransportedSharkDesiredPosition)
+                                                                          //{
+                                                                          //Vector3 pos = Vector3.MoveTowards(currentlyTransportedShark.transform.position, currentlyTransportedSharkDesiredPosition, Time.deltaTime);
+                                                                          //currentlyTransportedShark.GetComponent<Rigidbody>().MovePosition(pos);
 
-            Vector3 pos = Vector3.MoveTowards(currentlyTransportedShark.transform.localPosition, currentlyTransportedSharkDesiredPosition, moveSharkInMouthSpeed  * Time.deltaTime);
+            Vector3 pos = Vector3.MoveTowards(currentlyTransportedShark.transform.localPosition, currentlyTransportedSharkDesiredPosition, moveSharkInMouthSpeed * Time.deltaTime);
             currentlyTransportedShark.transform.localPosition = pos;
             //}
         }
     }
- 
+
 
     #endregion  Transport Knocked Out Sharks
 
@@ -163,7 +168,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
     Hai nearestFacingShark;
     float distanceToNearestFacingShark;
     Vector3 fromPlayerToSharkVector;
-    
+
     DestructableObstacle nearestFacingDestructable;
     float distanceToNearestFacingDestructable;
     Vector3 fromPlayerToDestructableVector;
@@ -183,21 +188,15 @@ public class OrcaPlayerController : SmallWhaleControllerBase
         if (bButtonPressed)
         {
             nearestFacingDestructable = GetNearestFacingDestructable(out distanceToNearestFacingDestructable, out fromPlayerToDestructableVector);
-            
-            if (nearestFacingDestructable != null)
+            nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
+
+            bool eitherDestructableOrSharkFound = nearestFacingDestructable != null && distanceToNearestFacingDestructable < maxRamDistance
+                || nearestFacingShark != null && distanceToNearestFacingShark < maxRamDistance;
+
+            if (eitherDestructableOrSharkFound)
             {
                 SheduleRamThrust();
             }
-            else {
-                nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
-                
-                if (nearestFacingShark != null)
-                {
-                    SheduleRamThrust();
-                }
-            }
-
-            
         }
 
         if (ramThrustSheduled)
@@ -206,22 +205,42 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
             if (timeLeftUntilRamThrust < 0)
             {
-                if (nearestFacingDestructable != null)
+                bool ramShark = false;
+                bool ramDestructable = false;
+
+                if (nearestFacingDestructable != null && nearestFacingShark == null)
+                {
+                    ramDestructable = true;
+                }
+                else if (nearestFacingShark != null && nearestFacingDestructable == null)
+                {
+                    ramShark = true;
+                }
+                else if (nearestFacingShark != null && nearestFacingDestructable != null)
+                {
+                    if (distanceToNearestFacingDestructable < distanceToNearestFacingShark)
+                    {
+                        ramDestructable = true;
+                    }
+                    else
+                    {
+                        ramShark = true;
+                    }
+                }
+
+                if (ramShark)
+                {
+                    transform.forward = fromPlayerToSharkVector;
+                }
+                else if (ramDestructable)
                 {
                     transform.forward = fromPlayerToDestructableVector;
+                }
 
+                if (ramShark || ramDestructable)
+                {
                     ramThrustSheduled = false;
                     RamThrusting = true;
-                }
-                else
-                {
-                    if (nearestFacingShark != null)
-                    {
-                        transform.forward = fromPlayerToSharkVector;
-
-                        ramThrustSheduled = false;
-                        RamThrusting = true;
-                    }
                 }
             }
         }
@@ -270,7 +289,8 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
         foreach (var destructable in destructables)
         {
-            if (destructable.OrcaCanDestroy) {
+            if (destructable.OrcaCanDestroy)
+            {
                 var fromPlayerToDestructableVector = destructable.transform.position - transform.position;
 
                 var dotProdToDestructable = Vector3.Dot(fromPlayerToDestructableVector.normalized, transform.forward);

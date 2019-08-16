@@ -68,29 +68,13 @@ public class EccoEffect : MonoBehaviour
 
             }
         }
-
-
-
-
-
-        //if (Input.GetButtonDown("X Button"))
-        //{
-        //AudioSource dolphinSound = dolphinSounds[Random.Range(0, dolphinSounds.Length)];
-        //dolphinSound.Play();
-
-        //Demo Code _scanning = true;
-        //Demo Code ScanDistance = 0;
-
-
-
-        //}
+ 
     }
-    // End Demo Code
-
+ 
     void OnEnable()
     {
         _camera = GetComponent<Camera>();
-        _camera.depthTextureMode = DepthTextureMode.Depth;
+        _camera.depthTextureMode = DepthTextureMode.DepthNormals;
 
     }
 

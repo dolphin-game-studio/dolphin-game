@@ -90,7 +90,7 @@ public class EccoEffectFindable : MonoBehaviour
     void OnEnable()
     {
         _camera = GetComponent<Camera>();
-        _camera.depthTextureMode = DepthTextureMode.Depth;
+        _camera.depthTextureMode = DepthTextureMode.DepthNormals;
 
     }
 

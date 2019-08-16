@@ -63,8 +63,8 @@ Shader "Hidden/ScannerEffect"
 				{
 					VertOut o;
 					o.vertex = UnityObjectToClipPos(v.vertex);
-					o.uv = v.uv.xy;
-					o.uv_depth = v.uv.xy;
+					o.uv = v.uv;
+					o.uv_depth = v.uv;
 
 					#if UNITY_UV_STARTS_AT_TOP
 					if (_MainTex_TexelSize.y < 0)
@@ -81,6 +81,10 @@ Shader "Hidden/ScannerEffect"
 				sampler2D_float _CameraDepthTexture;
 				float4 _WorldSpaceScannerPos;
  
+				//the depth normals texture
+				sampler2D _CameraDepthNormalsTexture;
+
+
 				float _EchoDistances[100];
 				float _EchoTypes[100];
 				float4 _EchoOrigins[100];
@@ -117,14 +121,19 @@ Shader "Hidden/ScannerEffect"
 				half4 frag(VertOut i) : SV_Target
 				{
 					half4 col = tex2D(_MainTex, i.uv);
+					float linearDepth;
+					float3 normal;
+					DecodeDepthNormal(tex2D(_CameraDepthNormalsTexture, i.uv_depth), linearDepth, normal);
+					float ndotd = 1 -  dot(normal, normalize( i.interpolatedRay ) );
 
-					float rawDepth = DecodeFloatRG(tex2D(_CameraDepthTexture, i.uv_depth));
-					float linearDepth = Linear01Depth(rawDepth);
+					 
+					//float linearDepth = DecodeFloatRG(tex2D(_CameraDepthNormalsTexture, i.uv_depth).zw);
+					//float linearDepth = Linear01Depth(rawDepth);
 					float4 wsDir = linearDepth * i.interpolatedRay;
 					float3 wsPos = _WorldSpaceCameraPos + wsDir;
 					half4 scannerCol = half4(0, 0, 0, 0);
 
-					
+
 
 					//if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && linearDepth < 1)
 					//{
@@ -138,19 +147,20 @@ Shader "Hidden/ScannerEffect"
 
 						float dist = distance(wsPos, _EchoOrigins[i]);
 
-						if (dist < _EchoDistances[i] && dist > _EchoDistances[i] - _ScanWidth && linearDepth < 1)
+						if (dist < _EchoDistances[i] && dist > _EchoDistances[i] - _ScanWidth && linearDepth < 1  )
 						{
 
 							if (_EchoTypes[i] == 0) {
   
 								float diff = 1 - (_EchoDistances[i] - dist) / (_ScanWidth);
 								half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
-								scannerCol = lerp(_TrailColor, edge, diff) /*+ horizBars(i.uv) */;
-								scannerCol *= diff;
+								scannerCol = lerp(_TrailColor, edge, diff) * pow(ndotd,0.7) * (1 - pow((_EchoDistances[i] / 200), 2))   /*+ horizBars(i.uv) */;
+								//scannerCol *= diff;
+								//scannerCol /= pow(dist, 0.2) ;
 
 								//scannerCol *= (1 - (linearDepth * 5));
 								//scannerCol *= (1 - (linearDepth * 8));
-								scannerCol /= (dist * 0.04);
+								//scannerCol /= ((1 - ndotd) * dist); //* 0.04); 
 
 							}
 							else if(_EchoTypes[i] == 1) {
@@ -162,7 +172,7 @@ Shader "Hidden/ScannerEffect"
 
 								//scannerCol *= (1 - (linearDepth * 5));
 								//scannerCol *= (1 - (linearDepth * 8));
-								scannerCol /= (dist * 0.5);
+								//scannerCol /= (dist * 0.5);
 
 							} else if (_EchoTypes[i] == 2) { 
 

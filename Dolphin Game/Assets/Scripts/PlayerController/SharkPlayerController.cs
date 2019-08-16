@@ -81,7 +81,7 @@ public class SharkPlayerController : PlayerControllerBase
             float distanceToNearestFacingShark;
             Vector3 fromPlayerToSharkVector;
 
-            Hai nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
+            Hai nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector, searchForKnockedOutShark: true);
             if (nearestFacingShark != null && nearestFacingShark.IsKnockedOut && distanceToNearestFacingShark < 10)
             {
                 if (Rank < nearestFacingShark.Rank)

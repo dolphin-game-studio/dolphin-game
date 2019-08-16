@@ -64,7 +64,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
         {
             if (IsNotTransportingShark)
             {
-                nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
+                nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector, searchForKnockedOutShark: true);
 
                 if (nearestFacingShark != null && nearestFacingShark.IsKnockedOut)
                 {

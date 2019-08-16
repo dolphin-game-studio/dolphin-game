@@ -37,7 +37,7 @@ public class PlayerControllerBase : MonoBehaviour
     }
 
 
-    protected Hai GetNearestFacingShark(out float distanceToNearestFacingShark, out Vector3 fromPlayerToNearestFacingSharkVector)
+    protected Hai GetNearestFacingShark(out float distanceToNearestFacingShark, out Vector3 fromPlayerToNearestFacingSharkVector, bool searchForKnockedOutShark = false)
     {
         Hai nearestShark = null;
         float nearestSharkDistance = float.MaxValue;
@@ -45,7 +45,14 @@ public class PlayerControllerBase : MonoBehaviour
 
         foreach (var hai in haie)
         {
-            if (hai.IsKnockedOut)
+            bool searchingForKnockedOutSharkButSharkIsNotKnockedOut = searchForKnockedOutShark && hai.IsNotKnockedOut;
+
+            bool searchingForNotKnockedOutSharkButSharkIsKnockedOut = !searchForKnockedOutShark && hai.IsKnockedOut;
+
+            if (searchingForKnockedOutSharkButSharkIsNotKnockedOut)
+                continue;
+
+            if (searchingForNotKnockedOutSharkButSharkIsKnockedOut)
                 continue;
 
             var fromPlayerToSharkVector = hai.transform.position - transform.position;

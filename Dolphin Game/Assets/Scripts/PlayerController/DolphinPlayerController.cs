@@ -20,15 +20,19 @@ public class DolphinPlayerController : SmallWhaleControllerBase
     }
 
     #region hacking
+
+    [SerializeField] private AudioSource hackingClip;
+ 
     public float hackDistance;
 
     public void SendHackEcho()
     {
         eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = nearestJammerInHackDistance.transform.position });
         eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = EccoOrigin.position });
+        hackingClip.Play();
     }
 
-    public Jammer GetNearestJammerInHackDistance()
+        public Jammer GetNearestJammerInHackDistance()
     {
         Jammer nearestJammer = null;
         float distanceToNearestJammer = float.MaxValue;
@@ -61,6 +65,8 @@ public class DolphinPlayerController : SmallWhaleControllerBase
 
     private bool hackingInProgress = false;
     private Jammer nearestJammerInHackDistance = null;
+
+
 
     private void HandleHacking()
     {

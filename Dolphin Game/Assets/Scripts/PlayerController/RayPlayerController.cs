@@ -19,6 +19,9 @@ public class RayPlayerController : PlayerControllerBase
     }
 
     #region HandleNarrowCorridors
+
+    [SerializeField] private AudioSource narrowCorridorClip;
+
     NarrowCorridor[] narrowCorridors;
 
     private void HandleNarrowCorridors()
@@ -35,6 +38,7 @@ public class RayPlayerController : PlayerControllerBase
             {
                 if (nearestFacingNarrowCorridor.RayCanSlipThrough) {
                     this.transform.position = nearestFacingNarrowCorridor.OtherNarrowCorridor.OutputPosition;
+                    narrowCorridorClip.Play();
                 }
             }
         }
@@ -42,6 +46,9 @@ public class RayPlayerController : PlayerControllerBase
     #endregion
 
     #region HandleSting
+
+    [SerializeField] private AudioSource rayStingClip;
+
     int stingHash = Animator.StringToHash("Sting");
 
     private void HandleSting()
@@ -51,6 +58,7 @@ public class RayPlayerController : PlayerControllerBase
         if (stingButtonPressed)
         {
             animator.SetTrigger(stingHash);
+            rayStingClip.Play();
 
             float distanceToNearestFacingShark;
             Vector3 fromPlayerToSharkVector;

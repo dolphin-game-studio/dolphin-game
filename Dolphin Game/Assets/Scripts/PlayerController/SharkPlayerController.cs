@@ -6,6 +6,8 @@ using UnityEngine;
 public class SharkPlayerController : PlayerControllerBase
 {
     
+
+
     #region Ranks
     [Range(0, 3)]
     public int rank = 0;
@@ -53,6 +55,9 @@ public class SharkPlayerController : PlayerControllerBase
     }
 
     #region Distract Shark
+
+    [SerializeField] private AudioSource distractSharkClip;
+
     private void HandleDistractShark()
     {
         bool xButtonPressed = Input.GetButtonUp("X Button");
@@ -66,12 +71,16 @@ public class SharkPlayerController : PlayerControllerBase
             if (nearestFacingShark != null && nearestFacingShark.IsNotStunned && nearestFacingShark.IsNotKnockedOut && distanceToNearestFacingShark < 20)
             {
                 nearestFacingShark.Distract(this);
+                distractSharkClip.Play();
             }
         }
     }
     #endregion
 
     #region Take Uniform
+
+    [SerializeField] private AudioSource takeUniformClip;
+    
     private void HandleTakeUniform()
     {
         bool yButtonPressed = Input.GetButtonUp("Y Button");
@@ -87,6 +96,7 @@ public class SharkPlayerController : PlayerControllerBase
                 if (Rank < nearestFacingShark.Rank)
                 {
                     Rank = nearestFacingShark.Rank;
+                    takeUniformClip.Play();
                 }
 
                 nearestFacingShark.Rank = 0;
@@ -96,6 +106,9 @@ public class SharkPlayerController : PlayerControllerBase
     #endregion
 
     #region Take Angler
+
+    [SerializeField] private AudioSource takeAnglerClip;
+
     [SerializeField] private float distanceToTakeAngler;
     protected Angler[] anglers;
     private Angler followingAngler;
@@ -123,6 +136,7 @@ public class SharkPlayerController : PlayerControllerBase
                         if (angler.SharkToFollow == this.gameObject)
                         {
                             followingAngler = angler;
+                            takeAnglerClip.Play();
                         }
                     }
                 }

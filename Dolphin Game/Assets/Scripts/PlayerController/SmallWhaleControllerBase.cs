@@ -47,10 +47,23 @@ public class SmallWhaleControllerBase : PlayerControllerBase
         return jammerInReach;
     }
 
+
+
+
     protected override void Update()
     {
         base.Update();
+        HandleEcho();
+    }
 
+    #region Handle Echo
+
+    [SerializeField] private AudioSource[] echoClips;
+    [SerializeField] private AudioSource[] echoJammedClips;
+
+
+    private void HandleEcho()
+    {
         if (Input.GetButtonDown("X Button"))
         {
             var jammerInReach = GetJammerInReach();
@@ -58,7 +71,7 @@ public class SmallWhaleControllerBase : PlayerControllerBase
             if (jammerInReach.Count > 0)
             {
                 eccoEffect.StartEcho(new Echo() { Type = EchoType.JammedEcho, Origin = eccoOrigin.position });
-
+                echoJammedClips[Random.Range(0, echoJammedClips.Length - 1)].Play();
 
                 for (int i = 0; i < jammerInReach.Count; i++)
                 {
@@ -70,10 +83,10 @@ public class SmallWhaleControllerBase : PlayerControllerBase
             {
                 eccoEffect.StartEcho(new Echo() { Type = EchoType.Echo, Origin = eccoOrigin.position });
                 eccoEffectFindable.StartEcho(new Echo() { Type = EchoType.Echo, Origin = eccoOrigin.position });
-                eccoEffectFindable.StartEcho(new Echo() { Type = EchoType.Echo, Origin = eccoOrigin.position });
-                eccoEffectFindable.StartEcho(new Echo() { Type = EchoType.Echo, Origin = eccoOrigin.position });
-
+                echoClips[Random.Range(0, echoClips.Length - 1)].Play();
             }
         }
     }
+
+    #endregion
 }

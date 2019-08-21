@@ -34,6 +34,9 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
     #region Transport Knocked Out Sharks
 
+    [SerializeField] private AudioSource transportSharksClip;
+
+
     [SerializeField] private GameObject mouthSpine;
     [SerializeField] private float rotateSharkInMouthSpeed;
     [SerializeField] private float moveSharkInMouthSpeed;
@@ -82,6 +85,8 @@ public class OrcaPlayerController : SmallWhaleControllerBase
                 currentlyTransportedShark.transform.SetParent(currentlyTransportedSharkParent);
                 currentlyTransportedShark = null;
                 currentlyTransportedSharkParent = null;
+
+                transportSharksClip.Play();
             }
         }
 
@@ -181,6 +186,11 @@ public class OrcaPlayerController : SmallWhaleControllerBase
         timeLeftUntilRamThrust = ramThrustDelay;
     }
 
+
+    #region Handle Ram Thrust
+
+    [SerializeField] private AudioSource ramThrustClip;
+
     private void HandleRamThrust()
     {
         bool bButtonPressed = Input.GetButtonUp("B Button");
@@ -241,7 +251,9 @@ public class OrcaPlayerController : SmallWhaleControllerBase
                 {
                     ramThrustSheduled = false;
                     RamThrusting = true;
-                }
+                    ramThrustClip.Play();
+
+}
             }
         }
         if (RamThrusting)
@@ -255,6 +267,8 @@ public class OrcaPlayerController : SmallWhaleControllerBase
             }
         }
     }
+
+    #endregion
 
     void OnCollisionEnter(Collision collision)
     {

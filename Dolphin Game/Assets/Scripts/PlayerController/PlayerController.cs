@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    [SerializeField] private AudioSource playerChangeClip;
+
+
     public PlayerControllerBase CurrentPlayerController
     {
         get => currentPlayerController;
@@ -13,6 +17,8 @@ public class PlayerController : MonoBehaviour
             if (currentPlayerController != value)
             {
                 currentPlayerController = value;
+
+                playerChangeClip.Play();
 
                 if (currentPlayerController == DolphinPlayerController)
                 {

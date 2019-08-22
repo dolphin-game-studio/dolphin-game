@@ -10,7 +10,6 @@ public class MenuItem : MonoBehaviour
     private Animator animator;
     [SerializeField] private UnityEvent pressedEvent;
 
-
     private bool _selected;
 
     public bool Selected
@@ -26,7 +25,8 @@ public class MenuItem : MonoBehaviour
         }
     }
 
-     void Start()
+
+    void Start()
     {
         animator = GetComponent<Animator>();
 
@@ -35,14 +35,8 @@ public class MenuItem : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-         bool aButtonPressed = Input.GetButtonUp("A Button");
-
-
-        if (Selected && aButtonPressed) {
-            pressedEvent.Invoke();
-            animator.SetTrigger("pressed");
-        }
+    public void Press() {
+        pressedEvent.Invoke();
+        animator.SetTrigger("pressed");
     }
 }

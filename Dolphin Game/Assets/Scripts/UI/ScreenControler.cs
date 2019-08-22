@@ -16,25 +16,29 @@ public class ScreenControler : MonoBehaviour
     [SerializeField] private MenuScreen creditsScreen;
     public MenuScreen CreditsScreen => creditsScreen;
 
-    private MenuScreen currentMenuScreen;
-    public MenuScreen CurrentMenuScreen
+
+    private List<MenuScreen> screenHistory = new List<MenuScreen>();
+
+    public List<MenuScreen> ScreenHistory { get => screenHistory; }
+
+    public void ActivateScreen(MenuScreen screen)
     {
-        get => currentMenuScreen;
-        set
+        if(screenHistory.Count > 0)
         {
-
-            if (currentMenuScreen != value)
-            {
-                if (currentMenuScreen != null)
-                {
-                    currentMenuScreen.Active = false;
-                }
-
-                currentMenuScreen = value;
-
-                currentMenuScreen.Active = true;
-            }
+            screenHistory[screenHistory.Count - 1].Active = false; ;
         }
+
+        screenHistory.Add(screen);
+
+        screenHistory[screenHistory.Count - 1].Active = true;
+    }
+
+    public void DeactivateCurrentScreen() {
+        screenHistory[screenHistory.Count - 1].Active = false;
+
+        screenHistory.RemoveAt(screenHistory.Count - 1);
+
+        screenHistory[screenHistory.Count - 1].Active = true;
     }
 
 
@@ -58,7 +62,7 @@ public class ScreenControler : MonoBehaviour
             throw new DolphinGameException("creditsScreen is not set");
         }
 
-        CurrentMenuScreen = startScreen;
+        ActivateScreen(startScreen);
     }
 
 }

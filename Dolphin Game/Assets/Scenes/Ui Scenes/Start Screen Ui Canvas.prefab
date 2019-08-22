@@ -111,7 +111,7 @@ MonoBehaviour:
   pressedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 457833894}
+      - m_Target: {fileID: 1991737561}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 437998067}
   - component: {fileID: 437998066}
   - component: {fileID: 437998065}
+  - component: {fileID: 4154533464366152873}
+  - component: {fileID: 1991737561}
   m_Layer: 5
   m_Name: Pause Screen
   m_TagString: Untagged
@@ -207,6 +209,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f09a7ce3779711469b61674597cb87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4154533464366152873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437998063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8ee6eb0f9129749aff25f8e6da24bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuItems:
+  - {fileID: 1384822002517306813}
+  - {fileID: 1167302071}
+  - {fileID: 234705670}
+--- !u!114 &1991737561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437998063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c882ae1eebcc23945bd22e2a2cfd2add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &457833892
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,8 +247,6 @@ GameObject:
   m_Component:
   - component: {fileID: 457833893}
   - component: {fileID: 457833897}
-  - component: {fileID: 457833896}
-  - component: {fileID: 457833894}
   - component: {fileID: 457833895}
   m_Layer: 5
   m_Name: Menu
@@ -257,34 +285,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457833892}
   m_CullTransparentMesh: 0
---- !u!114 &457833896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457833892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d8ee6eb0f9129749aff25f8e6da24bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuItems:
-  - {fileID: 1384822002517306813}
-  - {fileID: 1167302071}
-  - {fileID: 234705670}
---- !u!114 &457833894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457833892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367a3833749e88b469faeaa5a9e4566f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &457833895
 Animator:
   serializedVersion: 3
@@ -415,7 +415,7 @@ MonoBehaviour:
   pressedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 457833894}
+      - m_Target: {fileID: 1991737561}
         m_MethodName: OpenControlsScreen
         m_Mode: 1
         m_Arguments:
@@ -594,13 +594,15 @@ GameObject:
   - component: {fileID: 5297130214983512838}
   - component: {fileID: 5187624755442968490}
   - component: {fileID: 1679075969}
+  - component: {fileID: 4278688980600506521}
+  - component: {fileID: 8424949070092901911}
   m_Layer: 5
   m_Name: Start Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3389805169223032551
 RectTransform:
   m_ObjectHideFlags: 0
@@ -663,6 +665,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f09a7ce3779711469b61674597cb87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4278688980600506521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713049172201345652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8ee6eb0f9129749aff25f8e6da24bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuItems:
+  - {fileID: 78383118}
+  - {fileID: 3043651094590757062}
+  - {fileID: 1896194407}
+  - {fileID: 1951468381}
+  - {fileID: 1027939538}
+--- !u!114 &8424949070092901911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713049172201345652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367a3833749e88b469faeaa5a9e4566f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1105967718754280108
@@ -851,7 +883,7 @@ MonoBehaviour:
   pressedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 669015018}
+      - m_Target: {fileID: 8424949070092901911}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -975,7 +1007,7 @@ MonoBehaviour:
   pressedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 669015018}
+      - m_Target: {fileID: 8424949070092901911}
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -1099,7 +1131,7 @@ MonoBehaviour:
   pressedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 669015018}
+      - m_Target: {fileID: 8424949070092901911}
         m_MethodName: OpenCreditsScreen
         m_Mode: 1
         m_Arguments:
@@ -1320,8 +1352,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2970441314809961826}
   - component: {fileID: 2970441314809961827}
-  - component: {fileID: 669015017}
-  - component: {fileID: 669015018}
   - component: {fileID: 6651229052666275725}
   m_Layer: 5
   m_Name: Menu
@@ -1362,36 +1392,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2970441314809961757}
   m_CullTransparentMesh: 0
---- !u!114 &669015017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2970441314809961757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d8ee6eb0f9129749aff25f8e6da24bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuItems:
-  - {fileID: 78383118}
-  - {fileID: 3043651094590757062}
-  - {fileID: 1896194407}
-  - {fileID: 1951468381}
-  - {fileID: 1027939538}
---- !u!114 &669015018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2970441314809961757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367a3833749e88b469faeaa5a9e4566f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &6651229052666275725
 Animator:
   serializedVersion: 3
@@ -1522,7 +1522,7 @@ MonoBehaviour:
   pressedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 669015018}
+      - m_Target: {fileID: 8424949070092901911}
         m_MethodName: OpenControlsScreen
         m_Mode: 1
         m_Arguments:
@@ -1547,13 +1547,14 @@ GameObject:
   - component: {fileID: 1954780808989058656}
   - component: {fileID: 2031802523}
   - component: {fileID: 2031802524}
+  - component: {fileID: 8678776864347153559}
   m_Layer: 5
   m_Name: Controls Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3003534047628492885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1617,6 +1618,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f09a7ce3779711469b61674597cb87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8678776864347153559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4371276897354298655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48bda206b857f44449175fa004587631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7323372187386430701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,6 +1642,7 @@ GameObject:
   - component: {fileID: 7686091812836594850}
   - component: {fileID: 1633420546}
   - component: {fileID: 1633420547}
+  - component: {fileID: 2890666327126547843}
   m_Layer: 5
   m_Name: Credits Screen
   m_TagString: Untagged
@@ -1697,6 +1711,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f09a7ce3779711469b61674597cb87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2890666327126547843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7323372187386430701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48bda206b857f44449175fa004587631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7672991516499472257
@@ -1810,8 +1836,8 @@ MonoBehaviour:
   pressedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 457833894}
-        m_MethodName: StartGame
+      - m_Target: {fileID: 1991737561}
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1934,7 +1960,7 @@ MonoBehaviour:
   pressedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 669015018}
+      - m_Target: {fileID: 8424949070092901911}
         m_MethodName: PlayIntro
         m_Mode: 1
         m_Arguments:

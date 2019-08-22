@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartMenuControler : MonoBehaviour
+public class PauseMenuControler : MonoBehaviour
 {
     private ScreenControler screenControler;
 
@@ -15,14 +15,9 @@ public class StartMenuControler : MonoBehaviour
         }
      }
 
-    public void StartGame()
+    public void ContinueGame()
     {
-        screenControler.ActivateScreen(screenControler.PauseScreen);
-    }
-
-    public void PlayIntro()
-    {
-        Debug.Log("PlayIntro");
+        Debug.Log("ContinueGame");
     }
 
     public void OpenControlsScreen()
@@ -30,13 +25,10 @@ public class StartMenuControler : MonoBehaviour
          screenControler.ActivateScreen(screenControler.ControlsScreen);
     }
 
-    public void OpenCreditsScreen()
-    {
-        screenControler.ActivateScreen(screenControler.CreditsScreen);
-    }
 
     public void QuitGame()
     {
-        Application.Quit();
+        Debug.Log("QuitGame");
+        screenControler.DeactivateCurrentScreen();
     }
 }

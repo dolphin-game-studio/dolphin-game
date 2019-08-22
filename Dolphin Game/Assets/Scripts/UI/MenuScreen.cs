@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Animator), typeof(ScreenControler))]
 public class MenuScreen : MonoBehaviour
 {
     Animator animator;
@@ -31,6 +31,5 @@ public class MenuScreen : MonoBehaviour
 
     void Update()
     {
-
     }
 }

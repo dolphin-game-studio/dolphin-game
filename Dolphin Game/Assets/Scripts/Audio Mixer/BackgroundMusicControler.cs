@@ -6,7 +6,7 @@ public class BackgroundMusicControler : MonoBehaviour
 {
     [SerializeField] private BackgroundAudioMixerControl backgroundAudioMixerControl;
 
-    void Start()
+    void Awake()
     {
         
     }

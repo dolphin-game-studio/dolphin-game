@@ -2,7 +2,7 @@
 
 public class RayPlayerController : PlayerControllerBase
 {
-    void Start()
+    void Awake()
     {
         base.Init();
 

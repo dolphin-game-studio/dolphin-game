@@ -27,7 +27,7 @@ public class NarrowCorridor : MonoBehaviour
     [SerializeField] private ParticleSystem particleSystem;
 
 
-    void Start()
+    void Awake()
     {
         if (OtherNarrowCorridor == null)
         {

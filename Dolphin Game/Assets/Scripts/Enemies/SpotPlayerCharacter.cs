@@ -17,7 +17,7 @@ public class SpotPlayerCharacter : MonoBehaviour
     private Renderer _renderer;
     private MaterialPropertyBlock _propBlock;
 
-    void Start()
+    void Awake()
     {
         hai = GetComponent<Hai>();
 

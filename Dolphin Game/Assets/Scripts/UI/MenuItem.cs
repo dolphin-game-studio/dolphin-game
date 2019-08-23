@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class MenuItem : MonoBehaviour
 {
     private Animator animator;
+
     [SerializeField] private UnityEvent pressedEvent;
 
     private bool _selected;
@@ -26,7 +27,7 @@ public class MenuItem : MonoBehaviour
     }
 
 
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
 

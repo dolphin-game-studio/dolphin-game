@@ -14,7 +14,7 @@ public class DolphinPlayerController : SmallWhaleControllerBase
 
 
 
-    void Start()
+    void Awake()
     {
         base.Init();
     }

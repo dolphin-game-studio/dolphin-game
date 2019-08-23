@@ -22,7 +22,7 @@ public class HaiPatrouille : MonoBehaviour
 
 
 
-    void Start()
+    void Awake()
     {
         hai = GetComponent<Hai>();
 

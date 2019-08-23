@@ -197,7 +197,7 @@ public class Hai : MonoBehaviour
     public bool IsNotDistracted { get => !IsDistracted; set => IsDistracted = !value; }
     #endregion
 
-    void Start()
+    void Awake()
     {
         HaiPatrouille = GetComponent<HaiPatrouille>();
 

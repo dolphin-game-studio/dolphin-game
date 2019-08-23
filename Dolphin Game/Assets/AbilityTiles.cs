@@ -36,7 +36,7 @@ public class AbilityTiles : MonoBehaviour
     public Quaternion DesiredRotation => Visible ? Quaternion.LookRotation(Vector3.forward, new Vector3(1, 1, 0)) : Quaternion.LookRotation(new Vector3(1, 1, 0), Vector3.back);
 
 
-    void Start()
+    void Awake()
     {
         if (abilityVisualisation == null)
         {

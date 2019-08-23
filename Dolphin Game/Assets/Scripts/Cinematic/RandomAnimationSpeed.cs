@@ -33,7 +33,7 @@ public class RandomAnimationSpeed : MonoBehaviour
 
     public float SwimSpeed { get => swimSpeed; set => swimSpeed = value; }
     
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
 

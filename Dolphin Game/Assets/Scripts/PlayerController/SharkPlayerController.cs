@@ -33,7 +33,7 @@ public class SharkPlayerController : PlayerControllerBase
     }
     #endregion 
 
-    void Start()
+    void Awake()
     {
         base.Init();
 

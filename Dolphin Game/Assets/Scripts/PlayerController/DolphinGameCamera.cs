@@ -45,7 +45,7 @@ public class DolphinGameCamera : MonoBehaviour
     private Vector3 desiredPosition;
 
 
-    void Start()
+    void Awake()
     {
  
 

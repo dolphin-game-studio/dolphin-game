@@ -75,7 +75,7 @@ public class CharacterSelection : MonoBehaviour
 
     private float selectedPlayerImageSize;
 
-    void Start()
+    void Awake()
     {
         playerController = FindObjectOfType<PlayerController>();
 
@@ -91,7 +91,7 @@ public class CharacterSelection : MonoBehaviour
         }
 
 
-        Visible = false;
+        Visible = true;
 
         allPlayerSelectionImages = new Transform[] { playerSelectionImageNorth, playerSelectionImageWest, playerSelectionImageEast, playerSelectionImageSouth };
 

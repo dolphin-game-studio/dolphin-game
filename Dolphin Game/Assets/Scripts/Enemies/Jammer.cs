@@ -13,7 +13,7 @@ public class Jammer : MonoBehaviour
     public bool IsNotHacked { get { return !_isHacked; } }
 
 
-    void Start()
+    void Awake()
     {
 
     }

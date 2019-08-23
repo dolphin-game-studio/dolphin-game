@@ -14,7 +14,7 @@ public class Angler : MonoBehaviour
     [SerializeField] private Vector3 offsetToShark;
 
 
-    void Start()
+    void Awake()
     {
         SharkToFollow = sharkToFollow;
     }

@@ -9,7 +9,7 @@ public class CloseableScreen : MonoBehaviour
     private ScreenControler screenControler;
 
 
-    void Start()
+    void Awake()
     {
         menuScreen = GetComponent<MenuScreen>();
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpottedScreen : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
         
     }

@@ -9,7 +9,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
     DestructableObstacle[] destructables;
 
-    void Start()
+    void Awake()
     {
         base.Init();
 

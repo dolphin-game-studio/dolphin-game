@@ -36,7 +36,7 @@ public class Findable : MonoBehaviour
     }
     #endregion
 
-    void Start()
+    void Awake()
     {
         
     }

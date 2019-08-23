@@ -31,7 +31,7 @@ public class PlayerControllerBase : MonoBehaviour
 
     public virtual bool CanMove { get { return true; } }
 
-    void Start()
+    void Awake()
     {
         Init();
     }

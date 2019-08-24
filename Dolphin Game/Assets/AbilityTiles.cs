@@ -1,15 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AbilityTiles : MonoBehaviour
 {
+
     public float RotationChangeSpeed => abilityVisualisation.RotationChangeSpeed;
 
     [SerializeField] private RectTransform abilityTileNorthImage;
     [SerializeField] private RectTransform abilityTileWestImage;
     [SerializeField] private RectTransform abilityTileEastImage;
     [SerializeField] private RectTransform abilityTileSouthImage;
+
+    public RectTransform AbilityTileNorthImage  => abilityTileNorthImage;
+    public RectTransform AbilityTileWestImage => abilityTileWestImage;
+    public RectTransform AbilityTileEastImage => abilityTileEastImage;
+    public RectTransform AbilityTileSouthImage => abilityTileSouthImage;
+
 
     [SerializeField] private AbilityVisualisation abilityVisualisation;
 
@@ -64,6 +72,7 @@ public class AbilityTiles : MonoBehaviour
     {
         HandleAbilityVisualisationImagesRotation();
     }
+
 
     private void HandleAbilityVisualisationImagesRotation()
     {

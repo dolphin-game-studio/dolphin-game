@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PauseScreenControler : ScreenControler
 {
-    [SerializeField] private MenuScreen pauseScreen;
-    public MenuScreen PauseScreen => pauseScreen;
+    private CharacterSelection _characterSelection;
 
-    [SerializeField] private MenuScreen controlsScreen;
-    public MenuScreen ControlsScreen => controlsScreen;
+    [SerializeField] private GameScreen pauseScreen;
+    public GameScreen PauseScreen => pauseScreen;
 
-    public MenuScreen[] allScreens => new MenuScreen[] { pauseScreen, controlsScreen };
+    [SerializeField] private GameScreen controlsScreen;
+    public GameScreen ControlsScreen => controlsScreen;
+
+    public GameScreen[] allScreens => new GameScreen[] { pauseScreen, controlsScreen };
 
     public override void Awake()
     {
@@ -24,6 +26,12 @@ public class PauseScreenControler : ScreenControler
         {
             throw new DolphinGameException("controlsScreen is not set");
         }
+        
+        _characterSelection = FindObjectOfType<CharacterSelection>();
+        if (_characterSelection == null)
+        {
+            throw new DolphinGameException("CharacterSelection couldn't be found.");
+        }
     }
 
     public override void Start()
@@ -31,51 +39,26 @@ public class PauseScreenControler : ScreenControler
         base.Start();
     }
 
-    #region Visible
-
-    private bool _visible;
-    public bool Visible
-    {
-        get => _visible;
-        set
-        {
-            if (_visible != value)
-            {
-                _visible = value;
-
-                ActivateScreen(pauseScreen);
-
-                if (_visible)
-                {
-                    Time.timeScale = 0f;
-                }
-                else
-                {
-                    Time.timeScale = 1f;
-                }
-            }
-        }
-    }
-
-    public bool NotVisible { get => !Visible; set => Visible = !value; }
-
-    #endregion
+ 
 
     public override void Update()
     {
         base.Update();
 
-        bool startButtonPressed = Input.GetButtonDown("Start Button");
+        if (_characterSelection.NotVisible) {
+            bool startButtonPressed = Input.GetButtonDown("Start Button");
 
-        if (startButtonPressed)
-        {
-            if (screenHistory.Contains(pauseScreen))
+            if (startButtonPressed)
             {
-                DeactivateScreensUntil(pauseScreen);
+                if (screenHistory.Contains(pauseScreen))
+                {
+                    DeactivateScreensUntil(pauseScreen);
+                }
+                else
+                {
+                    ActivateScreen(pauseScreen);
+                }
             }
-            else {
-                ActivateScreen(pauseScreen);
-            }
-        }
+        } 
     }
 }

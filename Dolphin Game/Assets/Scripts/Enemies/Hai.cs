@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Hai : MonoBehaviour
 {
+    private Game _game;
+
+
     private Rigidbody Rigidbody;
     private HaiPatrouille HaiPatrouille;
 
@@ -199,6 +202,9 @@ public class Hai : MonoBehaviour
 
     void Awake()
     {
+
+        _game = FindObjectOfType<Game>();
+
         HaiPatrouille = GetComponent<HaiPatrouille>();
 
         Rigidbody = GetComponent<Rigidbody>();
@@ -386,7 +392,32 @@ public class Hai : MonoBehaviour
     public bool IsAlarmed => visibleTargets.Count > 0;
     public bool IsNotAlarmed => visibleTargets.Count == 0;
 
+
     RayPlayerController spottedRay;
+
+    bool _foundAtLeastOnePlayer = false;
+    public bool FoundAtLeastOnePlayer
+    {
+        get => _foundAtLeastOnePlayer;
+        set
+        {
+            if (_foundAtLeastOnePlayer != value)
+            {
+                _foundAtLeastOnePlayer = value;
+
+                if (_foundAtLeastOnePlayer)
+                {
+                    _game.NoticedPlayer = true;
+                }
+                else
+                {
+                    _game.NoticedPlayer = false;
+                }
+            }
+        }
+    }
+
+
 
     void FindVisibleTargets()
     {
@@ -394,7 +425,6 @@ public class Hai : MonoBehaviour
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, ViewRadius, targetMask);
         visibleTargets.Clear();
 
-        bool foundAtLeastOnePlayer = false;
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
@@ -425,7 +455,7 @@ public class Hai : MonoBehaviour
                         {
                             visibleTargets.Add(target.gameObject);
                             spottedRay = ray;
-                            foundAtLeastOnePlayer = true;
+                            FoundAtLeastOnePlayer = true;
                         }
                     }
                     else if (shark != null)
@@ -433,13 +463,13 @@ public class Hai : MonoBehaviour
                         if (shark.Rank < Rank)
                         {
                             visibleTargets.Add(target.gameObject);
-                            foundAtLeastOnePlayer = true;
+                            FoundAtLeastOnePlayer = true;
                         }
                     }
                     else if (dolphin != null || orca != null)
                     {
                         visibleTargets.Add(target.gameObject);
-                        foundAtLeastOnePlayer = true;
+                        FoundAtLeastOnePlayer = true;
                     }
                     else if (bubble != null && Rank == 1)
                     {
@@ -453,7 +483,7 @@ public class Hai : MonoBehaviour
             }
         }
 
-        if (foundAtLeastOnePlayer)
+        if (FoundAtLeastOnePlayer)
         {
             for (int i = visibleTargets.Count - 1; i > 0; i--)
             {
@@ -463,6 +493,11 @@ public class Hai : MonoBehaviour
                 {
                     visibleTargets.RemoveAt(i);
                 }
+            }
+
+            if (visibleTargets.Count == 0)
+            {
+                FoundAtLeastOnePlayer = false;
             }
         }
     }

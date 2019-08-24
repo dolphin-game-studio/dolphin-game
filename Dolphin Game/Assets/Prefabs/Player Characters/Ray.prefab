@@ -822,7 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3466860bf0ff38840b0960c6f796aa98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 20
   _fastSwimMultiplier: 15
   maxRotationDegreesDelta: 15
   funnyMoveMent: 0

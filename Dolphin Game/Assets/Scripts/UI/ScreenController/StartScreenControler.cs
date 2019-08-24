@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class StartScreenControler : ScreenControler
 {
-    [SerializeField] private MenuScreen loadingScreen;
-    public MenuScreen LoadingScreen => loadingScreen;
+    [SerializeField] private GameScreen loadingScreen;
+    public GameScreen LoadingScreen => loadingScreen;
 
-    [SerializeField] private MenuScreen startScreen;
-    public MenuScreen StartScreen => startScreen;
+    [SerializeField] private GameScreen startScreen;
+    public GameScreen StartScreen => startScreen;
 
-    [SerializeField] private MenuScreen controlsScreen;
-    public MenuScreen ControlsScreen => controlsScreen;
+    [SerializeField] private GameScreen controlsScreen;
+    public GameScreen ControlsScreen => controlsScreen;
 
-    [SerializeField] private MenuScreen creditsScreen;
-    public MenuScreen CreditsScreen => creditsScreen;
+    [SerializeField] private GameScreen creditsScreen;
+    public GameScreen CreditsScreen => creditsScreen;
 
-    public MenuScreen[] allScreens => new MenuScreen[] { loadingScreen, startScreen, controlsScreen, creditsScreen };
+    public GameScreen[] allScreens => new GameScreen[] { loadingScreen, startScreen, controlsScreen, creditsScreen };
      
     public override void Awake()
     {

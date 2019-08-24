@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class SmallWhaleControllerBase : PlayerControllerBase
 {
+    #region Cooldowns
+    [SerializeField] private float _echoCooldown;
+    [SerializeField] private float _timeSinceLastEcho;
+
+    public float EchoAbilityCooldown => Mathf.Clamp01(_timeSinceLastEcho  / _echoCooldown);
+    #endregion
+
+
     [SerializeField] private Transform eccoOrigin;
 
     public Transform EccoOrigin { get => eccoOrigin; }
@@ -64,8 +72,15 @@ public class SmallWhaleControllerBase : PlayerControllerBase
 
     private void HandleEcho()
     {
+        _timeSinceLastEcho += Time.deltaTime;
+
+        if (_timeSinceLastEcho < _echoCooldown)
+            return;
+
         if (Input.GetButtonDown("X Button"))
         {
+            _timeSinceLastEcho = 0;
+
             var jammerInReach = GetJammerInReach();
 
             if (jammerInReach.Count > 0)

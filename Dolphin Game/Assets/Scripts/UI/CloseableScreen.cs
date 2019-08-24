@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(MenuScreen))]
+[RequireComponent(typeof(GameScreen))]
 public class CloseableScreen : MonoBehaviour
 {
-    private MenuScreen menuScreen;
+    private GameScreen menuScreen;
     private ScreenControler screenControler;
 
 
     void Awake()
     {
-        menuScreen = GetComponent<MenuScreen>();
+        menuScreen = GetComponent<GameScreen>();
 
         screenControler = FindObjectOfType<ScreenControler>();
         if (screenControler == null)

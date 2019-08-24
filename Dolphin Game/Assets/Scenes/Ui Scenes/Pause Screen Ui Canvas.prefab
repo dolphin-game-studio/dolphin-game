@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 437998064}
   - component: {fileID: 437998067}
   - component: {fileID: 437998066}
-  - component: {fileID: 437998065}
   - component: {fileID: 1991737561}
   m_Layer: 5
   m_Name: Pause Screen
@@ -196,18 +195,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &437998065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 437998063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f09a7ce3779711469b61674597cb87a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1991737561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +211,8 @@ MonoBehaviour:
   - {fileID: 1384822002517306813}
   - {fileID: 1167302071}
   - {fileID: 234705670}
+  silenceSnapshot: {fileID: 2065257077286815233, guid: a374505712d29cb4b833dace29f1f46c,
+    type: 2}
 --- !u!1 &457833892
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59cd6f283181ca94cbaca89fc33195ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseScreen: {fileID: 437998065}
+  pauseScreen: {fileID: 0}
   controlsScreen: {fileID: 2031802524}
 --- !u!1 &4371276897354298655
 GameObject:

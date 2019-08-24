@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 5988355704109098797}
   - component: {fileID: 7120696215028451095}
   - component: {fileID: 2480746852769449213}
-  - component: {fileID: 1126787800}
   m_Layer: 5
   m_Name: Loading Screen
   m_TagString: Untagged
@@ -160,18 +159,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     m_Handle: 0
---- !u!114 &1126787800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421964114831899221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f09a7ce3779711469b61674597cb87a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &713049172201345652
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +170,6 @@ GameObject:
   - component: {fileID: 3389805169223032551}
   - component: {fileID: 5297130214983512838}
   - component: {fileID: 5187624755442968490}
-  - component: {fileID: 1679075969}
   - component: {fileID: 8424949070092901911}
   m_Layer: 5
   m_Name: Start Screen
@@ -237,25 +223,13 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 266a4a61452557a43bda1d4d108cb91d, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1679075969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713049172201345652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f09a7ce3779711469b61674597cb87a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8424949070092901911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -919,8 +893,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcddec224206704fb535921475d3179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadingScreen: {fileID: 1126787800}
-  startScreen: {fileID: 1679075969}
+  loadingScreen: {fileID: 2480746852769449213}
+  startScreen: {fileID: 8424949070092901911}
   controlsScreen: {fileID: 2031802524}
   creditsScreen: {fileID: 1633420547}
 --- !u!1 &2970441314809961757

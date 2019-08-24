@@ -3,23 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(MenuScreen))]
-public class LoadingScreen : MonoBehaviour
+ public class LoadingScreen : GameScreen
 {
-    MenuScreen menuScreen;
-
+ 
     [SerializeField] private Scene scene;
 
     AsyncOperation isLoadingGame;
 
-    void Awake()
+    public override void Awake()
     {
-        menuScreen = GetComponent<MenuScreen>();
+        base.Awake();
     }
 
-    void Update()
+    public override void Start()
     {
-        if (menuScreen.Active)
+        base.Start();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        if (Active && FadeComplete)
         {
             if (isLoadingGame == null)
             {

@@ -7,25 +7,12 @@ using UnityEngine;
 public class ScreenControler : MonoBehaviour
 {
 
-    protected List<MenuScreen> screenHistory = new List<MenuScreen>();
+    protected List<GameScreen> screenHistory = new List<GameScreen>();
 
-    public List<MenuScreen> ScreenHistory { get => screenHistory; }
+    public List<GameScreen> ScreenHistory { get => screenHistory; }
+ 
 
-    private bool _active;
-
-    public bool Active
-    {
-        get => _active;
-        set
-        {
-            if (_active != value)
-            {
-                _active = value;
-            }
-        }
-    }
-
-    public void ActivateScreen(MenuScreen screen)
+    public void ActivateScreen(GameScreen screen)
     {
         if (screenHistory.Count > 0)
         {
@@ -35,11 +22,13 @@ public class ScreenControler : MonoBehaviour
         screenHistory.Add(screen);
 
         screenHistory[screenHistory.Count - 1].Active = true;
+        screenHistory[screenHistory.Count - 1].InHistory = true; 
     }
 
     public void DeactivateCurrentScreen()
     {
         screenHistory[screenHistory.Count - 1].Active = false;
+        screenHistory[screenHistory.Count - 1].InHistory = false;
 
         screenHistory.RemoveAt(screenHistory.Count - 1);
 
@@ -49,7 +38,7 @@ public class ScreenControler : MonoBehaviour
         }
     }
 
-    public void DeactivateScreensUntil(MenuScreen screen)
+    public void DeactivateScreensUntil(GameScreen screen)
     {
         while (screenHistory.Count > 0 && screenHistory[screenHistory.Count - 1] != screen)
         {

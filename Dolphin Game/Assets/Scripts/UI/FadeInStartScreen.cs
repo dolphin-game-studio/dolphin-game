@@ -12,6 +12,5 @@ public class FadeInStartScreen : MonoBehaviour
     }
 
     public void LoadScreenControler() {
-        screenControler.Active = true;
-    }
+     }
 }

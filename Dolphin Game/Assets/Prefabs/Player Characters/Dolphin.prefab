@@ -626,10 +626,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5900129dbda88a94a90d6d002fd1742c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 20
   _fastSwimMultiplier: 15
   maxRotationDegreesDelta: 15
   funnyMoveMent: 0
+  _echoCooldown: 0
+  _timeSinceLastEcho: 0
   eccoOrigin: {fileID: 1741876647858184255}
   echoClips:
   - {fileID: 644950517201040222}

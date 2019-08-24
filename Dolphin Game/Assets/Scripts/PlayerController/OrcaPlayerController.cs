@@ -167,6 +167,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
         }
     }
 
+
     [SerializeField] private float ramThrustDuration = 1f;
     private float timeSinceRamStarted = 0f;
 

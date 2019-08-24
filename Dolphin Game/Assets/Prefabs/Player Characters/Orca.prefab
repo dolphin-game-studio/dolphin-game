@@ -259,10 +259,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88ef336734beb34096e868468851aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 7
+  _speed: 15
   _fastSwimMultiplier: 10
   maxRotationDegreesDelta: 15
   funnyMoveMent: 0
+  _echoCooldown: 2
+  _timeSinceLastEcho: 0
   eccoOrigin: {fileID: 2555234944986317815}
   echoClips:
   - {fileID: 4956139488957417424}
@@ -1360,8 +1362,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -6057140222963153312, guid: 5da583add83df6647b2c6e303fc59e62, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5da583add83df6647b2c6e303fc59e62, type: 3}
 --- !u!4 &4858048816654773136 stripped
 Transform:

@@ -23,5 +23,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - _AbilityUsable: 0
+    - _CooldownDarknes: 0.15
+    - _El: 3.72
+    - _EndeSharpness: 63.66
+    - _Filled: 1.37
+    - _GreyScaleBlue: 0.33
+    - _GreyScaleGreen: 0
+    - _GreyScaleMultiplier: 0.25
+    - _GreyScaleRed: 0
+    - _Joyce: 0
+    - _LowerEnd: 1.125
+    - _Nancy: 4.65
+    - _Range1: 0
+    - _Range2: 0
+    - _RangeX: 0
+    - _RangeY: 0
+    - _Will: 5.13
     m_Colors: []

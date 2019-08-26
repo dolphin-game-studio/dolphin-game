@@ -826,8 +826,12 @@ MonoBehaviour:
   _fastSwimMultiplier: 15
   maxRotationDegreesDelta: 15
   funnyMoveMent: 0
+  _rayInvisibilityClip: {fileID: 8933645243582764447}
+  _invisibleMaterial: {fileID: 0}
+  _rayRenderer: {fileID: 0}
+  maxDistanceToNarrowCorridor: 15
   narrowCorridorClip: {fileID: 1104327580610293785}
-  rayStingClip: {fileID: 1229737420283187979}
+  _rayStingClip: {fileID: 1229737420283187979}
 --- !u!1 &6024272212209227123
 GameObject:
   m_ObjectHideFlags: 0

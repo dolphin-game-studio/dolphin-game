@@ -19,7 +19,7 @@
 
 					_CooldownDarknes("Cooldown Darknes", Range(0,10)) = 0
 
-			_Filled("Filled", Range(1.125,2.125)) = 1.125
+			_Filled("Filled", Range(0,1)) = 0
 
 						_LowerEnd("LowerEnd", Range(1.125,2.125)) = 1.125
  
@@ -28,6 +28,7 @@
 
 						_AbilityUsable("Ability usable" , Range(0,1)) = 0
 												_EdgeGlowColor("Edge Glow Color" , Color) = (1,1,1,1)
+															_UnusableEdgeGlowColor("Unusable Edge Glow Color" , Color) = (1,0,0,1)
 
 									_EdgeGlow("Edge Glow" , Range(0,1)) = 0
 												_EdgeGlowOffset("Edge Glow Offset" , Range(0,0.5)) = 0
@@ -44,7 +45,7 @@
 			_VHI("_VHI", Range(0, 1)) = 0.25
 			_DI("_DI", Range(0, 1)) = 0.19
 			_PintPow("_PintPow", Range(0, 10)) = 2.3
-			_PintDevider("_PintDevider", Range(0, 100)) = 80.
+			_PintDevider("_PintDevider", Range(0, 100000)) = 80.
 			_PintSubstractor("_PintSubstractor", Range(0, 1)) = 0.1
 			_DistMultiplier("_DistMultiplier", Range(0, 10)) = 7
 			_BranchDistMultiplier("_BranchDistMultiplier", Range(0, 1)) = 1
@@ -97,6 +98,8 @@
 			float _EdgeGlow;
 
 			float4 _EdgeGlowColor;
+			float4 _UnusableEdgeGlowColor;
+
 			
 				float _EdgeGlowOffset;
 				float _EdgeGlowMultiplier;
@@ -140,9 +143,13 @@
 
 			float4 greyscaleColor = float4(greyscale, greyscale, greyscale, 1);
 			 
+			float renderCooldown = _Filled > 0 && _Filled < 1;
+			float dontRenderCooldown = _Filled == 0 || _Filled == 1;
+
+
 			float lowerEnd = frac(atan2(i.uv.y - 0.5, i.uv.x - 0.5) / 6.2832 + _LowerEnd);
 
-			float upperEnd = frac(atan2(i.uv.y - 0.5, i.uv.x - 0.5) / 6.2832 + _Filled);
+			float upperEnd = frac(atan2(i.uv.y - 0.5, i.uv.x - 0.5) / 6.2832 + _Filled + _LowerEnd);
 
 			float betweenLowerAndUpperEnd = lowerEnd < upperEnd;
 			float notBetweenLowerAndUpperEnd = 1 - betweenLowerAndUpperEnd;
@@ -154,7 +161,7 @@
  
 			float3 fadedOutColor = saturatedOrDesaturatedColor * pow(upperEnd, _EndeSharpness) + darkerColor * (1-pow(lowerEnd, _EndeSharpness));
 
-			float3 fullColor = fadedOutColor * betweenLowerAndUpperEnd + saturatedOrDesaturatedColor * notBetweenLowerAndUpperEnd;
+			float3 fullColor = (fadedOutColor * betweenLowerAndUpperEnd + saturatedOrDesaturatedColor * notBetweenLowerAndUpperEnd) * renderCooldown + saturatedOrDesaturatedColor * dontRenderCooldown;
 
   
  
@@ -162,7 +169,8 @@
 			float maxDistanceToCenter = clamp( max(max(abs(i.uv.y - 0.5), abs(i.uv.y - 0.5)), max(abs(i.uv.x - 0.5), abs(i.uv.x - 0.5))) - _EdgeGlowOffset, 0, 1) *  _EdgeGlowMultiplier;
 			float4 edgeGlow = maxDistanceToCenter * _EdgeGlow;
  
-			col.rgb = fullColor * (1 - edgeGlow) + _EdgeGlowColor * edgeGlow;
+			float3 colorAfterEdge = fullColor * (1 - edgeGlow) + (_UnusableEdgeGlowColor * (1-_AbilityUsable)) * edgeGlow +  (_EdgeGlowColor * _AbilityUsable) * edgeGlow;
+ 
 
 			//col.rgb = fullColor * (1 - edgeGlow) + _EdgeGlowColor * edgeGlow;
 			//float4 star = (pow(frac(atan2(i.uv.y - 0.5, i.uv.x - 0.5) / 1.570795 + _Time.y), 3)
@@ -171,16 +179,16 @@
 			//	;
 			//col.rgb = fullColor * (1 - star) + star;
 
-			float pintPow = frac(_Time.w / 6) * 6;
-			float minusPint = pintPow < 3;
+			//float pintPow = frac(_Time.w / 6) * 6;
+			//float minusPint = pintPow < 3;
 
 
-			_PintPow = (frac(_Time.w / 3) * 3) * minusPint + (3 - (frac(_Time.w / 3) * 3)) * (1 - minusPint);
+			//_PintPow = (frac(_Time.w / 3) * 3) * minusPint + (3 - (frac(_Time.w / 3) * 3)) * (1 - minusPint);
  
 			 
-			float distMultiplier = frac(_Time.w / 6) * 6;
-			float minusDistMultiplier = pintPow < 3;
-			_DistMultiplier =  ((frac(_Time.w / 3) * 3) * minusPint + (3 - (frac(_Time.w / 3) * 3)) * (1 - minusPint));
+			//float distMultiplier = frac(_Time.w / 6) * 6;
+			//float minusDistMultiplier = pintPow < 3;
+			//_DistMultiplier =  ((frac(_Time.w / 3) * 3) * minusPint + (3 - (frac(_Time.w / 3) * 3)) * (1 - minusPint));
 
  
 				// Main particle
@@ -201,8 +209,7 @@
 
 
 
-			float theta = frac(_Time.x / 360) * 3.14159 / 180;
-
+ 
 
 			// Draws the eight-branched star
 			// Horizontal and vertical branches
@@ -221,9 +228,9 @@
 				+ _DI / (distd1*_BranchDistMultiplier)
 				+ _DI / (distd2*_BranchDistMultiplier);
 
-			float pint =  (pow(pint1, _PintPow) / _PintDevider)- _PintSubstractor;
+			float pint = clamp( ( (pow(pint1, _PintPow) / _PintDevider)- _PintSubstractor ),0,1) ;
 
-			col.rgb += float3(pint, pint, pint);
+			col.rgb  = colorAfterEdge   +  float3(pint, pint, pint ) * _StarBrightness;
 
 			//col.rgb = dot( normalize( float3((i.uv.x -0.5) *2  , (i.uv.y - 0.5) * 2, -1  ))
 			//	          , normalize(float3( 0,  0, -1)));

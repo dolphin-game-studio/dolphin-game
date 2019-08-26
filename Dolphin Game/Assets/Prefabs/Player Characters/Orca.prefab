@@ -273,11 +273,12 @@ MonoBehaviour:
   - {fileID: 4362555018701932902}
   echoJammedClips:
   - {fileID: 7368116271304064215}
+  _ramCooldown: 2
   transportSharksClip: {fileID: 3354728072059484808}
   mouthSpine: {fileID: 849612582631142409}
   rotateSharkInMouthSpeed: 120
   moveSharkInMouthSpeed: 10
-  maxRamDistance: 35
+  maxRamDistance: 25
   ramForce: 30
   ramThrustDelay: 1
   ramThrustDuration: 1

@@ -99,8 +99,9 @@ public class Hai : MonoBehaviour
 
                     viewMesh.Clear();
 
-                    Collider.enabled = false;
-                }
+                    Collider.height = 1;
+                    gameObject.layer = LayerMask.NameToLayer("Knocked Out Enemy");
+                 }
             }
         }
     }
@@ -119,6 +120,8 @@ public class Hai : MonoBehaviour
         transform.LookAt(sharkPlayerController.transform, Vector3.up);
         distractingShark = sharkPlayerController;
         distractingSharkPositionWhenDistracted = sharkPlayerController.transform.position;
+
+        LookAtPlayerCharacter(sharkPlayerController.gameObject);
     }
 
     private Vector3 initialPosition;
@@ -445,9 +448,11 @@ public class Hai : MonoBehaviour
                     var bubble = target.GetComponent<Bubble>();
 
 
+                    var otherShark = target.GetComponent<Hai>();
+
+
                     if (ray != null)
                     {
-
                         bool isNotNearGround = !Physics.Raycast(transform.position, dirToTarget, dstToTarget * 1.2f, obstacleMask);
                         bool isMoving = ray.Rigidbody.velocity.magnitude > 1;
 
@@ -456,6 +461,9 @@ public class Hai : MonoBehaviour
                             visibleTargets.Add(target.gameObject);
                             spottedRay = ray;
                             FoundAtLeastOnePlayer = true;
+                        }
+                        else {
+                            ray.InvisibleToShark = true;
                         }
                     }
                     else if (shark != null)
@@ -474,6 +482,11 @@ public class Hai : MonoBehaviour
                     else if (bubble != null && Rank == 1)
                     {
                         visibleTargets.Add(target.gameObject);
+                    }
+                    else if (otherShark != null && otherShark.IsKnockedOut) {
+                        visibleTargets.Add(target.gameObject);
+                        FoundAtLeastOnePlayer = true;
+
                     }
                 }
             }

@@ -7,7 +7,7 @@ public class PlayerControllerBase : MonoBehaviour
     protected Hai[] haie;
     CapsuleCollider Collider;
 
-    protected Animator animator;
+    protected Animator _animator;
 
     public Rigidbody Rigidbody { get; set; }
 
@@ -102,8 +102,8 @@ public class PlayerControllerBase : MonoBehaviour
             throw new DolphinGameException("The essentials are not present in this scene. Please add one Essentials object from the Prefabs Folder.");
         }
 
-        animator = GetComponent<Animator>();
-        if (animator == null)
+        _animator = GetComponent<Animator>();
+        if (_animator == null)
         {
             throw new DolphinGameException("Animator Component is not set on DolphinPlayerController");
         }
@@ -139,6 +139,6 @@ public class PlayerControllerBase : MonoBehaviour
 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, maxRotationDegreesDelta);
 
-        animator.SetFloat("Speed", movement.magnitude);
+        _animator.SetFloat("Speed", movement.magnitude);
     }
 }

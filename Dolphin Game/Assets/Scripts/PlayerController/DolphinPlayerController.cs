@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class DolphinPlayerController : SmallWhaleControllerBase
 {
+    #region Cooldowns
+
+    [SerializeField] private float _bubbleCooldown;
+    private float _timeSinceLastBubble;
+
+    public float BubbleAbilityCooldown => Mathf.Clamp01(_timeSinceLastBubble / _bubbleCooldown);
+
+    public bool BubbleAbilityCooldownFinished => BubbleAbilityCooldown == 1;
+
+
+    #endregion
+
+
     public GameObject bubblePrefab;
     int bubbleHash = Animator.StringToHash("Bubble");
     private bool bubbleSheduled = false;
@@ -21,39 +34,70 @@ public class DolphinPlayerController : SmallWhaleControllerBase
 
     #region hacking
 
+    private Jammer _nearestJammer = null;
+    private float _distanceToNearestJammer = float.MaxValue;
+    private Vector3 _fromPlayerToNearestFacingJammerVector = Vector3.zero;
+
+    [SerializeField] private float _maxHackDistance = 10;
+
     [SerializeField] private AudioSource hackingClip;
- 
-    public float hackDistance;
+
 
     public void SendHackEcho()
     {
-        eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = nearestJammerInHackDistance.transform.position });
+        eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = _nearestJammerInHackDistance.transform.position });
         eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = EccoOrigin.position });
         hackingClip.Play();
     }
 
-        public Jammer GetNearestJammerInHackDistance()
+    public Jammer GetNearestFacingJammerInHackDistance(out float distanceToNearestFacingJammer, out Vector3 fromPlayerToNearestFacingJammerVector)
     {
         Jammer nearestJammer = null;
-        float distanceToNearestJammer = float.MaxValue;
+        fromPlayerToNearestFacingJammerVector = Vector3.zero;
+        distanceToNearestFacingJammer = float.MaxValue;
 
         for (int i = 0; i < allJammer.Length; i++)
         {
             var jammer = allJammer[i];
+
             if (jammer.IsNotHacked)
             {
-                var distanceToJammer = Vector3.Distance(transform.position, jammer.transform.position);
+                var fromPlayerToJammerVector = jammer.transform.position - transform.position;
+                var dotProdToJammer = Vector3.Dot(fromPlayerToJammerVector.normalized, transform.forward);
 
-                if (distanceToJammer < hackDistance)
+                bool facingTheJammer = dotProdToJammer > 0;
+
+                if (facingTheJammer)
                 {
-                    if (nearestJammer == null || distanceToJammer < distanceToNearestJammer)
+                    var distanceToJammer = Vector3.Distance(transform.position, jammer.transform.position);
+
+                    if (distanceToJammer < _maxHackDistance)
                     {
-                        nearestJammer = jammer;
+                        if (nearestJammer == null || distanceToJammer < distanceToNearestFacingJammer)
+                        {
+                            nearestJammer = jammer;
+                            distanceToNearestFacingJammer = distanceToJammer;
+                            fromPlayerToNearestFacingJammerVector = fromPlayerToJammerVector;
+                        }
                     }
                 }
             }
         }
+
+
         return nearestJammer;
+    }
+
+    public bool HackingInProgress => _hackingInProgress;
+    public float HackProgress => Map(hackEchoDelay, initialHackEchoDelay, hackEchoDelayEnd, 0, 1);
+            
+
+    public static float Map(float x, float x1, float x2, float y1, float y2)
+    {
+        var m = (y2 - y1) / (x2 - x1);
+        var c = y1 - m * x1; // point of interest: c is also equal to y2 - m * x2, though float math might lead to slightly different results.
+
+        return m * x + c;
     }
 
     public float hackEchoDelayMultiplier = 0.8f; // 1 1 2 3 5 8
@@ -63,36 +107,42 @@ public class DolphinPlayerController : SmallWhaleControllerBase
     private float hackEchoDelay;
     private float timeSinceLastHackEcho;
 
-    private bool hackingInProgress = false;
-    private Jammer nearestJammerInHackDistance = null;
+    private bool _hackingInProgress = false;
+
+    public bool AtLeastOneJammerInHackDistance => _nearestJammerInHackDistance != null;
 
 
+
+    private Jammer _nearestJammerInHackDistance = null;
+    private float _distanceToNearestFacingJammer;
+    private Vector3 _fromPlayerToJammerVector;
 
     private void HandleHacking()
     {
+        _nearestJammerInHackDistance = GetNearestFacingJammerInHackDistance(out _distanceToNearestFacingJammer, out _fromPlayerToJammerVector);
+
         bool yButtonDown = Input.GetButtonDown("Y Button");
         bool yButtonUp = Input.GetButtonUp("Y Button");
 
 
         if (yButtonDown)
         {
-            nearestJammerInHackDistance = GetNearestJammerInHackDistance();
-            if (nearestJammerInHackDistance != null)
+            if (_nearestJammerInHackDistance != null)
             {
-
-                hackingInProgress = true;
+                _hackingInProgress = true;
                 hackEchoDelay = initialHackEchoDelay;
                 SendHackEcho();
             }
         }
-        if (yButtonUp)
+        if (yButtonUp || _nearestJammerInHackDistance == null)
         {
+            hackingClip.Stop();
 
-            hackingInProgress = false;
+            _hackingInProgress = false;
         }
 
 
-        if (hackingInProgress)
+        if (_hackingInProgress)
         {
 
             if (timeSinceLastHackEcho > hackEchoDelay)
@@ -103,8 +153,8 @@ public class DolphinPlayerController : SmallWhaleControllerBase
                 timeSinceLastHackEcho = 0;
                 if (hackEchoDelay < hackEchoDelayEnd)
                 {
-                    hackingInProgress = false;
-                    nearestJammerInHackDistance.IsHacked = true;
+                    _hackingInProgress = false;
+                    _nearestJammerInHackDistance.IsHacked = true;
 
                 }
             }
@@ -123,13 +173,25 @@ public class DolphinPlayerController : SmallWhaleControllerBase
 
 
         HandleHacking();
+        HandlBubble();
 
+        base.Update();
+    }
+
+    private void HandlBubble()
+    {
         bool bButtonPressed = Input.GetButtonUp("B Button");
 
         if (bButtonPressed)
         {
-            animator.SetTrigger(bubbleHash);
-            SheduleBubble();
+
+            if (BubbleAbilityCooldownFinished)
+            {
+                _animator.SetTrigger(bubbleHash);
+                SheduleBubble();
+            }
+
+
 
         }
 
@@ -145,7 +207,8 @@ public class DolphinPlayerController : SmallWhaleControllerBase
             }
         }
 
-        base.Update();
+        _timeSinceLastBubble += Time.deltaTime;
+
     }
 
     private void SheduleBubble()
@@ -160,6 +223,8 @@ public class DolphinPlayerController : SmallWhaleControllerBase
         bubble.transform.position = EccoOrigin.transform.position;
         var bubbleRigidBody = bubble.GetComponent<Rigidbody>();
         bubbleRigidBody.velocity = transform.forward * bubbleThrustPower;
+
+        _timeSinceLastBubble = 0;
     }
 
 }

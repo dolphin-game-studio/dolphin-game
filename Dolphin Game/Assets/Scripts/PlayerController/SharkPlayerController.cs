@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class SharkPlayerController : PlayerControllerBase
 {
-    
 
 
     #region Ranks
@@ -56,19 +55,29 @@ public class SharkPlayerController : PlayerControllerBase
 
     #region Distract Shark
 
+    [SerializeField] private float _maxDinstanceToTalkToShark = 20;
+
     [SerializeField] private AudioSource distractSharkClip;
+
+    private float distanceToNearestFacingShark;
+    private Vector3 fromPlayerToSharkVector;
+    private Hai nearestFacingShark;
+
+    public bool SharkToDistractInReach => nearestFacingShark != null
+        && nearestFacingShark.IsNotStunned
+        && nearestFacingShark.IsNotKnockedOut
+        && distanceToNearestFacingShark < _maxDinstanceToTalkToShark
+        && Rank >= nearestFacingShark.Rank;
 
     private void HandleDistractShark()
     {
+        nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
+
         bool xButtonPressed = Input.GetButtonUp("X Button");
 
         if (xButtonPressed)
         {
-            float distanceToNearestFacingShark;
-            Vector3 fromPlayerToSharkVector;
-
-            Hai nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
-            if (nearestFacingShark != null && nearestFacingShark.IsNotStunned && nearestFacingShark.IsNotKnockedOut && distanceToNearestFacingShark < 20)
+            if (SharkToDistractInReach)
             {
                 nearestFacingShark.Distract(this);
                 distractSharkClip.Play();
@@ -79,27 +88,28 @@ public class SharkPlayerController : PlayerControllerBase
 
     #region Take Uniform
 
+    public bool KnockedOutSharkInReach => nearestFacingKnockedOutShark != null && distanceToNearestFacingKnockedOutShark < 10;
+    public bool KnockedOutSharkWithSuperiorUniformInReach => KnockedOutSharkInReach && nearestFacingKnockedOutShark.Rank > Rank;
+
+    private float distanceToNearestFacingKnockedOutShark;
+    private Vector3 fromPlayerToKnockedOutSharkVector;
+    private Hai nearestFacingKnockedOutShark;
+
     [SerializeField] private AudioSource takeUniformClip;
-    
+
     private void HandleTakeUniform()
     {
+        nearestFacingKnockedOutShark = GetNearestFacingShark(out distanceToNearestFacingKnockedOutShark, out fromPlayerToKnockedOutSharkVector, searchForKnockedOutShark: true);
+
         bool yButtonPressed = Input.GetButtonUp("Y Button");
 
         if (yButtonPressed)
         {
-            float distanceToNearestFacingShark;
-            Vector3 fromPlayerToSharkVector;
-
-            Hai nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector, searchForKnockedOutShark: true);
-            if (nearestFacingShark != null && nearestFacingShark.IsKnockedOut && distanceToNearestFacingShark < 10)
+            if (KnockedOutSharkWithSuperiorUniformInReach)
             {
-                if (Rank < nearestFacingShark.Rank)
-                {
-                    Rank = nearestFacingShark.Rank;
-                    takeUniformClip.Play();
-                }
-
-                nearestFacingShark.Rank = 0;
+                Rank = nearestFacingKnockedOutShark.Rank;
+                takeUniformClip.Play();
+                nearestFacingKnockedOutShark.Rank = 0;
             }
         }
     }
@@ -107,49 +117,79 @@ public class SharkPlayerController : PlayerControllerBase
 
     #region Take Angler
 
-    [SerializeField] private AudioSource takeAnglerClip;
+    private Angler _nearestAngler;
+    private float _distanceToNearestFacingAngler;
+    private Vector3 _fromPlayerToNearestFacingAnglerVector;
 
-    [SerializeField] private float distanceToTakeAngler;
+    public bool AnglerInReach => _nearestAngler != null && _distanceToNearestFacingAngler < _distanceToTakeAngler;
+
+    [SerializeField] private AudioSource _takeAnglerClip;
+
+    [SerializeField] private float _distanceToTakeAngler;
     protected Angler[] anglers;
-    private Angler followingAngler;
+    private Angler _followingAngler;
 
     private void HandleTakeAngler()
     {
+        _nearestAngler = GetNearestFacingAngler(out _distanceToNearestFacingAngler, out _fromPlayerToNearestFacingAnglerVector);
+
         bool bButtonPressed = Input.GetButtonUp("B Button");
 
         if (bButtonPressed)
         {
-            if (followingAngler == null)
+            if (_followingAngler == null)
             {
-                foreach (var angler in anglers)
+                if (AnglerInReach)
                 {
-                    var fromPlayerToAnglerVector = angler.transform.position - transform.position;
-
-                    var dotProdToAngler = Vector3.Dot(fromPlayerToAnglerVector.normalized, transform.forward);
-
-                    bool facingTheAngler = dotProdToAngler > 0;
-
-                    bool anglerInReach = fromPlayerToAnglerVector.magnitude < distanceToTakeAngler;
-                    if (anglerInReach)
+                    _nearestAngler.SharkToFollow = this.gameObject;
+                    if (_nearestAngler.SharkToFollow == this.gameObject)
                     {
-                        angler.SharkToFollow = this.gameObject;
-                        if (angler.SharkToFollow == this.gameObject)
-                        {
-                            followingAngler = angler;
-                            takeAnglerClip.Play();
-                        }
+                        _followingAngler = _nearestAngler;
+                        _takeAnglerClip.Play();
                     }
                 }
             }
-            else if (followingAngler != null)
+            else if (_followingAngler != null)
             {
-                followingAngler.SharkToFollow = null;
-                followingAngler = null;
+                _followingAngler.SharkToFollow = null;
+                _followingAngler = null;
+            }
+        }
+    }
+
+    protected Angler GetNearestFacingAngler(out float distanceToNearestFacingAngler, out Vector3 fromPlayerToNearestFacingAnglerVector)
+    {
+        Angler nearestAngler = null;
+        float nearestAnglerDistance = float.MaxValue;
+        fromPlayerToNearestFacingAnglerVector = Vector3.zero;
+
+        foreach (var angler in anglers)
+        {
+            if (angler.SharkToFollow != null)
+                continue;
+
+            var fromPlayerToAnglerVector = angler.transform.position - transform.position;
+
+            var dotProdToAngler = Vector3.Dot(fromPlayerToAnglerVector.normalized, transform.forward);
+
+            bool facingTheAngler = dotProdToAngler > 0;
+
+            if (facingTheAngler)
+            {
+                var distanceToAngler = Vector3.Distance(angler.transform.position, transform.position);
+                if (distanceToAngler < nearestAnglerDistance)
+                {
+                    nearestAnglerDistance = distanceToAngler;
+                    nearestAngler = angler;
+                    fromPlayerToNearestFacingAnglerVector = fromPlayerToAnglerVector;
+                }
             }
         }
 
-
+        distanceToNearestFacingAngler = nearestAnglerDistance;
+        return nearestAngler;
     }
+
     #endregion
 
 }

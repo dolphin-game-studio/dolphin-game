@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(AbilityTiles))]
-public class ActiveAbilityTilesOrca : MonoBehaviour
+ public class ActiveAbilityTilesOrca : AbilityTiles
 {
     private OrcaPlayerController _orcaPlayerController;
 
-    private AbilityTiles _abilityTiles;
-       
 
-    void Awake()
+
+
+    public override void Awake()
     {
-        _abilityTiles = GetComponent<AbilityTiles>();
+        base.Awake();
 
         _orcaPlayerController = FindObjectOfType<OrcaPlayerController>();
 
@@ -22,15 +21,60 @@ public class ActiveAbilityTilesOrca : MonoBehaviour
         {
             throw new DolphinGameException("OrcaPlayerController Object couldn't be found.");
         }
+
+        
     }
 
     void Update()
     {
+        base.Update();
+
+
         HandleActiveAbilityVisualisation();
     }
 
+    private bool _triggerNextEchoAbilityCooldownFinished = true;
+
+    private bool _triggerNextRamAbilityCooldownFinished = true;
+
+
     private void HandleActiveAbilityVisualisation()
     {
-        _abilityTiles.AbilityTileWestImage.GetComponent<Image>().fillAmount = _orcaPlayerController.EchoAbilityCooldown;
+        if (_triggerNextEchoAbilityCooldownFinished && _orcaPlayerController.EchoAbilityCooldownFinished)
+        {
+            westIcon.TriggerCooldownFinished();
+            _triggerNextEchoAbilityCooldownFinished = false;
+        }
+        if (!_orcaPlayerController.EchoAbilityCooldownFinished)
+        {
+            _triggerNextEchoAbilityCooldownFinished = true;
+        }
+        westIcon.Filled = _orcaPlayerController.EchoAbilityCooldown;
+
+        westIcon.Usable = _orcaPlayerController.NoJammerInReach;
+
+
+        if (_triggerNextRamAbilityCooldownFinished && _orcaPlayerController.RamAbilityCooldownFinished)
+        {
+            eastIcon.TriggerCooldownFinished();
+            _triggerNextRamAbilityCooldownFinished = false;
+        }
+
+        if (!_orcaPlayerController.RamAbilityCooldownFinished)
+        { 
+            _triggerNextRamAbilityCooldownFinished = true;
+        }
+        eastIcon.Filled = _orcaPlayerController.RamAbilityCooldown;
+
+        eastIcon.Usable = _orcaPlayerController.EitherDestructableOrSharkFound;
+
+ 
+
+        //southIcon.Filled = _orcaPlayerController.EchoAbilityCooldown;
+
+
+        //_abilityTiles.AbilityTileWestImage.GetComponent<Image>().material.SetFloat("_PintPow", echoCooldown);
+        // _abilityTiles.AbilityTileWestImage.GetComponent<Image>().material.SetFloat("_DistMultiplier", echoCooldown);
+
     }
 }

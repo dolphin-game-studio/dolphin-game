@@ -5,6 +5,29 @@ using UnityEngine;
 
 public class OrcaPlayerController : SmallWhaleControllerBase
 {
+    #region Cooldowns
+ 
+    [SerializeField] private float _ramCooldown;
+    private float _timeSinceLastRam;
+
+    public float RamAbilityCooldown => Mathf.Clamp01(_timeSinceLastRam / _ramCooldown);
+
+     public bool RamAbilityCooldownFinished => RamAbilityCooldown == 1;
+
+
+    #endregion
+
+    #region
+    private bool _eitherDestructableOrSharkFound = false;
+
+    public bool EitherDestructableOrSharkFound => _eitherDestructableOrSharkFound;
+    #endregion
+
+    #region Active Abilities
+    public bool RamActive => ramThrustSheduled;
+    #endregion
+
+
     public override bool CanMove => RamThrusting == false && ramThrustSheduled == false && IsNotSwimmingToSharkToTransport;
 
     DestructableObstacle[] destructables;
@@ -77,6 +100,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
                     IsSwimmingToSharkToTransport = true;
                 }
+
             }
             else if (IsTransportingShark)
             {
@@ -93,7 +117,11 @@ public class OrcaPlayerController : SmallWhaleControllerBase
         if (IsSwimmingToSharkToTransport)
         {
 
-            var distanceToShark = Vector3.Distance(mouthSpine.transform.position, currentlyTransportedShark.BackFin.transform.position);
+            Vector2 mouth2DPos = mouthSpine.transform.position;
+            Vector2 backFin2DPos = currentlyTransportedShark.BackFin.transform.position;
+
+            
+            var distanceToShark = Vector2.Distance(mouth2DPos, backFin2DPos);
             //var distanceToShark = Vector3.Distance(transform.position, currentlyTransportedShark.BackFin.transform.position);
 
             var centerToMouth = mouthSpine.transform.position - transform.position;
@@ -110,6 +138,8 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
                 currentlyTransportedSharkParent = currentlyTransportedShark.transform.parent;
                 currentlyTransportedShark.transform.SetParent(mouthSpine.transform);
+
+                transportSharksClip.Play();
             }
         }
 
@@ -181,7 +211,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
     private void SheduleRamThrust()
     {
-        animator.SetTrigger(ramHash);
+        _animator.SetTrigger(ramHash);
 
         ramThrustSheduled = true;
         timeLeftUntilRamThrust = ramThrustDelay;
@@ -194,17 +224,17 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
     private void HandleRamThrust()
     {
+        nearestFacingDestructable = GetNearestFacingDestructable(out distanceToNearestFacingDestructable, out fromPlayerToDestructableVector);
+        nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
+
+        _eitherDestructableOrSharkFound = nearestFacingDestructable != null && distanceToNearestFacingDestructable < maxRamDistance
+            || nearestFacingShark != null && distanceToNearestFacingShark < maxRamDistance;
+
         bool bButtonPressed = Input.GetButtonUp("B Button");
 
-        if (bButtonPressed)
+        if (bButtonPressed && RamAbilityCooldown >= 1)
         {
-            nearestFacingDestructable = GetNearestFacingDestructable(out distanceToNearestFacingDestructable, out fromPlayerToDestructableVector);
-            nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
-
-            bool eitherDestructableOrSharkFound = nearestFacingDestructable != null && distanceToNearestFacingDestructable < maxRamDistance
-                || nearestFacingShark != null && distanceToNearestFacingShark < maxRamDistance;
-
-            if (eitherDestructableOrSharkFound)
+            if (_eitherDestructableOrSharkFound)
             {
                 SheduleRamThrust();
             }
@@ -265,8 +295,11 @@ public class OrcaPlayerController : SmallWhaleControllerBase
             {
                 timeSinceRamStarted = 0;
                 RamThrusting = false;
+                _timeSinceLastRam = 0;
             }
         }
+
+        _timeSinceLastRam += Time.deltaTime;
     }
 
     #endregion

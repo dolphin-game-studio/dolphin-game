@@ -1803,6 +1803,8 @@ GameObject:
   - component: {fileID: 1689106695607967122}
   - component: {fileID: 2023260931409413688}
   - component: {fileID: 6969872293662472868}
+  - component: {fileID: 1756175240}
+  - component: {fileID: 1756175239}
   m_Layer: 17
   m_Name: Ability Tile West Active Indicator
   m_TagString: Untagged
@@ -1849,7 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1857,8 +1859,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: bda20b79b8185fc41aa43a9ee5ff5127, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: f775cb93cf80e414995955df4fc82c33, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1867,6 +1869,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1756175240
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763001652384309595}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1756175239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763001652384309595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &796157185708706416
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,7 +2395,7 @@ RectTransform:
   m_GameObject: {fileID: 1798031451862761709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 1981776833977169337}
   - {fileID: 6486132144762156491}
@@ -2378,7 +2418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6486132144762156491}
-  - component: {fileID: 4439901563840292357}
+  - component: {fileID: 4600800232221126235}
   m_Layer: 17
   m_Name: Ability Tiles Shark
   m_TagString: Untagged
@@ -2409,7 +2449,7 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4439901563840292357
+--- !u!114 &4600800232221126235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2418,7 +2458,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1798749732047172367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df29f2f1f69c7cd459ecb7bf59ae53e2, type: 3}
+  m_Script: {fileID: 11500000, guid: ce14ed94ed44a8d45a3c9ab5872dda87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   abilityTileNorthImage: {fileID: 7148527653405847287}
@@ -2705,7 +2745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1981776833977169337}
-  - component: {fileID: 4095548200101506266}
+  - component: {fileID: 2727262270578349760}
   m_Layer: 17
   m_Name: Ability Tiles Dolphin
   m_TagString: Untagged
@@ -2736,7 +2776,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4095548200101506266
+--- !u!114 &2727262270578349760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2745,7 +2785,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2080141200990444536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df29f2f1f69c7cd459ecb7bf59ae53e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a0f561df474eaf4d85f29f3176a1031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   abilityTileNorthImage: {fileID: 560140156319212348}
@@ -2986,6 +3026,8 @@ GameObject:
   - component: {fileID: 7963360778503189107}
   - component: {fileID: 9087570558405269973}
   - component: {fileID: 3434400337762744581}
+  - component: {fileID: 1274259882}
+  - component: {fileID: 1274259884}
   m_Layer: 17
   m_Name: Ability Tile South Active Indicator
   m_TagString: Untagged
@@ -3032,7 +3074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -3040,8 +3082,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 622b2a974d885334e96b40222ea713f9, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 3d8f857594d27234fa646536daac8d88, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3050,6 +3092,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1274259882
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2404200801714059962}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1274259884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2404200801714059962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &2492790499963939711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,6 +3252,8 @@ GameObject:
   - component: {fileID: 5364261075241020441}
   - component: {fileID: 515322371360214656}
   - component: {fileID: 3382859927773111821}
+  - component: {fileID: 1937158219}
+  - component: {fileID: 1937158218}
   m_Layer: 17
   m_Name: Ability Tile East Active Indicator
   m_TagString: Untagged
@@ -3218,7 +3300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -3226,8 +3308,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 59aa7101508ac8246bd572a047d5ee69, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: f35014e266849ee499c9dabac87eced8, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3236,6 +3318,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1937158219
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555935044052187379}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1937158218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555935044052187379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &2981807139679977957
 GameObject:
   m_ObjectHideFlags: 0
@@ -3254,7 +3374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7523425930536441073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3346,6 +3466,8 @@ GameObject:
   - component: {fileID: 4375392417410986696}
   - component: {fileID: 1362476350858619210}
   - component: {fileID: 4876733532460480384}
+  - component: {fileID: 1000458927}
+  - component: {fileID: 1000458926}
   m_Layer: 17
   m_Name: Ability Tile South Active Indicator
   m_TagString: Untagged
@@ -3392,7 +3514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -3400,8 +3522,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 397c2fde1df5afa4e9f16056e1048f01, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: f314291d1f0dd5f46954e30e6ce5e649, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3410,6 +3532,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1000458927
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985442928040985369}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1000458926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985442928040985369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &2988582431794852293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,6 +3950,8 @@ GameObject:
   - component: {fileID: 560140156319212348}
   - component: {fileID: 1308132822011096141}
   - component: {fileID: 6401267775193368645}
+  - component: {fileID: 2082957731}
+  - component: {fileID: 2082957730}
   m_Layer: 17
   m_Name: Ability Tile North Active Indicator
   m_TagString: Untagged
@@ -3836,7 +3998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -3844,8 +4006,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fd43690a806eee44b953f30eb22315b0, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 1aab780720e9adc4a898b0dfa9ed29ba, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3854,6 +4016,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2082957731
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3652487838414720984}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2082957730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3652487838414720984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &3670477459852110952
 GameObject:
   m_ObjectHideFlags: 0
@@ -4233,7 +4433,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 12065
+    m_Bits: 36641
   m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4436,6 +4636,8 @@ GameObject:
   - component: {fileID: 1218902711223470090}
   - component: {fileID: 8773074932293932528}
   - component: {fileID: 875426277349545497}
+  - component: {fileID: 2071022097}
+  - component: {fileID: 2071022096}
   m_Layer: 17
   m_Name: Ability Tile East Active Indicator
   m_TagString: Untagged
@@ -4482,7 +4684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -4490,8 +4692,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2df43a48fa344e0479b085bab1bb0147, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: a1ef0bf95dd0e1342849558530380d1a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4500,6 +4702,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2071022097
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292365050532245093}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2071022096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292365050532245093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &4416136096265229417
 GameObject:
   m_ObjectHideFlags: 0
@@ -4619,6 +4859,8 @@ GameObject:
   - component: {fileID: 7195692392869342934}
   - component: {fileID: 5279120728722536604}
   - component: {fileID: 3699327067781967228}
+  - component: {fileID: 1361707564}
+  - component: {fileID: 1361707563}
   m_Layer: 17
   m_Name: Ability Tile East Active Indicator
   m_TagString: Untagged
@@ -4665,7 +4907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -4673,8 +4915,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: aa8920698fcbab944b3a433e9264b0a5, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 84ba1c3562d6b8c42b24e76b3f3f02df, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4683,6 +4925,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1361707564
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060430862364196583}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1361707563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060430862364196583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &5101748403387706494
 GameObject:
   m_ObjectHideFlags: 0
@@ -4946,6 +5226,8 @@ GameObject:
   - component: {fileID: 5252404849072465146}
   - component: {fileID: 6578849466171346533}
   - component: {fileID: 6860299427637700051}
+  - component: {fileID: 1481465518}
+  - component: {fileID: 1481465520}
   m_Layer: 17
   m_Name: Ability Tile East Active Indicator
   m_TagString: Untagged
@@ -4992,7 +5274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5000,8 +5282,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fe99fffb08bc76c49a5ba9bfe72f3080, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 2a0c0e1623d812143bd8fa4cc96a08eb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5010,6 +5292,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1481465518
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5604023764692509309}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1481465520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5604023764692509309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 0
+  _active: 0
 --- !u!1 &5675222585947454806
 GameObject:
   m_ObjectHideFlags: 0
@@ -5076,6 +5396,8 @@ GameObject:
   - component: {fileID: 1111371125367528033}
   - component: {fileID: 1532556409114106306}
   - component: {fileID: 5147530645586776583}
+  - component: {fileID: 782658552}
+  - component: {fileID: 782658551}
   m_Layer: 17
   m_Name: Ability Tile West Active Indicator
   m_TagString: Untagged
@@ -5122,7 +5444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5130,8 +5452,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8e478923e01bce14bba0ea7d32401d40, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 67cb1d98f9f3adf49b11c820960f2041, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5140,6 +5462,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &782658552
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878925158263372849}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &782658551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5878925158263372849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &5888707037819526704
 GameObject:
   m_ObjectHideFlags: 0
@@ -5150,7 +5510,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4648051758323941588}
   - component: {fileID: 3906830031127081758}
-  - component: {fileID: 176725238781357009}
   m_Layer: 0
   m_Name: Camera Character Selection
   m_TagString: Untagged
@@ -5215,14 +5574,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &176725238781357009
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5888707037819526704}
-  m_Enabled: 1
 --- !u!1 &5901156235354852348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5342,6 +5693,8 @@ GameObject:
   - component: {fileID: 7926547812164279943}
   - component: {fileID: 2533032468435340305}
   - component: {fileID: 7926243771152056360}
+  - component: {fileID: 686305839}
+  - component: {fileID: 686305838}
   m_Layer: 17
   m_Name: Ability Tile South Active Indicator
   m_TagString: Untagged
@@ -5388,7 +5741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5396,8 +5749,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 029df23bbb8591e44b7cf10ea2c075d1, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 70cef70b73aceac4c9effe5539f2788a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5406,6 +5759,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &686305839
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5971717001951693901}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &686305838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5971717001951693901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &6001499238803724507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5675,6 +6066,8 @@ GameObject:
   - component: {fileID: 1486440193608540323}
   - component: {fileID: 3139415311739373580}
   - component: {fileID: 3007675704216844274}
+  - component: {fileID: 275240029}
+  - component: {fileID: 275240028}
   m_Layer: 17
   m_Name: Ability Tile North Active Indicator
   m_TagString: Untagged
@@ -5721,7 +6114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5729,8 +6122,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ddcc77ff08ec3b04289a156326102077, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: e0f1aff1c84589948beda329f6fd2e80, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5739,6 +6132,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &275240029
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237303526635772400}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &275240028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237303526635772400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &6328362825205583114
 GameObject:
   m_ObjectHideFlags: 0
@@ -5786,6 +6217,8 @@ GameObject:
   - component: {fileID: 4529189118944145610}
   - component: {fileID: 8279776162227937874}
   - component: {fileID: 4623103453949367415}
+  - component: {fileID: 2117524540}
+  - component: {fileID: 2117524539}
   m_Layer: 17
   m_Name: Ability Tile South Active Indicator
   m_TagString: Untagged
@@ -5832,7 +6265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5840,8 +6273,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a528c58cb62e3e44aaab19024a04d422, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 05d4f830456379247a95335e3810c2b0, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5850,6 +6283,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2117524540
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353498262018911016}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2117524539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353498262018911016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &6356894768601930333
 GameObject:
   m_ObjectHideFlags: 0
@@ -5970,7 +6441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5882875262648257841}
-  - component: {fileID: 2848481352702062715}
+  - component: {fileID: 5047329829230403917}
   m_Layer: 17
   m_Name: Ability Tiles Ray
   m_TagString: Untagged
@@ -6001,7 +6472,7 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2848481352702062715
+--- !u!114 &5047329829230403917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6010,7 +6481,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6881791058927837763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df29f2f1f69c7cd459ecb7bf59ae53e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fecc3126f6d4494f934bbbe89f8e408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   abilityTileNorthImage: {fileID: 1486440193608540323}
@@ -6104,6 +6575,8 @@ GameObject:
   - component: {fileID: 8700946038838037998}
   - component: {fileID: 8397945006655106029}
   - component: {fileID: 4867113880791688235}
+  - component: {fileID: 1690014950}
+  - component: {fileID: 1690014952}
   m_Layer: 17
   m_Name: Ability Tile North Active Indicator
   m_TagString: Untagged
@@ -6118,13 +6591,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6926906776117891408}
-  m_LocalRotation: {x: -0, y: -0, z: -0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: -0.36056668, w: 0.9327335}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0000138, y: 1.0000138, z: 1}
   m_Children: []
   m_Father: {fileID: 5999848328287747024}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -42.27}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000022888184, y: -0.00015258789}
@@ -6150,7 +6623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -6158,8 +6631,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ba0a5d66d88ea5a4a98f68b977290f5f, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: f797f61262a973d478d59259e8327897, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6168,6 +6641,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1690014950
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926906776117891408}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1690014952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926906776117891408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 0
+  _active: 0
 --- !u!1 &7009977378476268757
 GameObject:
   m_ObjectHideFlags: 0
@@ -6257,6 +6768,8 @@ GameObject:
   - component: {fileID: 7148527653405847287}
   - component: {fileID: 5711165069436851232}
   - component: {fileID: 7455102899631864537}
+  - component: {fileID: 285983090}
+  - component: {fileID: 285983089}
   m_Layer: 17
   m_Name: Ability Tile North Active Indicator
   m_TagString: Untagged
@@ -6303,7 +6816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -6311,8 +6824,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dd7ab80f02452774db9803c620ea47f6, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: bd70edd22eceb0147bcdc2fec7210675, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6321,6 +6834,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &285983090
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7093909387339136115}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &285983089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7093909387339136115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &7107795047889811099
 GameObject:
   m_ObjectHideFlags: 0
@@ -6442,7 +6993,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2304115841914093525}
   - component: {fileID: 2827415860055760149}
-  - component: {fileID: 4840299241377787940}
   m_Layer: 0
   m_Name: Camera Active Abilities
   m_TagString: Untagged
@@ -6507,14 +7057,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4840299241377787940
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7352380177356435982}
-  m_Enabled: 1
 --- !u!1 &7437151485444246903
 GameObject:
   m_ObjectHideFlags: 0
@@ -6601,6 +7143,8 @@ GameObject:
   - component: {fileID: 3694756774863453189}
   - component: {fileID: 6266101418171399988}
   - component: {fileID: 7252662159498964299}
+  - component: {fileID: 491829967}
+  - component: {fileID: 491829969}
   m_Layer: 17
   m_Name: Ability Tile West Active Indicator
   m_TagString: Untagged
@@ -6647,7 +7191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -6655,8 +7199,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4506c0a7ae5a953418f97f101d283d13, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 917b436a444f84c47a39ff043ba59878, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6665,6 +7209,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &491829967
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482459339790228821}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &491829969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482459339790228821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 0
+  _active: 0
 --- !u!1 &7634411697089324995
 GameObject:
   m_ObjectHideFlags: 0
@@ -6889,7 +7471,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4110693802964472530}
   - component: {fileID: 8675690121782626008}
-  - component: {fileID: 7718047560167248558}
   m_Layer: 18
   m_Name: Camera Inactive Abilities
   m_TagString: Untagged
@@ -6954,14 +7535,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &7718047560167248558
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728802353877226324}
-  m_Enabled: 1
 --- !u!1 &7760061621491215937
 GameObject:
   m_ObjectHideFlags: 0
@@ -7272,10 +7845,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationChangeSpeed: 10
-  abilityTilesDolphin: {fileID: 4095548200101506266}
-  abilityTilesOrca: {fileID: 5526334275945312741}
-  abilityTilesShark: {fileID: 4439901563840292357}
-  abilityTilesRay: {fileID: 2848481352702062715}
+  abilityTilesDolphin: {fileID: 2727262270578349760}
+  abilityTilesOrca: {fileID: 6068325435303646759}
+  abilityTilesShark: {fileID: 4600800232221126235}
+  abilityTilesRay: {fileID: 5047329829230403917}
 --- !u!1 &8185338441438920667
 GameObject:
   m_ObjectHideFlags: 0
@@ -7321,7 +7894,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4769885442662211347}
-  - component: {fileID: 5526334275945312741}
   - component: {fileID: 6068325435303646759}
   m_Layer: 17
   m_Name: Ability Tiles Orca
@@ -7353,23 +7925,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5526334275945312741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8209794938805824681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df29f2f1f69c7cd459ecb7bf59ae53e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityTileNorthImage: {fileID: 8700946038838037998}
-  abilityTileWestImage: {fileID: 3694756774863453189}
-  abilityTileEastImage: {fileID: 5252404849072465146}
-  abilityTileSouthImage: {fileID: 7963360778503189107}
-  abilityVisualisation: {fileID: 3925359484901644210}
 --- !u!114 &6068325435303646759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7382,6 +7937,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05cf76971c1fd64584d918f7571a9a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityTileNorthImage: {fileID: 8700946038838037998}
+  abilityTileWestImage: {fileID: 3694756774863453189}
+  abilityTileEastImage: {fileID: 5252404849072465146}
+  abilityTileSouthImage: {fileID: 7963360778503189107}
+  abilityVisualisation: {fileID: 3925359484901644210}
 --- !u!1 &8261382574729866747
 GameObject:
   m_ObjectHideFlags: 0
@@ -7393,6 +7953,8 @@ GameObject:
   - component: {fileID: 2597882772667113996}
   - component: {fileID: 6347042594194970768}
   - component: {fileID: 5315084692915309608}
+  - component: {fileID: 1402272733}
+  - component: {fileID: 1402272732}
   m_Layer: 17
   m_Name: Ability Tile West Active Indicator
   m_TagString: Untagged
@@ -7439,7 +8001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 1922a756797dc384f9369e981453a1e7, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -7447,8 +8009,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e37200485eadf2740abc0edd172f75a6, type: 3}
-  m_Type: 3
+  m_Sprite: {fileID: 21300000, guid: 194513580a04d744db2860c1b8e85e99, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7457,6 +8019,44 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1402272733
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261382574729866747}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ad95109f8b18e4e9d7c8b7a3e65d70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1402272732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261382574729866747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49ef0fc7752124fa7d6a10883e019e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _edgeGlow: 0
+  _filled: 0
+  _pintPow: 0
+  _distMultiplier: 0
+  _starBrightness: 0
+  _usable: 1
+  _active: 0
 --- !u!1 &8334950407641840777
 GameObject:
   m_ObjectHideFlags: 0

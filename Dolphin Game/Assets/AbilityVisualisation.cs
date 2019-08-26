@@ -34,7 +34,7 @@ public class AbilityVisualisation : MonoBehaviour
     }
 
 
-    void Start()
+    void Awake()
     {
         playerController = FindObjectOfType<PlayerController>();
 

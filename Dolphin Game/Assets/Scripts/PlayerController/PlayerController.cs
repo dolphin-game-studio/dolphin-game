@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Game _game;
+
+    [SerializeField] private AudioSource playerChangeClip;
+
+
     public PlayerControllerBase CurrentPlayerController
     {
         get => currentPlayerController;
@@ -13,6 +18,8 @@ public class PlayerController : MonoBehaviour
             if (currentPlayerController != value)
             {
                 currentPlayerController = value;
+
+                playerChangeClip.Play();
 
                 if (currentPlayerController == DolphinPlayerController)
                 {
@@ -54,17 +61,33 @@ public class PlayerController : MonoBehaviour
 
     private List<PlayerControllerBase> allPlayerControllers = new List<PlayerControllerBase>();
     private CharacterSelection characterSelection;
+    private PauseMenuScreen _pauseMenuScreen;
+
     private CharacterVisualisation characterVisualisation;
 
 
 
-    void Start()
+    void Awake()
     {
+        _game = FindObjectOfType<Game>();
+
+        if (_game == null)
+        {
+            throw new DolphinGameException("Game Object couldn't be found.");
+        }
+
         characterSelection = FindObjectOfType<CharacterSelection>();
 
         if (characterSelection == null)
         {
             throw new DolphinGameException("CharacterSelection Object couldn't be found.");
+        }
+
+        _pauseMenuScreen = FindObjectOfType<PauseMenuScreen>();
+
+        if (_pauseMenuScreen == null)
+        {
+            throw new DolphinGameException("PauseMenuScreen Object couldn't be found.");
         }
 
         characterVisualisation = FindObjectOfType<CharacterVisualisation>();
@@ -109,7 +132,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (characterSelection.NotVisible)
+        if (characterSelection.NotVisible && !_pauseMenuScreen.InHistory && !_game.Spotted)
         {
             UpdateMovement();
 

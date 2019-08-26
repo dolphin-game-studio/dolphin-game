@@ -1,15 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AbilityTiles : MonoBehaviour
 {
+
     public float RotationChangeSpeed => abilityVisualisation.RotationChangeSpeed;
 
     [SerializeField] private RectTransform abilityTileNorthImage;
     [SerializeField] private RectTransform abilityTileWestImage;
     [SerializeField] private RectTransform abilityTileEastImage;
     [SerializeField] private RectTransform abilityTileSouthImage;
+
+    public RectTransform AbilityTileNorthImage => abilityTileNorthImage;
+    public RectTransform AbilityTileWestImage => abilityTileWestImage;
+    public RectTransform AbilityTileEastImage => abilityTileEastImage;
+    public RectTransform AbilityTileSouthImage => abilityTileSouthImage;
+
 
     [SerializeField] private AbilityVisualisation abilityVisualisation;
 
@@ -36,8 +44,16 @@ public class AbilityTiles : MonoBehaviour
     public Quaternion DesiredRotation => Visible ? Quaternion.LookRotation(Vector3.forward, new Vector3(1, 1, 0)) : Quaternion.LookRotation(new Vector3(1, 1, 0), Vector3.back);
 
 
-    void Start()
+
+    protected AbilityIcon northIcon;
+    protected AbilityIcon westIcon;
+    protected AbilityIcon eastIcon;
+    protected AbilityIcon southIcon;
+
+
+    public virtual void Awake()
     {
+
         if (abilityVisualisation == null)
         {
             throw new DolphinGameException("abilityVisualisation is not set");
@@ -58,11 +74,51 @@ public class AbilityTiles : MonoBehaviour
         {
             throw new DolphinGameException("abilityTileSouthImage is not set");
         }
+
+
+
+        northIcon = AbilityTileNorthImage.GetComponent<AbilityIcon>();
+
+        if (northIcon == null)
+        {
+            throw new DolphinGameException("northIcon has no AbilityIcon Component");
+        }
+
+        westIcon = AbilityTileWestImage.GetComponent<AbilityIcon>();
+
+        if (westIcon == null)
+        {
+            throw new DolphinGameException("westIcon has no AbilityIcon Component");
+        }
+
+        eastIcon = AbilityTileEastImage.GetComponent<AbilityIcon>();
+
+        if (eastIcon == null)
+        {
+            throw new DolphinGameException("eastIcon has no AbilityIcon Component");
+        }
+
+        southIcon = AbilityTileSouthImage.GetComponent<AbilityIcon>();
+
+        if (southIcon == null)
+        {
+            throw new DolphinGameException("southIcon has no AbilityIcon Component");
+        }
     }
 
-    void Update()
+    public virtual void Update()
     {
         HandleAbilityVisualisationImagesRotation();
+
+        UpdateAbilitiTilesActiveHighlight();
+    }
+
+    private void UpdateAbilitiTilesActiveHighlight()
+    {
+        northIcon.Active = Input.GetButton("Y Button");
+        westIcon.Active = Input.GetButton("X Button");
+        eastIcon.Active = Input.GetButton("B Button");
+        southIcon.Active = Input.GetButton("A Button");
     }
 
     private void HandleAbilityVisualisationImagesRotation()

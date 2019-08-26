@@ -24,7 +24,7 @@ public class PlayerSelectionController : MonoBehaviour
         }
     }
 
-    void Start()
+    void Awake()
     {
         if (playerSelectionImages.Length < 4)
         {

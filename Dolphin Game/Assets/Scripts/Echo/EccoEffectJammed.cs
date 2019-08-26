@@ -41,7 +41,7 @@ public class EccoEffectJammed : MonoBehaviour
         currentScanDistancesIndex = (currentScanDistancesIndex + 1) % echos.Length;
     }
 
-    void Start()
+    void Awake()
     {
         playerController = FindObjectOfType<PlayerController>();
 

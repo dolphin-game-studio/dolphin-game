@@ -8,7 +8,7 @@ public class BackgroundAreaMusicTrigger : MonoBehaviour
  
     [SerializeField] private AudioMixerSnapshot triggerSnapshot;
  
-    void Start()
+    void Awake()
     {
  
     }

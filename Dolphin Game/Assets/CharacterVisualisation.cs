@@ -70,7 +70,7 @@ public class CharacterVisualisation : MonoBehaviour
 
 
 
-    void Start()
+    void Awake()
     {
         allPlayerVisualisationImages = new CharacterVisualisationPanel[] { playerVisualisationImageDolphin, playerVisualisationImageOrca, playerVisualisationImageShark, playerVisualisationImageRay };
 

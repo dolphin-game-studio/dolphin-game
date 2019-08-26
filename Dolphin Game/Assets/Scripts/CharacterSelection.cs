@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class CharacterSelection : MonoBehaviour
 {
+    private Game _game;
+
     private PlayerController playerController;
     private DolphinGameCamera dolphinGameCamera;
+    private PauseMenuScreen _pauseMenuScreen;
 
-
+    
     [SerializeField] private GameObject characterSelectionPanels;
 
     [SerializeField] private bool roation;
@@ -75,8 +78,15 @@ public class CharacterSelection : MonoBehaviour
 
     private float selectedPlayerImageSize;
 
-    void Start()
+    void Awake()
     {
+        _game = FindObjectOfType<Game>();
+
+        if (_game == null)
+        {
+            throw new DolphinGameException("Game Object couldn't be found.");
+        }
+
         playerController = FindObjectOfType<PlayerController>();
 
         if (playerController == null)
@@ -90,8 +100,12 @@ public class CharacterSelection : MonoBehaviour
             throw new DolphinGameException("Dolphin Game Camera Object couldn't be found.");
         }
 
-
-        Visible = false;
+        _pauseMenuScreen = FindObjectOfType<PauseMenuScreen>();
+        if (_pauseMenuScreen == null)
+        {
+            throw new DolphinGameException("PauseMenuScreen couldn't be found.");
+        }
+        
 
         allPlayerSelectionImages = new Transform[] { playerSelectionImageNorth, playerSelectionImageWest, playerSelectionImageEast, playerSelectionImageSouth };
 
@@ -115,6 +129,11 @@ public class CharacterSelection : MonoBehaviour
         selectedPlayerImageSize = 1f * selectedPlayerImageSizeMultiplier;
     }
 
+    public void Start()
+    {
+        Visible = true;
+    }
+
     private void resetPlayerSelection()
     {
         foreach (var image in allPlayerSelectionImages)
@@ -125,19 +144,22 @@ public class CharacterSelection : MonoBehaviour
 
     void Update()
     {
-        bool backButtonPressed = Input.GetButtonDown("Back Button");
-
-        if (backButtonPressed)
+        if (_pauseMenuScreen.NotInHistory && !_game.Spotted)
         {
-            Visible = !Visible;
-        }
+            bool backButtonPressed = Input.GetButtonDown("Back Button");
+
+            if (backButtonPressed)
+            {
+                Visible = !Visible;
+            }
 
 
-        if (Visible)
-        {
-            HandleSelectCharacterByAnalogStick();
+            if (Visible)
+            {
+                HandleSelectCharacterByAnalogStick();
 
-            HandleChoseCharacterByAButton();
+                HandleChoseCharacterByAButton();
+            }
         }
     }
 

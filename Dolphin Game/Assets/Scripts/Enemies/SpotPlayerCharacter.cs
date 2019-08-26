@@ -6,8 +6,7 @@ public class SpotPlayerCharacter : MonoBehaviour
 {
     private Game game;
     Hai hai;
-    bool noticedPlayer;
-    float timePlayerNoticed;
+     float timePlayerNoticed;
     public float secondsToSpotPlayer = 2f;
     public float secondsToSpotPlayerWhenNear = 0.2f;
 
@@ -17,7 +16,7 @@ public class SpotPlayerCharacter : MonoBehaviour
     private Renderer _renderer;
     private MaterialPropertyBlock _propBlock;
 
-    void Start()
+    void Awake()
     {
         hai = GetComponent<Hai>();
 

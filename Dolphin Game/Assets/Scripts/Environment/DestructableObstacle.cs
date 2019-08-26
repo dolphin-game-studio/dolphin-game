@@ -37,7 +37,7 @@ public class DestructableObstacle : MonoBehaviour
     public bool NotDestroyed { get => !Destroyed; set => Destroyed = !value; }
 
 
-    void Start()
+    void Awake()
     {
         sphereCollider = GetComponent<SphereCollider>();
 

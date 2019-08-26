@@ -6,7 +6,10 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class DolphinGameCamera : MonoBehaviour
 {
-    private CharacterSelection characterSelection;
+    private CharacterSelection _characterSelection;
+    private PauseMenuScreen _pauseMenuScreen;
+    private Game _game;
+
 
     [SerializeField] private float clipNearOffset;
 
@@ -45,9 +48,15 @@ public class DolphinGameCamera : MonoBehaviour
     private Vector3 desiredPosition;
 
 
-    void Start()
+    void Awake()
     {
- 
+
+        _game = FindObjectOfType<Game>();
+
+        if (_game == null)
+        {
+            throw new DolphinGameException("There is no Game Component in this Scene.");
+        }
 
         playerController = FindObjectOfType<PlayerController>();
 
@@ -56,11 +65,18 @@ public class DolphinGameCamera : MonoBehaviour
             throw new DolphinGameException("There is no PlayerController Component in this Scene. Please add one PlayerController from the Prefabs folder.");
         }
 
-        characterSelection = FindObjectOfType<CharacterSelection>();
-        if (characterSelection == null)
+        _characterSelection = FindObjectOfType<CharacterSelection>();
+        if (_characterSelection == null)
         {
             throw new DolphinGameException("There is no CharacterSelection Component in this Scene. Please add one CharacterSelection from the Prefabs folder.");
         }
+
+        _pauseMenuScreen = FindObjectOfType<PauseMenuScreen>();
+        if (_pauseMenuScreen == null)
+        {
+            throw new DolphinGameException("There is no PauseMenuScreen Component in this Scene.");
+        }
+        
 
         Rigidbody = GetComponent<Rigidbody>();
         Camera = GetComponent<Camera>();
@@ -109,7 +125,7 @@ public class DolphinGameCamera : MonoBehaviour
 
         Vector3 position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * damping);
         transform.position = new Vector3(position.x, position.y, position.z);
-        Camera.nearClipPlane = Mathf.Abs(transform.position.z) - clipNearOffset;
+        //Camera.nearClipPlane = Mathf.Abs(transform.position.z) - clipNearOffset;
 
 
         HandleDepthOfFIeld();
@@ -133,7 +149,7 @@ public class DolphinGameCamera : MonoBehaviour
 
     private void HandleDepthOfFIeld()
     {
-        if (characterSelection.Visible)
+        if (_characterSelection.Visible  || _pauseMenuScreen.InHistory && _game.Spotted)
         {
             depthOfFieldLayer.focusDistance.value = 0;
             depthOfFieldLayer.focalLength.value = 300;
@@ -141,7 +157,7 @@ public class DolphinGameCamera : MonoBehaviour
             colorGrading.saturation.value = -100;
 
         }
-        else if (characterSelection.NotVisible)
+        else
         {
             depthOfFieldLayer.focusDistance.value = Mathf.Abs(transform.position.z);
             depthOfFieldLayer.focalLength.value = Mathf.Abs(transform.position.z * 3);

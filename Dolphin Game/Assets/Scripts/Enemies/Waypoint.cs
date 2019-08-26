@@ -10,7 +10,7 @@ public class Waypoint : MonoBehaviour
     [Range(0, 360)]
     public float observationAngle = 0;
 
-    void Start()
+    void Awake()
     {
         
     }

@@ -827,8 +827,8 @@ MonoBehaviour:
   maxRotationDegreesDelta: 15
   funnyMoveMent: 0
   _rayInvisibilityClip: {fileID: 8933645243582764447}
-  _invisibleMaterial: {fileID: 0}
-  _rayRenderer: {fileID: 0}
+  _invisibleMaterial: {fileID: 2100000, guid: b45d70bf1cde0f94a84af74254433b5d, type: 2}
+  _rayRenderer: {fileID: 8783615139967282401}
   maxDistanceToNarrowCorridor: 15
   narrowCorridorClip: {fileID: 1104327580610293785}
   _rayStingClip: {fileID: 1229737420283187979}
@@ -936,7 +936,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2028416769467749129, guid: a374505712d29cb4b833dace29f1f46c,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 554c04c3eb5b2b94d8135520a5ebe4a9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7095e0b61f33c934e8956440effaec9e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -68,7 +68,7 @@ using UnityEngine.UI;
 
         eastIcon.Usable = _orcaPlayerController.EitherDestructableOrSharkFound;
 
- 
+        northIcon.Usable = _orcaPlayerController.SharkToTransportInReach;
 
         //southIcon.Filled = _orcaPlayerController.EchoAbilityCooldown;
 

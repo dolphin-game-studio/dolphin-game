@@ -157,7 +157,7 @@ MonoBehaviour:
     value: {x: 1, y: 1, z: 1, w: -0.055205543}
   gain:
     overrideState: 1
-    value: {x: 0.71820724, y: 0.68865246, z: 1, w: -0.13490728}
+    value: {x: 0.71820724, y: 0.68865246, z: 1, w: 1}
   masterCurve:
     overrideState: 0
     value:

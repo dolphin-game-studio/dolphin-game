@@ -172,7 +172,7 @@ Shader "Hidden/ScannerEffect"
 
 								//scannerCol *= (1 - (linearDepth * 5));
 								//scannerCol *= (1 - (linearDepth * 8));
-								//scannerCol /= (dist * 0.5);
+								scannerCol /= (dist * 0.5);
 
 							} else if (_EchoTypes[i] == 2) { 
 

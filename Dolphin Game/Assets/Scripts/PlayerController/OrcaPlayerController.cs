@@ -56,6 +56,10 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
 
     #region Transport Knocked Out Sharks
+    [SerializeField] private float maxSharkToTransportDistance = 20;
+
+    public bool SharkToTransportInReach => _nearestFacingKnockedOutShark != null 
+        && _distanceToNearestFacingKnockedOutShark < maxSharkToTransportDistance;
 
     [SerializeField] private AudioSource transportSharksClip;
 
@@ -64,7 +68,6 @@ public class OrcaPlayerController : SmallWhaleControllerBase
     [SerializeField] private float rotateSharkInMouthSpeed;
     [SerializeField] private float moveSharkInMouthSpeed;
 
-    [SerializeField] private float maxRamDistance;
 
 
     private bool _isTransportingShark;
@@ -81,22 +84,26 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
     private Transform currentlyTransportedSharkParent;
 
+    Hai _nearestFacingKnockedOutShark;
+    float _distanceToNearestFacingKnockedOutShark;
+    Vector3 _fromPlayerToKnockedOutSharkVector;
 
     private void HandleTransportKnockedOutSharks()
     {
+        _nearestFacingKnockedOutShark = GetNearestFacingShark(out _distanceToNearestFacingKnockedOutShark, out _fromPlayerToKnockedOutSharkVector, searchForKnockedOutShark: true);
+         
         bool yButtonPressed = Input.GetButtonUp("Y Button");
 
         if (yButtonPressed)
         {
             if (IsNotTransportingShark)
             {
-                nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector, searchForKnockedOutShark: true);
 
-                if (nearestFacingShark != null && nearestFacingShark.IsKnockedOut)
+                if (SharkToTransportInReach)
                 {
                     IsTransportingShark = true;
 
-                    currentlyTransportedShark = nearestFacingShark;
+                    currentlyTransportedShark = _nearestFacingKnockedOutShark;
 
                     IsSwimmingToSharkToTransport = true;
                 }
@@ -129,7 +136,6 @@ public class OrcaPlayerController : SmallWhaleControllerBase
             //Vector3 pos = Vector3.MoveTowards(transform.position, currentlyTransportedShark.BackFin.transform.position, Speed * Time.deltaTime);
             Vector3 pos = Vector3.MoveTowards(transform.position, currentlyTransportedShark.BackFin.transform.position - centerToMouth, Speed * Time.deltaTime);
 
-            Debug.Log(mouthSpine.transform.position + " " + currentlyTransportedShark.BackFin.transform.position + " " + pos + " mouth to fin: " + fromMouthToFin + "distance mouth to fin: " + distanceToShark);
             GetComponent<Rigidbody>().MovePosition(pos);
 
             if (distanceToShark < 1)
@@ -167,6 +173,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
 
     #region Handle Ram Thrust
+    [SerializeField] private float maxRamDistance;
 
     int ramHash = Animator.StringToHash("Ram");
     public float ramForce = 1f;
@@ -218,8 +225,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
     }
 
 
-    #region Handle Ram Thrust
-
+ 
     [SerializeField] private AudioSource ramThrustClip;
 
     private void HandleRamThrust()
@@ -302,8 +308,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
         _timeSinceLastRam += Time.deltaTime;
     }
 
-    #endregion
-
+ 
     void OnCollisionEnter(Collision collision)
     {
         if (RamThrusting)

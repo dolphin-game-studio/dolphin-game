@@ -90,7 +90,7 @@ public class DolphinPlayerController : SmallWhaleControllerBase
 
     public bool HackingInProgress => _hackingInProgress;
     public float HackProgress => Map(hackEchoDelay, initialHackEchoDelay, hackEchoDelayEnd, 0, 1);
-            
+
 
     public static float Map(float x, float x1, float x2, float y1, float y2)
     {
@@ -178,6 +178,11 @@ public class DolphinPlayerController : SmallWhaleControllerBase
         base.Update();
     }
 
+    #region Bubble
+
+    [SerializeField] private AudioSource bubbleClip;
+
+
     private void HandlBubble()
     {
         bool bButtonPressed = Input.GetButtonUp("B Button");
@@ -214,6 +219,8 @@ public class DolphinPlayerController : SmallWhaleControllerBase
     private void SheduleBubble()
     {
         bubbleSheduled = true;
+        bubbleClip.Play();
+
         timeLeftUntilBubble = bubbleDelay;
     }
 
@@ -225,6 +232,9 @@ public class DolphinPlayerController : SmallWhaleControllerBase
         bubbleRigidBody.velocity = transform.forward * bubbleThrustPower;
 
         _timeSinceLastBubble = 0;
+
+
     }
+    #endregion
 
 }

@@ -175,14 +175,16 @@ public class PlayerController : MonoBehaviour
         {
             var currentPlayerIndex = allPlayerControllers.IndexOf(CurrentPlayerController);
 
-
-            currentPlayerIndex = (currentPlayerIndex - 1) % allPlayerControllers.Count;
-
-
-            if (currentPlayerIndex < 0)
+            do
             {
-                currentPlayerIndex = allPlayerControllers.Count + currentPlayerIndex;
-            }
+                currentPlayerIndex = (currentPlayerIndex - 1) % allPlayerControllers.Count;
+
+                if (currentPlayerIndex < 0)
+                {
+                    currentPlayerIndex = allPlayerControllers.Count + currentPlayerIndex;
+                }
+            } while (!allPlayerControllers[currentPlayerIndex].IsPlayable);
+
             CurrentPlayerController = allPlayerControllers[currentPlayerIndex];
         }
 
@@ -190,13 +192,20 @@ public class PlayerController : MonoBehaviour
         {
             var currentPlayerIndex = allPlayerControllers.IndexOf(CurrentPlayerController);
 
-            currentPlayerIndex = (currentPlayerIndex + 1) % allPlayerControllers.Count;
+            do
+            {
+                currentPlayerIndex = (currentPlayerIndex + 1) % allPlayerControllers.Count;
+            } while (!allPlayerControllers[currentPlayerIndex].IsPlayable);
+
             CurrentPlayerController = allPlayerControllers[currentPlayerIndex];
         }
     }
 
     private void UpdateMovement()
     {
+        if (!CurrentPlayerController.IsPlayable)
+            return;
+
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
 

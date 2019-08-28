@@ -56,6 +56,9 @@ public class SharkPlayerController : PlayerControllerBase
     #region Distract Shark
 
     [SerializeField] private float _maxDinstanceToTalkToShark = 20;
+    [SerializeField] private float _maxDinstanceToTakeUniform = 20;
+
+    
 
     [SerializeField] private AudioSource distractSharkClip;
 
@@ -88,7 +91,7 @@ public class SharkPlayerController : PlayerControllerBase
 
     #region Take Uniform
 
-    public bool KnockedOutSharkInReach => nearestFacingKnockedOutShark != null && distanceToNearestFacingKnockedOutShark < 10;
+    public bool KnockedOutSharkInReach => nearestFacingKnockedOutShark != null && distanceToNearestFacingKnockedOutShark < _maxDinstanceToTakeUniform;
     public bool KnockedOutSharkWithSuperiorUniformInReach => KnockedOutSharkInReach && nearestFacingKnockedOutShark.Rank > Rank;
 
     private float distanceToNearestFacingKnockedOutShark;
@@ -145,6 +148,13 @@ public class SharkPlayerController : PlayerControllerBase
                     if (_nearestAngler.SharkToFollow == this.gameObject)
                     {
                         _followingAngler = _nearestAngler;
+                        _followingAngler.Spotlight.intensity = 0.6f;
+                        _followingAngler.Spotlight.spotAngle = 60f;
+                        _followingAngler.Spotlight.range = 933f;
+
+                        _followingAngler.PointLight.intensity = 1.45f;
+                        _followingAngler.PointLight.range = 153f;
+
                         _takeAnglerClip.Play();
                     }
                 }
@@ -166,7 +176,15 @@ public class SharkPlayerController : PlayerControllerBase
         foreach (var angler in anglers)
         {
             if (angler.SharkToFollow != null)
-                continue;
+            {
+                var hai = angler.SharkToFollow.GetComponent<Hai>();
+                if (hai != null && hai.IsNotKnockedOut)
+                {
+                    continue;
+                }
+            }
+
+
 
             var fromPlayerToAnglerVector = angler.transform.position - transform.position;
 

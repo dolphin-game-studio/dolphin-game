@@ -96,6 +96,14 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
         if (yButtonPressed)
         {
+            if (IsSwimmingToSharkToTransport) {
+                IsSwimmingToSharkToTransport = false;
+                IsTransportingShark = false;
+                return;
+            }
+
+
+
             if (IsNotTransportingShark)
             {
 
@@ -226,7 +234,9 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
 
  
-    [SerializeField] private AudioSource ramThrustClip;
+    [SerializeField] private AudioSource ramThrustStartClip;
+    [SerializeField] private AudioSource ramThrustEndClip;
+
 
     private void HandleRamThrust()
     {
@@ -288,7 +298,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
                 {
                     ramThrustSheduled = false;
                     RamThrusting = true;
-                    ramThrustClip.Play();
+                    ramThrustStartClip.Play();
 
 }
             }
@@ -319,12 +329,14 @@ public class OrcaPlayerController : SmallWhaleControllerBase
             if (rammedShark != null && rammedShark.IsNotAlarmed)
             {
                 rammedShark.IsKnockedOut = true;
+                ramThrustEndClip.Play();
             }
 
             DestructableObstacle rammedDestructable = collision.gameObject.GetComponent<DestructableObstacle>();
             if (rammedDestructable != null)
             {
                 rammedDestructable.Destroy();
+                ramThrustEndClip.Play();
             }
         }
 

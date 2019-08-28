@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerControllerBase : MonoBehaviour
 {
+    [SerializeField] private bool _isPlayable = true;
+    public bool IsPlayable { get => _isPlayable; set => _isPlayable = value; }
+
+    [SerializeField] private bool _achieved = false;
+    public bool Achieved { get => _achieved; set => _achieved = value; }
+
+
     protected Hai[] haie;
     CapsuleCollider Collider;
 
@@ -111,7 +118,7 @@ public class PlayerControllerBase : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (playerController.CurrentPlayerController != this)
+        if (playerController.CurrentPlayerController != this && !IsPlayable)
             return;
 
     }

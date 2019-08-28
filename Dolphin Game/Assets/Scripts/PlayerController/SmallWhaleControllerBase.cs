@@ -28,7 +28,8 @@ public class SmallWhaleControllerBase : PlayerControllerBase
 
     public Transform EccoOrigin { get => eccoOrigin; }
 
-    protected Jammer[] allJammer;
+    protected Jammer[] allJammer; 
+
     protected EccoEffect eccoEffect;
     protected EccoEffectFindable eccoEffectFindable;
     protected EccoEffectJammed eccoEffectJammed;

@@ -13,6 +13,12 @@ public class Angler : MonoBehaviour
 
     [SerializeField] private Vector3 offsetToShark;
 
+    [SerializeField] private Light _spotlight;  
+    [SerializeField] private Light _pointLight;  
+
+    public Light Spotlight => _spotlight;
+    public Light PointLight => _pointLight;
+
 
     void Awake()
     {
@@ -33,21 +39,20 @@ public class Angler : MonoBehaviour
         }
     }
 
+ 
+
     private void FollowShark()
     {
         RotateToDesiredRotation();
         MoveToDesiredPosition();
+        UpdateSpotlightAngle();
+        
+    }
 
-        var hai = sharkToFollow.GetComponent<Hai>();
-
-        if (hai != null)
-        {
-            if (hai.IsKnockedOut)
-            {
-                sharkToFollow = null;
-            }
-        }
-
+    private void UpdateSpotlightAngle()
+    {
+        _spotlight.transform.forward = sharkToFollow.transform.forward .normalized + Vector3.forward;
+         
     }
 
     private void RotateToDesiredRotation()

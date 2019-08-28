@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class DestructableObstacle : MonoBehaviour
 {
+
+    public delegate void Destructed();
+    public static event Destructed OnDestructed;
+
     public bool OrcaCanDestroy
     {
         get
@@ -27,7 +31,7 @@ public class DestructableObstacle : MonoBehaviour
 
     private Findable findable;
 
-    SphereCollider sphereCollider;
+    Collider collider;
     Rigidbody[] stones;
     [SerializeField] private float minDestructableForce = 300;
     [SerializeField] private float maxDestructableForce = 1000;
@@ -39,11 +43,11 @@ public class DestructableObstacle : MonoBehaviour
 
     void Awake()
     {
-        sphereCollider = GetComponent<SphereCollider>();
+        collider = GetComponent<Collider>();
 
-        if (sphereCollider == null)
+        if (collider == null)
         {
-            throw new DolphinGameException("SphereCollider component isn't set on Destructable.");
+            throw new DolphinGameException("Collider component isn't set on Destructable.");
         }
 
         stones = transform.GetComponentsInChildren<Rigidbody>();
@@ -58,7 +62,7 @@ public class DestructableObstacle : MonoBehaviour
     public void Destroy()
     {
         destroyed = true;
-        sphereCollider.enabled = false;
+        collider.enabled = false;
 
         foreach (var stone in stones)
         {
@@ -78,5 +82,7 @@ public class DestructableObstacle : MonoBehaviour
 
             Destroy(stone.gameObject, 10);
         }
+
+        OnDestructed();
     }
 }

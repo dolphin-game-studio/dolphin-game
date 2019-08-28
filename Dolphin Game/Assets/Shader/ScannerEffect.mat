@@ -28,12 +28,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _EchoFadePower: 3
     - _HackEchoWidth: 150
     - _HackLeadSharp: 12
     - _HackScanWidth: 150
     - _JammedLeadSharp: 150
     - _JammedScanWidth: 150
     - _LeadSharp: 1
+    - _MaxEchoDistance: 300
+    - _NormalDotCameraRayPower: 0.7
     - _ScanDistance: 69.223656
     - _ScanWidth: 150
     m_Colors:
@@ -45,5 +48,5 @@ Material:
     - _JammedMidColor: {r: 1, g: 0, b: 0, a: 0}
     - _JammedTrailColor: {r: 1, g: 0, b: 0, a: 0}
     - _LeadColor: {r: 1, g: 1, b: 1, a: 0}
-    - _MidColor: {r: 0, g: 0.06298852, b: 1, a: 0}
-    - _TrailColor: {r: 0, g: 0.06818819, b: 1, a: 0}
+    - _MidColor: {r: 1, g: 1, b: 1, a: 0}
+    - _TrailColor: {r: 1, g: 1, b: 1, a: 0}

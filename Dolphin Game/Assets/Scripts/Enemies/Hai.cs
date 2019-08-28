@@ -386,6 +386,8 @@ public class Hai : MonoBehaviour
 
     #region Find Visible Targets
 
+    [SerializeField] private float _rayInvisibilityDistance = 2f;
+
     public LayerMask targetMask;
     public LayerMask obstacleMask;
 
@@ -415,6 +417,7 @@ public class Hai : MonoBehaviour
                 else
                 {
                     _game.NoticedPlayer = false;
+                    spottedRay = null;
                 }
             }
         }
@@ -453,11 +456,15 @@ public class Hai : MonoBehaviour
 
                     if (ray != null)
                     {
-                        bool isNotNearGround = !Physics.Raycast(transform.position, dirToTarget, dstToTarget * 1.2f, obstacleMask);
+                        RaycastHit hit;
+                        bool hitSucc =  Physics.Raycast(ray.transform.position, dirToTarget, out hit, _rayInvisibilityDistance * 3, obstacleMask);
+                        bool isNotNearGround = !hitSucc || hit.distance > _rayInvisibilityDistance;
                         bool isMoving = ray.Rigidbody.velocity.magnitude > 1;
+ 
 
                         if (spottedRay != null || isNotNearGround || isMoving)
                         {
+ 
                             visibleTargets.Add(target.gameObject);
                             spottedRay = ray;
                             FoundAtLeastOnePlayer = true;
@@ -489,11 +496,7 @@ public class Hai : MonoBehaviour
 
                     }
                 }
-            }
-            else
-            {
-                spottedRay = null;
-            }
+            } 
         }
 
         if (FoundAtLeastOnePlayer)

@@ -39,6 +39,13 @@ public class CharacterSelection : MonoBehaviour
                 else
                 {
                     Time.timeScale = 1f;
+
+                    playerController.DolphinPlayerController.Achieved = false;
+                    playerController.SharkPlayerController.Achieved = false;
+                    playerController.OrcaPlayerController.Achieved = false;
+                    playerController.RayPlayerController.Achieved = false;
+
+
                 }
             }
         }

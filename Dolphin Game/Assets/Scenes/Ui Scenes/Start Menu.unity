@@ -511,7 +511,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 912fdecd995c9e141a8a1bed5dbd6071, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -652,5 +652,104 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3ac4dba5d11152e43b40240ec5a92f66, type: 2}
+    - target: {fileID: 6651229052666275725, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120696215028451095, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297130214983512838, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954780808989058656, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031802523, guid: 47893f8fcb741b5409f29bfd95d3026f, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7686091812836594850, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633420546, guid: 47893f8fcb741b5409f29bfd95d3026f, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251189846539221068, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ae0aaa2b36467649bc3f99bad9e25ce,
+        type: 3}
+    - target: {fileID: 1274384558102811953, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 55b736e1e5a1f9047b0cd2f07169274d,
+        type: 3}
+    - target: {fileID: 2970441313832769284, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b379a0d104436364aa76e36c8ab3788f,
+        type: 3}
+    - target: {fileID: 3264909328922584570, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970441314091455339, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ead130f38c062944f92c95bb3a156324,
+        type: 3}
+    - target: {fileID: 78383117, guid: 47893f8fcb741b5409f29bfd95d3026f, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970441314256858921, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1a1a1f0f7b7b0541b0e2a599c63e6f1,
+        type: 3}
+    - target: {fileID: 6284114274671848250, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2970441315803263062, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d65b961fc9d1df348867a90c873886a2,
+        type: 3}
+    - target: {fileID: 2448305004643583784, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061206682661123086, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 790785f111b1e4547894938da794f9da,
+        type: 3}
+    - target: {fileID: 4447234745864713679, guid: 47893f8fcb741b5409f29bfd95d3026f,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47893f8fcb741b5409f29bfd95d3026f, type: 3}

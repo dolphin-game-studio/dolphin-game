@@ -47,7 +47,6 @@ public class DolphinPlayerController : SmallWhaleControllerBase
     {
         eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = _nearestJammerInHackDistance.transform.position });
         eccoEffect.StartEcho(new Echo() { Type = EchoType.HackEcho, Origin = EccoOrigin.position });
-        hackingClip.Play();
     }
 
     public Jammer GetNearestFacingJammerInHackDistance(out float distanceToNearestFacingJammer, out Vector3 fromPlayerToNearestFacingJammerVector)
@@ -88,8 +87,7 @@ public class DolphinPlayerController : SmallWhaleControllerBase
         return nearestJammer;
     }
 
-    public bool HackingInProgress => _hackingInProgress;
-    public float HackProgress => Map(hackEchoDelay, initialHackEchoDelay, hackEchoDelayEnd, 0, 1);
+     public float HackProgress => Map(hackEchoDelay, initialHackEchoDelay, hackEchoDelayEnd, 0, 1);
 
 
     public static float Map(float x, float x1, float x2, float y1, float y2)
@@ -108,14 +106,36 @@ public class DolphinPlayerController : SmallWhaleControllerBase
     private float timeSinceLastHackEcho;
 
     private bool _hackingInProgress = false;
+    private bool _hackingFinished = false;
+
 
     public bool AtLeastOneJammerInHackDistance => _nearestJammerInHackDistance != null;
 
+    public bool HackingInProgress
+    {
+        get => _hackingInProgress;
+        set
+        {
+            if (_hackingInProgress != value)
+            {
+                _hackingInProgress = value;
 
+                if (_hackingInProgress) {
+                    hackingClip.Play();
+                }
+
+                if (!_hackingInProgress && !_hackingFinished) {
+                    hackingClip.Stop();
+                }
+            }
+        }
+    }
 
     private Jammer _nearestJammerInHackDistance = null;
     private float _distanceToNearestFacingJammer;
     private Vector3 _fromPlayerToJammerVector;
+
+
 
     private void HandleHacking()
     {
@@ -129,16 +149,16 @@ public class DolphinPlayerController : SmallWhaleControllerBase
         {
             if (_nearestJammerInHackDistance != null)
             {
-                _hackingInProgress = true;
+                HackingInProgress = true;
+                _hackingFinished = false;
+ 
                 hackEchoDelay = initialHackEchoDelay;
                 SendHackEcho();
             }
         }
         if (yButtonUp || _nearestJammerInHackDistance == null)
         {
-            hackingClip.Stop();
-
-            _hackingInProgress = false;
+            HackingInProgress = false;
         }
 
 
@@ -153,7 +173,9 @@ public class DolphinPlayerController : SmallWhaleControllerBase
                 timeSinceLastHackEcho = 0;
                 if (hackEchoDelay < hackEchoDelayEnd)
                 {
-                    _hackingInProgress = false;
+                    _hackingFinished = true;
+
+                    HackingInProgress = false;
                     _nearestJammerInHackDistance.IsHacked = true;
 
                 }

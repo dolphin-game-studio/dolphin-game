@@ -6,6 +6,7 @@ using System.Collections.Generic;
 [ExecuteInEditMode]
 public class EccoEffect : MonoBehaviour
 {
+    protected Jammer[] allJammer;
     Echo[] echos = new Echo[100];
 
     public EccoEffect()
@@ -43,6 +44,8 @@ public class EccoEffect : MonoBehaviour
 
     void Awake()
     {
+        allJammer = FindObjectsOfType<Jammer>();
+
         playerController = FindObjectOfType<PlayerController>();
 
         findables = FindObjectsOfType<Findable>();
@@ -68,9 +71,9 @@ public class EccoEffect : MonoBehaviour
 
             }
         }
- 
+
     }
- 
+
     void OnEnable()
     {
         _camera = GetComponent<Camera>();
@@ -90,6 +93,18 @@ public class EccoEffect : MonoBehaviour
         float[] echoDistancesArray = new float[100];
         float[] echoTypesArray = new float[100];
         Vector4[] echoOriginsArray = new Vector4[100];
+
+        Vector4[] jammerPositionsArray = new Vector4[allJammer.Length];
+        float[] jammerActiveArray = new float[allJammer.Length];
+        float[] jammerJammingDistancesArray = new float[allJammer.Length];
+
+ 
+        for (int i = 0; i < allJammer.Length; i++)
+        {
+            jammerPositionsArray[i] = allJammer[i].transform.position;
+            jammerActiveArray[i] = allJammer[i].IsNotHacked ? 1.0f : 0.0f;
+            jammerJammingDistancesArray[i] = allJammer[i].Radius;
+        }
 
         for (int i = 0; i < echos.Length && i < echoDistancesArray.Length; i++)
         {
@@ -120,6 +135,12 @@ public class EccoEffect : MonoBehaviour
         EffectMaterial.SetFloatArray("_EchoDistances", echoDistancesArray);
         EffectMaterial.SetFloatArray("_EchoTypes", echoTypesArray);
 
+
+
+        EffectMaterial.SetVectorArray("_JammerPositions", jammerPositionsArray);
+        EffectMaterial.SetFloatArray("_JammerActive", jammerActiveArray);
+        EffectMaterial.SetFloatArray("_JammerJammingDistances", jammerJammingDistancesArray);
+        
 
         RaycastCornerBlit(src, dst, EffectMaterial);
 

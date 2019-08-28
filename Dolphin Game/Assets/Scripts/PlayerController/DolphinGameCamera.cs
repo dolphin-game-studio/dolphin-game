@@ -160,7 +160,7 @@ public class DolphinGameCamera : MonoBehaviour
         else
         {
             depthOfFieldLayer.focusDistance.value = Mathf.Abs(transform.position.z);
-            depthOfFieldLayer.focalLength.value = Mathf.Abs(transform.position.z * 3);
+            depthOfFieldLayer.focalLength.value = Mathf.Abs(transform.position.z / 3 );
             colorGrading.saturation.value = 0;
         }
 

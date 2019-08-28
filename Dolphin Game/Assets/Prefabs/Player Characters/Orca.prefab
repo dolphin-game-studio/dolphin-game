@@ -117,7 +117,7 @@ MonoBehaviour:
   _ramCooldown: 2
   maxSharkToTransportDistance: 25
   transportSharksClip: {fileID: 3354728072059484808}
-  mouthSpine: {fileID: 849612582631142409}
+  mouthSpine: {fileID: 0}
   rotateSharkInMouthSpeed: 120
   moveSharkInMouthSpeed: 10
   maxRamDistance: 25
@@ -408,17 +408,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -1539068400968687757, guid: 5da583add83df6647b2c6e303fc59e62,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5da583add83df6647b2c6e303fc59e62, type: 3}
 --- !u!4 &4858048816654773136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5da583add83df6647b2c6e303fc59e62,
-    type: 3}
-  m_PrefabInstance: {fileID: 437400458939547786}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &849612582631142409 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -8224809586226285437, guid: 5da583add83df6647b2c6e303fc59e62,
     type: 3}
   m_PrefabInstance: {fileID: 437400458939547786}
   m_PrefabAsset: {fileID: 0}
@@ -489,6 +488,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 368321737423397361, guid: 59a0e9eef3b0dcd4bb8454496e4380f8,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d4877fc0b59b4494c900c2bb74dc7184, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59a0e9eef3b0dcd4bb8454496e4380f8, type: 3}
 --- !u!4 &7378524811207751345 stripped
@@ -754,7 +758,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 4ce35efb789c67140bd47381553968ae, type: 3}
+      objectReference: {fileID: 8300000, guid: 4ab22f3d282d6c741a3aa546692b3480, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 556bcf2cd44a59145a79d694c401789c, type: 3}
 --- !u!82 &4504759923606393479 stripped

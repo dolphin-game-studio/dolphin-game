@@ -772,11 +772,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2440778616989711762}
     m_Modifications:
-    - target: {fileID: 6181972182332409518, guid: 3c905e9c57f50454d9d0cc2622fec169,
-        type: 3}
-      propertyPath: m_Name
-      value: Rochen Stich
-      objectReference: {fileID: 0}
     - target: {fileID: 2846878503939900079, guid: 3c905e9c57f50454d9d0cc2622fec169,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -831,6 +826,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181972182332409518, guid: 3c905e9c57f50454d9d0cc2622fec169,
+        type: 3}
+      propertyPath: m_Name
+      value: Rochen Stich
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c905e9c57f50454d9d0cc2622fec169, type: 3}
@@ -934,11 +934,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2440778616989711762}
     m_Modifications:
-    - target: {fileID: 5490193586435107070, guid: 71a6bd871c70d5745aa6e774f9826123,
-        type: 3}
-      propertyPath: m_Name
-      value: Rochen Tarnen
-      objectReference: {fileID: 0}
     - target: {fileID: 2262218037071652419, guid: 71a6bd871c70d5745aa6e774f9826123,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -994,6 +989,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5490193586435107070, guid: 71a6bd871c70d5745aa6e774f9826123,
+        type: 3}
+      propertyPath: m_Name
+      value: Rochen Tarnen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899455817755008855, guid: 71a6bd871c70d5745aa6e774f9826123,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 168cd51a1a4722148b057709c5f6ae23, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71a6bd871c70d5745aa6e774f9826123, type: 3}
 --- !u!82 &8933645243582764447 stripped

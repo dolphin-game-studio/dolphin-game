@@ -117,7 +117,7 @@ MonoBehaviour:
   _ramCooldown: 2
   maxSharkToTransportDistance: 25
   transportSharksClip: {fileID: 3354728072059484808}
-  mouthSpine: {fileID: 0}
+  mouthSpine: {fileID: 849612582631142409}
   rotateSharkInMouthSpeed: 120
   moveSharkInMouthSpeed: 10
   maxRamDistance: 25
@@ -411,13 +411,19 @@ PrefabInstance:
     - target: {fileID: -1539068400968687757, guid: 5da583add83df6647b2c6e303fc59e62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5da583add83df6647b2c6e303fc59e62, type: 3}
 --- !u!4 &4858048816654773136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5da583add83df6647b2c6e303fc59e62,
+    type: 3}
+  m_PrefabInstance: {fileID: 437400458939547786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &849612582631142409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8224809586226285437, guid: 5da583add83df6647b2c6e303fc59e62,
     type: 3}
   m_PrefabInstance: {fileID: 437400458939547786}
   m_PrefabAsset: {fileID: 0}

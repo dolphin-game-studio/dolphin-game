@@ -28,7 +28,7 @@ using UnityEngine.SceneManagement;
         {
             if (isLoadingGame == null)
             {
-                isLoadingGame = SceneManager.LoadSceneAsync("final map shanice", LoadSceneMode.Single);
+                isLoadingGame = SceneManager.LoadSceneAsync("Final Level Alex", LoadSceneMode.Single);
             }
         }
     }

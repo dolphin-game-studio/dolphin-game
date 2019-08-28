@@ -31,12 +31,12 @@ Material:
     - _DX: 13
     - _DY: 0.61
     - _DistMultiplier: 3.75
-    - _EdgeGlow: 1
+    - _EdgeGlow: 0
     - _EdgeGlowMultiplier: 10
     - _EdgeGlowOffset: 0.357
     - _El: 3.72
     - _EndeSharpness: 105
-    - _Filled: 0.389
+    - _Filled: 1
     - _GreyScaleBlue: 0.33
     - _GreyScaleGreen: 0.33
     - _GreyScaleMultiplier: 0.25
@@ -59,3 +59,4 @@ Material:
     - _edgeGlow: 0
     m_Colors:
     - _EdgeGlowColor: {r: 0.6981132, g: 0.5459304, b: 0.30624774, a: 1}
+    - _UnusableEdgeGlowColor: {r: 1, g: 0, b: 0, a: 1}

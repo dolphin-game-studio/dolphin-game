@@ -149,7 +149,7 @@ public class DolphinGameCamera : MonoBehaviour
 
     private void HandleDepthOfFIeld()
     {
-        if (_characterSelection.Visible  || _pauseMenuScreen.InHistory && _game.Spotted)
+        if (_characterSelection.Visible  || _pauseMenuScreen.InHistory || _game.Spotted)
         {
             depthOfFieldLayer.focusDistance.value = 0;
             depthOfFieldLayer.focalLength.value = 300;

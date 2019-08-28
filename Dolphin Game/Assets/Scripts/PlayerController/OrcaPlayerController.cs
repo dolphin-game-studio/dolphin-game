@@ -96,6 +96,14 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
         if (yButtonPressed)
         {
+            if (IsSwimmingToSharkToTransport) {
+                IsSwimmingToSharkToTransport = false;
+                IsTransportingShark = false;
+                return;
+            }
+
+
+
             if (IsNotTransportingShark)
             {
 

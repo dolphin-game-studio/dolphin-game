@@ -6,8 +6,118 @@ using UnityEngine;
 
 public class Hai : MonoBehaviour
 {
-    private Game _game;
+    private DolphinPlayerController _dolphinPlayerController;
+    private RayPlayerController _rayPlayerController;
+    private SharkPlayerController _sharkPlayerController;
+    private OrcaPlayerController _orcaPlayerController;
 
+    private PlayerControllerBase[] _allPlayers;
+
+
+    private Game _game;
+     float timePlayerNoticed;
+    public float secondsToSpotPlayer = 2f;
+    public float secondsToSpotPlayerWhenNear = 0.2f;
+
+
+    private Color colorNormal = new Color(0, 1, 0), colorSuspicious = new Color(1, 1, 0), colorSpotted = new Color(1, 0, 0);
+
+    private Renderer _renderer;
+    private MaterialPropertyBlock _propBlock;
+
+     
+
+    public float DistanceToNearestPlayerCharacter
+    {
+        get
+        {
+
+
+            PlayerControllerBase nearestPlayer = _allPlayers[0];
+
+            float distanceToNearest = float.MaxValue;
+
+            for (int i = 0; i < _allPlayers.Length; i++)
+            { 
+                PlayerControllerBase playerController = _allPlayers[i];
+
+                if (!playerController.IsPlayable) {
+                    continue;
+                }
+
+                var distanceToCurrent = Vector3.Distance(this.transform.position, playerController.transform.position);
+
+                if (distanceToCurrent < distanceToNearest)
+                {
+                    distanceToNearest = distanceToCurrent;
+
+                    nearestPlayer = playerController;
+                }
+            }
+            return distanceToNearest;
+
+        }
+    }
+
+ 
+
+    private void SpotPlayer()
+    {
+
+        if (DistanceToNearestPlayerCharacter > 100   )
+        {
+            return;
+        }
+
+        
+        _renderer.GetPropertyBlock(_propBlock);
+
+        if (NearestTarget != null && NearestTarget.GetComponent<Bubble>() == null)
+        {
+            var distanceToPlayer = Vector3.Distance(transform.position, NearestTarget.transform.position);
+
+            var timeToSpotPlayerRegardingDistanceToPlayer = Mathf.Lerp(secondsToSpotPlayer, secondsToSpotPlayerWhenNear, 1 - distanceToPlayer / viewRadiusWhenSuspicious);
+
+            if (timePlayerNoticed > timeToSpotPlayerRegardingDistanceToPlayer)
+            {
+                _game.Spotted = true;
+            }
+
+
+            timePlayerNoticed += Time.deltaTime;
+
+            _propBlock.SetColor("_Color", new Color(1, Mathf.Lerp(1, 0, timePlayerNoticed / timeToSpotPlayerRegardingDistanceToPlayer), 0));
+        }
+        else
+        {
+            timePlayerNoticed = 0;
+            _propBlock.SetColor("_Color", colorNormal);
+        }
+
+
+        var distanceToNearestPlayerCharacterClamped = Mathf.Clamp(DistanceToNearestPlayerCharacter, 0, 100);
+        var distanceToNearestPlayerCharacter01 = distanceToNearestPlayerCharacterClamped / 100;
+
+
+
+        _propBlock.SetFloat("_Transparency", Mathf.Clamp(1 - distanceToNearestPlayerCharacter01, 0, 0.4f));
+
+
+
+
+        _renderer.SetPropertyBlock(_propBlock);
+    }
+
+
+
+
+
+
+
+
+
+
+ 
 
     private Rigidbody Rigidbody;
     private HaiPatrouille HaiPatrouille;
@@ -136,6 +246,8 @@ public class Hai : MonoBehaviour
     }
     #endregion
 
+
+
     public GameObject NearestTarget
     {
         get
@@ -205,6 +317,45 @@ public class Hai : MonoBehaviour
 
     void Awake()
     {
+ 
+        _game = FindObjectOfType<Game>();
+ 
+        if (_game == null)
+        {
+            throw new DolphinGameException("The essentials are not present in this scene. Please add one Essentials object from the Prefabs Folder.");
+        }
+
+
+        _dolphinPlayerController = FindObjectOfType<DolphinPlayerController>();
+        if (_dolphinPlayerController == null)
+        {
+            throw new DolphinGameException("DolphinPlayerController not present in this scene.");
+        }
+        _rayPlayerController = FindObjectOfType<RayPlayerController>();
+        if (_rayPlayerController == null)
+        {
+            throw new DolphinGameException("RayPlayerController not present in this scene.");
+        }
+        _sharkPlayerController = FindObjectOfType<SharkPlayerController>();
+        if (_sharkPlayerController == null)
+        {
+            throw new DolphinGameException("SharkPlayerController not present in this scene.");
+        }
+        _orcaPlayerController = FindObjectOfType<OrcaPlayerController>();
+        if (_orcaPlayerController == null)
+        {
+            throw new DolphinGameException("OrcaPlayerController not present in this scene.");
+        }
+
+
+        _allPlayers = new PlayerControllerBase[] { _dolphinPlayerController, _rayPlayerController, _sharkPlayerController, _orcaPlayerController };
+
+
+        _propBlock = new MaterialPropertyBlock();
+        _renderer =  viewMeshFilter.GetComponent<Renderer>();
+
+
+
 
         _game = FindObjectOfType<Game>();
 
@@ -256,7 +407,10 @@ public class Hai : MonoBehaviour
             DrawFieldOfView();
 
             FindVisibleTargets();
+
+            SpotPlayer();
         }
+ 
 
         if (IsStunned)
         {
@@ -529,6 +683,10 @@ public class Hai : MonoBehaviour
 
     void DrawFieldOfView()
     {
+
+        if (DistanceToNearestPlayerCharacter > 100) {
+            return;
+        }
 
         int stepCount = Mathf.RoundToInt(viewAngle * meshResolution);
         float stepAngleSize = viewAngle / stepCount;

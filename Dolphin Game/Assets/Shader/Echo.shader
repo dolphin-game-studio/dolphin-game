@@ -219,36 +219,7 @@ Shader "Operation Whalekyrie/Echo"
 							
  
 
-							for (int j = 0; j < _JammerPositions.Length; j++) {
-								float4 jammerPosition = _JammerPositions[j];
-								float jammerActive = _JammerActive[j];
 
-								if (jammerActive == 1) {
-
-									float jammerJammingDistance = _JammerJammingDistances[j];
-
-									float fragmentDistanceToJammer = distance(float2(fragmentWorldPosition.x, fragmentWorldPosition.y), float2(jammerPosition.x, jammerPosition.y));
-									
-									
-									if (fragmentDistanceToJammer < jammerJammingDistance) {
-										float3 fromJammerToFragmentVector = fragmentWorldPosition - jammerPosition;
-										float fromJammerToFragmentAngle = (atan2(fromJammerToFragmentVector.x, fromJammerToFragmentVector.y) + 3.14159);
-										float fromJammerToFragmentAngleAbsedFraced = frac(fromJammerToFragmentAngle / (3.14159 / 10) + frac(fragmentDistanceToJammer / 3 + _Time.z));
-										float fromJammerToFragmentAngleWave = abs((fromJammerToFragmentAngleAbsedFraced - 0.5));
-
-										//float fromJammerToFragmentAngle0TwoPi = fromJammerToFragmentAngle + 3.14159;
-										//float fromJammerToFragmentAngleFraced = frac(fromJammerToFragmentAngle0TwoPi / (3.14159/10) + _Time.z);
-										//float fromJammerToFragmentAngleFracedByTwoPi =   fromJammerToFragmentAngle ;
-										//fragmentDistanceToJammer -= fromJammerToFragmentAngleFracedByTwoPi;
-
-										if ((fragmentDistanceToJammer + pow(fromJammerToFragmentAngleWave * 4, 4)) < jammerJammingDistance) {
-											float fragmentDistanceToJammer01 = fragmentDistanceToJammer / jammerJammingDistance;
-											float fragmentDistanceToJammer01Powered = pow(fragmentDistanceToJammer01, fromJammerToFragmentAngleWave * 2 + 25);
-											scannerCol = float4(fragmentDistanceToJammer01Powered, 0, 0, 1);
-										}
-									}
-								}
-							}
 
 							if (_EchoTypes[i] == 2) {
 
@@ -279,6 +250,117 @@ Shader "Operation Whalekyrie/Echo"
 								scannerCol /= (fragmentDistanceToOrigin * 0.5);
 
 							}
+
+							  bool inJammerArea = false;
+							  int jammerIndexInWhichAreaThePlayerIs = 0;
+
+							  for (int j = 0; j < _JammerPositions.Length; j++) {
+								  if (!inJammerArea) {
+									  float4 jammerPosition = _JammerPositions[j];
+									  float jammerActive = _JammerActive[j];
+
+									  if (jammerActive == 1) {
+										  float jammerJammingDistance = _JammerJammingDistances[j];
+										  float originDistanceToJammer = distance(float2(_EchoOrigins[i].x, _EchoOrigins[i].y), float2(jammerPosition.x, jammerPosition.y));
+
+										  if (originDistanceToJammer < jammerJammingDistance) {
+											  inJammerArea = true;
+											  jammerIndexInWhichAreaThePlayerIs = j;
+										  }
+									  }
+								  }
+
+
+							  }
+							  
+							  if (inJammerArea) {
+								  
+
+
+
+									  float4 jammerPosition = _JammerPositions[jammerIndexInWhichAreaThePlayerIs];
+									  float jammerActive = _JammerActive[jammerIndexInWhichAreaThePlayerIs];
+
+									  if (jammerActive == 1) {
+
+										  float jammerJammingDistance = _JammerJammingDistances[jammerIndexInWhichAreaThePlayerIs];
+										  float fragmentDistanceToJammer = distance(float2(fragmentWorldPosition.x, fragmentWorldPosition.y), float2(jammerPosition.x, jammerPosition.y));
+
+
+										  //float fragmentDistanceToJammer = distance(float2(_EchoOrigins[i].x, _EchoOrigins[i].y), float2(jammerPosition.x, jammerPosition.y));
+
+										  if (fragmentDistanceToJammer < jammerJammingDistance) {
+
+
+											  float originDistanceToJammer = distance(float2(_EchoOrigins[i].x, _EchoOrigins[i].y), float2(jammerPosition.x, jammerPosition.y));
+
+											  jammerJammingDistance = min(originDistanceToJammer, jammerJammingDistance);
+
+
+											  float3 fromJammerToFragmentVector = fragmentWorldPosition - jammerPosition;
+											  float fromJammerToFragmentAngle = (atan2(fromJammerToFragmentVector.x, fromJammerToFragmentVector.y) + 3.14159);
+											  float fromJammerToFragmentAngleAbsedFraced = frac(fromJammerToFragmentAngle / (3.14159 / 10) + frac(fragmentDistanceToJammer / 3 + _Time.z));
+											  float fromJammerToFragmentAngleWave = abs((fromJammerToFragmentAngleAbsedFraced - 0.5));
+
+											  //float fromJammerToFragmentAngle0TwoPi = fromJammerToFragmentAngle + 3.14159;
+											  //float fromJammerToFragmentAngleFraced = frac(fromJammerToFragmentAngle0TwoPi / (3.14159/10) + _Time.z);
+											  //float fromJammerToFragmentAngleFracedByTwoPi =   fromJammerToFragmentAngle ;
+											  //fragmentDistanceToJammer -= fromJammerToFragmentAngleFracedByTwoPi;
+
+											  if ((fragmentDistanceToJammer + pow(fromJammerToFragmentAngleWave * 4, 4)) < jammerJammingDistance) {
+												  float fragmentDistanceToJammer01 = fragmentDistanceToJammer / jammerJammingDistance;
+												  float fragmentDistanceToJammer01Powered = pow(fragmentDistanceToJammer01, fromJammerToFragmentAngleWave * 2 + 25);
+												  scannerCol = float4(fragmentDistanceToJammer01Powered, 0, 0, 1);
+											  }
+										  }
+									  }
+
+
+
+							  }
+							  else {
+								  for (int j = 0; j < _JammerPositions.Length; j++) {
+									  float4 jammerPosition = _JammerPositions[j];
+									  float jammerActive = _JammerActive[j];
+
+									  if (jammerActive == 1) {
+
+										  float jammerJammingDistance = _JammerJammingDistances[j];
+										  float fragmentDistanceToJammer = distance(float2(fragmentWorldPosition.x, fragmentWorldPosition.y), float2(jammerPosition.x, jammerPosition.y));
+
+
+										  //float fragmentDistanceToJammer = distance(float2(_EchoOrigins[i].x, _EchoOrigins[i].y), float2(jammerPosition.x, jammerPosition.y));
+
+										  if (fragmentDistanceToJammer < jammerJammingDistance) {
+
+
+											  float originDistanceToJammer = distance(float2(_EchoOrigins[i].x, _EchoOrigins[i].y), float2(jammerPosition.x, jammerPosition.y));
+
+											  jammerJammingDistance = min(originDistanceToJammer, jammerJammingDistance);
+
+
+											  float3 fromJammerToFragmentVector = fragmentWorldPosition - jammerPosition;
+											  float fromJammerToFragmentAngle = (atan2(fromJammerToFragmentVector.x, fromJammerToFragmentVector.y) + 3.14159);
+											  float fromJammerToFragmentAngleAbsedFraced = frac(fromJammerToFragmentAngle / (3.14159 / 10) + frac(fragmentDistanceToJammer / 3 + _Time.z));
+											  float fromJammerToFragmentAngleWave = abs((fromJammerToFragmentAngleAbsedFraced - 0.5));
+
+											  //float fromJammerToFragmentAngle0TwoPi = fromJammerToFragmentAngle + 3.14159;
+											  //float fromJammerToFragmentAngleFraced = frac(fromJammerToFragmentAngle0TwoPi / (3.14159/10) + _Time.z);
+											  //float fromJammerToFragmentAngleFracedByTwoPi =   fromJammerToFragmentAngle ;
+											  //fragmentDistanceToJammer -= fromJammerToFragmentAngleFracedByTwoPi;
+
+											  if ((fragmentDistanceToJammer + pow(fromJammerToFragmentAngleWave * 4, 4)) < jammerJammingDistance) {
+												  float fragmentDistanceToJammer01 = fragmentDistanceToJammer / jammerJammingDistance;
+												  float fragmentDistanceToJammer01Powered = pow(fragmentDistanceToJammer01, fromJammerToFragmentAngleWave * 2 + 25);
+												  scannerCol = float4(fragmentDistanceToJammer01Powered, 0, 0, 1);
+											  }
+										  }
+									  }
+								  }
+							  }
+
+
+
 
 
 							// scannerCol *= ((_ScanDistances[i]));

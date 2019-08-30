@@ -3,7 +3,7 @@
    Properties
     {
 		[PerRendererData]_Color("Color", Color) = (1,1,1,1)
-        _Transparency("Transparency", Range(0.0,0.5)) = 0.25
+		[PerRendererData]_Transparency("Transparency", Range(0.0,0.5)) = 0.25
     }
 
     SubShader 

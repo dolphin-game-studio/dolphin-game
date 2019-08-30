@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _EchoFadePower: 3
+    - _EchoFadePower: 4
     - _HackEchoWidth: 150
     - _HackLeadSharp: 12
     - _HackScanWidth: 150

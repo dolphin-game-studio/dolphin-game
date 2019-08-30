@@ -10865,6 +10865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d756d140e2a06b74b90d60aa8a2f678f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  secondsToSpotPlayer: 2
+  secondsToSpotPlayerWhenNear: 0.2
   backFin: {fileID: 3321653112994583975}
   viewAngle: 70
   viewRadiusWhenNotSuspicious: 30
@@ -10877,7 +10879,7 @@ MonoBehaviour:
   - {fileID: 505448285355436155}
   - {fileID: 505448286033846761}
   roationSpeed: 60
-  timeToRegainConsciousness: 30
+  timeToRegainConsciousness: 35
   viewPanAngle1: -35
   viewPanAngle2: 35
   panDuration: 3
@@ -10905,8 +10907,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e65249e6256a9a41a94dce86c533103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToSpotPlayer: 3
-  secondsToSpotPlayerWhenNear: 0.2
 --- !u!114 &505448286642768209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11067,6 +11067,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 560f2a4be237cad468bbbda42cf50bc2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6666114030307459702, guid: 560f2a4be237cad468bbbda42cf50bc2,
         type: 3}

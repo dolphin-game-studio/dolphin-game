@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -206,21 +207,41 @@ public class PlayerController : MonoBehaviour
         if (!CurrentPlayerController.IsPlayable)
             return;
 
-        var horizontal = Input.GetAxis("Horizontal");
-        var vertical = Input.GetAxis("Vertical");
+        float horizontal1, vertical1, horizontal2, vertical2;
+        var dolphinMovement = GetPlayerSpeed("Horizontal 1", "Vertical 1", "A Button 1", dolphinPlayerController, out horizontal1, out vertical1);
+        var rayMovement = GetPlayerSpeed("Horizontal 2", "Vertical 2", "A Button 2", rayPlayerController, out horizontal2, out vertical2);
 
-        float playerCharacterSpeed = CurrentPlayerController.Speed;
 
-        var swimFastButtonPressed = Input.GetAxis("A Button");
+
+        if (Mathf.Abs(horizontal1) + Mathf.Abs(vertical1) > 0.4)
+        {
+            Debug.Log(dolphinMovement.magnitude);
+
+            dolphinPlayerController.Move(dolphinMovement);
+        }
+
+        if (Mathf.Abs(horizontal2) + Mathf.Abs(vertical2) > 0.4)
+        {
+            rayPlayerController.Move(rayMovement);
+        }
+
+
+        //CurrentPlayerController.Move(horizontal * playerCharacterSpeed, vertical * playerCharacterSpeed);
+
+    }
+
+    private Vector3 GetPlayerSpeed(String horizontalAxisName, String verticalAxisName, String aButtonName, PlayerControllerBase playerController, out float horizontal, out float vertical)
+    {
+        horizontal = Input.GetAxisRaw(horizontalAxisName);
+        vertical = Input.GetAxisRaw(verticalAxisName);
+        var playerCharacterSpeed = playerController.Speed;
+        var swimFastButtonPressed = Input.GetAxis(aButtonName);
 
         if (swimFastButtonPressed > 0)
         {
-            playerCharacterSpeed += CurrentPlayerController.FastSwimMultiplier * swimFastButtonPressed;
+            playerCharacterSpeed += playerController.FastSwimMultiplier * swimFastButtonPressed;
         }
 
-        if (Mathf.Abs(horizontal) + Mathf.Abs(vertical) > 0.4)
-        {
-            CurrentPlayerController.Move(horizontal * playerCharacterSpeed, vertical * playerCharacterSpeed);
-        }
+        return new Vector3(horizontal * playerCharacterSpeed, vertical * playerCharacterSpeed);
     }
 }

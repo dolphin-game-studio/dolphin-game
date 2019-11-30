@@ -123,7 +123,7 @@ public class PlayerControllerBase : MonoBehaviour
 
     }
 
-    public void Move(float horizontal, float vertical)
+    public void Move(Vector3 movement)
     {
         var cantMove = !CanMove;
         if (cantMove)
@@ -131,7 +131,6 @@ public class PlayerControllerBase : MonoBehaviour
             return;
         }
 
-        var movement = new Vector3(horizontal, vertical);
         Rigidbody.velocity = movement;
 
         if (funnyMoveMent)

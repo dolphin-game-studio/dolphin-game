@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmallWhaleControllerBase : PlayerControllerBase
+public abstract class SmallWhaleControllerBase : PlayerControllerBase
 {
     #region Cooldowns
     [SerializeField] private float _echoCooldown;
@@ -25,6 +26,8 @@ public class SmallWhaleControllerBase : PlayerControllerBase
 
 
     [SerializeField] private Transform eccoOrigin;
+
+    public abstract String XButtonName { get; }
 
     public Transform EccoOrigin { get => eccoOrigin; }
 
@@ -95,7 +98,7 @@ public class SmallWhaleControllerBase : PlayerControllerBase
             return;
         }
 
-        if (Input.GetButtonDown("X Button"))
+        if (Input.GetButtonDown(XButtonName))
         {
             _timeSinceLastEcho = 0;
 
@@ -103,7 +106,7 @@ public class SmallWhaleControllerBase : PlayerControllerBase
             if (AtLeastOneJammerInReach)
             {
                 eccoEffect.StartEcho(new Echo() { Type = EchoType.JammedEcho, Origin = eccoOrigin.position });
-                echoJammedClips[Random.Range(0, echoJammedClips.Length - 1)].Play();
+                echoJammedClips[UnityEngine.Random.Range(0, echoJammedClips.Length - 1)].Play();
 
                 for (int i = 0; i < _jammersInReach.Count; i++)
                 {
@@ -115,7 +118,7 @@ public class SmallWhaleControllerBase : PlayerControllerBase
             {
                 eccoEffect.StartEcho(new Echo() { Type = EchoType.Echo, Origin = eccoOrigin.position });
                 eccoEffectFindable.StartEcho(new Echo() { Type = EchoType.Echo, Origin = eccoOrigin.position });
-                echoClips[Random.Range(0, echoClips.Length - 1)].Play();
+                echoClips[UnityEngine.Random.Range(0, echoClips.Length - 1)].Play();
             }
         }
     }

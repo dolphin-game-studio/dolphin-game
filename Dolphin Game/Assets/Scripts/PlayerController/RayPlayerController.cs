@@ -20,9 +20,6 @@ public class RayPlayerController : PlayerControllerBase
     {
         base.Update();
 
-        if (playerController.CurrentPlayerController != this)
-            return;
-
         if (Rigidbody.velocity.magnitude > 1) {
             InvisibleToShark = false;
         }
@@ -86,7 +83,7 @@ public class RayPlayerController : PlayerControllerBase
     {
         _nearestFacingNarrowCorridor = GetNearestFacingNarrowCorridor(out _distanceToNearestNarrowCorridor, out _fromPlayerToNarrowCorridorVector);
 
-        bool narrowCorridorButtonPressed = Input.GetButtonDown("Y Button");
+        bool narrowCorridorButtonPressed = Input.GetButtonDown("Y Button 2");
 
         if (narrowCorridorButtonPressed)
         {
@@ -121,7 +118,7 @@ public class RayPlayerController : PlayerControllerBase
     {
         _nearestFacingShark = GetNearestFacingShark(out _distanceToNearestFacingShark, out _fromPlayerToSharkVector);
 
-        bool stingButtonPressed = Input.GetButtonDown("X Button");
+        bool stingButtonPressed = Input.GetButtonDown("X Button 2");
 
         if (stingButtonPressed)
         {

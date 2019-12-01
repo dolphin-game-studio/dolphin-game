@@ -131,6 +131,8 @@ public class DolphinPlayerController : SmallWhaleControllerBase
         }
     }
 
+    public override string XButtonName => "X Button 1";
+
     private Jammer _nearestJammerInHackDistance = null;
     private float _distanceToNearestFacingJammer;
     private Vector3 _fromPlayerToJammerVector;
@@ -141,8 +143,8 @@ public class DolphinPlayerController : SmallWhaleControllerBase
     {
         _nearestJammerInHackDistance = GetNearestFacingJammerInHackDistance(out _distanceToNearestFacingJammer, out _fromPlayerToJammerVector);
 
-        bool yButtonDown = Input.GetButtonDown("Y Button");
-        bool yButtonUp = Input.GetButtonUp("Y Button");
+        bool yButtonDown = Input.GetButtonDown("Y Button 1");
+        bool yButtonUp = Input.GetButtonUp("Y Button 1");
 
 
         if (yButtonDown)
@@ -190,9 +192,6 @@ public class DolphinPlayerController : SmallWhaleControllerBase
     #endregion
     protected override void Update()
     {
-        if (playerController.CurrentPlayerController != this)
-            return;
-
 
         HandleHacking();
         HandlBubble();
@@ -207,7 +206,7 @@ public class DolphinPlayerController : SmallWhaleControllerBase
 
     private void HandlBubble()
     {
-        bool bButtonPressed = Input.GetButtonUp("B Button");
+        bool bButtonPressed = Input.GetButtonUp("B Button 1");
 
         if (bButtonPressed)
         {

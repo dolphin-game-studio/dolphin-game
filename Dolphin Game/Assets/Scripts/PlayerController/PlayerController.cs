@@ -215,8 +215,6 @@ public class PlayerController : MonoBehaviour
 
         if (Mathf.Abs(horizontal1) + Mathf.Abs(vertical1) > 0.4)
         {
-            Debug.Log(dolphinMovement.magnitude);
-
             dolphinPlayerController.Move(dolphinMovement);
         }
 

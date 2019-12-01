@@ -118,8 +118,6 @@ public class PlayerControllerBase : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (playerController.CurrentPlayerController != this && !IsPlayable)
-            return;
 
     }
 

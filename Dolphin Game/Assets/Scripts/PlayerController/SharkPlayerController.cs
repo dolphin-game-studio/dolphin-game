@@ -43,8 +43,6 @@ public class SharkPlayerController : PlayerControllerBase
 
     void Update()
     {
-        if (playerController.CurrentPlayerController != this)
-            return;
 
         HandleTakeAngler();
 
@@ -76,7 +74,7 @@ public class SharkPlayerController : PlayerControllerBase
     {
         nearestFacingShark = GetNearestFacingShark(out distanceToNearestFacingShark, out fromPlayerToSharkVector);
 
-        bool xButtonPressed = Input.GetButtonUp("X Button");
+        bool xButtonPressed = Input.GetButtonUp("X Button 3");
 
         if (xButtonPressed)
         {
@@ -104,7 +102,7 @@ public class SharkPlayerController : PlayerControllerBase
     {
         nearestFacingKnockedOutShark = GetNearestFacingShark(out distanceToNearestFacingKnockedOutShark, out fromPlayerToKnockedOutSharkVector, searchForKnockedOutShark: true);
 
-        bool yButtonPressed = Input.GetButtonUp("Y Button");
+        bool yButtonPressed = Input.GetButtonUp("Y Button 3");
 
         if (yButtonPressed)
         {
@@ -136,7 +134,7 @@ public class SharkPlayerController : PlayerControllerBase
     {
         _nearestAngler = GetNearestFacingAngler(out _distanceToNearestFacingAngler, out _fromPlayerToNearestFacingAnglerVector);
 
-        bool bButtonPressed = Input.GetButtonUp("B Button");
+        bool bButtonPressed = Input.GetButtonUp("B Button 3");
 
         if (bButtonPressed)
         {

@@ -117,7 +117,11 @@ public class DolphinGameCamera : MonoBehaviour
         }
         else
         {
-            targetPosition = Vector3.MoveTowards(targetPosition , playerController.CurrentPlayerController.transform.position, Time.deltaTime * followSpeed);
+            var fromDolphinToRay = playerController.RayPlayerController.transform.position - playerController.DolphinPlayerController.transform.position;
+            var halfWayFromDolphinToRay = fromDolphinToRay / 2;
+            var centerBetweenDolphinAndRay = playerController.DolphinPlayerController.transform.position + halfWayFromDolphinToRay;
+
+           targetPosition = Vector3.MoveTowards(targetPosition , centerBetweenDolphinAndRay, Time.deltaTime * followSpeed);
         }
 
         desiredPosition = targetPosition + Offset;
@@ -127,10 +131,7 @@ public class DolphinGameCamera : MonoBehaviour
         transform.position = new Vector3(position.x, position.y, position.z);
         //Camera.nearClipPlane = Mathf.Abs(transform.position.z) - clipNearOffset;
 
-
         HandleDepthOfFIeld();
-
-
 
         transform.LookAt(targetPosition);
 

@@ -80,7 +80,7 @@ public class Hai : MonoBehaviour
 
             if (timePlayerNoticed > timeToSpotPlayerRegardingDistanceToPlayer)
             {
-                _game.Spotted = true;
+                //_game.Spotted = true;
             }
 
 

@@ -7,10 +7,7 @@ using UnityEngine.UI;
  public class ActiveAbilityTilesShark : AbilityTiles
 {
     private SharkPlayerController _sharkPlayerController;
-
-
-
-
+         
     public override void Awake()
     {
         base.Awake();
@@ -20,15 +17,12 @@ using UnityEngine.UI;
         if (_sharkPlayerController == null)
         {
             throw new DolphinGameException("SharkPlayerController Object couldn't be found.");
-        }
-
-        
+        }        
     }
 
     public override void Update()
     {
         base.Update();
-
 
         HandleActiveAbilityVisualisation();
     }
@@ -43,5 +37,14 @@ using UnityEngine.UI;
         westIcon.Usable = _sharkPlayerController.SharkToDistractInReach;
         eastIcon.Usable = _sharkPlayerController.AnglerInReach;
         northIcon.Usable = _sharkPlayerController.KnockedOutSharkWithSuperiorUniformInReach;
+    }
+
+
+    public override void UpdateAbilitiTilesActiveHighlight()
+    {
+        northIcon.Active = Input.GetButton("Y Button");
+        westIcon.Active = Input.GetButton("X Button");
+        eastIcon.Active = Input.GetButton("B Button");
+        southIcon.Active = Input.GetButton("A Button");
     }
 }

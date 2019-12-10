@@ -42,11 +42,16 @@ public class OrcaPlayerController : SmallWhaleControllerBase
 
     protected override void Update()
     {
+
+        if (playerController.CurrentPlayerController == this)
+        {
+            HandleRamThrust();
+
+            HandleTransportKnockedOutSharks();
+        }
         base.Update();
 
-        HandleRamThrust();
 
-        HandleTransportKnockedOutSharks();
 
     }
 
@@ -209,7 +214,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
         }
     }
 
-    public override string XButtonName => "X Button 4";
+    public override string XButtonName => playerController.CurrentPlayerController == this ? "X Button 1" : "X Button 4";
 
     [SerializeField] private float ramThrustDuration = 1f;
     private float timeSinceRamStarted = 0f;
@@ -244,7 +249,7 @@ public class OrcaPlayerController : SmallWhaleControllerBase
         _eitherDestructableOrSharkFound = nearestFacingDestructable != null && distanceToNearestFacingDestructable < maxRamDistance
             || nearestFacingShark != null && distanceToNearestFacingShark < maxRamDistance;
 
-        bool bButtonPressed = Input.GetButtonUp("B Button 4");
+        bool bButtonPressed = Input.GetButtonUp("B Button 1");
 
         if (bButtonPressed && RamAbilityCooldown >= 1)
         {

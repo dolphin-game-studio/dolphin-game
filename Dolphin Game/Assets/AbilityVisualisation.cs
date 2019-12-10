@@ -80,7 +80,7 @@ public class AbilityVisualisation : MonoBehaviour
         abilityTilesDolphin.Visible = playerController.DolphinIsActive;
         abilityTilesOrca.Visible = playerController.OrcaIsActive;
         abilityTilesShark.Visible = playerController.SharkIsActive;
-        abilityTilesRay.Visible = playerController.RayIsActive;
+        abilityTilesRay.Visible = playerController.DolphinIsActive;
 
     }
 

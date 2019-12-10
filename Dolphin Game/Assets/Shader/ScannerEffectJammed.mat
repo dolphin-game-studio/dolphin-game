@@ -36,6 +36,7 @@ Material:
     - _JammedScanWidth: 150
     - _LeadSharp: 30
     - _MaxEchoDistance: 100
+    - _MinEcho: 0.2
     - _NormalDotCameraRayPower: 1.26
     - _ScanDistance: 69.223656
     - _ScanWidth: 1000

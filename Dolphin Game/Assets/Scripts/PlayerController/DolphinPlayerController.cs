@@ -87,7 +87,7 @@ public class DolphinPlayerController : SmallWhaleControllerBase
         return nearestJammer;
     }
 
-     public float HackProgress => Map(hackEchoDelay, initialHackEchoDelay, hackEchoDelayEnd, 0, 1);
+    public float HackProgress => Map(hackEchoDelay, initialHackEchoDelay, hackEchoDelayEnd, 0, 1);
 
 
     public static float Map(float x, float x1, float x2, float y1, float y2)
@@ -120,19 +120,21 @@ public class DolphinPlayerController : SmallWhaleControllerBase
             {
                 _hackingInProgress = value;
 
-                if (_hackingInProgress) {
+                if (_hackingInProgress)
+                {
                     hackingClip.Play();
                 }
 
-                if (!_hackingInProgress && !_hackingFinished) {
+                if (!_hackingInProgress && !_hackingFinished)
+                {
                     hackingClip.Stop();
                 }
             }
         }
     }
+    public override string XButtonName => playerController.CurrentPlayerController == this ? "X Button 1" : "X Button 4";
 
-    public override string XButtonName => "X Button 1";
-
+ 
     private Jammer _nearestJammerInHackDistance = null;
     private float _distanceToNearestFacingJammer;
     private Vector3 _fromPlayerToJammerVector;
@@ -153,7 +155,7 @@ public class DolphinPlayerController : SmallWhaleControllerBase
             {
                 HackingInProgress = true;
                 _hackingFinished = false;
- 
+
                 hackEchoDelay = initialHackEchoDelay;
                 SendHackEcho();
             }
@@ -192,10 +194,11 @@ public class DolphinPlayerController : SmallWhaleControllerBase
     #endregion
     protected override void Update()
     {
-
-        HandleHacking();
-        HandlBubble();
-
+        if (playerController.CurrentPlayerController == this)
+        {
+            HandleHacking();
+            HandlBubble();
+        }
         base.Update();
     }
 

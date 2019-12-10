@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityTiles : MonoBehaviour
+public abstract class AbilityTiles : MonoBehaviour
 {
 
     public float RotationChangeSpeed => abilityVisualisation.RotationChangeSpeed;
@@ -113,13 +113,7 @@ public class AbilityTiles : MonoBehaviour
         UpdateAbilitiTilesActiveHighlight();
     }
 
-    private void UpdateAbilitiTilesActiveHighlight()
-    {
-        northIcon.Active = Input.GetButton("Y Button");
-        westIcon.Active = Input.GetButton("X Button");
-        eastIcon.Active = Input.GetButton("B Button");
-        southIcon.Active = Input.GetButton("A Button");
-    }
+    public abstract void UpdateAbilitiTilesActiveHighlight();
 
     private void HandleAbilityVisualisationImagesRotation()
     {

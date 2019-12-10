@@ -31,7 +31,15 @@ using UnityEngine.UI;
         
         HandleActiveAbilityVisualisation();
     }
-     
+
+    public override void UpdateAbilitiTilesActiveHighlight()
+    {
+        northIcon.Active = Input.GetButton("Y Button 2");
+        westIcon.Active = Input.GetButton("X Button 2");
+        eastIcon.Active = Input.GetButton("B Button 2");
+        southIcon.Active = Input.GetButton("A Button 2");
+    }
+
     private void HandleActiveAbilityVisualisation()
     {
         westIcon.Usable = _rayPlayerController.SharkToStunInReach;

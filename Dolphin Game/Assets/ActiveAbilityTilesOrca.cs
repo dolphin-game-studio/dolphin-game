@@ -33,6 +33,14 @@ using UnityEngine.UI;
         HandleActiveAbilityVisualisation();
     }
 
+    public override void UpdateAbilitiTilesActiveHighlight()
+    {
+        northIcon.Active = Input.GetButton("Y Button");
+        westIcon.Active = Input.GetButton("X Button");
+        eastIcon.Active = Input.GetButton("B Button");
+        southIcon.Active = Input.GetButton("A Button");
+    }
+
     private bool _triggerNextEchoAbilityCooldownFinished = true;
 
     private bool _triggerNextRamAbilityCooldownFinished = true;

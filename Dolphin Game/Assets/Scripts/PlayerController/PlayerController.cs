@@ -49,14 +49,14 @@ public class PlayerController : MonoBehaviour
 
 
     public DolphinPlayerController DolphinPlayerController => dolphinPlayerController;
-    public RayPlayerController RayPlayerController => rayPlayerController;
+    public RayPlayerController RayPlayerController => playerTwoMovement;
     public SharkPlayerController SharkPlayerController => sharkPlayerController;
     public OrcaPlayerController OrcaPlayerController => orcaPlayerController;
 
     private PlayerControllerBase currentPlayerController;
 
     private DolphinPlayerController dolphinPlayerController;
-    private RayPlayerController rayPlayerController;
+    private RayPlayerController playerTwoMovement;
     private SharkPlayerController sharkPlayerController;
     private OrcaPlayerController orcaPlayerController;
 
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
 
 
         dolphinPlayerController = FindObjectOfType<DolphinPlayerController>();
-        rayPlayerController = FindObjectOfType<RayPlayerController>();
+        playerTwoMovement = FindObjectOfType<RayPlayerController>();
         sharkPlayerController = FindObjectOfType<SharkPlayerController>();
         orcaPlayerController = FindObjectOfType<OrcaPlayerController>();
 
@@ -108,13 +108,13 @@ public class PlayerController : MonoBehaviour
         {
             allPlayerControllers.Add(dolphinPlayerController);
         }
-        if (rayPlayerController != null)
+        if (playerTwoMovement != null)
         {
             allPlayerControllers.Add(sharkPlayerController);
         }
         if (sharkPlayerController != null)
         {
-            allPlayerControllers.Add(rayPlayerController);
+            allPlayerControllers.Add(playerTwoMovement);
         }
         if (orcaPlayerController != null)
         {
@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
 
         if (selectRay)
         {
-            CurrentPlayerController = rayPlayerController;
+            CurrentPlayerController = playerTwoMovement;
         }
 
         if (selectOrca)
@@ -208,20 +208,27 @@ public class PlayerController : MonoBehaviour
             return;
 
         float horizontal1, vertical1, horizontal2, vertical2;
-        var dolphinMovement = GetPlayerSpeed("Horizontal 1", "Vertical 1", "A Button 1", dolphinPlayerController, out horizontal1, out vertical1);
-        var rayMovement = GetPlayerSpeed("Horizontal 2", "Vertical 2", "A Button 2", rayPlayerController, out horizontal2, out vertical2);
+        var playerOneMovement = GetPlayerSpeed("Horizontal 1", "Vertical 1", "A Button 1", dolphinPlayerController, out horizontal1, out vertical1);
+        var rayMovement = GetPlayerSpeed("Horizontal 2", "Vertical 2", "A Button 2", playerTwoMovement, out horizontal2, out vertical2);
 
+        if (CurrentPlayerController == dolphinPlayerController) {
+            if (Mathf.Abs(horizontal1) + Mathf.Abs(vertical1) > 0.4)
+            {
+                dolphinPlayerController.Move(playerOneMovement);
+            }
 
-
-        if (Mathf.Abs(horizontal1) + Mathf.Abs(vertical1) > 0.4)
-        {
-            dolphinPlayerController.Move(dolphinMovement);
+            if (Mathf.Abs(horizontal2) + Mathf.Abs(vertical2) > 0.4)
+            {
+                playerTwoMovement.Move(rayMovement);
+            }
+        } else if (CurrentPlayerController == OrcaPlayerController) {
+            if (Mathf.Abs(horizontal1) + Mathf.Abs(vertical1) > 0.4)
+            {
+                orcaPlayerController.Move(playerOneMovement);
+            }
         }
 
-        if (Mathf.Abs(horizontal2) + Mathf.Abs(vertical2) > 0.4)
-        {
-            rayPlayerController.Move(rayMovement);
-        }
+
 
 
         //CurrentPlayerController.Move(horizontal * playerCharacterSpeed, vertical * playerCharacterSpeed);

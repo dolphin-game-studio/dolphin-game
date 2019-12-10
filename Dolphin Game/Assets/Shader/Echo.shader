@@ -5,6 +5,9 @@ Shader "Operation Whalekyrie/Echo"
 {
 	Properties
 	{
+				_MinEcho("Min Eccho", float) = 0.1
+
+
 		_MainTex("Texture", 2D) = "white" {}
 		_DetailTex("Texture", 2D) = "white" {}
 		_ScanWidth("Scan Width", float) = 10
@@ -66,6 +69,9 @@ Shader "Operation Whalekyrie/Echo"
 
 				float4 _MainTex_TexelSize;
 				float4 _CameraWS;
+				float _MinEcho;
+
+				
 
 				VertOut vert(VertIn v)
 				{
@@ -144,8 +150,8 @@ Shader "Operation Whalekyrie/Echo"
 					float linearDepth;
 					float3 normal;
 					DecodeDepthNormal(tex2D(_CameraDepthNormalsTexture, i.uv_depth), linearDepth, normal);
-					float fragmentNormalDotCameraRay = 1 - dot(normal, normalize(i.interpolatedRay));
-
+					float fragmentNormalDotCameraRay = max(_MinEcho, 1 - dot(normal, normalize(i.interpolatedRay)));
+ 
 
 					//float linearDepth = DecodeFloatRG(tex2D(_CameraDepthNormalsTexture, i.uv_depth).zw);
 					//float linearDepth = Linear01Depth(rawDepth);

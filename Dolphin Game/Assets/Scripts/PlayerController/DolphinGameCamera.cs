@@ -6,6 +6,9 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class DolphinGameCamera : MonoBehaviour
 {
+    [SerializeField]
+    private float _characterBounds = 30;
+
     private CharacterSelection _characterSelection;
     private PauseMenuScreen _pauseMenuScreen;
     private Game _game;
@@ -20,15 +23,23 @@ public class DolphinGameCamera : MonoBehaviour
     ColorGrading colorGrading = null;
 
 
-    private Vector3 targetPosition;
+    private Vector3 desiredTargetPosition;
 
+    public float zoom = 0f;
+    public float Zoom
+    {
+        get => zoom; set
+        {
+            zoom = value;
+        }
+    }
 
     public Vector3 offset = new Vector3(0, 0, 0);
 
     public float damping = 1.0f;
     public Rigidbody Rigidbody { get; set; }
     private Camera Camera { get; set; }
-    public Vector3 Offset
+    public Vector3 OffsetToTarget
     {
         get => offset; set
         {
@@ -38,14 +49,24 @@ public class DolphinGameCamera : MonoBehaviour
             }
         }
     }
-    
+
+    public float CharacterBounds
+    {
+        get { return _characterBounds; }
+        set
+        {
+            if (value >= 0)
+                _characterBounds = value;
+        }
+    }
+
     public float followSpeed;
     public float panSpeed;
     public float zoomSpeed;
 
     private bool manualCamera = false;
 
-    private Vector3 desiredPosition;
+    private Vector3 desiredCameraPosition;
 
 
     void Awake()
@@ -76,7 +97,7 @@ public class DolphinGameCamera : MonoBehaviour
         {
             throw new DolphinGameException("There is no PauseMenuScreen Component in this Scene.");
         }
-        
+
 
         Rigidbody = GetComponent<Rigidbody>();
         Camera = GetComponent<Camera>();
@@ -89,8 +110,10 @@ public class DolphinGameCamera : MonoBehaviour
 
     }
 
-
-    void Update()
+    Vector3 targetPosition;
+    Vector3 cameraPositionSmoothDampVelocity;
+    Vector3 targetPositionSmoothDampVelocity;
+    void LateUpdate()
     {
         var leftHorizontal = Input.GetAxis("Horizontal");
         var leftVertical = Input.GetAxis("Vertical");
@@ -112,27 +135,68 @@ public class DolphinGameCamera : MonoBehaviour
             if (Mathf.Abs(rightHorizontal) + Mathf.Abs(rightVertical) > 0)
             {
                 var cameraMovement = new Vector3(rightHorizontal, rightVertical);
-                targetPosition += cameraMovement * panSpeed;
+                desiredTargetPosition += cameraMovement * panSpeed;
             }
+            Bounds bounds = new Bounds(desiredTargetPosition, new Vector3(_characterBounds, _characterBounds));
+
+            desiredTargetPosition = bounds.center;
+
+            float radius = bounds.size.magnitude / 2f;
+
+            float horizontalFOV = 2f * Mathf.Atan(Mathf.Tan(Camera.fieldOfView * Mathf.Deg2Rad / 2f) * Camera.aspect) * Mathf.Rad2Deg;
+            float fov = Mathf.Min(Camera.fieldOfView, horizontalFOV);
+            float dist = radius / (Mathf.Sin(fov * Mathf.Deg2Rad / 2f));
+            // OffsetToTarget = new Vector3(0, 0, -bounds.size.magnitude +  Zoom);
+            OffsetToTarget = new Vector3(0, 0, -dist);
+            desiredCameraPosition = desiredTargetPosition + OffsetToTarget;
+        }
+        else if (playerController.CurrentPlayerController == playerController.DolphinPlayerController)
+        {
+            Bounds bounds = new Bounds(playerController.DolphinPlayerController.transform.position, new Vector3(_characterBounds, _characterBounds));
+            bounds.Encapsulate(new Bounds(playerController.RayPlayerController.transform.position, new Vector3(_characterBounds, _characterBounds)));
+
+
+
+
+            desiredTargetPosition = bounds.center;
+
+
+
+            float radius = bounds.size.magnitude / 2f;
+
+            float horizontalFOV = 2f * Mathf.Atan(Mathf.Tan(Camera.fieldOfView * Mathf.Deg2Rad / 2f) * Camera.aspect) * Mathf.Rad2Deg;
+            float fov = Mathf.Min(Camera.fieldOfView, horizontalFOV);
+            float dist = radius / (Mathf.Sin(fov * Mathf.Deg2Rad / 2f));
+            // OffsetToTarget = new Vector3(0, 0, -bounds.size.magnitude +  Zoom);
+            OffsetToTarget = new Vector3(0, 0, -dist);
+            desiredCameraPosition = desiredTargetPosition + OffsetToTarget;
+
+
         }
         else
         {
-            var fromDolphinToRay = playerController.RayPlayerController.transform.position - playerController.DolphinPlayerController.transform.position;
-            var halfWayFromDolphinToRay = fromDolphinToRay / 2;
-            var centerBetweenDolphinAndRay = playerController.DolphinPlayerController.transform.position + halfWayFromDolphinToRay;
+            Bounds bounds = new Bounds(playerController.CurrentPlayerController.transform.position, new Vector3(_characterBounds, _characterBounds));
+            desiredTargetPosition = bounds.center;
+            float radius = bounds.size.magnitude / 2f;
 
-           targetPosition = Vector3.MoveTowards(targetPosition , centerBetweenDolphinAndRay, Time.deltaTime * followSpeed);
+            float horizontalFOV = 2f * Mathf.Atan(Mathf.Tan(Camera.fieldOfView * Mathf.Deg2Rad / 2f) * Camera.aspect) * Mathf.Rad2Deg;
+            float fov = Mathf.Min(Camera.fieldOfView, horizontalFOV);
+            float dist = radius / (Mathf.Sin(fov * Mathf.Deg2Rad / 2f));
+            // OffsetToTarget = new Vector3(0, 0, -bounds.size.magnitude +  Zoom);
+            OffsetToTarget = new Vector3(0, 0, -dist);
+            desiredCameraPosition = desiredTargetPosition + OffsetToTarget;
         }
 
-        desiredPosition = targetPosition + Offset;
 
 
-        Vector3 position = Vector3.Lerp(transform.position, desiredPosition, Time.deltaTime * damping);
+
+        Vector3 position = Vector3.SmoothDamp(transform.position, desiredCameraPosition, ref cameraPositionSmoothDampVelocity, 1f);
         transform.position = new Vector3(position.x, position.y, position.z);
         //Camera.nearClipPlane = Mathf.Abs(transform.position.z) - clipNearOffset;
 
         HandleDepthOfFIeld();
 
+        targetPosition = Vector3.SmoothDamp(targetPosition, desiredTargetPosition, ref targetPositionSmoothDampVelocity, 0.5f);
         transform.LookAt(targetPosition);
 
         var leftTrigger = Input.GetAxis("Left Trigger");
@@ -140,17 +204,17 @@ public class DolphinGameCamera : MonoBehaviour
 
         if (leftTrigger < -0.1)
         {
-            Offset += new Vector3(0, 0, leftTrigger * zoomSpeed);
+            CharacterBounds -= leftTrigger * zoomSpeed;
         }
         if (rightTrigger < -0.1)
         {
-            Offset += new Vector3(0, 0, -rightTrigger * zoomSpeed);
+            CharacterBounds += rightTrigger * zoomSpeed;
         }
     }
 
     private void HandleDepthOfFIeld()
     {
-        if (_characterSelection.Visible  || _pauseMenuScreen.InHistory || _game.Spotted)
+        if (_characterSelection.Visible || _pauseMenuScreen.InHistory || _game.Spotted)
         {
             depthOfFieldLayer.focusDistance.value = 0;
             depthOfFieldLayer.focalLength.value = 300;
@@ -161,7 +225,7 @@ public class DolphinGameCamera : MonoBehaviour
         else
         {
             depthOfFieldLayer.focusDistance.value = Mathf.Abs(transform.position.z);
-            depthOfFieldLayer.focalLength.value = Mathf.Abs(transform.position.z / 3 );
+            depthOfFieldLayer.focalLength.value = Mathf.Abs(transform.position.z / 3);
             colorGrading.saturation.value = 0;
         }
 

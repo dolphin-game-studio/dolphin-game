@@ -52,6 +52,14 @@ public class ActiveAbilityTilesDolphin : AbilityTiles
         HandleActiveAbilityVisualisation();
     }
 
+    public override void UpdateAbilitiTilesActiveHighlight()
+    {
+        northIcon.Active = Input.GetButton("Y Button 1");
+        westIcon.Active = Input.GetButton("X Button 1");
+        eastIcon.Active = Input.GetButton("B Button 1");
+        southIcon.Active = Input.GetButton("A Button 1");
+    }
+
     private bool _triggerNextEchoAbilityCooldownFinished = true;
 
     private bool _triggerNextBubbleAbilityCooldownFinished = true;

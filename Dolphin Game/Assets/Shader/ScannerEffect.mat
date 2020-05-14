@@ -29,17 +29,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _EchoFadePower: 4
-    - _HackEchoWidth: 150
-    - _HackLeadSharp: 12
+    - _HackEchoWidth: 350
+    - _HackLeadSharp: 3
     - _HackScanWidth: 150
-    - _JammedLeadSharp: 150
-    - _JammedScanWidth: 150
-    - _LeadSharp: 1
-    - _MaxEchoDistance: 300
-    - _MinEcho: 0.15
+    - _JammedLeadSharp: 350
+    - _JammedScanWidth: 350
+    - _LeadSharp: 3
+    - _MaxEchoDistance: 350
+    - _MinEcho: 0.2
     - _NormalDotCameraRayPower: 0.7
     - _ScanDistance: 69.223656
-    - _ScanWidth: 150
+    - _ScanWidth: 350
     m_Colors:
     - _HBarColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _HackLeadColor: {r: 0, g: 1, b: 0, a: 0}
